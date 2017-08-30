@@ -1,0 +1,10 @@
+site_name: My Docs
+
+pages:
+        - Overview: index.md
+        - Checkout:
+                - Web: checkout/web.md
+                - Android: checkout/android.md
+                - iOS: checkout/ios.md
+        - Server: server.md
+theme: readthedocs

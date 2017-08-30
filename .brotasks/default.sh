@@ -3,6 +3,11 @@
 project=$(basename `pwd`)
 
 setup () {
+	sudo pip install virtualenv
+	virtualenv --python=python3 .env
+	source .env/bin/activate
+	pip install pipx
+	px setup
 }
 
 init () {

@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Overview of Khalti merchant api\n\n\nKhalti has two level of implementation.\nOne at client (web app, mobile app) and other at server.\nClient initiates and confirms payment, and server verifies it.\n\n\nBelow is overall process of payment through Khalti.\nTODO: include process diagram\n\n\nClient implementation\n\n\n\n\nweb -> link\n\n\nandroid -> link\n\n\nios -> link\n\n\n\n\nServer implementation\n\n\n\n\nserver -> link",
+            "text": "Overview of Khalti merchant api\n\n\nKhalti has two level of implementation.\nOne at client (web app, mobile app) and other at server.\nClient initiates and confirms payment, and server verifies it.\n\n\nBelow is overall process of payment through Khalti.\nTODO: include process diagram\n\n\nClient implementation\n\n\n\n\nWeb -> https://github.com/janakitech/khalti-web\n\n\nAndroid -> https://github.com/janakitech/khalti-android\n\n\niOS -> Coming Soon\n\n\n\n\nServer implementation\n\n\n\n\nserver -> https://github.com/janakitech/khalti-web",
             "title": "Overview"
         },
         {
@@ -12,12 +12,12 @@
         },
         {
             "location": "/#client-implementation",
-            "text": "web -> link  android -> link  ios -> link",
+            "text": "Web -> https://github.com/janakitech/khalti-web  Android -> https://github.com/janakitech/khalti-android  iOS -> Coming Soon",
             "title": "Client implementation"
         },
         {
             "location": "/#server-implementation",
-            "text": "server -> link",
+            "text": "server -> https://github.com/janakitech/khalti-web",
             "title": "Server implementation"
         },
         {

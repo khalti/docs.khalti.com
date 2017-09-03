@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Overview of Khalti merchant api\n\n\nKhalti has two level of implementation.\nOne at client (web app, mobile app) and other at server.\nClient initiates and confirms payment, and server verifies it.\n\n\nBelow is overall process of payment through Khalti.\nTODO: include process diagram\n\n\nClient implementation\n\n\n<<<<<<< HEAD\n- Web -> https://github.com/janakitech/khalti-web\n- Android -> https://github.com/janakitech/khalti-android\n- iOS -> Coming Soon\n\n\nServer implementation\n\n\n- server -> https://github.com/janakitech/khalti-web\n\n\n\n\nWeb\n\n\nAndroid\n\n\nios\n\n\n\n\nServer implementation\n\n\n\n\nserver\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7860c40fa2207246403ecefe490f4b2790e5ab0f",
+            "text": "Overview of Khalti merchant api\n\n\nKhalti has two level of implementation.\nOne at client (web app, mobile app) and other at server.\nClient initiates and confirms payment, and server verifies it.\n\n\nBelow is overall process of payment through Khalti.\nTODO: include process diagram\n\n\nClient implementation\n\n\n\n\nWeb\n\n\nAndroid\n\n\nios\n\n\n\n\nServer implementation\n\n\n\n\nserver",
             "title": "Overview"
         },
         {
@@ -12,22 +12,12 @@
         },
         {
             "location": "/#client-implementation",
-            "text": "<<<<<<< HEAD\n- Web -> https://github.com/janakitech/khalti-web\n- Android -> https://github.com/janakitech/khalti-android\n- iOS -> Coming Soon",
+            "text": "Web  Android  ios",
             "title": "Client implementation"
         },
         {
             "location": "/#server-implementation",
-            "text": "",
-            "title": "Server implementation"
-        },
-        {
-            "location": "/#-server-httpsgithubcomjanakitechkhalti-web",
-            "text": "Web  Android  ios",
-            "title": "- server -&gt; https://github.com/janakitech/khalti-web"
-        },
-        {
-            "location": "/#server-implementation_1",
-            "text": "server        7860c40fa2207246403ecefe490f4b2790e5ab0f",
+            "text": "server",
             "title": "Server implementation"
         },
         {

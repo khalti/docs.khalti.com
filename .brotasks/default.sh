@@ -15,7 +15,7 @@ init () {
 }
 
 serve () {
-	mkdocs serve -a localhost:3000
+	mkdocs serve -a localhost:4040
 }
 
 env () {

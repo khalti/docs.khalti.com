@@ -116,13 +116,16 @@
               
                 <h2 id="verification">Verification</h2>
 <p>After user confirms payment, it is verified server to server.</p>
-<p>url: "https://khalti.com/api/payment/verify/"
-method: "POST"
-headers:
-    Authorization: <Key live/test secret key>
-payload:
-    - token:
-    - amount:</p>
+<ul>
+<li><code>url</code>: "https://khalti.com/api/payment/verify/"</li>
+<li><code>method</code>: "POST"</li>
+<li><code>headers</code>: Pass your test or live secret key at <code>Authorization</code> header.</li>
+<li><code>payload</code>:<ul>
+<li><code>token</code>: Token given my Khalti after payment confirmation.</li>
+<li><code>amount</code>: Amount (in paisa) with which payment was initiated.</li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>

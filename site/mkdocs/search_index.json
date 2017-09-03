@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Overview of Khalti merchant api\n\n\nKhalti has two level of implementation.\nOne at client (web app, mobile app) and other at server.\nClient initiates and confirms payment, and server verifies it.\n\n\nBelow is overall process of payment through Khalti.\nTODO: include process diagram\n\n\nClient implementation\n\n\n\n\nWeb -> https://github.com/janakitech/khalti-web\n\n\nAndroid -> https://github.com/janakitech/khalti-android\n\n\niOS -> Coming Soon\n\n\n\n\nServer implementation\n\n\n\n\nserver -> https://github.com/janakitech/khalti-web",
+            "text": "Overview of Khalti merchant api\n\n\nKhalti has two level of implementation.\nOne at client (web app, mobile app) and other at server.\nClient initiates and confirms payment, and server verifies it.\n\n\nBelow is overall process of payment through Khalti.\nTODO: include process diagram\n\n\nClient implementation\n\n\n\n\nWeb\n\n\nAndroid\n\n\nios\n\n\n\n\nServer implementation\n\n\n\n\nserver",
             "title": "Overview"
         },
         {
@@ -12,32 +12,52 @@
         },
         {
             "location": "/#client-implementation",
-            "text": "Web -> https://github.com/janakitech/khalti-web  Android -> https://github.com/janakitech/khalti-android  iOS -> Coming Soon",
+            "text": "Web  Android  ios",
             "title": "Client implementation"
         },
         {
             "location": "/#server-implementation",
-            "text": "server -> https://github.com/janakitech/khalti-web",
+            "text": "server",
             "title": "Server implementation"
         },
         {
             "location": "/checkout/web/",
-            "text": "There are two ways to integrate Khalti checkout in web.\nWith or without build tools like \nWebpak\n and \nRollup\n.\n\n\n1. Without build tools\n\n\n<body>\n    <script src=\"https://khalti.com/static/khalti-checkout.js\"></script>\n    // ...\n    <button id=\"payment-button\">Pay with Khalti</button>\n    // ...\n    <script>\n        let config = {\n            \"public_key\": \"\",\n            \"return_url\": \"\",\n            \"product_identity\": \"\",\n            \"product_name\": \"\",\n            \"product_url\": \"\",\n            onConfirmation (payload) {\n                // hit merchant api for initiating verfication\n                console.log(payload);\n            }\n        };\n\n        let checkout = new KhaltiCheckout(config);\n        let btn = document.getElementById(\"payment-button\");\n        btn.onclick = function () {\n            checkout.show({amount: 1000});\n        }\n    </script>\n</body>\n\n\n\n\n2. With build tools\n\n\nComming soon ...\n\n\nDescriptions of attributes\n\n\npublic_key\n    - Test or live public key which identifies the merchant.\namount\n    - Amount to pay. It must be in paisa.\nreturn_url\n    - The url at which Khalti widget will make post request after user confirmation.\nbutton_type\n    - Type of button to render. There are 3 choices:\n        1. normal - Plain button\n        2. mini - Small image button\n        3. big - Big image button\nproduct_identity\n    - Unique product identifier at merchant.\nproduct_name\n    - Name of product\nproduct_url\n    - Url of the product.\nmerchant_x\n    - Merchant data are special payloads which Khalti will provide to merchant's \nreturn_url\n \\\n    after confirmation. Usually merchant uses these data for product purchase verification on their side.",
+            "text": "There are two ways to integrate Khalti checkout in web.\nWith or without build tools like \nWebpack\n and \nRollup\n.\n\n\n1. Without build tools\n\n\n<body>\n    <script src=\"https://khalti.com/static/khalti-checkout.js\"></script>\n    // ...\n    <button id=\"payment-button\">Pay with Khalti</button>\n    // ...\n    <script>\n        var config = {\n            \"publicKey\": \"test_public_key_dc74e0fd57cb46cd93832aee0a507256\",\n            \"productIdentity\": \"1234567890\",\n            \"productName\": \"Dragon\",\n            \"productUrl\": \"http://gameofthrones.wikia.com/wiki/Dragons\",\n            \"eventHandler\": {\n                onSuccess (payload) {\n                    // hit merchant api for initiating verfication\n                    console.log(payload);\n                },\n                onError (error) {\n                    console.log(error);\n                }\n            }\n        };\n\n        var checkout = new KhaltiCheckout(config);\n        var btn = document.getElementById(\"payment-button\");\n        btn.onclick = function () {\n            checkout.show({amount: 1000});\n        }\n    </script>\n</body>\n\n\n\n\n2. With build tools\n\n\nIf you are developing SPA(Single Page App) using build tools like Webpack, Rollup, etc\nplease follow following steps.\n\n\n1. Install \nkhalti-checkout\n\n\nUsing yarn\n\n\nyarn add khalti-checkout\n\n\nUsing npm\n\n\nnpm install khalti-checkout --save\n\n\n2. Import and use it in your desired component\n\n\nimport KhaltiCheckout from \"khalti-checkout\";\n\nlet config = {\n    \"publicKey\": \"test_public_key_dc74e0fd57cb46cd93832aee0a507256\",\n    \"productIdentity\": \"1234567890\",\n    \"productName\": \"\",\n    \"productUrl\": \"http://gameofthrones.wikia.com/wiki/Dragons\",\n    \"eventHandler\": {\n        onSuccess (payload) {\n            // hit merchant api for initiating verfication\n            console.log(payload);\n        },\n        // onError handler is optional\n        onError (error) {\n            // handle errors\n            console.log(error);\n        }\n    }\n};\n\nlet checkout = new KhaltiCheckout(config);\nlet btn = document.getElementById(\"payment-button\");\nbtn.onclick = function () {\n    checkout.show({amount: 1000});\n}\n\n\n\n\nDescriptions of attributes\n\n\n\n\n\n\npublicKey\n: Test or live public key which identifies the merchant.\n\n\n\n\n\n\namount\n: Amount to pay. It must be in paisa.\n\n\n\n\n\n\nproductIdentity\n: Unique product identifier at merchant.\n\n\n\n\n\n\nproductName\n: Name of product\n\n\n\n\n\n\nproductUrl\n: Url of the product.\n\n\n\n\n\n\neventHandler\n:\n\n\nIt is an object with two methods:\n\n\n\n\n\n\nonSuccess\n\n    This method is called once a transaction is confirmed by a user.\n    One should implement this method to initiate payment verification at merchant.\n\n\n\n\n\n\nonError (optional)\n\n    This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.",
             "title": "Web"
         },
         {
             "location": "/checkout/web/#1-without-build-tools",
-            "text": "<body>\n    <script src=\"https://khalti.com/static/khalti-checkout.js\"></script>\n    // ...\n    <button id=\"payment-button\">Pay with Khalti</button>\n    // ...\n    <script>\n        let config = {\n            \"public_key\": \"\",\n            \"return_url\": \"\",\n            \"product_identity\": \"\",\n            \"product_name\": \"\",\n            \"product_url\": \"\",\n            onConfirmation (payload) {\n                // hit merchant api for initiating verfication\n                console.log(payload);\n            }\n        };\n\n        let checkout = new KhaltiCheckout(config);\n        let btn = document.getElementById(\"payment-button\");\n        btn.onclick = function () {\n            checkout.show({amount: 1000});\n        }\n    </script>\n</body>",
+            "text": "<body>\n    <script src=\"https://khalti.com/static/khalti-checkout.js\"></script>\n    // ...\n    <button id=\"payment-button\">Pay with Khalti</button>\n    // ...\n    <script>\n        var config = {\n            \"publicKey\": \"test_public_key_dc74e0fd57cb46cd93832aee0a507256\",\n            \"productIdentity\": \"1234567890\",\n            \"productName\": \"Dragon\",\n            \"productUrl\": \"http://gameofthrones.wikia.com/wiki/Dragons\",\n            \"eventHandler\": {\n                onSuccess (payload) {\n                    // hit merchant api for initiating verfication\n                    console.log(payload);\n                },\n                onError (error) {\n                    console.log(error);\n                }\n            }\n        };\n\n        var checkout = new KhaltiCheckout(config);\n        var btn = document.getElementById(\"payment-button\");\n        btn.onclick = function () {\n            checkout.show({amount: 1000});\n        }\n    </script>\n</body>",
             "title": "1. Without build tools"
         },
         {
             "location": "/checkout/web/#2-with-build-tools",
-            "text": "Comming soon ...",
+            "text": "If you are developing SPA(Single Page App) using build tools like Webpack, Rollup, etc\nplease follow following steps.",
             "title": "2. With build tools"
         },
         {
+            "location": "/checkout/web/#1-install-khalti-checkout",
+            "text": "",
+            "title": "1. Install khalti-checkout"
+        },
+        {
+            "location": "/checkout/web/#using-yarn",
+            "text": "yarn add khalti-checkout",
+            "title": "Using yarn"
+        },
+        {
+            "location": "/checkout/web/#using-npm",
+            "text": "npm install khalti-checkout --save",
+            "title": "Using npm"
+        },
+        {
+            "location": "/checkout/web/#2-import-and-use-it-in-your-desired-component",
+            "text": "import KhaltiCheckout from \"khalti-checkout\";\n\nlet config = {\n    \"publicKey\": \"test_public_key_dc74e0fd57cb46cd93832aee0a507256\",\n    \"productIdentity\": \"1234567890\",\n    \"productName\": \"\",\n    \"productUrl\": \"http://gameofthrones.wikia.com/wiki/Dragons\",\n    \"eventHandler\": {\n        onSuccess (payload) {\n            // hit merchant api for initiating verfication\n            console.log(payload);\n        },\n        // onError handler is optional\n        onError (error) {\n            // handle errors\n            console.log(error);\n        }\n    }\n};\n\nlet checkout = new KhaltiCheckout(config);\nlet btn = document.getElementById(\"payment-button\");\nbtn.onclick = function () {\n    checkout.show({amount: 1000});\n}",
+            "title": "2. Import and use it in your desired component"
+        },
+        {
             "location": "/checkout/web/#descriptions-of-attributes",
-            "text": "public_key\n    - Test or live public key which identifies the merchant.\namount\n    - Amount to pay. It must be in paisa.\nreturn_url\n    - The url at which Khalti widget will make post request after user confirmation.\nbutton_type\n    - Type of button to render. There are 3 choices:\n        1. normal - Plain button\n        2. mini - Small image button\n        3. big - Big image button\nproduct_identity\n    - Unique product identifier at merchant.\nproduct_name\n    - Name of product\nproduct_url\n    - Url of the product.\nmerchant_x\n    - Merchant data are special payloads which Khalti will provide to merchant's  return_url  \\\n    after confirmation. Usually merchant uses these data for product purchase verification on their side.",
+            "text": "publicKey : Test or live public key which identifies the merchant.    amount : Amount to pay. It must be in paisa.    productIdentity : Unique product identifier at merchant.    productName : Name of product    productUrl : Url of the product.    eventHandler :  It is an object with two methods:    onSuccess \n    This method is called once a transaction is confirmed by a user.\n    One should implement this method to initiate payment verification at merchant.    onError (optional) \n    This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.",
             "title": "Descriptions of attributes"
         },
         {
@@ -62,12 +82,12 @@
         },
         {
             "location": "/server/",
-            "text": "Verification\n\n\nAfter user confirms payment, it is verified server to server.\n\n\nurl: \"https://khalti.com/api/payment/verify/\"\nmethod: \"POST\"\nheaders:\n    Authorization: \n\npayload:\n    - token:\n    - amount:",
+            "text": "Verification\n\n\nAfter user confirms payment, it is verified server to server.\n\n\n\n\nurl\n: \"https://khalti.com/api/payment/verify/\"\n\n\nmethod\n: \"POST\"\n\n\nheaders\n: Pass your test or live secret key at \nAuthorization\n header.\n\n\npayload\n:\n\n\ntoken\n: Token given my Khalti after payment confirmation.\n\n\namount\n: Amount (in paisa) with which payment was initiated.",
             "title": "Server"
         },
         {
             "location": "/server/#verification",
-            "text": "After user confirms payment, it is verified server to server.  url: \"https://khalti.com/api/payment/verify/\"\nmethod: \"POST\"\nheaders:\n    Authorization:  \npayload:\n    - token:\n    - amount:",
+            "text": "After user confirms payment, it is verified server to server.   url : \"https://khalti.com/api/payment/verify/\"  method : \"POST\"  headers : Pass your test or live secret key at  Authorization  header.  payload :  token : Token given my Khalti after payment confirmation.  amount : Amount (in paisa) with which payment was initiated.",
             "title": "Verification"
         }
     ]

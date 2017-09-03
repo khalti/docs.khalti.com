@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <lastmod>2017-09-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,19 +13,19 @@
         
     <url>
      <loc>/checkout/web/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <lastmod>2017-09-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/checkout/android/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <lastmod>2017-09-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/checkout/ios/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <lastmod>2017-09-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -34,7 +34,7 @@
     
     <url>
      <loc>/server/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <lastmod>2017-09-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

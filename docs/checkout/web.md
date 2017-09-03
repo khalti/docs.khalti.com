@@ -1,5 +1,5 @@
 There are two ways to integrate Khalti checkout in web.
-With or without build tools like [Webpak](https://github.com/webpack/webpack) and [Rollup](https://github.com/rollup/rollup).
+With or without build tools like [Webpack](https://github.com/webpack/webpack) and [Rollup](https://github.com/rollup/rollup).
 
 ## 1. Without build tools
 
@@ -10,20 +10,24 @@ With or without build tools like [Webpak](https://github.com/webpack/webpack) an
 	<button id="payment-button">Pay with Khalti</button>
 	// ...
 	<script>
-		let config = {
-			"public_key": "",
-			"return_url": "",
-			"product_identity": "",
-			"product_name": "",
-			"product_url": "",
-			onConfirmation (payload) {
-				// hit merchant api for initiating verfication
-				console.log(payload);
+		var config = {
+			"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
+			"productIdentity": "1234567890",
+			"productName": "Dragon",
+			"productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+			"eventHandler": {
+				onSuccess (payload) {
+					// hit merchant api for initiating verfication
+					console.log(payload);
+				},
+				onError (error) {
+					console.log(error);
+				}
 			}
 		};
 
-		let checkout = new KhaltiCheckout(config);
-		let btn = document.getElementById("payment-button");
+		var checkout = new KhaltiCheckout(config);
+		var btn = document.getElementById("payment-button");
 		btn.onclick = function () {
 			checkout.show({amount: 1000});
 		}
@@ -32,28 +36,66 @@ With or without build tools like [Webpak](https://github.com/webpack/webpack) an
 ```
 
 ### 2. With build tools
-Comming soon ...
+If you are developing SPA(Single Page App) using build tools like Webpack, Rollup, etc
+please follow following steps.
+
+#### 1. Install `khalti-checkout`
+##### Using yarn
+`yarn add khalti-checkout`
+
+##### Using npm
+`npm install khalti-checkout --save`
+
+#### 2. Import and use it in your desired component
+```javascript
+import KhaltiCheckout from "khalti-checkout";
+
+let config = {
+	"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
+	"productIdentity": "1234567890",
+	"productName": "",
+	"productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+	"eventHandler": {
+		onSuccess (payload) {
+			// hit merchant api for initiating verfication
+			console.log(payload);
+		},
+		// onError handler is optional
+		onError (error) {
+			// handle errors
+			console.log(error);
+		}
+	}
+};
+
+let checkout = new KhaltiCheckout(config);
+let btn = document.getElementById("payment-button");
+btn.onclick = function () {
+	checkout.show({amount: 1000});
+}
+```
 
 
 ## Descriptions of attributes
 
-public_key
-	- Test or live public key which identifies the merchant.
-amount
-	- Amount to pay. It must be in paisa.
-return_url
-	- The url at which Khalti widget will make post request after user confirmation.
-button_type
-	- Type of button to render. There are 3 choices:
-		1. normal - Plain button
-		2. mini - Small image button
-		3. big - Big image button
-product_identity
-	- Unique product identifier at merchant.
-product_name
-	- Name of product
-product_url
-	- Url of the product.
-merchant_x
-	- Merchant data are special payloads which Khalti will provide to merchant's `return_url` \
-	after confirmation. Usually merchant uses these data for product purchase verification on their side.
+- `publicKey`: Test or live public key which identifies the merchant.
+
+- `amount`: Amount to pay. It must be in paisa.
+
+- `productIdentity`: Unique product identifier at merchant.
+
+- `productName`: Name of product
+
+- `productUrl`: Url of the product.
+
+- `eventHandler`:
+	
+	It is an object with two methods:
+
+	1. `onSuccess`
+		This method is called once a transaction is confirmed by a user.
+		One should implement this method to initiate payment verification at merchant.
+
+	2. `onError (optional)`
+		This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.
+	

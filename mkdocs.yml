@@ -8,3 +8,5 @@ pages:
                 - iOS: checkout/ios.md
         - Server: server.md
 theme: readthedocs
+docs_dir: content
+site_dir: docs

@@ -82,12 +82,12 @@
         },
         {
             "location": "/server/",
-            "text": "Verification\n\n\nAfter user confirms payment, it is verified server to server.\n\n\n\n\nurl\n: \"https://khalti.com/api/payment/verify/\"\n\n\nmethod\n: \"POST\"\n\n\nheaders\n: Pass your test or live secret key at \nAuthorization\n header.\n\n\npayload\n:\n\n\ntoken\n: Token given my Khalti after payment confirmation.\n\n\namount\n: Amount (in paisa) with which payment was initiated.",
+            "text": "Verification\n\n\nAfter user confirms payment, it is verified server to server.\n\n\n\n\nurl\n: \"https://khalti.com/api/payment/verify/\"\n\n\nmethod\n: \"POST\"\n\n\nheaders\n: \n\n\nAuthorization\n: Pass your test or live secret key.\n\n\n\n\n\n\npayload\n:\n\n\ntoken\n: Token given my Khalti after payment confirmation.\n\n\namount\n: Amount (in paisa) with which payment was initiated.",
             "title": "Server"
         },
         {
             "location": "/server/#verification",
-            "text": "After user confirms payment, it is verified server to server.   url : \"https://khalti.com/api/payment/verify/\"  method : \"POST\"  headers : Pass your test or live secret key at  Authorization  header.  payload :  token : Token given my Khalti after payment confirmation.  amount : Amount (in paisa) with which payment was initiated.",
+            "text": "After user confirms payment, it is verified server to server.   url : \"https://khalti.com/api/payment/verify/\"  method : \"POST\"  headers :   Authorization : Pass your test or live secret key.    payload :  token : Token given my Khalti after payment confirmation.  amount : Amount (in paisa) with which payment was initiated.",
             "title": "Verification"
         }
     ]

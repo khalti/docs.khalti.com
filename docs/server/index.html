@@ -119,7 +119,10 @@
 <ul>
 <li><code>url</code>: "https://khalti.com/api/payment/verify/"</li>
 <li><code>method</code>: "POST"</li>
-<li><code>headers</code>: Pass your test or live secret key at <code>Authorization</code> header.</li>
+<li><code>headers</code>: <ul>
+<li><code>Authorization</code>: Pass your test or live secret key.</li>
+</ul>
+</li>
 <li><code>payload</code>:<ul>
 <li><code>token</code>: Token given my Khalti after payment confirmation.</li>
 <li><code>amount</code>: Amount (in paisa) with which payment was initiated.</li>

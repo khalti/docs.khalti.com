@@ -1,2 +1,5 @@
 .env/
 .brotasks/suren.sh
+.brotasks
+.brotasks/*
+.gitignore

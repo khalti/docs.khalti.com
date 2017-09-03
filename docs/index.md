@@ -8,9 +8,9 @@ Below is overall process of payment through Khalti.
 TODO: include process diagram
 
 ## Client implementation
-- web -> link
-- android -> link
-- ios -> link
+- [Web](./checkout/web.md)
+- [Android](./checkout/android.md)
+- [ios](./checkout/ios.md)
 
 ## Server implementation
-- server -> link
+- [server](./server.md)

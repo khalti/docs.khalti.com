@@ -8,9 +8,9 @@ Below is overall process of payment through Khalti.
 TODO: include process diagram
 
 ## Client implementation
-- web -> link
-- android -> link
-- ios -> link
+- Web -> https://github.com/janakitech/khalti-web
+- Android -> https://github.com/janakitech/khalti-android
+- iOS -> Coming Soon
 
 ## Server implementation
-- server -> link
+- server -> https://github.com/janakitech/khalti-web

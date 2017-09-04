@@ -49,7 +49,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../..">Overview</a>
+    <a class="" href="../..">Welcome</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -61,16 +61,19 @@
     <a class="current" href="./">Web</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#1-without-build-tools">1. Without build tools</a></li>
+    <li class="toctree-l3"><a href="#without-build-tools">Without build tools</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#2-with-build-tools">2. With build tools</a></li>
+            <li><a class="toctree-l4" href="#with-build-tools">With build tools</a></li>
         
         </ul>
     
 
-    <li class="toctree-l3"><a href="#descriptions-of-attributes">Descriptions of attributes</a></li>
+    <li class="toctree-l3"><a href="#api">API</a></li>
+    
+
+    <li class="toctree-l3"><a href="#configuration">Configuration</a></li>
     
 
     </ul>
@@ -88,7 +91,17 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../server/">Server</a>
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../api/verification/">Verification</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../api/transaction/">Transaction</a>
+                </li>
+    </ul>
 	    </li>
           
         </ul>
@@ -127,16 +140,18 @@
           <div role="main">
             <div class="section">
               
-                <p>There are two ways to integrate Khalti checkout in web.
-With or without build tools like <a href="https://github.com/webpack/webpack">Webpack</a> and <a href="https://github.com/rollup/rollup">Rollup</a>.</p>
-<h2 id="1-without-build-tools">1. Without build tools</h2>
-<pre><code class="html">&lt;body&gt;
+                <p>Khalti checkout can be integrated with or without build tools like 
+<a href="https://github.com/webpack/webpack">Webpack</a> and <a href="https://github.com/rollup/rollup">Rollup</a>.</p>
+<h2 id="without-build-tools">Without build tools</h2>
+<pre><code class="html">&lt;html&gt;
+&lt;head&gt;
     &lt;script src=&quot;https://khalti.com/static/khalti-checkout.js&quot;&gt;&lt;/script&gt;
-    // ...
+&lt;/head&gt;
+&lt;body&gt;
     &lt;button id=&quot;payment-button&quot;&gt;Pay with Khalti&lt;/button&gt;
-    // ...
     &lt;script&gt;
         var config = {
+            // replace the publicKey with yours
             &quot;publicKey&quot;: &quot;test_public_key_dc74e0fd57cb46cd93832aee0a507256&quot;,
             &quot;productIdentity&quot;: &quot;1234567890&quot;,
             &quot;productName&quot;: &quot;Dragon&quot;,
@@ -159,20 +174,22 @@ With or without build tools like <a href="https://github.com/webpack/webpack">We
         }
     &lt;/script&gt;
 &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
-<h3 id="2-with-build-tools">2. With build tools</h3>
-<p>If you are developing SPA(Single Page App) using build tools like Webpack, Rollup, etc
-please follow following steps.</p>
-<h4 id="1-install-khalti-checkout">1. Install <code>khalti-checkout</code></h4>
+<p><a href="#descriptions-of-attributes">Click here</a> for details on config parameters.</p>
+<h3 id="with-build-tools">With build tools</h3>
+<p>Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.</p>
+<h4 id="1-install-khalti-web">1. Install <code>khalti-web</code></h4>
 <h5 id="using-yarn">Using yarn</h5>
-<p><code>yarn add khalti-checkout</code></p>
+<p><code>yarn add khalti-web</code></p>
 <h5 id="using-npm">Using npm</h5>
-<p><code>npm install khalti-checkout --save</code></p>
+<p><code>npm install khalti-web --save</code></p>
 <h4 id="2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</h4>
 <pre><code class="javascript">import KhaltiCheckout from &quot;khalti-checkout&quot;;
 
 let config = {
+    // replace this key with yours
     &quot;publicKey&quot;: &quot;test_public_key_dc74e0fd57cb46cd93832aee0a507256&quot;,
     &quot;productIdentity&quot;: &quot;1234567890&quot;,
     &quot;productName&quot;: &quot;&quot;,
@@ -197,7 +214,20 @@ btn.onclick = function () {
 }
 </code></pre>
 
-<h2 id="descriptions-of-attributes">Descriptions of attributes</h2>
+<h2 id="api">API</h2>
+<ul>
+<li><code>KhaltiCheckout(configuration?)</code></li>
+</ul>
+<p>Instantiate <code>KhaltiCheckout</code> class and pass a <a href="#descriptions-of-attributes">configuration</a>.</p>
+<ul>
+<li><code>show(configuration?)</code></li>
+</ul>
+<p>Displays the Khalti checkout widget.</p>
+<ul>
+<li><code>hide()</code></li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>Configuration is a Javascript object with following attributes.</p>
 <ul>
 <li>
 <p><code>publicKey</code>: Test or live public key which identifies the merchant.</p>
@@ -212,7 +242,7 @@ btn.onclick = function () {
 <p><code>productName</code>: Name of product</p>
 </li>
 <li>
-<p><code>productUrl</code>: Url of the product.</p>
+<p><code>productUrl(optional)</code>: Url of the product.</p>
 </li>
 <li>
 <p><code>eventHandler</code>:</p>
@@ -240,7 +270,7 @@ btn.onclick = function () {
         <a href="../android/" class="btn btn-neutral float-right" title="Android">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../.." class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral" title="Welcome"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

@@ -22,4 +22,8 @@ env () {
 	source .env/bin/activate
 }
 
+build () {
+	mkdocs build
+}
+
 $@

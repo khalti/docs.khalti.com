@@ -1,16 +1,18 @@
-There are two ways to integrate Khalti checkout in web.
-With or without build tools like [Webpack](https://github.com/webpack/webpack) and [Rollup](https://github.com/rollup/rollup).
+Khalti checkout can be integrated with or without build tools like 
+[Webpack](https://github.com/webpack/webpack) and [Rollup](https://github.com/rollup/rollup).
 
-## 1. Without build tools
+## Without build tools
 
 ```html
-<body>
+<html>
+<head>
 	<script src="https://khalti.com/static/khalti-checkout.js"></script>
-	// ...
+</head>
+<body>
 	<button id="payment-button">Pay with Khalti</button>
-	// ...
 	<script>
 		var config = {
+			// replace the publicKey with yours
 			"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
 			"productIdentity": "1234567890",
 			"productName": "Dragon",
@@ -33,24 +35,27 @@ With or without build tools like [Webpack](https://github.com/webpack/webpack) a
 		}
 	</script>
 </body>
+</html>
 ```
 
-### 2. With build tools
-If you are developing SPA(Single Page App) using build tools like Webpack, Rollup, etc
-please follow following steps.
+[Click here](#descriptions-of-attributes) for details on config parameters.
 
-#### 1. Install `khalti-checkout`
+### With build tools
+Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
+
+#### 1. Install `khalti-web`
 ##### Using yarn
-`yarn add khalti-checkout`
+`yarn add khalti-web`
 
 ##### Using npm
-`npm install khalti-checkout --save`
+`npm install khalti-web --save`
 
 #### 2. Import and use it in your desired component
 ```javascript
 import KhaltiCheckout from "khalti-checkout";
 
 let config = {
+	// replace this key with yours
 	"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
 	"productIdentity": "1234567890",
 	"productName": "",
@@ -75,6 +80,12 @@ btn.onclick = function () {
 }
 ```
 
+## API
+
+- `KhaltiCheckout()`
+- `show()`
+- `hide()`
+- `destroy()`
 
 ## Descriptions of attributes
 
@@ -86,7 +97,7 @@ btn.onclick = function () {
 
 - `productName`: Name of product
 
-- `productUrl`: Url of the product.
+- `productUrl(optional)`: Url of the product.
 
 - `eventHandler`:
 	

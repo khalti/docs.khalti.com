@@ -1,16 +1,14 @@
-## Overview of Khalti merchant api
+Welcome to Khalti documentation.
 
-Khalti has two level of implementation.
-One at client (web app, mobile app) and other at server.
-Client initiates and confirms payment, and server verifies it.
+## Checkout
+Documentation on integrating Khalti checkout widget on various platforms.
 
-Below is overall process of payment through Khalti.
-TODO: include process diagram
-
-## Client implementation
 - [Web](./checkout/web.md)
 - [Android](./checkout/android.md)
 - [ios](./checkout/ios.md)
 
-## Server implementation
-- [server](./server.md)
+## API
+API reference for intereacting with Khalti.
+
+- [Verification](./api/verification.md)
+- [Transaction](./api/transaction.md)

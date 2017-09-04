@@ -1,12 +1,14 @@
 site_name: Khalti Gateway Docs
 
 pages:
-        - Overview: index.md
+        - Welcome: index.md
         - Checkout:
                 - Web: checkout/web.md
                 - Android: checkout/android.md
                 - iOS: checkout/ios.md
-        - Server: server.md
+        - API:
+                - Verification: api/verification.md
+                - Transaction: api/transaction.md
 theme: readthedocs
 docs_dir: content
 site_dir: docs

@@ -1,5 +1,8 @@
 Welcome to Khalti documentation.
 
+Documentation is work in progress.
+Please contact Khalti support (01-5524415) for help.
+
 ## Checkout
 Documentation on integrating Khalti checkout widget on various platforms.
 

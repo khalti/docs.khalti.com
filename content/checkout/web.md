@@ -82,12 +82,18 @@ btn.onclick = function () {
 
 ## API
 
-- `KhaltiCheckout()`
-- `show()`
-- `hide()`
-- `destroy()`
+- `KhaltiCheckout(configuration?)`
 
-## Descriptions of attributes
+Instantiate `KhaltiCheckout` class and pass a [configuration](#descriptions-of-attributes).
+
+- `show(configuration?)`
+
+Displays the Khalti checkout widget.
+
+- `hide()`
+
+## Configuration
+Configuration is a Javascript object with following attributes.
 
 - `publicKey`: Test or live public key which identifies the merchant.
 

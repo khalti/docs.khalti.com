@@ -1,5 +1,6 @@
 ## Verification
 After user confirms payment, it is verified server to server.
+A verification request must have following signature.
 
 - `url`: "https://khalti.com/api/payment/verify/"
 - `method`: "POST"
@@ -7,3 +8,14 @@ After user confirms payment, it is verified server to server.
 - `payload`:
 	- `token`: Token given my Khalti after payment confirmation.
 	- `amount`: Amount (in paisa) with which payment was initiated.
+
+## Examples
+### CURL
+
+```curl
+```
+
+### Python
+
+```python
+```

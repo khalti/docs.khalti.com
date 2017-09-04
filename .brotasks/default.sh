@@ -26,4 +26,10 @@ build () {
 	mkdocs build
 }
 
+publish () {
+	bro build
+	git add --all
+	git commit -m "updated"
+}
+
 $@

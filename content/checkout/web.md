@@ -38,7 +38,7 @@ Khalti checkout can be integrated with or without build tools like
 </html>
 ```
 
-[Click here](#descriptions-of-attributes) for details on config parameters.
+[Click here](#configuration) for details on config parameters.
 
 ### With build tools
 Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
@@ -111,7 +111,10 @@ Configuration is a Javascript object with following attributes.
 
 	1. `onSuccess`
 		This method is called once a transaction is confirmed by a user.
-		One should implement this method to initiate payment verification at merchant.
+		It receives transaction `token` and `amount` among other payloads.
+		One should implement this method to initiate payment verification 
+		at merchant which in turn will make verification request at Khalti.
+		For documentation on verification follow this [link](./../api/verification.md).
 
 	2. `onError (optional)`
 		This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.

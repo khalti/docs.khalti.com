@@ -177,7 +177,7 @@
 &lt;/html&gt;
 </code></pre>
 
-<p><a href="#descriptions-of-attributes">Click here</a> for details on config parameters.</p>
+<p><a href="#configuration">Click here</a> for details on config parameters.</p>
 <h3 id="with-build-tools">With build tools</h3>
 <p>Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.</p>
 <h4 id="1-install-khalti-web">1. Install <code>khalti-web</code></h4>
@@ -251,7 +251,10 @@ btn.onclick = function () {
 <li>
 <p><code>onSuccess</code>
     This method is called once a transaction is confirmed by a user.
-    One should implement this method to initiate payment verification at merchant.</p>
+    It receives transaction <code>token</code> and <code>amount</code> among other payloads.
+    One should implement this method to initiate payment verification 
+    at merchant which in turn will make verification request at Khalti.
+    For documentation on verification follow this <a href="../../api/verification/">link</a>.</p>
 </li>
 <li>
 <p><code>onError (optional)</code>

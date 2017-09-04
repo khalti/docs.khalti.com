@@ -13,6 +13,10 @@ A verification request must have following signature.
 ### CURL
 
 ```curl
+curl https://khalti.com/api/payment/verify/ \
+   -H Authorization=test_secret_key_f59e8b7d18b4499ca40f68195a846e9b \
+   -d amount=1000 \
+   -d token=<token>
 ```
 
 ### Python

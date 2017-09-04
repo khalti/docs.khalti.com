@@ -154,7 +154,11 @@ A verification request must have following signature.</p>
 </ul>
 <h2 id="examples">Examples</h2>
 <h3 id="curl">CURL</h3>
-<pre><code class="curl"></code></pre>
+<pre><code class="curl">curl https://khalti.com/api/payment/verify/ \
+   -H Authorization=test_secret_key_f59e8b7d18b4499ca40f68195a846e9b \
+   -d amount=1000 \
+   -d token=&lt;token&gt;
+</code></pre>
 
 <h3 id="python">Python</h3>
 <pre><code class="python"></code></pre>

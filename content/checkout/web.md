@@ -40,17 +40,17 @@ Khalti checkout can be integrated with or without build tools like
 
 [Click here](#configuration) for details on config parameters.
 
-### With build tools
+## With build tools
 Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
 
-#### 1. Install `khalti-web`
-##### Using yarn
+### 1. Install `khalti-web`
+#### Using yarn
 `yarn add khalti-web`
 
-##### Using npm
+#### Using npm
 `npm install khalti-web --save`
 
-#### 2. Import and use it in your desired component
+### 2. Import and use it in your desired component
 ```javascript
 import KhaltiCheckout from "khalti-checkout";
 
@@ -58,8 +58,8 @@ let config = {
 	// replace this key with yours
 	"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
 	"productIdentity": "1234567890",
-	"productName": "",
-	"productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+	"productName": "Drogon",
+	"productUrl": "http://gameofthrones.com/buy/Dragons",
 	"eventHandler": {
 		onSuccess (payload) {
 			// hit merchant api for initiating verfication
@@ -91,6 +91,8 @@ Instantiate `KhaltiCheckout` class and pass a [configuration](#descriptions-of-a
 Displays the Khalti checkout widget.
 
 - `hide()`
+
+Hide the widget.
 
 ## Configuration
 Configuration is a Javascript object with following attributes.

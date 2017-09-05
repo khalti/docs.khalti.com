@@ -54,6 +54,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../../getting-started/">Getting started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">Checkout</span>
     <ul class="subnav">
                 <li class="">
@@ -145,7 +150,10 @@ A verification request must have following signature.</p>
 <ul>
 <li><code>url</code>: "https://khalti.com/api/payment/verify/"</li>
 <li><code>method</code>: "POST"</li>
-<li><code>headers</code>: Pass your test or live secret key at <code>Authorization</code> header.</li>
+<li><code>headers</code>:<ul>
+<li><code>Authorization</code>: test or live secret key in the form <code>Key &lt;secret key&gt;</code></li>
+</ul>
+</li>
 <li><code>payload</code>:<ul>
 <li><code>token</code>: Token given my Khalti after payment confirmation.</li>
 <li><code>amount</code>: Amount (in paisa) with which payment was initiated.</li>
@@ -153,15 +161,28 @@ A verification request must have following signature.</p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
+<p>Assuming the token that we received is <code>QUao9cqFzxPgvWJNi9aKac</code>.</p>
 <h3 id="curl">CURL</h3>
 <pre><code class="curl">curl https://khalti.com/api/payment/verify/ \
-   -H Authorization=test_secret_key_f59e8b7d18b4499ca40f68195a846e9b \
+   -H &quot;Authorization:Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot; \
    -d amount=1000 \
-   -d token=&lt;token&gt;
+   -d token=QUao9cqFzxPgvWJNi9aKac
 </code></pre>
 
 <h3 id="python">Python</h3>
-<pre><code class="python"></code></pre>
+<pre><code class="python">import requests
+
+url = &quot;https://khalti.com/api/payment/verify/&quot;
+payload = {
+  &quot;token&quot;: &quot;QUao9cqFzxPgvWJNi9aKac&quot;
+  &quot;amount&quot;: 1000
+}
+headers = {
+  &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
+}
+
+requests.post(url, payload, headers = headers)
+</code></pre>
               
             </div>
           </div>

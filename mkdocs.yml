@@ -2,6 +2,7 @@ site_name: Khalti Gateway Docs
 
 pages:
         - Welcome: index.md
+        - Getting started: getting-started.md
         - Checkout:
                 - Web: checkout/web.md
                 - Android: checkout/android.md

@@ -54,6 +54,11 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../../getting-started/">Getting started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">Checkout</span>
     <ul class="subnav">
                 <li class=" current">
@@ -63,9 +68,14 @@
             
     <li class="toctree-l3"><a href="#without-build-tools">Without build tools</a></li>
     
+
+    <li class="toctree-l3"><a href="#with-build-tools">With build tools</a></li>
+    
         <ul>
         
-            <li><a class="toctree-l4" href="#with-build-tools">With build tools</a></li>
+            <li><a class="toctree-l4" href="#1-install-khalti-web">1. Install khalti-web</a></li>
+        
+            <li><a class="toctree-l4" href="#2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</a></li>
         
         </ul>
     
@@ -178,22 +188,22 @@
 </code></pre>
 
 <p><a href="#configuration">Click here</a> for details on config parameters.</p>
-<h3 id="with-build-tools">With build tools</h3>
+<h2 id="with-build-tools">With build tools</h2>
 <p>Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.</p>
-<h4 id="1-install-khalti-web">1. Install <code>khalti-web</code></h4>
-<h5 id="using-yarn">Using yarn</h5>
+<h3 id="1-install-khalti-web">1. Install <code>khalti-web</code></h3>
+<h4 id="using-yarn">Using yarn</h4>
 <p><code>yarn add khalti-web</code></p>
-<h5 id="using-npm">Using npm</h5>
+<h4 id="using-npm">Using npm</h4>
 <p><code>npm install khalti-web --save</code></p>
-<h4 id="2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</h4>
+<h3 id="2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</h3>
 <pre><code class="javascript">import KhaltiCheckout from &quot;khalti-checkout&quot;;
 
 let config = {
     // replace this key with yours
     &quot;publicKey&quot;: &quot;test_public_key_dc74e0fd57cb46cd93832aee0a507256&quot;,
     &quot;productIdentity&quot;: &quot;1234567890&quot;,
-    &quot;productName&quot;: &quot;&quot;,
-    &quot;productUrl&quot;: &quot;http://gameofthrones.wikia.com/wiki/Dragons&quot;,
+    &quot;productName&quot;: &quot;Drogon&quot;,
+    &quot;productUrl&quot;: &quot;http://gameofthrones.com/buy/Dragons&quot;,
     &quot;eventHandler&quot;: {
         onSuccess (payload) {
             // hit merchant api for initiating verfication
@@ -226,6 +236,7 @@ btn.onclick = function () {
 <ul>
 <li><code>hide()</code></li>
 </ul>
+<p>Hide the widget.</p>
 <h2 id="configuration">Configuration</h2>
 <p>Configuration is a Javascript object with following attributes.</p>
 <ul>
@@ -273,7 +284,7 @@ btn.onclick = function () {
         <a href="../android/" class="btn btn-neutral float-right" title="Android">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../.." class="btn btn-neutral" title="Welcome"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../getting-started/" class="btn btn-neutral" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -299,7 +310,7 @@ btn.onclick = function () {
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../getting-started/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../android/" style="color: #fcfcfc">Next &raquo;</a></span>

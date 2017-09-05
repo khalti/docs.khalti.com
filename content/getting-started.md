@@ -34,7 +34,7 @@ Checkouts provide all the necessary UIs and perform necessary processes to initi
 - [Android](./checkout/android.md)
 - [iOS](./checkout/ios.md) (Comming soon)
 
-### 3.1. Server side integration
+### 3.2. Server side integration
 After user confirms payment, it has to be verified by Khalti.
 Fund from user's account is move to merchant only if verification succeeds.
 Verification must be done by the merchant server using a secret key.

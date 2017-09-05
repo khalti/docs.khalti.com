@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to Khalti documentation.\n\n\nDocumentation is work in progress.\nPlease contact Khalti support (01-5524415) for help.\n\n\nOverview\n\n\nClick \nhere\n to get high level overview of Khalti payment process.\n\n\nCheckout\n\n\nDocumentation on integrating Khalti checkout widget on various platforms.\n\n\n\n\nWeb\n\n\nAndroid\n\n\nios\n\n\n\n\nAPI\n\n\nAPI reference for intereacting with Khalti.\n\n\n\n\nVerification\n\n\nTransaction",
+            "text": "Welcome to Khalti documentation.\n\n\nDocumentation is work in progress.\nPlease contact Khalti support (01-5524415) for help.\n\n\nGetting started\n\n\nStart \nhere\n.\n\n\nCheckout\n\n\nDocumentation on integrating Khalti checkout widget on various platforms.\n\n\n\n\nWeb\n\n\nAndroid\n\n\nios\n\n\n\n\nAPI\n\n\nAPI reference for intereacting with Khalti.\n\n\n\n\nVerification\n\n\nTransaction",
             "title": "Welcome"
         },
         {
-            "location": "/#overview",
-            "text": "Click  here  to get high level overview of Khalti payment process.",
-            "title": "Overview"
+            "location": "/#getting-started",
+            "text": "Start  here .",
+            "title": "Getting started"
         },
         {
             "location": "/#checkout",
@@ -22,7 +22,7 @@
         },
         {
             "location": "/getting-started/",
-            "text": "There are four steps for integrating Khalti payment to a merchant system.\n\n\n\n\n1. Signup as merchant\n\n\n2. Understand how khalti payment works\n\n\n3. Integration\n\n\n3.1. Client side integration\n\n\n3.2. Server side integration\n\n\n\n\n1. Signup as merchant\n\n\nFirst of all you will need a merchant and a consumer accounts.\nMerchant is an online business service like QFX, Kaymu, etc.\nConsumer is an end user who uses Khalti to purchase products or services from merchants.\n\n\nPlease follow links below to create a merchant and a consumer accounts if you have not already.\n\n\n\n\nCreate a merchant account\n\n\nCreate a consumer account\n\n\n\n\n2. Understand Khalti payment process\n\n\n\n\n3. Integration\n\n\nNow that you know how Khalti payment works. Its time to integrate it into your system.\nKhalti must to be integrated at client and server.\n\n\n3.1. Client side integration\n\n\nFor now there is only one way to integrate Khalti at client side, through SDKs.\nWe have developed SDKs for every major plaforms and we call it \nCheckout\n.\n\n\nCheckouts provide all the necessary UIs and perform necessary processes to initiate and confirm payment.\n\n\n\n\nWeb\n\n\nAndroid\n\n\niOS\n (Comming soon)\n\n\n\n\n3.1. Server side integration\n\n\nAfter user confirms payment, it has to be verified by Khalti.\nFund from user's account is move to merchant only if verification succeeds.\nVerification must be done by the merchant server using a secret key.\n\n\n\n\nVerification api\n\n\nTransaction api",
+            "text": "There are four steps for integrating Khalti payment to a merchant system.\n\n\n\n\n1. Signup as merchant\n\n\n2. Understand how khalti payment works\n\n\n3. Integration\n\n\n3.1. Client side integration\n\n\n3.2. Server side integration\n\n\n\n\n1. Signup as merchant\n\n\nFirst of all you will need a merchant and a consumer accounts.\nMerchant is an online business service like QFX, Kaymu, etc.\nConsumer is an end user who uses Khalti to purchase products or services from merchants.\n\n\nPlease follow links below to create a merchant and a consumer accounts if you have not already.\n\n\n\n\nCreate a merchant account\n\n\nCreate a consumer account\n\n\n\n\n2. Understand Khalti payment process\n\n\n\n\n3. Integration\n\n\nNow that you know how Khalti payment works. Its time to integrate it into your system.\nKhalti must to be integrated at client and server.\n\n\n3.1. Client side integration\n\n\nFor now there is only one way to integrate Khalti at client side, through SDKs.\nWe have developed SDKs for every major plaforms and we call it \nCheckout\n.\n\n\nCheckouts provide all the necessary UIs and perform necessary processes to initiate and confirm payment.\n\n\n\n\nWeb\n\n\nAndroid\n\n\niOS\n (Comming soon)\n\n\n\n\n3.2. Server side integration\n\n\nAfter user confirms payment, it has to be verified by Khalti.\nFund from user's account is move to merchant only if verification succeeds.\nVerification must be done by the merchant server using a secret key.\n\n\n\n\nVerification api\n\n\nTransaction api",
             "title": "Getting started"
         },
         {
@@ -46,9 +46,9 @@
             "title": "3.1. Client side integration"
         },
         {
-            "location": "/getting-started/#31-server-side-integration",
+            "location": "/getting-started/#32-server-side-integration",
             "text": "After user confirms payment, it has to be verified by Khalti.\nFund from user's account is move to merchant only if verification succeeds.\nVerification must be done by the merchant server using a secret key.   Verification api  Transaction api",
-            "title": "3.1. Server side integration"
+            "title": "3.2. Server side integration"
         },
         {
             "location": "/checkout/web/",

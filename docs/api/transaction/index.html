@@ -89,6 +89,12 @@
     <a class="current" href="./">Transaction</a>
     <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#list-payments">List payments</a></li>
+    
+
+    <li class="toctree-l3"><a href="#retrieve-a-payment">Retrieve a payment</a></li>
+    
+
     </ul>
                 </li>
     </ul>
@@ -130,7 +136,17 @@
           <div role="main">
             <div class="section">
               
-                
+                <p>Khalti provides API for retrieving list of payments made to a merchant.
+A merchant should use secret test and live keys for retrieving test and live payments respectively.</p>
+<h2 id="list-payments">List payments</h2>
+<pre><code class="curl">curl https://khalti.com/api/transaction/ \
+   -H &quot;Authorization:Key &lt;secret key&gt;
+</code></pre>
+
+<h2 id="retrieve-a-payment">Retrieve a payment</h2>
+<pre><code class="curl">curl https://khalti.com/api/transaction/&lt;idx&gt;/ \
+   -H &quot;Authorization:Key &lt;secret key&gt;
+</code></pre>
               
             </div>
           </div>

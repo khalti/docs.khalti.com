@@ -142,8 +142,18 @@
         },
         {
             "location": "/api/transaction/",
-            "text": "",
+            "text": "Khalti provides API for retrieving list of payments made to a merchant.\nA merchant should use secret test and live keys for retrieving test and live payments respectively.\n\n\nList payments\n\n\ncurl https://khalti.com/api/transaction/ \\\n   -H \"Authorization:Key <secret key>\n\n\n\n\nRetrieve a payment\n\n\ncurl https://khalti.com/api/transaction/<idx>/ \\\n   -H \"Authorization:Key <secret key>",
             "title": "Transaction"
+        },
+        {
+            "location": "/api/transaction/#list-payments",
+            "text": "curl https://khalti.com/api/transaction/ \\\n   -H \"Authorization:Key <secret key>",
+            "title": "List payments"
+        },
+        {
+            "location": "/api/transaction/#retrieve-a-payment",
+            "text": "curl https://khalti.com/api/transaction/<idx>/ \\\n   -H \"Authorization:Key <secret key>",
+            "title": "Retrieve a payment"
         }
     ]
 }

@@ -47,4 +47,4 @@ Verification must be done by the merchant server using a secret key.
 
 ## 4. Deploy integration
 After successful integration test, the merchant must replace test keys with live ones.
-Live keys start with `live_`. Replace test public and test secret keys with live public and live secret keys respectively.
+Live keys start with `live_X_X`. Replace `test_public_X` and `test_secret_X` keys with `live_public_X` and `live_secret_X` keys respectively.

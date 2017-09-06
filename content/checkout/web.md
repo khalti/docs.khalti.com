@@ -1,6 +1,10 @@
 Khalti checkout can be integrated with or without build tools like 
 [Webpack](https://github.com/webpack/webpack) and [Rollup](https://github.com/rollup/rollup).
 
+To get the feel of how Khalti checkout looks click the button below.
+
+<button id="payment-button">Pay with Khalti</button>
+
 ## Without build tools
 
 ```html
@@ -121,3 +125,29 @@ Configuration is a Javascript object with following attributes.
 	2. `onError (optional)`
 		This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.
 	
+<script src="https://khalti.com/static/khalti-checkout.js"></script>
+<script>
+        var config = {
+            // replace the publicKey with yours
+            "publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
+            "productIdentity": "1234567890",
+            "productName": "Dragon",
+            "productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+            "eventHandler": {
+                onSuccess (payload) {
+                    // hit merchant api for initiating verfication
+                    console.log(payload);
+                },
+                onError (error) {
+                    console.log(error);
+                }
+            }
+        };
+
+        var checkout = new KhaltiCheckout(config);
+        var btn = document.getElementById("payment-button");
+        btn.onclick = function () {
+            checkout.show({amount: 1000});
+        }
+</script>
+

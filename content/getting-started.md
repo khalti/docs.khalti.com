@@ -1,11 +1,11 @@
 There are four steps for integrating Khalti payment to a merchant system.
 
-- [1. Signup as merchant](#signup-as-merchant)
-- [2. Understand how khalti payment works](#understand-how-khalti-payment-works)
-- [3. Test integration](#test-integration)
-- [3.1. Client side integration](#client-side-integration)
-- [3.2. Server side integration](#server-side-integration)
-- [4. Deploy integration](#deploy-integration)
+- [1. Signup as merchant](#1-signup-as-merchant)
+- [2. Understand how khalti payment works](#2-understand-khalti-payment-process)
+- [3. Test integration](#3-test-integration)
+- [3.1. Client side integration](#31-client-side-integration)
+- [3.2. Server side integration](#32-server-side-integration)
+- [4. Deploy integration](#4-deploy-integration)
 
 ## 1. Signup as merchant
 First of all you will need a merchant and a consumer accounts.

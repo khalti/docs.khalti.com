@@ -2,9 +2,10 @@ There are four steps for integrating Khalti payment to a merchant system.
 
 - [1. Signup as merchant](#signup-as-merchant)
 - [2. Understand how khalti payment works](#understand-how-khalti-payment-works)
-- [3. Integration](#integration)
+- [3. Test integration](#test-integration)
 - [3.1. Client side integration](#client-side-integration)
 - [3.2. Server side integration](#server-side-integration)
+- [4. Deploy integration](#deploy-integration)
 
 ## 1. Signup as merchant
 First of all you will need a merchant and a consumer accounts.
@@ -20,8 +21,10 @@ Please follow links below to create a merchant and a consumer accounts if you ha
 
 ![Khalti payment overview](./img/khalti-payment-overview.jpg)
 
-## 3. Integration
+## 3. Test integration
 Now that you know how Khalti payment works. Its time to integrate it into your system.
+A merchant must complete test integration using test keys. Test keys start with `test_`.
+In test mode, transactions are sandboxed, which means fund is not moved from a consumer to the merchant.
 Khalti must to be integrated at client and server.
 
 ### 3.1. Client side integration
@@ -41,3 +44,7 @@ Verification must be done by the merchant server using a secret key.
 
 - [Verification api](./api/verification.md)
 - [Transaction api](./api/transaction.md)
+
+## 4. Deploy integration
+After successful integration test, the merchant must replace test keys with live ones.
+Live keys start with `live_`. Replace test public and test secret keys with live public and live secret keys respectively.

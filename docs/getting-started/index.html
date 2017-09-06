@@ -63,7 +63,7 @@
     <li class="toctree-l2"><a href="#2-understand-khalti-payment-process">2. Understand Khalti payment process</a></li>
     
 
-    <li class="toctree-l2"><a href="#3-integration">3. Integration</a></li>
+    <li class="toctree-l2"><a href="#3-test-integration">3. Test integration</a></li>
     
         <ul>
         
@@ -72,6 +72,9 @@
             <li><a class="toctree-l3" href="#32-server-side-integration">3.2. Server side integration</a></li>
         
         </ul>
+    
+
+    <li class="toctree-l2"><a href="#4-deploy-integration">4. Deploy integration</a></li>
     
 
     </ul>
@@ -147,9 +150,10 @@
 <ul>
 <li><a href="#signup-as-merchant">1. Signup as merchant</a></li>
 <li><a href="#understand-how-khalti-payment-works">2. Understand how khalti payment works</a></li>
-<li><a href="#integration">3. Integration</a></li>
+<li><a href="#test-integration">3. Test integration</a></li>
 <li><a href="#client-side-integration">3.1. Client side integration</a></li>
 <li><a href="#server-side-integration">3.2. Server side integration</a></li>
+<li><a href="#deploy-integration">4. Deploy integration</a></li>
 </ul>
 <h2 id="1-signup-as-merchant">1. Signup as merchant</h2>
 <p>First of all you will need a merchant and a consumer accounts.
@@ -162,8 +166,10 @@ Consumer is an end user who uses Khalti to purchase products or services from me
 </ul>
 <h2 id="2-understand-khalti-payment-process">2. Understand Khalti payment process</h2>
 <p><img alt="Khalti payment overview" src="../img/khalti-payment-overview.jpg" /></p>
-<h2 id="3-integration">3. Integration</h2>
+<h2 id="3-test-integration">3. Test integration</h2>
 <p>Now that you know how Khalti payment works. Its time to integrate it into your system.
+A merchant must complete test integration using test keys. Test keys start with <code>test_</code>.
+In test mode, transactions are sandboxed, which means fund is not moved from a consumer to the merchant.
 Khalti must to be integrated at client and server.</p>
 <h3 id="31-client-side-integration">3.1. Client side integration</h3>
 <p>For now there is only one way to integrate Khalti at client side, through SDKs.
@@ -182,6 +188,9 @@ Verification must be done by the merchant server using a secret key.</p>
 <li><a href="../api/verification/">Verification api</a></li>
 <li><a href="../api/transaction/">Transaction api</a></li>
 </ul>
+<h2 id="4-deploy-integration">4. Deploy integration</h2>
+<p>After successful integration test, the merchant must replace test keys with live ones.
+Live keys start with <code>live_</code>. Replace test public and test secret keys with live public and live secret keys respectively.</p>
               
             </div>
           </div>

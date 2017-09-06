@@ -3,7 +3,7 @@ Khalti checkout can be integrated with or without build tools like
 
 To get the feel of how Khalti checkout looks click the button below.
 
-<button id="payment-button">Pay with Khalti</button>
+<button id="payment-button" style="background-color: #773292; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
 
 ## Without build tools
 

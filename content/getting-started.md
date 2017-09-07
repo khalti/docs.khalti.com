@@ -19,7 +19,7 @@ Please follow links below to create a merchant and a consumer accounts if you ha
 
 ## 2. Understand Khalti payment process
 
-![Khalti payment overview](./img/khalti-payment-overview.jpg)
+![Khalti payment overview](./img/khalti-payment-overview.png)
 
 ## 3. Test integration
 Now that you know how Khalti payment works. Its time to integrate it into your system.

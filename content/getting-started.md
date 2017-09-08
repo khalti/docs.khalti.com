@@ -25,7 +25,7 @@ Please follow links below to create a merchant and a consumer accounts if you ha
 Now that you know how Khalti payment works. Its time to integrate it into your system.
 A merchant must complete test integration using test keys. Test keys start with `test_`.
 In test mode, transactions are sandboxed, which means fund is not moved from a consumer to the merchant.
-Khalti must to be integrated at client and server.
+Khalti must to be integrated at client and server. A client initiates and confirms payment while server verifies it.
 
 ### 3.1. Client side integration
 For now there is only one way to integrate Khalti at client side, through SDKs.

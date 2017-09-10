@@ -91,8 +91,28 @@
             
     <li class="toctree-l3"><a href="#list-payments">List payments</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l4" href="#curl">CURL</a></li>
+        
+            <li><a class="toctree-l4" href="#php">PHP</a></li>
+        
+            <li><a class="toctree-l4" href="#python">Python</a></li>
+        
+        </ul>
+    
 
     <li class="toctree-l3"><a href="#retrieve-a-payment">Retrieve a payment</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#curl_1">CURL</a></li>
+        
+            <li><a class="toctree-l4" href="#php_1">PHP</a></li>
+        
+            <li><a class="toctree-l4" href="#python_1">Python</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -139,13 +159,77 @@
                 <p>Khalti provides API for retrieving list of payments made to a merchant.
 A merchant should use secret test and live keys for retrieving test and live payments respectively.</p>
 <h2 id="list-payments">List payments</h2>
+<h3 id="curl">CURL</h3>
 <pre><code class="curl">curl https://khalti.com/api/transaction/ \
    -H &quot;Authorization:Key &lt;secret key&gt;
 </code></pre>
 
+<h3 id="php">PHP</h3>
+<pre><code class="php">
+    $url = &quot;https://khalti.com/api/transaction/&quot;;
+
+    # Make the call using API.
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    // Response
+    $response = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+</code></pre>
+
+<h3 id="python">Python</h3>
+<pre><code class="python">import requests
+
+url = &quot;https://khalti.com/api/transaction/&quot;
+payload = {}
+headers = {
+  &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
+}
+
+response = requests.get(url, payload, headers = headers)
+</code></pre>
+
 <h2 id="retrieve-a-payment">Retrieve a payment</h2>
+<h3 id="curl_1">CURL</h3>
 <pre><code class="curl">curl https://khalti.com/api/transaction/&lt;idx&gt;/ \
    -H &quot;Authorization:Key &lt;secret key&gt;
+</code></pre>
+
+<h3 id="php_1">PHP</h3>
+<pre><code class="php">
+    $url = &quot;https://khalti.com/api/transaction/&lt;idx&gt;/&quot;;
+
+    # Make the call using API.
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    // Response
+    $response = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+</code></pre>
+
+<h3 id="python_1">Python</h3>
+<pre><code class="python">import requests
+
+url = &quot;https://khalti.com/api/transaction/&lt;idx&gt;/&quot;
+payload = {}
+headers = {
+  &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
+}
+
+response = requests.get(url, payload, headers = headers)
 </code></pre>
               
             </div>

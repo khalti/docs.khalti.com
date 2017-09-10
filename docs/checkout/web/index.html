@@ -160,7 +160,11 @@
     &lt;script src=&quot;https://khalti.com/static/khalti-checkout.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
+    ...
+    &lt;!-- Place this where you need payment button --&gt;
     &lt;button id=&quot;payment-button&quot;&gt;Pay with Khalti&lt;/button&gt;
+    &lt;!-- Place this where you need payment button --&gt;
+    &lt;!-- Paste this code anywhere in you body tag --&gt;
     &lt;script&gt;
         var config = {
             // replace the publicKey with yours
@@ -185,6 +189,8 @@
             checkout.show({amount: 1000});
         }
     &lt;/script&gt;
+    &lt;!-- Paste this code anywhere in you body tag --&gt;
+    ...
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>

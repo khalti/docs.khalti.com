@@ -9,7 +9,7 @@ There are four steps for integrating Khalti payment to a merchant system.
 
 ## 1. Signup as merchant
 First of all you will need a merchant and a consumer accounts.
-Merchant is an online business service like QFX, Kaymu, etc.
+Merchant is an online business service like e-commerce websites, ISP online payment, Movie online purchase etc.
 Consumer is an end user who uses Khalti to purchase products or services from merchants.
 
 Please follow links below to create a merchant and a consumer accounts if you have not already.

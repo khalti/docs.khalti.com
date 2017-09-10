@@ -1,20 +1,26 @@
-Welcome to Khalti documentation.
+Welcome to Khalti Merchant API documentation.
 
-Documentation is work in progress.
-Please contact Khalti support (01-5524415) for help.
+##Introduction
+Khalti is the new generation Payment Gateway, Digital Wallet and API provider for various services. 
+We provide you with true Payment Gateway, where you can accepts payments from:
 
-## Getting started
-Start [here](./getting-started.md).
+- Khalti User
+- Net Banking customers of our partner banks, it is not required that user is khalti user, it works even if user uses ebanking but not khalti user.
 
-## Checkout
-Documentation on integrating Khalti checkout widget on various platforms.
 
-- [Web](./checkout/web.md)
-- [Android](./checkout/android.md)
-- [ios](./checkout/ios.md)
+##Features
+- Highly secure
+- Easy to accept payments
+- Incase of wallet payment, Customer can pay from your software directly without redirecting to our website.
+- Netbanking users can choose their bank and make payment.
+- No hassle to integrate with individual banks
+- Fully featured real time admin dashboard
+- Transaction List, with the feature of issuing refund, filtering and download report.
+- Multi user system
+- Realtime balance
+- Withdraw fund
+- Customizable “Pay button”
 
-## API
-API reference for intereacting with Khalti.
+**For Queries, feel free to call us at 9801165568 or email merchantapi@khalti.com**
 
-- [Verification](./api/verification.md)
-- [Transaction](./api/transaction.md)
+### [Getting Started](./getting-started.md)

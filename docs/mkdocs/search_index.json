@@ -102,23 +102,23 @@
         },
         {
             "location": "/checkout/android/",
-            "text": "Khalti checkout widget for android\n\n\nsomething\nanother",
+            "text": "Khalti checkout widget for android\n\n\nComming soon ...",
             "title": "Android"
         },
         {
             "location": "/checkout/android/#khalti-checkout-widget-for-android",
-            "text": "something\nanother",
+            "text": "Comming soon ...",
             "title": "Khalti checkout widget for android"
         },
         {
             "location": "/checkout/ios/",
-            "text": "Khalti checkout widget or iOS",
+            "text": "Khalti checkout widget for iOS\n\n\nComming soon",
             "title": "iOS"
         },
         {
-            "location": "/checkout/ios/#khalti-checkout-widget-or-ios",
-            "text": "",
-            "title": "Khalti checkout widget or iOS"
+            "location": "/checkout/ios/#khalti-checkout-widget-for-ios",
+            "text": "Comming soon",
+            "title": "Khalti checkout widget for iOS"
         },
         {
             "location": "/api/verification/",
@@ -147,17 +147,17 @@
         },
         {
             "location": "/api/transaction/",
-            "text": "Khalti provides API for retrieving list of payments made to a merchant.\nA merchant should use secret test and live keys for retrieving test and live payments respectively.\n\n\nList payments\n\n\ncurl https://khalti.com/api/transaction/ \\\n   -H \"Authorization:Key <secret key>\n\n\n\n\nRetrieve a payment\n\n\ncurl https://khalti.com/api/transaction/<idx>/ \\\n   -H \"Authorization:Key <secret key>",
+            "text": "Khalti provides API for retrieving list of payments made to a merchant.\nA merchant should use secret test and live keys for retrieving test and live payments respectively.\n\n\nReplace \n<secret key>\n with test or live secret key as per required.\n\n\nList payments\n\n\ncurl https://khalti.com/api/transaction/ -H \"Authorization:Key <secret key>\n\n\n\n\nRetrieve a payment\n\n\ncurl https://khalti.com/api/transaction/<idx>/ -H \"Authorization:Key <secret key>",
             "title": "Transaction"
         },
         {
             "location": "/api/transaction/#list-payments",
-            "text": "curl https://khalti.com/api/transaction/ \\\n   -H \"Authorization:Key <secret key>",
+            "text": "curl https://khalti.com/api/transaction/ -H \"Authorization:Key <secret key>",
             "title": "List payments"
         },
         {
             "location": "/api/transaction/#retrieve-a-payment",
-            "text": "curl https://khalti.com/api/transaction/<idx>/ \\\n   -H \"Authorization:Key <secret key>",
+            "text": "curl https://khalti.com/api/transaction/<idx>/ -H \"Authorization:Key <secret key>",
             "title": "Retrieve a payment"
         }
     ]

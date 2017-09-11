@@ -1,1 +1,2 @@
-# Khalti checkout widget or iOS
+# Khalti checkout widget for iOS
+Comming soon

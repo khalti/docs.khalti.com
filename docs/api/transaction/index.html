@@ -223,12 +223,11 @@ response = requests.get(url, payload, headers = headers)
 <pre><code class="python">import requests
 
 url = &quot;https://khalti.com/api/transaction/&lt;idx&gt;/&quot;
-payload = {}
 headers = {
   &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
 }
 
-response = requests.get(url, payload, headers = headers)
+response = requests.get(url, headers = headers)
 </code></pre>
               
             </div>

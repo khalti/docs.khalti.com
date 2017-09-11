@@ -81,10 +81,9 @@ curl https://khalti.com/api/transaction/<idx>/ -H "Authorization:Key <secret key
 import requests
 
 url = "https://khalti.com/api/transaction/<idx>/"
-payload = {}
 headers = {
   "Authorization": "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b"
 }
 
-response = requests.get(url, payload, headers = headers)
+response = requests.get(url, headers = headers)
 ```

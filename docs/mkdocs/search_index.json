@@ -2,17 +2,17 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to Khalti Merchant API documentation.\n\n\nIntroduction\n\n\nKhalti is the new generation Payment Gateway, Digital Wallet and API provider for various services. \nWe provide you with true Payment Gateway, where you can accepts payments from:\n\n\n\n\nKhalti User\n\n\nNet Banking customers of our partner banks, it is not required that user is khalti user, it works even if user uses ebanking but not khalti user.\n\n\n\n\nFeatures\n\n\n\n\nHighly secure\n\n\nEasy to accept payments\n\n\nIncase of wallet payment, Customer can pay from your software directly without redirecting to our website.\n\n\nNetbanking users can choose their bank and make payment.\n\n\nNo hassle to integrate with individual banks\n\n\nFully featured real time admin dashboard\n\n\nTransaction List, with the feature of issuing refund, filtering and download report.\n\n\nMulti user system\n\n\nRealtime balance\n\n\nWithdraw fund\n\n\nCustomizable \u201cPay button\u201d\n\n\n\n\nFor Queries, feel free to call us at 9801165568 or email merchantapi@khalti.com\n\n\nGetting Started",
+            "text": "Welcome to Khalti Merchant API documentation.\n\n\nIntroduction\n\n\nKhalti is the new generation Payment Gateway, Digital Wallet and API provider for various services. \nWe provide you with true Payment Gateway, where you can accepts payments from:\n\n\n\n\nKhalti User\n\n\nNet Banking customers of our partner banks (need not be Khalti user)\n\n\n\n\nFeatures\n\n\n\n\nHighly secure\n\n\nEasy to accept payments\n\n\nIncase of wallet payment, Customer can pay from your software directly without redirecting to our website.\n\n\nNetbanking users can choose their bank and make payment.\n\n\nNo hassle to integrate with individual banks\n\n\nTransaction List, with the feature of issuing refund, filtering and download report.\n\n\nMulti user system\n\n\nRealtime balance\n\n\nWithdraw fund\n\n\n\n\nFor Queries, feel free to call us at 9801165568 or email merchantapi@khalti.com\n\n\nGetting Started",
             "title": "Welcome"
         },
         {
             "location": "/#introduction",
-            "text": "Khalti is the new generation Payment Gateway, Digital Wallet and API provider for various services. \nWe provide you with true Payment Gateway, where you can accepts payments from:   Khalti User  Net Banking customers of our partner banks, it is not required that user is khalti user, it works even if user uses ebanking but not khalti user.",
+            "text": "Khalti is the new generation Payment Gateway, Digital Wallet and API provider for various services. \nWe provide you with true Payment Gateway, where you can accepts payments from:   Khalti User  Net Banking customers of our partner banks (need not be Khalti user)",
             "title": "Introduction"
         },
         {
             "location": "/#features",
-            "text": "Highly secure  Easy to accept payments  Incase of wallet payment, Customer can pay from your software directly without redirecting to our website.  Netbanking users can choose their bank and make payment.  No hassle to integrate with individual banks  Fully featured real time admin dashboard  Transaction List, with the feature of issuing refund, filtering and download report.  Multi user system  Realtime balance  Withdraw fund  Customizable \u201cPay button\u201d   For Queries, feel free to call us at 9801165568 or email merchantapi@khalti.com",
+            "text": "Highly secure  Easy to accept payments  Incase of wallet payment, Customer can pay from your software directly without redirecting to our website.  Netbanking users can choose their bank and make payment.  No hassle to integrate with individual banks  Transaction List, with the feature of issuing refund, filtering and download report.  Multi user system  Realtime balance  Withdraw fund   For Queries, feel free to call us at 9801165568 or email merchantapi@khalti.com",
             "title": "Features"
         },
         {

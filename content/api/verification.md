@@ -55,7 +55,7 @@ import requests
 
 url = "https://khalti.com/api/payment/verify/"
 payload = {
-  "token": "QUao9cqFzxPgvWJNi9aKac"
+  "token": "QUao9cqFzxPgvWJNi9aKac",
   "amount": 1000
 }
 headers = {

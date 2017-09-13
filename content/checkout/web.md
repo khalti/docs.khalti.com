@@ -62,7 +62,7 @@ Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
 
 ### 2. Import and use it in your desired component
 ```javascript
-import KhaltiCheckout from "khalti-checkout";
+import KhaltiCheckout from "khalti-web";
 
 let config = {
 	// replace this key with yours

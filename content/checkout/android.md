@@ -1,6 +1,3 @@
-# khalti-android
-SDK for Khalti Android App
-
 ## Installation
 Add the following line to `dependency` section in `build.gradle` file
 

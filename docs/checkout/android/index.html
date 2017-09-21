@@ -80,6 +80,8 @@
         
             <li><a class="toctree-l4" href="#usage">Usage</a></li>
         
+            <li><a class="toctree-l4" href="#summary">Summary</a></li>
+        
         </ul>
     
 
@@ -194,7 +196,7 @@ compile 'com.android.support:appcompat-v7:26.0.1'
 </code></pre>
 
 <p>Or, use it in Java</p>
-<pre><code class="java">KhaltiButton khaltiButton = new KhaltiButton();         
+<pre><code class="java">KhaltiButton khaltiButton = new KhaltiButton();
 </code></pre>
 
 <h4 id="configure">Configure</h4>
@@ -233,9 +235,87 @@ compile 'com.android.support:appcompat-v7:26.0.1'
 </code></pre>
 
 <h4 id="set-config">Set Config</h4>
-<p>Finally set your config in your KhaltiButton.
-<code>java;
-khaltiButton.setCheckOutConfig(config);</code></p>
+<p>Finally set your config in your KhaltiButton.</p>
+<pre><code class="java">khaltiButton.setCheckOutConfig(config);
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+<h3 id="xml-attribute">XML Attribute</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>khalti:text</code></td>
+<td>Text to display</td>
+</tr>
+<tr>
+<td><code>khalti:button_style</code></td>
+<td>Set the style of KhaltiButton from 2 options</td>
+</tr>
+</tbody>
+</table>
+<h3 id="public-methods">Public Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Required</td>
+<td><code>setCheckOutConfig(Config config)</code></td>
+<td>Set configuration required by Khalti checkout</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td><code>setText(String text)</code></td>
+<td>Set text to display in KhaltiButton</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td><code>setCustomView(View view)</code></td>
+<td>Replace KhaltiButton's default button with your custom view</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td><code>setButtonStyle(ButtonStyle buttonStyle)</code></td>
+<td>Select between 2 options to set KhaltiButton's style</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td><code>destroyCheckOut()</code></td>
+<td>Use this method to close Khalti checkout UI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="callback-methods">Callback Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onSuccess(HashMap data)</code></td>
+<td>This method is called when a transaction has been completed and,confirmed by the user. A map containing an access token, required to,verify the transaction, and data passed through Config instance is,returned.Once this method is called, use the access token to verify,transaction. Please follow the <a href="../../api/verification/">verification</a> process for further instructions.</td>
+</tr>
+<tr>
+<td><code>onError(String action, String message)</code></td>
+<td>This method is called when an error occurs during payment initiation and,confirmation. Action and message value is passed where action defines,the current action being performed and message defines the error.</td>
+</tr>
+</tbody>
+</table>
+<p>Check out the source for <a href="https://github.com/khalti/khalti-android">Khalti checkout on Github</a>.</p>
               
             </div>
           </div>

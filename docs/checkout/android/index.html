@@ -70,7 +70,17 @@
     <a class="current" href="./">Android</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#khalti-checkout-widget-for-android">Khalti checkout widget for android</a></li>
+    <li class="toctree-l3"><a href="#khalti-android">khalti-android</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#installation">Installation</a></li>
+        
+            <li><a class="toctree-l4" href="#setup">Setup</a></li>
+        
+            <li><a class="toctree-l4" href="#usage">Usage</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -133,8 +143,99 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="khalti-checkout-widget-for-android">Khalti checkout widget for android</h1>
-<p>Comming soon ...</p>
+                <h1 id="khalti-android">khalti-android</h1>
+<p>SDK for Khalti Android App</p>
+<h2 id="installation">Installation</h2>
+<p>Add the following line to <code>dependency</code> section in <code>build.gradle</code> file</p>
+<pre><code>compile 'com.khalti:khalti-checkout:0.1.2'
+</code></pre>
+
+<p>Note : We recommend you use the latest version of <code>Build tools</code> and <code>Support libraries</code> for maximum compatibility. </p>
+<p>In order to build and run this project, please use <code>Android Studio 3</code> and the minimum <code>Build tools</code> and <code>Support libraries</code> version should be <code>26</code>.</p>
+<pre><code>compileSdkVersion 26
+buildToolsVersion '26.0.1'
+
+compile 'com.android.support:appcompat-v7:26.0.1'
+</code></pre>
+
+<p>In order to add support library 26, add the Google's maven url in <code>build.gradle</code></p>
+<pre><code>repositories {
+        jcenter()
+        mavenCentral()
+        maven { url &quot;https://maven.google.com&quot; }
+    }
+</code></pre>
+
+<h2 id="setup">Setup</h2>
+<p>Add these lines to the default config section in <code>build.gradle</code> file</p>
+<pre><code>android {
+    ...
+
+    defaultConfig {
+        ...
+
+        renderscriptTargetApi 20'   
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true;
+    }
+}
+
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+<h4 id="layout">Layout</h4>
+<p>You can add it to your xml layout</p>
+<pre><code class="xml">&lt;khalti.widget.KhaltiButton
+            android:id=&quot;@+id/khalti_button&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;/&gt;
+
+
+</code></pre>
+
+<p>Or, use it in Java</p>
+<pre><code class="java">KhaltiButton khaltiButton = new KhaltiButton();         
+</code></pre>
+
+<h4 id="configure">Configure</h4>
+<p>Configure Khalti Checkout by passing an instance of Config class</p>
+<p>When instantiating Config class pass public key, product id, product name, product web url, amount (in paisa) and a new instance of OnCheckOutListener.</p>
+<pre><code class="java">Config config = new Config(&quot;Public Key&quot;, &quot;Product ID&quot;, &quot;Product Name&quot;, &quot;Product Url&quot;, amount, new OnCheckOutListener() {
+
+            @Override
+            public void onSuccess(HashMap&lt;String, Object&gt; data) {
+                Log.i(&quot;Payment confirmed&quot;, data+&quot;&quot;);
+            }
+
+            @Override
+            public void onError(String action, String message) {
+                Log.i(action, message);
+            }
+        });
+</code></pre>
+
+<p>Addtionally, Config class also accepts a HashMap parameter which you can use to pass any additional data.</p>
+<pre><code class="java">HashMap&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;extra&quot;, &quot;This is extra data&quot;);
+
+        Config config = new Config(&quot;Public Key&quot;, &quot;Product ID&quot;, &quot;Product Name&quot;, &quot;Product Url&quot;, amount, map, new OnCheckOutListener() {
+
+            @Override
+            public void onSuccess(HashMap&lt;String, Object&gt; data) {
+                Log.i(&quot;Payment confirmed&quot;, data);
+            }
+
+            @Override
+            public void onError(String action, String message) {
+                Log.i(action, message);
+            }
+        });
+</code></pre>
+
+<h4 id="set-config">Set Config</h4>
+<p>Finally set your config in your KhaltiButton.
+<code>java;
+khaltiButton.setCheckOutConfig(config);</code></p>
               
             </div>
           </div>

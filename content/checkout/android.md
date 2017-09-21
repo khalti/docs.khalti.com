@@ -1,3 +1,5 @@
+Documentation of Khalti checkout for android
+
 ## Installation
 Add the following line to `dependency` section in `build.gradle` file
 
@@ -44,7 +46,7 @@ android {
 
 ## Usage
 
-#### Layout
+### Layout
 
 You can add it to your xml layout
 ```xml
@@ -60,7 +62,7 @@ Or, use it in Java
 ``` java
 KhaltiButton khaltiButton = new KhaltiButton();
 ```
-#### Configure
+### Configure
 
 Configure Khalti Checkout by passing an instance of Config class
 
@@ -106,7 +108,7 @@ khaltiButton.setCheckOutConfig(config);
 
 ## Summary
 
-### XML Attribute
+#### XML Attribute
 
 | Attribute                 | Description                                  |
 |---------------------------|----------------------------------------------|
@@ -114,7 +116,7 @@ khaltiButton.setCheckOutConfig(config);
 | `khalti:button_style`     | Set the style of KhaltiButton from 2 options |
 
 
-### Public Methods
+#### Public Methods
 
 | Constraint | Method                                    | Description                                                 |
 |------------|-------------------------------------------|-------------------------------------------------------------|
@@ -124,7 +126,7 @@ khaltiButton.setCheckOutConfig(config);
 | Optional   | `setButtonStyle(ButtonStyle buttonStyle)` | Select between 2 options to set KhaltiButton's style        |
 | Optional   | `destroyCheckOut()`                       | Use this method to close Khalti checkout UI                 |
 
-### Callback Methods
+#### Callback Methods
 
 | Method                                   | Description                                                                                                                                                                                                                                                                                                                                                                           |
 |------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

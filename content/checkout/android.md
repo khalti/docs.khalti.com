@@ -4,7 +4,14 @@ Documentation of Khalti checkout for android
 Add the following line to `dependency` section in `build.gradle` file
 
 ```
-compile 'com.khalti:khalti-checkout:0.1.2'
+compile 'com.khalti:khalti-android:1.0.4'
+```
+It is recommend that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.
+
+```
+compile ('com.khalti:khalti-android:1.0.4') {
+        transitive = true
+    }
 ```
 Note : We recommend you use the latest version of `Build tools` and `Support libraries` for maximum compatibility. 
 
@@ -24,24 +31,6 @@ repositories {
         mavenCentral()
         maven { url "https://maven.google.com" }
     }
-```
-
-## Setup
-Add these lines to the default config section in `build.gradle` file
-
-```
-android {
-    ...
-
-    defaultConfig {
-        ...
-        
-        renderscriptTargetApi 20'   
-        renderscriptSupportModeEnabled true
-        vectorDrawables.useSupportLibrary = true;
-    }
-}
-
 ```
 
 ## Usage

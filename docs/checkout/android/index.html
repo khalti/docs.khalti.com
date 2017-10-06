@@ -160,21 +160,21 @@
                 <p>Documentation of Khalti checkout for android</p>
 <h2 id="installation">Installation</h2>
 <p>Add the following line to <code>dependency</code> section in <code>build.gradle</code> file</p>
-<pre><code>compile 'com.khalti:khalti-android:1.0.4'
+<pre><code>compile 'com.khalti:khalti-android:1.0.6'
 </code></pre>
 
-<p>It is recommend that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.</p>
-<pre><code>compile ('com.khalti:khalti-android:1.0.4') {
+<p>It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.</p>
+<pre><code>compile ('com.khalti:khalti-android:1.0.6') {
         transitive = true
     }
 </code></pre>
 
-<p>Note : We recommend you use the latest version of <code>Build tools</code> and <code>Support libraries</code> for maximum compatibility. </p>
-<p>In order to build and run this project, please use <code>Android Studio 3</code> and the minimum <code>Build tools</code> and <code>Support libraries</code> version should be <code>26</code>.</p>
+<p>Note : We recommend you to use the latest version of <code>Build tools</code> and <code>Support libraries</code> for maximum compatibility. </p>
+<p>In order to build and run this project, please use <code>Android Studio 3</code> and please note that the minimum <code>Build tools</code> and <code>Support libraries</code> version should be <code>26</code>.</p>
 <pre><code>compileSdkVersion 26
-buildToolsVersion '26.0.1'
+buildToolsVersion '26.0.2'
 
-compile 'com.android.support:appcompat-v7:26.0.1'
+compile 'com.android.support:appcompat-v7:26.1.0'
 </code></pre>
 
 <p>In order to add support library 26, add the Google's maven url in <code>build.gradle</code></p>
@@ -217,7 +217,7 @@ compile 'com.android.support:appcompat-v7:26.0.1'
         });
 </code></pre>
 
-<p>Addtionally, Config class also accepts a HashMap parameter which you can use to pass any additional data.</p>
+<p>Additionally, Config class also accepts a HashMap parameter which you can use to pass any additional data.</p>
 <pre><code class="java">HashMap&lt;String, Object&gt; map = new HashMap&lt;&gt;();
         map.put(&quot;extra&quot;, &quot;This is extra data&quot;);
 
@@ -233,6 +233,7 @@ compile 'com.android.support:appcompat-v7:26.0.1'
                 Log.i(action, message);
             }
         });
+
 </code></pre>
 
 <h4 id="set-config">Set Config</h4>
@@ -283,12 +284,22 @@ compile 'com.android.support:appcompat-v7:26.0.1'
 <tr>
 <td>Optional</td>
 <td><code>setCustomView(View view)</code></td>
-<td>Replace KhaltiButton's default button with your custom view</td>
+<td>Replace KhaltiButton's default view with your custom view</td>
 </tr>
 <tr>
 <td>Optional</td>
 <td><code>setButtonStyle(ButtonStyle buttonStyle)</code></td>
 <td>Select between 2 options to set KhaltiButton's style</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td><code>setCustomClickListener(OnClickListener onClickListener)</code></td>
+<td>Set your own click listener to KhaltiButton</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td><code>showCheckOut()</code></td>
+<td>Use this method to show Khalti checkout UI</td>
 </tr>
 <tr>
 <td>Optional</td>
@@ -308,11 +319,11 @@ compile 'com.android.support:appcompat-v7:26.0.1'
 <tbody>
 <tr>
 <td><code>onSuccess(HashMap data)</code></td>
-<td>This method is called when a transaction has been completed and,confirmed by the user. A map containing an access token, required to,verify the transaction, and data passed through Config instance is,returned.Once this method is called, use the access token to verify,transaction. Please follow the <a href="../../api/verification/">verification</a> process for further instructions.</td>
+<td>This method is called when a transaction has been completed and confirmed by the user. A map containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the <a href="../../api/verification/">verification</a> process for further instructions.</td>
 </tr>
 <tr>
 <td><code>onError(String action, String message)</code></td>
-<td>This method is called when an error occurs during payment initiation and,confirmation. Action and message value is passed where action defines,the current action being performed and message defines the error.</td>
+<td>This method is called when an error occurs during payment initiation and confirmation. Action and message value is passed where action defines, the current action being performed and message defines the error.</td>
 </tr>
 </tbody>
 </table>

@@ -4,12 +4,12 @@ Documentation of Khalti checkout for android
 Add the following line to `dependency` section in `build.gradle` file
 
 ```
-compile 'com.khalti:khalti-android:1.0.6'
+compile 'com.khalti:khalti-android:1.0.8'
 ```
 It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.
 
 ```
-compile ('com.khalti:khalti-android:1.0.6') {
+compile ('com.khalti:khalti-android:1.0.8') {
         transitive = true
     }
 ```
@@ -70,11 +70,11 @@ Config config = new Config("Public Key", "Product ID", "Product Name", "Product 
             }
         });
 ```
-Additionally, Config class also accepts a HashMap parameter which you can use to pass any additional data.
+Additionally, Config class also accepts a HashMap parameter which you can use to pass any additional data. Make sure you add a `merchant_` prefix in your map key.
 
 ``` java
 HashMap<String, Object> map = new HashMap<>();
-        map.put("extra", "This is extra data");
+        map.put("merchant_extra", "This is extra data");
         
         Config config = new Config("Public Key", "Product ID", "Product Name", "Product Url", amount, map, new OnCheckOutListener() {
 

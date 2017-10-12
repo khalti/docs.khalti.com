@@ -130,6 +130,14 @@ Configuration is a Javascript object with following attributes.
 
 	2. `onError (optional)`
 		This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.
+
+Additionally Configuration also accepts attribute starting with `merchant_` that can be used to pass additional data. 
+
+- `merchant_name`: This is merchant name
+
+- `merchant_extra`: This is extra data
+
+The additional data starting with `merchant_` is returned in success response payload.
 	
 <script src="https://khalti.com/static/khalti-checkout.js"></script>
 <script>

@@ -4,12 +4,12 @@ Documentation of Khalti checkout for android
 Add the following line to `dependency` section in `build.gradle` file
 
 ```
-compile 'com.khalti:khalti-android:1.0.8'
+compile 'com.khalti:khalti-android:1.1.0'
 ```
 It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.
 
 ```
-compile ('com.khalti:khalti-android:1.0.8') {
+compile ('com.khalti:khalti-android:1.1.0') {
         transitive = true
     }
 ```

@@ -126,6 +126,6 @@ khaltiButton.setCheckOutConfig(config);
 | `onSuccess(HashMap data)`                | This method is called when a transaction has been completed and confirmed by the user. A map containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the [verification](./../api/verification.md) process for further instructions. |
 | `onError(String action, String message)` | This method is called when an error occurs during payment initiation and confirmation. Action and message value is passed where action defines, the current action being performed and message defines the error.                                                                                                                                                                      |
 
-Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-android).
+Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-android).
 
 

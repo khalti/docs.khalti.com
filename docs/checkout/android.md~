@@ -4,12 +4,12 @@ Documentation of Khalti checkout for android
 Add the following line to `dependency` section in `build.gradle` file
 
 ```
-compile 'com.khalti:khalti-android:1.0.6'
+compile 'com.khalti:khalti-android:1.1.0'
 ```
 It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.
 
 ```
-compile ('com.khalti:khalti-android:1.0.6') {
+compile ('com.khalti:khalti-android:1.1.0') {
         transitive = true
     }
 ```
@@ -70,11 +70,11 @@ Config config = new Config("Public Key", "Product ID", "Product Name", "Product 
             }
         });
 ```
-Additionally, Config class also accepts a HashMap parameter which you can use to pass any additional data.
+Additionally, Config class also accepts a HashMap parameter which you can use to pass any additional data. Make sure you add a `merchant_` prefix in your map key.
 
 ``` java
 HashMap<String, Object> map = new HashMap<>();
-        map.put("extra", "This is extra data");
+        map.put("merchant_extra", "This is extra data");
         
         Config config = new Config("Public Key", "Product ID", "Product Name", "Product Url", amount, map, new OnCheckOutListener() {
 
@@ -126,6 +126,6 @@ khaltiButton.setCheckOutConfig(config);
 | `onSuccess(HashMap data)`                | This method is called when a transaction has been completed and confirmed by the user. A map containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the [verification](./../api/verification.md) process for further instructions. |
 | `onError(String action, String message)` | This method is called when an error occurs during payment initiation and confirmation. Action and message value is passed where action defines, the current action being performed and message defines the error.                                                                                                                                                                      |
 
-Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-android).
+Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-android).
 
 

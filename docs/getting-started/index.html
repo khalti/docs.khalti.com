@@ -82,7 +82,7 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Checkout</span>
+    <span class="caption-text">Widget</span>
     <ul class="subnav">
                 <li class="">
                     
@@ -101,7 +101,7 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">API</span>
+    <span class="caption-text">Verification</span>
     <ul class="subnav">
                 <li class="">
                     
@@ -150,15 +150,17 @@
 <ul>
 <li><a href="#1-signup-as-merchant">1. Signup as merchant</a></li>
 <li><a href="#2-understand-khalti-payment-process">2. Understand how khalti payment works</a></li>
-<li><a href="#3-test-integration">3. Test integration</a></li>
-<li><a href="#31-client-side-integration">3.1. Client side integration</a></li>
-<li><a href="#32-server-side-integration">3.2. Server side integration</a></li>
+<li><a href="#3-test-integration">3. Test integration</a><ul>
+<li><a href="##3.1-client-side-integration">3.1. Client side integration</a></li>
+<li><a href="##3.2-server-side-integration">3.2. Server side integration</a></li>
+</ul>
+</li>
 <li><a href="#4-deploy-integration">4. Deploy integration</a></li>
 </ul>
 <h2 id="1-signup-as-merchant">1. Signup as merchant</h2>
 <p>First of all you will need a merchant and a consumer accounts.
-Merchant is an online business service like e-commerce websites, ISP online payment, Movie online purchase etc.
-Consumer is an end user who uses Khalti to purchase products or services from merchants.</p>
+<strong>Merchant</strong> is an online business service like e-commerce websites, ISP online payment, Movie online purchase etc.
+<strong>Consumer</strong> is an end user who uses Khalti to purchase products or services from merchants.</p>
 <p>Please follow links below to create a merchant and a consumer accounts if you have not already.</p>
 <ul>
 <li><a href="https://khalti.com/join/merchant/">Create a merchant account</a></li>
@@ -168,8 +170,8 @@ Consumer is an end user who uses Khalti to purchase products or services from me
 <p><img alt="Khalti payment overview" src="../img/khalti-payment-overview.png" /></p>
 <h2 id="3-test-integration">3. Test integration</h2>
 <p>Now that you know how Khalti payment works. Its time to integrate it into your system.
-A merchant must complete test integration using test keys. Test keys start with <code>test_</code>.
-In test mode, transactions are sandboxed, which means fund is not moved from a consumer to the merchant.
+A merchant must complete test integration using test keys. Test keys start with <code>test_</code>.</p>
+<p>In test mode, transactions are sandboxed, which means fund is not moved from a consumer to the merchant.
 Khalti must to be integrated at client and server. A client initiates and confirms payment while server verifies it.</p>
 <h3 id="31-client-side-integration">3.1. Client side integration</h3>
 <p>For now there is only one way to integrate Khalti at client side, through SDKs.
@@ -182,7 +184,7 @@ We have developed SDKs for every major plaforms and we call it <code>Checkout</c
 </ul>
 <h3 id="32-server-side-integration">3.2. Server side integration</h3>
 <p>After user confirms payment, it has to be verified by Khalti.
-Fund from user's account is move to merchant only if verification succeeds.
+<strong>Fund from user's account is moved to merchant only if verification succeeds.</strong>
 Verification must be done by the merchant server using a secret key.</p>
 <ul>
 <li><a href="../api/verification/">Verification api</a></li>

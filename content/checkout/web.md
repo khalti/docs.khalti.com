@@ -94,15 +94,15 @@ btn.onclick = function () {
 
 - `KhaltiCheckout(configuration?)`
 
-Instantiate `KhaltiCheckout` class and pass a [configuration](#descriptions-of-attributes).
+	> Instantiate `KhaltiCheckout` class and pass a [configuration](#configuration).
 
 - `show(configuration?)`
 
-Displays the Khalti checkout widget.
+	> Displays the Khalti checkout widget.
 
 - `hide()`
 
-Hide the widget.
+	> Hide the widget.
 
 ## Configuration
 Configuration is a Javascript object with following attributes.
@@ -117,18 +117,17 @@ Configuration is a Javascript object with following attributes.
 
 - `productUrl(optional)`: Url of the product.
 
-- `eventHandler`:
-	
-	It is an object with two methods:
+- `eventHandler`: It is an object with two methods:
 
-	1. `onSuccess`
+	> 1. `onSuccess`
 		This method is called once a transaction is confirmed by a user.
 		It receives transaction `token` and `amount` among other payloads.
 		One should implement this method to initiate payment verification 
 		at merchant which in turn will make verification request at Khalti.
 		For documentation on verification follow this [link](./../api/verification.md).
 
-	2. `onError (optional)`
+
+	> 2. `onError (optional)`
 		This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.
 
 Additionally Configuration also accepts attribute starting with `merchant_` that can be used to pass additional data. 

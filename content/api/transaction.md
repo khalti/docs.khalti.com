@@ -1,6 +1,8 @@
 Khalti provides API for retrieving list of payments made to a merchant.
 A merchant should use secret test and live keys for retrieving test and live payments respectively.
 
+**List of transactions can also be viewed after logging on [Khalti website](https://khalti.com) with merchant account.**
+
 Replace `<secret key>` with test or live secret key as per required.
 
 ## List payments
@@ -87,3 +89,4 @@ headers = {
 
 response = requests.get(url, headers = headers)
 ```
+

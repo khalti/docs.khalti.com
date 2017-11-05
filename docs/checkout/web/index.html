@@ -59,7 +59,7 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Checkout</span>
+    <span class="caption-text">Widget</span>
     <ul class="subnav">
                 <li class=" current">
                     
@@ -101,7 +101,7 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">API</span>
+    <span class="caption-text">Verification</span>
     <ul class="subnav">
                 <li class="">
                     
@@ -136,7 +136,7 @@
     
       
         
-          <li>Checkout &raquo;</li>
+          <li>Widget &raquo;</li>
         
       
     
@@ -234,17 +234,25 @@ btn.onclick = function () {
 
 <h2 id="api">API</h2>
 <ul>
-<li><code>KhaltiCheckout(configuration?)</code></li>
-</ul>
-<p>Instantiate <code>KhaltiCheckout</code> class and pass a <a href="#descriptions-of-attributes">configuration</a>.</p>
-<ul>
-<li><code>show(configuration?)</code></li>
-</ul>
+<li>
+<p><code>KhaltiCheckout(configuration?)</code></p>
+<blockquote>
+<p>Instantiate <code>KhaltiCheckout</code> class and pass a <a href="#configuration">configuration</a>.</p>
+</blockquote>
+</li>
+<li>
+<p><code>show(configuration?)</code></p>
+<blockquote>
 <p>Displays the Khalti checkout widget.</p>
-<ul>
-<li><code>hide()</code></li>
-</ul>
+</blockquote>
+</li>
+<li>
+<p><code>hide()</code></p>
+<blockquote>
 <p>Hide the widget.</p>
+</blockquote>
+</li>
+</ul>
 <h2 id="configuration">Configuration</h2>
 <p>Configuration is a Javascript object with following attributes.</p>
 <ul>
@@ -264,8 +272,8 @@ btn.onclick = function () {
 <p><code>productUrl(optional)</code>: Url of the product.</p>
 </li>
 <li>
-<p><code>eventHandler</code>:</p>
-<p>It is an object with two methods:</p>
+<p><code>eventHandler</code>: It is an object with two methods:</p>
+<blockquote>
 <ol>
 <li>
 <p><code>onSuccess</code>
@@ -280,6 +288,7 @@ btn.onclick = function () {
     This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.</p>
 </li>
 </ol>
+</blockquote>
 </li>
 </ul>
 <p>Additionally Configuration also accepts attribute starting with <code>merchant_</code> that can be used to pass additional data. </p>

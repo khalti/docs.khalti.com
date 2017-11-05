@@ -137,6 +137,8 @@ Additionally Configuration also accepts attribute starting with `merchant_` that
 - `merchant_extra`: This is extra data
 
 The additional data starting with `merchant_` is returned in success response payload.
+
+Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-web).
 	
 <script src="https://khalti.com/static/khalti-checkout.js"></script>
 <script>

@@ -4,12 +4,12 @@ Documentation of Khalti checkout for android
 Add the following line to `dependency` section in `build.gradle` file
 
 ```
-compile 'com.khalti:khalti-android:1.1.0'
+compile 'com.khalti:khalti-android:1.1.2'
 ```
 It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.
 
 ```
-compile ('com.khalti:khalti-android:1.1.0') {
+compile ('com.khalti:khalti-android:1.1.2') {
         transitive = true
     }
 ```
@@ -23,7 +23,7 @@ buildToolsVersion '26.0.2'
 
 compile 'com.android.support:appcompat-v7:26.1.0'
 ```
-In order to add support library 26, add the Google's maven url in `build.gradle`
+In order to add support library 26, add the Google's maven url in your project level `build.gradle`
 
 ```
 repositories {
@@ -33,24 +33,37 @@ repositories {
     }
 ```
 
+`Important` Add the lines below in android default config of 'build.gradle'
+``` java
+renderscriptTargetApi 20
+renderscriptSupportModeEnabled true
+```
+
 ## Usage
 
 ### Layout
 
-You can add it to your xml layout
+You can add KhaltiButton to your xml layout
 ```xml
 <khalti.widget.KhaltiButton
             android:id="@+id/khalti_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-
 ```
+And, Locate your xml Khalti Button in your Java
+``` java
+KhaltiButton khaltiButton = (KhaltiButton) findViewById(R.id.khalti_button);
+```
+
 Or, use it in Java
 
 ``` java
 KhaltiButton khaltiButton = new KhaltiButton();
 ```
+And, add this java KhaltiButton into your layout container.
+
+
 ### Configure
 
 Configure Khalti Checkout by passing an instance of Config class
@@ -115,7 +128,6 @@ khaltiButton.setCheckOutConfig(config);
 | Optional   | `setText(String text)`                    | Set text to display in KhaltiButton                         |
 | Optional   | `setCustomView(View view)`                | Replace KhaltiButton's default view with your custom view   |
 | Optional   | `setButtonStyle(ButtonStyle buttonStyle)` | Select between 2 options to set KhaltiButton's style        |
-| Optional   | `setCustomClickListener(OnClickListener onClickListener)` | Set your own click listener to KhaltiButton        |
 | Optional   | `showCheckOut()`                          | Use this method to show Khalti checkout UI                  |
 | Optional   | `destroyCheckOut()`                       | Use this method to close Khalti checkout UI                 |
 
@@ -125,6 +137,57 @@ khaltiButton.setCheckOutConfig(config);
 |------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `onSuccess(HashMap data)`                | This method is called when a transaction has been completed and confirmed by the user. A map containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the [verification](./../api/verification.md) process for further instructions. |
 | `onError(String action, String message)` | This method is called when an error occurs during payment initiation and confirmation. Action and message value is passed where action defines, the current action being performed and message defines the error.                                                                                                                                                                      |
+
+
+##### Response Sample
+###### Success Messsage
+| Key               |        Value                 |            Type         |
+|-------------------|------------------------------|-------------------------|
+| mobile            | 98XXXXXXXX                   |           String        |
+| product_name      | Product Name                 |           String        |
+| product_identity  | Product Id                   |           String        |
+| product_url       | Product Url                  |           String        |
+| amount            | 100                          |            Long         |
+| token             | token                        |           String        | 
+
+The success message also contains all the `key` and `value` provide as extra data while initiating `Config` 
+
+###### Error Messsage
+|  Variable                 | Description                            |    Type   |
+|---------------------------|----------------------------------------|-----------|   
+| action                    | Action performed - initiate, confirm   |   String  |
+| message                   | Detail Error Message                   |   String  |
+
+#### More Implementations
+##### Method 1: With Custom Click Listener
+
+Initialize the KhaltiCheckout Object
+``` java
+KhaltiCheckOut khaltiCheckOut = new KhaltiCheckOut(this, config);
+```
+Use `khaltiCheckout.show()` to display khalti widget
+``` java
+khaltiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                khaltiCheckOut.show();
+            }
+        });
+```
+
+##### Method 2: With Custom View
+
+Get your custom view
+``` java
+View view = LayoutInflater.from(this).inflate(R.layout.custom_khalti_button, container, false);
+```
+Set custom view to your khalti button
+```java
+khaltiButton.setCustomView(view);
+khaltiButton.setCheckOutConfig(config);
+```
+
+
 
 Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-android).
 

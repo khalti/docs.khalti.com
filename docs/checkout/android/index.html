@@ -94,6 +94,8 @@
         
             <li><a class="toctree-l4" href="#callback-methods">Callback Methods</a></li>
         
+            <li><a class="toctree-l4" href="#more-implementations">More Implementations</a></li>
+        
         </ul>
     
 
@@ -160,11 +162,11 @@
                 <p>Documentation of Khalti checkout for android</p>
 <h2 id="installation">Installation</h2>
 <p>Add the following line to <code>dependency</code> section in <code>build.gradle</code> file</p>
-<pre><code>compile 'com.khalti:khalti-android:1.1.0'
+<pre><code>compile 'com.khalti:khalti-android:1.1.2'
 </code></pre>
 
 <p>It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.</p>
-<pre><code>compile ('com.khalti:khalti-android:1.1.0') {
+<pre><code>compile ('com.khalti:khalti-android:1.1.2') {
         transitive = true
     }
 </code></pre>
@@ -177,7 +179,7 @@ buildToolsVersion '26.0.2'
 compile 'com.android.support:appcompat-v7:26.1.0'
 </code></pre>
 
-<p>In order to add support library 26, add the Google's maven url in <code>build.gradle</code></p>
+<p>In order to add support library 26, add the Google's maven url in your project level <code>build.gradle</code></p>
 <pre><code>repositories {
         jcenter()
         mavenCentral()
@@ -185,21 +187,30 @@ compile 'com.android.support:appcompat-v7:26.1.0'
     }
 </code></pre>
 
+<p><code>Important</code> Add the lines below in android default config of 'build.gradle'</p>
+<pre><code class="java">renderscriptTargetApi 20
+renderscriptSupportModeEnabled true
+</code></pre>
+
 <h2 id="usage">Usage</h2>
 <h3 id="layout">Layout</h3>
-<p>You can add it to your xml layout</p>
+<p>You can add KhaltiButton to your xml layout</p>
 <pre><code class="xml">&lt;khalti.widget.KhaltiButton
             android:id=&quot;@+id/khalti_button&quot;
             android:layout_width=&quot;wrap_content&quot;
             android:layout_height=&quot;wrap_content&quot;/&gt;
 
+</code></pre>
 
+<p>And, Locate your xml Khalti Button in your Java</p>
+<pre><code class="java">KhaltiButton khaltiButton = (KhaltiButton) findViewById(R.id.khalti_button);
 </code></pre>
 
 <p>Or, use it in Java</p>
 <pre><code class="java">KhaltiButton khaltiButton = new KhaltiButton();
 </code></pre>
 
+<p>And, add this java KhaltiButton into your layout container.</p>
 <h3 id="configure">Configure</h3>
 <p>Configure Khalti Checkout by passing an instance of Config class</p>
 <p>When instantiating Config class pass public key, product id, product name, product web url, amount (in paisa) and a new instance of OnCheckOutListener.</p>
@@ -293,11 +304,6 @@ compile 'com.android.support:appcompat-v7:26.1.0'
 </tr>
 <tr>
 <td>Optional</td>
-<td><code>setCustomClickListener(OnClickListener onClickListener)</code></td>
-<td>Set your own click listener to KhaltiButton</td>
-</tr>
-<tr>
-<td>Optional</td>
 <td><code>showCheckOut()</code></td>
 <td>Use this method to show Khalti checkout UI</td>
 </tr>
@@ -327,6 +333,97 @@ compile 'com.android.support:appcompat-v7:26.1.0'
 </tr>
 </tbody>
 </table>
+<h5 id="response-sample">Response Sample</h5>
+<h6 id="success-messsage">Success Messsage</h6>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mobile</td>
+<td>98XXXXXXXX</td>
+<td>String</td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>Product Name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>product_identity</td>
+<td>Product Id</td>
+<td>String</td>
+</tr>
+<tr>
+<td>product_url</td>
+<td>Product Url</td>
+<td>String</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>100</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>token</td>
+<td>token</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p>The success message also contains all the <code>key</code> and <code>value</code> provide as extra data while initiating <code>Config</code> </p>
+<h6 id="error-messsage">Error Messsage</h6>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td>Action performed - initiate, confirm</td>
+<td>String</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Detail Error Message</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<h4 id="more-implementations">More Implementations</h4>
+<h5 id="method-1-with-custom-click-listener">Method 1: With Custom Click Listener</h5>
+<p>Initialize the KhaltiCheckout Object</p>
+<pre><code class="java">KhaltiCheckOut khaltiCheckOut = new KhaltiCheckOut(this, config);
+</code></pre>
+
+<p>Use <code>khaltiCheckout.show()</code> to display khalti widget</p>
+<pre><code class="java">khaltiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                khaltiCheckOut.show();
+            }
+        });
+</code></pre>
+
+<h5 id="method-2-with-custom-view">Method 2: With Custom View</h5>
+<p>Get your custom view</p>
+<pre><code class="java">View view = LayoutInflater.from(this).inflate(R.layout.custom_khalti_button, container, false);
+</code></pre>
+
+<p>Set custom view to your khalti button</p>
+<pre><code class="java">khaltiButton.setCustomView(view);
+khaltiButton.setCheckOutConfig(config);
+</code></pre>
+
 <p>Check out the source for <a href="https://github.com/khalti/khalti-sdk-android">Khalti checkout on Github</a>.</p>
               
             </div>

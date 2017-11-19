@@ -160,6 +160,40 @@
 A merchant should use secret test and live keys for retrieving test and live payments respectively.</p>
 <p><strong>List of transactions can also be viewed after logging on <a href="https://khalti.com">Khalti website</a> with merchant account.</strong></p>
 <p>Replace <code>&lt;secret key&gt;</code> with test or live secret key as per required.</p>
+<p><strong>Response</strong> is paginated and in the following format:</p>
+<pre><code>{
+  &quot;total_pages&quot;: 1,
+  &quot;total_records&quot;: 2,
+  &quot;next&quot;: null,
+  &quot;previous&quot;: null,
+  &quot;record_range&quot;: [
+    1,
+    2
+  ],
+  &quot;current_page&quot;: 1,
+  &quot;records&quot;: [
+    {
+      &quot;idx&quot;: &quot;vXaHQXJd6Ke79By9dTHsVe&quot;,
+      &quot;type&quot;: &quot;Wallet payment&quot;,
+      &quot;state&quot;: &quot;Confirmed&quot;,
+      &quot;amount&quot;: 1000,
+      &quot;fee_amount&quot;: 30,
+      &quot;created_on&quot;: &quot;2017-11-19T11:17:53.763052+05:45&quot;,
+      &quot;source&quot;: &quot;98XXXXX969&quot;
+    },
+    {
+      &quot;idx&quot;: &quot;ymYXHiG2dYSGkxw7s2SghM&quot;,
+      &quot;type&quot;: &quot;Wallet payment&quot;,
+      &quot;state&quot;: &quot;Completed&quot;,
+      &quot;amount&quot;: 1000,
+      &quot;fee_amount&quot;: 30,
+      &quot;created_on&quot;: &quot;2017-11-19T11:21:39.646256+05:45&quot;,
+      &quot;source&quot;: &quot;98XXXXX969&quot;
+    }
+  ]
+}
+</code></pre>
+
 <h2 id="list-payments">List payments</h2>
 <h3 id="curl">CURL</h3>
 <pre><code class="curl">curl https://khalti.com/api/transaction/ -H &quot;Authorization:Key &lt;secret key&gt;

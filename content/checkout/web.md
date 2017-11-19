@@ -119,18 +119,39 @@ Configuration is a Javascript object with following attributes.
 
 - `eventHandler`: It is an object with two methods:
 
-	> 1. `onSuccess`
-		This method is called once a transaction is confirmed by a user.
-		It receives transaction `token` and `amount` among other payloads.
-		One should implement this method to initiate payment verification 
-		at merchant which in turn will make verification request at Khalti.
-		For documentation on verification follow this [link](./../api/verification.md).
+>  1) `onSuccess`
+	This method is called once a transaction is confirmed by a user.
+	The success response is in the following format:
+
+	{
+		"amount": 1000,
+		"mobile": "98XXXXX969",
+		"product_identity": "1234567890",
+		"product_name": "Dragon",
+		"product_url": "http://gameofthrones.wikia.com/wiki/Dragons",
+		"token": "QUao9cqFzxPgvWJNi9aKac"
+	}
+
+It receives transaction `token` and `amount` among other payloads.
+One should implement this method to initiate payment verification 
+at merchant which in turn will make verification request at Khalti.
+For documentation on verification follow this [link](./../api/verification.md).
 
 
-	> 2. `onError (optional)`
-		This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.
+>  2) `onError (optional)`
+	This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for `Invalid Transaction PIN or Confirmation Code`:
 
-Additionally Configuration also accepts attribute starting with `merchant_` that can be used to pass additional data. 
+	{
+	  "action": "WALLET_PAYMENT_CONFIRM",
+	  "message": undefined,
+	  "payload": {
+	    "detail": "Confirmation code or transaction pin does not match."
+	  },
+	  "status_code": 400
+	}
+
+
+**Additionally** Configuration also accepts attribute starting with `merchant_` that can be used to pass additional (meta) data. 
 
 - `merchant_name`: This is merchant name
 

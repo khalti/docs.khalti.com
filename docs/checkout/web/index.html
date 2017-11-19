@@ -273,25 +273,40 @@ btn.onclick = function () {
 </li>
 <li>
 <p><code>eventHandler</code>: It is an object with two methods:</p>
-<blockquote>
-<ol>
-<li>
-<p><code>onSuccess</code>
-    This method is called once a transaction is confirmed by a user.
-    It receives transaction <code>token</code> and <code>amount</code> among other payloads.
-    One should implement this method to initiate payment verification 
-    at merchant which in turn will make verification request at Khalti.
-    For documentation on verification follow this <a href="../../api/verification/">link</a>.</p>
-</li>
-<li>
-<p><code>onError (optional)</code>
-    This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.</p>
-</li>
-</ol>
-</blockquote>
 </li>
 </ul>
-<p>Additionally Configuration also accepts attribute starting with <code>merchant_</code> that can be used to pass additional data. </p>
+<blockquote>
+<p>1) <code>onSuccess</code>
+    This method is called once a transaction is confirmed by a user.
+    The success response is in the following format:</p>
+</blockquote>
+<pre><code>{
+    "amount": 1000,
+    "mobile": "98XXXXX969",
+    "product_identity": "1234567890",
+    "product_name": "Dragon",
+    "product_url": "http://gameofthrones.wikia.com/wiki/Dragons",
+    "token": "QUao9cqFzxPgvWJNi9aKac"
+}
+</code></pre>
+<p>It receives transaction <code>token</code> and <code>amount</code> among other payloads.
+One should implement this method to initiate payment verification 
+at merchant which in turn will make verification request at Khalti.
+For documentation on verification follow this <a href="../../api/verification/">link</a>.</p>
+<blockquote>
+<p>2) <code>onError (optional)</code>
+    This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for <code>Invalid Transaction PIN or Confirmation Code</code>:</p>
+</blockquote>
+<pre><code>{
+  "action": "WALLET_PAYMENT_CONFIRM",
+  "message": undefined,
+  "payload": {
+    "detail": "Confirmation code or transaction pin does not match."
+  },
+  "status_code": 400
+}
+</code></pre>
+<p><strong>Additionally</strong> Configuration also accepts attribute starting with <code>merchant_</code> that can be used to pass additional (meta) data. </p>
 <ul>
 <li>
 <p><code>merchant_name</code>: This is merchant name</p>

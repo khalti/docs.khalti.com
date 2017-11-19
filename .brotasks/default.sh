@@ -12,6 +12,7 @@ setup () {
 
 init () {
 	echo "Happy hacking."
+	bro env
 }
 
 serve () {

@@ -162,6 +162,15 @@ A verification request must have following signature.</p>
 </ul>
 </li>
 </ul>
+<p><strong>Response</strong> is in the following format:</p>
+<p><code>Success</code>: Success response consists of the idx of transaction created.</p>
+<pre><code>{'idx': 'ymYXHiG2dYSGk1w7s2SghM'}
+</code></pre>
+
+<p><code>Error</code>: Error response consists of the detail of errors.</p>
+<pre><code>{'token': ['Invalid token.']}
+</code></pre>
+
 <h2 id="examples">Examples</h2>
 <p>Assuming the token that we received is <code>QUao9cqFzxPgvWJNi9aKac</code>.</p>
 <h3 id="curl">CURL</h3>

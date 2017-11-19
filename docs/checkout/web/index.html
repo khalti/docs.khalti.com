@@ -179,6 +179,9 @@
                 },
                 onError (error) {
                     console.log(error);
+                },
+                onClose () {
+                    console.log('widget is closing');
                 }
             }
         };
@@ -221,6 +224,9 @@ let config = {
         onError (error) {
             // handle errors
             console.log(error);
+        },
+        onClose () {
+            console.log('widget is closing');
         }
     }
 };
@@ -272,7 +278,7 @@ btn.onclick = function () {
 <p><code>productUrl(optional)</code>: Url of the product.</p>
 </li>
 <li>
-<p><code>eventHandler</code>: It is an object with two methods:</p>
+<p><code>eventHandler</code>: It is an object with three methods:</p>
 </li>
 </ul>
 <blockquote>
@@ -306,6 +312,10 @@ For documentation on verification follow this <a href="../../api/verification/">
   "status_code": 400
 }
 </code></pre>
+<blockquote>
+<p>3) <code>onClose (optional)</code>
+        This method is also optional. If implemented, this method is called when <code>close icon(X)</code> of the widget is called.</p>
+</blockquote>
 <p><strong>Additionally</strong> Configuration also accepts attribute starting with <code>merchant_</code> that can be used to pass additional (meta) data. </p>
 <ul>
 <li>
@@ -333,6 +343,9 @@ For documentation on verification follow this <a href="../../api/verification/">
                 },
                 onError (error) {
                     console.log(error);
+                },
+                onClose () {
+                    console.log('widget is closing');
                 }
             }
         };

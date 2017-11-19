@@ -32,6 +32,9 @@ To get the feel of how Khalti checkout looks click the button below.
 				},
 				onError (error) {
 					console.log(error);
+				},
+				onClose () {
+					console.log('widget is closing');
 				}
 			}
 		};
@@ -79,6 +82,9 @@ let config = {
 		onError (error) {
 			// handle errors
 			console.log(error);
+		},
+		onClose () {
+			console.log('widget is closing');
 		}
 	}
 };
@@ -117,7 +123,7 @@ Configuration is a Javascript object with following attributes.
 
 - `productUrl(optional)`: Url of the product.
 
-- `eventHandler`: It is an object with two methods:
+- `eventHandler`: It is an object with three methods:
 
 >  1) `onSuccess`
 	This method is called once a transaction is confirmed by a user.
@@ -151,6 +157,10 @@ For documentation on verification follow this [link](./../api/verification.md).
 	}
 
 
+>  3) `onClose (optional)`
+		This method is also optional. If implemented, this method is called when `close icon(X)` of the widget is called.
+
+
 **Additionally** Configuration also accepts attribute starting with `merchant_` that can be used to pass additional (meta) data. 
 
 - `merchant_name`: This is merchant name
@@ -176,6 +186,9 @@ Check out the source for [Khalti checkout on Github](https://github.com/khalti/k
                 },
                 onError (error) {
                     console.log(error);
+                },
+                onClose () {
+                	console.log('widget is closing');
                 }
             }
         };

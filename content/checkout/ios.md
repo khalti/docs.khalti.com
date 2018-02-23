@@ -36,7 +36,7 @@ pod 'Khalti'
 Khalti uses custom Scheme: So merhant should setup **URLScheme** unique for their app. We have made usability as of user case.
 
 
-![Khalti scheme setup overview](https://github.com/khalti/khalti-sdk-ios/blob/master/Screenshots/customUrlScheme.png)
+![Khalti scheme setup overview](../img/customUrlScheme.png)
 
 After adding Url Scheme create global constant for same customUrlScheme as below 
 ```ruby

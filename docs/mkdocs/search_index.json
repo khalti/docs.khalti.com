@@ -182,13 +182,48 @@
         },
         {
             "location": "/checkout/ios/",
-            "text": "Khalti checkout widget for iOS\n\n\nComing soon",
+            "text": "Khalti\n\n\n\n\n\n\n\n\n\n\nRelased version 0.1.2 Under Development with release version 0.1.2\n\n\nKhalti is currently under development. Pod has already been released but updates are under process. Documentation will soon be available. Anyone intreseted can check the example and whole code to start integration Khalti.\n\n\nPod Depedency\n\n\nKhalti has currenlty depenceny on  \nAlamofire\n.\nThis dependency will be soon be removed.\n\n\nFor best working with UI incorporated in this library \nIQKeyboardManager\n is used. Suggest using \n\n\npod 'IQKeyboarManager'\n\n\n\n\nSo installation of \nKhalti\n provides automatically dependency pod \nAlamofire\n but use of \nIQKeyboardManager\n is up to you.\n\n\nExample\n\n\nTo run the example project, clone the repo, and run \npod install\n from the Example directory first.\n\n\nInstallation guide\n\n\nKhalti is available through \nCocoaPods\n. To install\nit, simply add the following line to your Podfile:\n\n\npod 'Khalti'\n\n\n\n\nUsage\n\n\nKhalti uses custom Scheme: So merhant should setup \nURLScheme\n unique for their app. We have made usability as of user case.\n\n\n\n\nAfter adding Url Scheme create global constant for same customUrlScheme as below \n\n\nlet khaltiUrlScheme:String = \"KhaltiPayExampleScheme\"\n\n\n\n\nTo work around with this redirection you have to implement some openUrl in \nAppdelegate.swift\n. \n\nKhalti.shared.defaultAction()\n returns true if you initiate payment through Khalti.\n\nKhalti.shared.action(with: url)\n is needed for complete action after ebanking and card payment. \n\n\nNote:\n If \nKhalti.shared.defaultAction()\n  is missed delegate \nonCheckOutSuccess(data: Dictionary<String, Any>)\n might not work properly.\n\n\nIn \nAppdelegate.swift\n\n\n    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {\n        Khalti.shared.action(with: url)\n        return Khalti.shared.defaultAction()\n    }\n\n\n\n\nAuthor\n\n\nKhalti\n\n\nLicense\n\n\nKhalti is available under the MIT license. See the LICENSE file for more info.",
             "title": "iOS"
         },
         {
-            "location": "/checkout/ios/#khalti-checkout-widget-for-ios",
-            "text": "Coming soon",
-            "title": "Khalti checkout widget for iOS"
+            "location": "/checkout/ios/#khalti",
+            "text": "",
+            "title": "Khalti"
+        },
+        {
+            "location": "/checkout/ios/#relased-version-012-under-development-with-release-version-012",
+            "text": "Khalti is currently under development. Pod has already been released but updates are under process. Documentation will soon be available. Anyone intreseted can check the example and whole code to start integration Khalti.",
+            "title": "Relased version 0.1.2 Under Development with release version 0.1.2"
+        },
+        {
+            "location": "/checkout/ios/#pod-depedency",
+            "text": "Khalti has currenlty depenceny on   Alamofire .\nThis dependency will be soon be removed.  For best working with UI incorporated in this library  IQKeyboardManager  is used. Suggest using   pod 'IQKeyboarManager'  So installation of  Khalti  provides automatically dependency pod  Alamofire  but use of  IQKeyboardManager  is up to you.",
+            "title": "Pod Depedency"
+        },
+        {
+            "location": "/checkout/ios/#example",
+            "text": "To run the example project, clone the repo, and run  pod install  from the Example directory first.",
+            "title": "Example"
+        },
+        {
+            "location": "/checkout/ios/#installation-guide",
+            "text": "Khalti is available through  CocoaPods . To install\nit, simply add the following line to your Podfile:  pod 'Khalti'",
+            "title": "Installation guide"
+        },
+        {
+            "location": "/checkout/ios/#usage",
+            "text": "Khalti uses custom Scheme: So merhant should setup  URLScheme  unique for their app. We have made usability as of user case.   After adding Url Scheme create global constant for same customUrlScheme as below   let khaltiUrlScheme:String = \"KhaltiPayExampleScheme\"  To work around with this redirection you have to implement some openUrl in  Appdelegate.swift .  Khalti.shared.defaultAction()  returns true if you initiate payment through Khalti. Khalti.shared.action(with: url)  is needed for complete action after ebanking and card payment.   Note:  If  Khalti.shared.defaultAction()   is missed delegate  onCheckOutSuccess(data: Dictionary<String, Any>)  might not work properly.  In  Appdelegate.swift      func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {\n        Khalti.shared.action(with: url)\n        return Khalti.shared.defaultAction()\n    }",
+            "title": "Usage"
+        },
+        {
+            "location": "/checkout/ios/#author",
+            "text": "Khalti",
+            "title": "Author"
+        },
+        {
+            "location": "/checkout/ios/#license",
+            "text": "Khalti is available under the MIT license. See the LICENSE file for more info.",
+            "title": "License"
         },
         {
             "location": "/api/verification/",

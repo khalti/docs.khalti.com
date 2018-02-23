@@ -93,7 +93,21 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#khalti-checkout-widget-for-ios">Khalti checkout widget for iOS</a></li>
+                <li class="toctree-l3"><a href="#khalti">Khalti</a></li>
+                
+                    <li><a class="toctree-l4" href="#relased-version-012-under-development-with-release-version-012">Relased version 0.1.2 Under Development with release version 0.1.2</a></li>
+                
+                    <li><a class="toctree-l4" href="#pod-depedency">Pod Depedency</a></li>
+                
+                    <li><a class="toctree-l4" href="#example">Example</a></li>
+                
+                    <li><a class="toctree-l4" href="#installation-guide">Installation guide</a></li>
+                
+                    <li><a class="toctree-l4" href="#usage">Usage</a></li>
+                
+                    <li><a class="toctree-l4" href="#author">Author</a></li>
+                
+                    <li><a class="toctree-l4" href="#license">License</a></li>
                 
             
             </ul>
@@ -162,8 +176,51 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="khalti-checkout-widget-for-ios">Khalti checkout widget for iOS</h1>
-<p>Coming soon</p>
+                <h1 id="khalti">Khalti</h1>
+<p><a href="https://travis-ci.org/rjndra/Khalti"><img alt="CI Status" src="http://img.shields.io/travis/rjndra/Khalti.svg?style=flat" /></a>
+<a href="http://cocoapods.org/pods/Khalti"><img alt="Version" src="https://img.shields.io/cocoapods/v/Khalti.svg?style=flat" /></a>
+<a href="http://cocoapods.org/pods/Khalti"><img alt="License" src="https://img.shields.io/cocoapods/l/Khalti.svg?style=flat" /></a>
+<a href="http://cocoapods.org/pods/Khalti"><img alt="Platform" src="https://img.shields.io/cocoapods/p/Khalti.svg?style=flat" /></a></p>
+<h2 id="relased-version-012-under-development-with-release-version-012">Relased version 0.1.2 Under Development with release version 0.1.2</h2>
+<p>Khalti is currently under development. Pod has already been released but updates are under process. Documentation will soon be available. Anyone intreseted can check the example and whole code to start integration Khalti.</p>
+<h2 id="pod-depedency">Pod Depedency</h2>
+<p>Khalti has currenlty depenceny on  <code>Alamofire</code>.
+This dependency will be soon be removed.</p>
+<p>For best working with UI incorporated in this library <code>IQKeyboardManager</code> is used. Suggest using </p>
+<pre><code class="ruby">pod 'IQKeyboarManager'
+</code></pre>
+
+<p>So installation of <code>Khalti</code> provides automatically dependency pod <code>Alamofire</code> but use of <code>IQKeyboardManager</code> is up to you.</p>
+<h2 id="example">Example</h2>
+<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
+<h2 id="installation-guide">Installation guide</h2>
+<p>Khalti is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre><code class="ruby">pod 'Khalti'
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+<p>Khalti uses custom Scheme: So merhant should setup <strong>URLScheme</strong> unique for their app. We have made usability as of user case.</p>
+<p><img alt="Khalti scheme setup overview" src="https://github.com/khalti/khalti-sdk-ios/blob/master/Screenshots/customUrlScheme.png" /></p>
+<p>After adding Url Scheme create global constant for same customUrlScheme as below </p>
+<pre><code class="ruby">let khaltiUrlScheme:String = &quot;KhaltiPayExampleScheme&quot;
+</code></pre>
+
+<p>To work around with this redirection you have to implement some openUrl in <code>Appdelegate.swift</code>. 
+<code>Khalti.shared.defaultAction()</code> returns true if you initiate payment through Khalti.
+<code>Khalti.shared.action(with: url)</code> is needed for complete action after ebanking and card payment. </p>
+<p><strong>Note:</strong> If <code>Khalti.shared.defaultAction()</code>  is missed delegate <code>onCheckOutSuccess(data: Dictionary&lt;String, Any&gt;)</code> might not work properly.</p>
+<p>In <code>Appdelegate.swift</code></p>
+<pre><code class="ruby">    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&gt; Bool {
+        Khalti.shared.action(with: url)
+        return Khalti.shared.defaultAction()
+    }
+</code></pre>
+
+<h2 id="author">Author</h2>
+<p>Khalti</p>
+<h2 id="license">License</h2>
+<p>Khalti is available under the MIT license. See the LICENSE file for more info.</p>
               
             </div>
           </div>

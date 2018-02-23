@@ -1,4 +1,5 @@
 .env/
+.brotasks/rajendra.sh
 .brotasks/suren.sh
 build.sh
 *.orig

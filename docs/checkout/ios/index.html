@@ -209,14 +209,14 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <p>To work around with this redirection you have to implement some openUrl in <code>Appdelegate.swift</code>. 
-<code>Khalti.shared.defaultAction()</code> returns true if you initiate payment through Khalti.
+<code>Khalti.shared.defaultAction()</code> returns <code>true</code> if you initiate payment through Khalti.
 <code>Khalti.shared.action(with: url)</code> is needed for complete action after ebanking and card payment. </p>
-<p><strong>Note:</strong> If <code>Khalti.shared.defaultAction()</code>  is missed delegate <code>onCheckOutSuccess(data: Dictionary&lt;String, Any&gt;)</code> might not work properly.</p>
+<p><strong>Note:</strong> If <code>Khalti.shared.action(with: url)</code>  is missed delegate <code>onCheckOutSuccess(data: Dictionary&lt;String, Any&gt;)</code> might not work properly.</p>
 <p>In <code>Appdelegate.swift</code></p>
-<pre><code class="ruby">    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&gt; Bool {
-        Khalti.shared.action(with: url)
-        return Khalti.shared.defaultAction()
-    }
+<pre><code class="ruby"> func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&gt; Bool {
+    Khalti.shared.action(with: url)
+    return Khalti.shared.defaultAction() // Or true 
+}
 </code></pre>
 
 <p>At your viewController during action of pay add initiate config file</p>
@@ -228,7 +228,7 @@ product web url and additional data are optional.</p>
 <p>Finally present the khaltiPay Viewcontroller by calling public funcation 
   <code>ruby
   Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)</code></p>
-<p><strong>Params of presnt function of Khalti </strong></p>
+<p><strong>Params of presnt function of Khalti</strong></p>
 <table>
 <thead>
 <tr>

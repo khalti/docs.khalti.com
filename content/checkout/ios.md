@@ -45,17 +45,17 @@ let khaltiUrlScheme:String = "KhaltiPayExampleScheme"
 
 
 To work around with this redirection you have to implement some openUrl in ```Appdelegate.swift```. 
-```Khalti.shared.defaultAction()``` returns true if you initiate payment through Khalti.
+```Khalti.shared.defaultAction()``` returns `true` if you initiate payment through Khalti.
 ```Khalti.shared.action(with: url)``` is needed for complete action after ebanking and card payment. 
 
-**Note:** If ```Khalti.shared.defaultAction()```  is missed delegate ```onCheckOutSuccess(data: Dictionary<String, Any>)``` might not work properly.
+**Note:** If ```Khalti.shared.action(with: url)```  is missed delegate ```onCheckOutSuccess(data: Dictionary<String, Any>)``` might not work properly.
 
 In ```Appdelegate.swift```
 ```ruby
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        Khalti.shared.action(with: url)
-        return Khalti.shared.defaultAction()
-    }
+ func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+    Khalti.shared.action(with: url)
+    return Khalti.shared.defaultAction() // Or true 
+}
 ```
 
 
@@ -75,13 +75,13 @@ At this stage the scheme named you declared earlier is passed to Khatli.shared.a
   Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
   ```
 
- **Params of presnt function of Khalti **
+ **Params of presnt function of Khalti**
 
-| param               |        Value                                    |
-|---------------------|-------------------------------------------------|
-| caller              | viewController  from where you initate payment. |
-| with                | Config object                                   |
-| delegate            | self                                            |
+| param                    |        Value                                    |
+|--------------------------|-------------------------------------------------|
+| caller                   | viewController  from where you initate payment. |
+| with                     | Config object                                   |
+| delegate                 | self                                            |
 
   Delegate must be assigned to same Viewcontroller to get callback action from KhaltiPayDelegate.
 

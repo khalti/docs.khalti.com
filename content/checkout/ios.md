@@ -177,3 +177,6 @@ Khalti
 ## License
 
 Khalti is available under the MIT license. See the LICENSE file for more info.
+
+Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-ios).
+

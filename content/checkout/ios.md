@@ -75,7 +75,7 @@ At this stage the scheme named you declared earlier is passed to Khatli.shared.a
   Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
   ```
 
- **Params of presnt function of Khalti**
+ **Params of present function of Khalti**
 
 | param                    |        Value                                    |
 |--------------------------|-------------------------------------------------|

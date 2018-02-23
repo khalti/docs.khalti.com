@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2017-12-13</lastmod>
+     <lastmod>2018-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>None/getting-started/</loc>
-     <lastmod>2017-12-13</lastmod>
+     <lastmod>2018-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,19 @@
         
     <url>
      <loc>None/checkout/web/</loc>
-     <lastmod>2017-12-13</lastmod>
+     <lastmod>2018-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/checkout/android/</loc>
-     <lastmod>2017-12-13</lastmod>
+     <lastmod>2018-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/checkout/ios/</loc>
-     <lastmod>2017-12-13</lastmod>
+     <lastmod>2018-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -43,13 +43,13 @@
         
     <url>
      <loc>None/api/verification/</loc>
-     <lastmod>2017-12-13</lastmod>
+     <lastmod>2018-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/api/transaction/</loc>
-     <lastmod>2017-12-13</lastmod>
+     <lastmod>2018-02-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

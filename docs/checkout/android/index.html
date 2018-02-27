@@ -160,24 +160,24 @@
                 <p>Documentation of Khalti checkout for android</p>
 <h2 id="installation">Installation</h2>
 <p>Add the following line to <code>dependency</code> section in <code>build.gradle</code> file</p>
-<pre><code>compile 'com.khalti:khalti-android:1.1.0'
+<pre><code>compile 'com.khalti:khalti-android:1.2.1'
 </code></pre>
 
 <p>It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.</p>
-<pre><code>compile ('com.khalti:khalti-android:1.1.0') {
+<pre><code>compile ('com.khalti:khalti-android:1.2.1') {
         transitive = true
     }
 </code></pre>
 
 <p>Note : We recommend you to use the latest version of <code>Build tools</code> and <code>Support libraries</code> for maximum compatibility. </p>
-<p>In order to build and run this project, please use <code>Android Studio 3</code> and please note that the minimum <code>Build tools</code> and <code>Support libraries</code> version should be <code>26</code>.</p>
-<pre><code>compileSdkVersion 26
-buildToolsVersion '26.0.2'
+<p>In order to build and run this project, please use <code>Android Studio 3</code> and please note that the minimum <code>Build tools</code> and <code>Support libraries</code> version should be <code>27</code>.</p>
+<pre><code>compileSdkVersion 27
+buildToolsVersion '27.0.3'
 
-compile 'com.android.support:appcompat-v7:26.1.0'
+compile 'com.android.support:appcompat-v7:27.0.2'
 </code></pre>
 
-<p>In order to add support library 26, add the Google's maven url in <code>build.gradle</code></p>
+<p>In order to add support library 27, add the Google's maven url in <code>build.gradle</code></p>
 <pre><code>repositories {
         jcenter()
         mavenCentral()
@@ -218,7 +218,7 @@ compile 'com.android.support:appcompat-v7:26.1.0'
 </code></pre>
 
 <p>Additionally, Config class also accepts a HashMap parameter which you can use to pass any additional data. Make sure you add a <code>merchant_</code> prefix in your map key.</p>
-<pre><code class="java">HashMap&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+<pre><code class="java">HashMap&lt;String, String&gt; map = new HashMap&lt;&gt;();
         map.put(&quot;merchant_extra&quot;, &quot;This is extra data&quot;);
 
         Config config = new Config(&quot;Public Key&quot;, &quot;Product ID&quot;, &quot;Product Name&quot;, &quot;Product Url&quot;, amount, map, new OnCheckOutListener() {

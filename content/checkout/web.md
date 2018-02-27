@@ -32,6 +32,9 @@ To get the feel of how Khalti checkout looks click the button below.
 				},
 				onError (error) {
 					console.log(error);
+				},
+				onClose () {
+					console.log('widget is closing');
 				}
 			}
 		};
@@ -79,6 +82,9 @@ let config = {
 		onError (error) {
 			// handle errors
 			console.log(error);
+		},
+		onClose () {
+			console.log('widget is closing');
 		}
 	}
 };
@@ -94,15 +100,15 @@ btn.onclick = function () {
 
 - `KhaltiCheckout(configuration?)`
 
-Instantiate `KhaltiCheckout` class and pass a [configuration](#descriptions-of-attributes).
+	> Instantiate `KhaltiCheckout` class and pass a [configuration](#configuration).
 
 - `show(configuration?)`
 
-Displays the Khalti checkout widget.
+	> Displays the Khalti checkout widget.
 
 - `hide()`
 
-Hide the widget.
+	> Hide the widget.
 
 ## Configuration
 Configuration is a Javascript object with following attributes.
@@ -117,21 +123,45 @@ Configuration is a Javascript object with following attributes.
 
 - `productUrl(optional)`: Url of the product.
 
-- `eventHandler`:
-	
-	It is an object with two methods:
+- `eventHandler`: It is an object with three methods:
 
-	1. `onSuccess`
-		This method is called once a transaction is confirmed by a user.
-		It receives transaction `token` and `amount` among other payloads.
-		One should implement this method to initiate payment verification 
-		at merchant which in turn will make verification request at Khalti.
-		For documentation on verification follow this [link](./../api/verification.md).
+>  1) `onSuccess`
+	This method is called once a transaction is confirmed by a user.
+	The success response is in the following format:
 
-	2. `onError (optional)`
-		This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation.
+	{
+		"amount": 1000,
+		"mobile": "98XXXXX969",
+		"product_identity": "1234567890",
+		"product_name": "Dragon",
+		"product_url": "http://gameofthrones.wikia.com/wiki/Dragons",
+		"token": "QUao9cqFzxPgvWJNi9aKac"
+	}
 
-Additionally Configuration also accepts attribute starting with `merchant_` that can be used to pass additional data. 
+It receives transaction `token` and `amount` among other payloads.
+One should implement this method to initiate payment verification 
+at merchant which in turn will make verification request at Khalti.
+For documentation on verification follow this [link](./../api/verification.md).
+
+
+>  2) `onError (optional)`
+	This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for `Invalid Transaction PIN or Confirmation Code`:
+
+	{
+	  "action": "WALLET_PAYMENT_CONFIRM",
+	  "message": undefined,
+	  "payload": {
+	    "detail": "Confirmation code or transaction pin does not match."
+	  },
+	  "status_code": 400
+	}
+
+
+>  3) `onClose (optional)`
+		This method is also optional. If implemented, this method is called when `close icon(X)` of the widget is called.
+
+
+**Additionally** Configuration also accepts attribute starting with `merchant_` that can be used to pass additional (meta) data. 
 
 - `merchant_name`: This is merchant name
 
@@ -156,6 +186,9 @@ Check out the source for [Khalti checkout on Github](https://github.com/khalti/k
                 },
                 onError (error) {
                     console.log(error);
+                },
+                onClose () {
+                	console.log('widget is closing');
                 }
             }
         };

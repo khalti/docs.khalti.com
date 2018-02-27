@@ -10,6 +10,20 @@ A verification request must have following signature.
 	- `token`: Token given my Khalti after payment confirmation.
 	- `amount`: Amount (in paisa) with which payment was initiated.
 
+**Response** is in the following format:
+
+`Success`: Success response consists of the idx of transaction created.
+
+```
+{'idx': 'ymYXHiG2dYSGk1w7s2SghM'}
+```
+
+`Error`: Error response consists of the detail of errors.
+
+```
+{'token': ['Invalid token.']}
+```
+
 ## Examples
 Assuming the token that we received is `QUao9cqFzxPgvWJNi9aKac`.
 

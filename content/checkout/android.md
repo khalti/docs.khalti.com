@@ -4,20 +4,12 @@ Documentation of Khalti checkout for android
 Add the following line to `dependency` section in `build.gradle` file
 
 ```
-<<<<<<< HEAD
 compile 'com.khalti:khalti-android:1.2.1'
-=======
-compile 'com.khalti:khalti-android:1.1.2'
->>>>>>> 7c3beccf4fb4d813614a857b82cff9c5ec11750c
 ```
 It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.
 
 ```
-<<<<<<< HEAD
 compile ('com.khalti:khalti-android:1.2.1') {
-=======
-compile ('com.khalti:khalti-android:1.1.2') {
->>>>>>> 7c3beccf4fb4d813614a857b82cff9c5ec11750c
         transitive = true
     }
 ```
@@ -31,11 +23,8 @@ buildToolsVersion '27.0.3'
 
 compile 'com.android.support:appcompat-v7:27.0.2'
 ```
-<<<<<<< HEAD
+
 In order to add support library 27, add the Google's maven url in `build.gradle`
-=======
-In order to add support library 26, add the Google's maven url in your project level `build.gradle`
->>>>>>> 7c3beccf4fb4d813614a857b82cff9c5ec11750c
 
 ```
 repositories {

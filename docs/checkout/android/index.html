@@ -162,19 +162,11 @@
                 <p>Documentation of Khalti checkout for android</p>
 <h2 id="installation">Installation</h2>
 <p>Add the following line to <code>dependency</code> section in <code>build.gradle</code> file</p>
-<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-compile 'com.khalti:khalti-android:1.2.1'
-=======
-compile 'com.khalti:khalti-android:1.1.2'
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 7c3beccf4fb4d813614a857b82cff9c5ec11750c
+<pre><code>compile 'com.khalti:khalti-android:1.2.1'
 </code></pre>
 
 <p>It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.</p>
-<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-compile ('com.khalti:khalti-android:1.2.1') {
-=======
-compile ('com.khalti:khalti-android:1.1.2') {
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 7c3beccf4fb4d813614a857b82cff9c5ec11750c
+<pre><code>compile ('com.khalti:khalti-android:1.2.1') {
         transitive = true
     }
 </code></pre>
@@ -187,25 +179,7 @@ buildToolsVersion '27.0.3'
 compile 'com.android.support:appcompat-v7:27.0.2'
 </code></pre>
 
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-In order to add support library 27, add the Google's maven url in <code>build.gradle</code>
-=======
-In order to add support library 26, add the Google's maven url in your project level <code>build.gradle</code></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>7c3beccf4fb4d813614a857b82cff9c5ec11750c</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<p>In order to add support library 27, add the Google's maven url in <code>build.gradle</code></p>
 <pre><code>repositories {
         jcenter()
         mavenCentral()

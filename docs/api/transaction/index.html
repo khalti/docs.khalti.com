@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Transaction - Khalti Gateway Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Transaction";
+    var mkdocs_page_input_path = "api/transaction.md";
+    var mkdocs_page_url = "/api/transaction/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Khalti Gateway Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Welcome</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Widget</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../checkout/web/">Web</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../checkout/android/">Android</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../checkout/ios/">iOS</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Verification</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../verification/">Verification</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Transaction</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#list-payments">List payments</a></li>
+                
+                    <li><a class="toctree-l4" href="#curl">CURL</a></li>
+                
+                    <li><a class="toctree-l4" href="#php">PHP</a></li>
+                
+                    <li><a class="toctree-l4" href="#python">Python</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#retrieve-a-payment">Retrieve a payment</a></li>
+                
+                    <li><a class="toctree-l4" href="#curl_1">CURL</a></li>
+                
+                    <li><a class="toctree-l4" href="#php_1">PHP</a></li>
+                
+                    <li><a class="toctree-l4" href="#python_1">Python</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Khalti Gateway Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Verification &raquo;</li>
+        
+      
+    
+    <li>Transaction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Khalti provides API for retrieving list of payments made to a merchant.
+A merchant should use secret test and live keys for retrieving test and live payments respectively.</p>
+<p><strong>List of transactions can also be viewed after logging on <a href="https://khalti.com">Khalti website</a> with merchant account.</strong></p>
+<p>Replace <code>&lt;secret key&gt;</code> with test or live secret key as per required.</p>
+<p><strong>Response</strong> is paginated and in the following format:</p>
+<pre><code>{
+  &quot;total_pages&quot;: 1,
+  &quot;total_records&quot;: 2,
+  &quot;next&quot;: null,
+  &quot;previous&quot;: null,
+  &quot;record_range&quot;: [
+    1,
+    2
+  ],
+  &quot;current_page&quot;: 1,
+  &quot;records&quot;: [
+    {
+      &quot;idx&quot;: &quot;vXaHQXJd6Ke79By9dTHsVe&quot;,
+      &quot;type&quot;: &quot;Wallet payment&quot;,
+      &quot;state&quot;: &quot;Confirmed&quot;,
+      &quot;amount&quot;: 1000,
+      &quot;fee_amount&quot;: 30,
+      &quot;created_on&quot;: &quot;2017-11-19T11:17:53.763052+05:45&quot;,
+      &quot;source&quot;: &quot;98XXXXX969&quot;
+    },
+    {
+      &quot;idx&quot;: &quot;ymYXHiG2dYSGkxw7s2SghM&quot;,
+      &quot;type&quot;: &quot;Wallet payment&quot;,
+      &quot;state&quot;: &quot;Completed&quot;,
+      &quot;amount&quot;: 1000,
+      &quot;fee_amount&quot;: 30,
+      &quot;created_on&quot;: &quot;2017-11-19T11:21:39.646256+05:45&quot;,
+      &quot;source&quot;: &quot;98XXXXX969&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="list-payments">List payments</h2>
+<h3 id="curl">CURL</h3>
+<pre><code class="curl">curl https://khalti.com/api/merchant-transaction/ -H &quot;Authorization:Key &lt;secret key&gt;
+</code></pre>
+
+<h3 id="php">PHP</h3>
+<pre><code class="php">
+    $url = &quot;https://khalti.com/api/merchant-transaction/&quot;;
+
+    # Make the call using API.
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    // Response
+    $response = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+</code></pre>
+
+<h3 id="python">Python</h3>
+<pre><code class="python">import requests
+
+url = &quot;https://khalti.com/api/merchant-transaction/&quot;
+payload = {}
+headers = {
+  &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
+}
+
+response = requests.get(url, payload, headers = headers)
+</code></pre>
+
+<h2 id="retrieve-a-payment">Retrieve a payment</h2>
+<h3 id="curl_1">CURL</h3>
+<pre><code class="curl">curl https://khalti.com/api/merchant-transaction/&lt;idx&gt;/ -H &quot;Authorization:Key &lt;secret key&gt;
+</code></pre>
+
+<h3 id="php_1">PHP</h3>
+<pre><code class="php">
+    $url = &quot;https://khalti.com/api/merchant-transaction/&lt;idx&gt;/&quot;;
+
+    # Make the call using API.
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    // Response
+    $response = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+</code></pre>
+
+<h3 id="python_1">Python</h3>
+<pre><code class="python">import requests
+
+url = &quot;https://khalti.com/api/merchant-transaction/&lt;idx&gt;/&quot;
+headers = {
+  &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
+}
+
+response = requests.get(url, headers = headers)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../verification/" class="btn btn-neutral" title="Verification"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../verification/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

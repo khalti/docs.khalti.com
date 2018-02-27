@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>iOS - Khalti Gateway Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "iOS";
+    var mkdocs_page_input_path = "checkout/ios.md";
+    var mkdocs_page_url = "/checkout/ios/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Khalti Gateway Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Welcome</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/">Getting started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Widget</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../web/">Web</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/">Android</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">iOS</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#khalti">Khalti</a></li>
+                
+                    <li><a class="toctree-l4" href="#relase-012">Relase 0.1.2</a></li>
+                
+                    <li><a class="toctree-l4" href="#pod-depedency">Pod Depedency</a></li>
+                
+                    <li><a class="toctree-l4" href="#example">Example</a></li>
+                
+                    <li><a class="toctree-l4" href="#installation-guide">Installation guide</a></li>
+                
+                    <li><a class="toctree-l4" href="#usage">Usage</a></li>
+                
+                    <li><a class="toctree-l4" href="#summary">Summary</a></li>
+                
+                    <li><a class="toctree-l4" href="#author">Author</a></li>
+                
+                    <li><a class="toctree-l4" href="#license">License</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Verification</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/verification/">Verification</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/transaction/">Transaction</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Khalti Gateway Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Widget &raquo;</li>
+        
+      
+    
+    <li>iOS</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="khalti">Khalti</h1>
+<p><a href="http://cocoapods.org/pods/Khalti"><img alt="Version" src="https://img.shields.io/cocoapods/v/Khalti.svg?style=flat" /></a>
+<a href="http://cocoapods.org/pods/Khalti"><img alt="License" src="https://img.shields.io/cocoapods/l/Khalti.svg?style=flat" /></a>
+<a href="http://cocoapods.org/pods/Khalti"><img alt="Platform" src="https://img.shields.io/cocoapods/p/Khalti.svg?style=flat" /></a></p>
+<h2 id="relase-012">Relase 0.1.2</h2>
+<p>Pod has already been released but updates are under process.</p>
+<h2 id="pod-depedency">Pod Depedency</h2>
+<p>Khalti has currenlty depenceny on  <code>Alamofire</code>.
+This dependency will be soon be removed.</p>
+<p>For best working with UI incorporated in this library <code>IQKeyboardManager</code> is used. Suggest using </p>
+<pre><code class="swift">pod 'IQKeyboarManager'
+</code></pre>
+
+<p>So installation of <code>Khalti</code> provides automatically dependency pod <code>Alamofire</code> but use of <code>IQKeyboardManager</code> is up to you.</p>
+<h2 id="example">Example</h2>
+<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
+<h2 id="installation-guide">Installation guide</h2>
+<p>Khalti is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre><code class="swift">pod 'Khalti'
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+<h3 id="adding-customschme">Adding CustomSchme</h3>
+<p>Khalti uses custom Scheme: So merhant should setup <strong>URLScheme</strong> unique for their app. We have made usability as of user case.</p>
+<p><img alt="Khalti scheme setup overview" src="../../img/customUrlScheme.png" /></p>
+<p>After adding Url Scheme create global constant for same customUrlScheme as below </p>
+<pre><code class="swift">let khaltiUrlScheme:String = &quot;KhaltiPayExampleScheme&quot;
+</code></pre>
+
+<h3 id="requirements">Requirements</h3>
+<p>To work around with this redirection you have to implement some openUrl in <code>Appdelegate.swift</code>. </p>
+<p><code>Khalti.shared.defaultAction()</code> returns <code>true</code> if you initiate payment through Khalti.
+<code>Khalti.shared.action(with: url)</code> is needed for complete action after ebanking and card payment. </p>
+<p><strong>Note:</strong> Using <code>Khalti.shared.action(with: url)</code>  is mandatory.</p>
+<p>Add following code to <code>Appdelegate.swift</code></p>
+<pre><code class="swift"> func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&gt; Bool {
+    Khalti.shared.action(with: url)
+    return Khalti.shared.defaultAction() // Or true 
+}
+</code></pre>
+
+<h3 id="using-at-particular-viewcontroller">Using at particular ViewController</h3>
+<p>At your viewController during action of pay add initiate config file</p>
+<p>When instantiating <code>Config</code>  pass public key, product id, product name, amount (in paisa).
+Product web url and additional data are optional.</p>
+<pre><code class="swift">let TEST_CONFIG:Config = Config(publicKey: khaltiMerchantKey, amount: 1000, productId: &quot;1234567890&quot;, productName: &quot;Dragon_boss&quot;, productUrl: &quot;http://gameofthrones.wikia.com/wiki/Dragons&quot;,additionalData: additionalData)
+// Data passed here are based on Example project
+</code></pre>
+
+<p><strong>Note:</strong>  Public is provided to every merchant of khalti. Intially test is available to every merchant and live key is provided after MoU signup with Khalti.</p>
+<p>At this stage the scheme named you declared earlier is passed to <code>Khatli.shared.appUrlScheme</code></p>
+<pre><code class="swift">Khalti.shared.appUrlScheme = khaltiUrlScheme // see above for file khaltiUrlScheme
+// This can be used at appdelegate during didfinishlaunching. 
+// This should be mandatory
+</code></pre>
+
+<p>Finally present the khaltiPay Viewcontroller by calling public funcation </p>
+<pre><code class="swift">Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
+</code></pre>
+
+<p><strong>Params of present function of Khalti</strong></p>
+<table>
+<thead>
+<tr>
+<th>param</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>caller</td>
+<td>viewController  from where you initate payment.</td>
+</tr>
+<tr>
+<td>with</td>
+<td>Config object</td>
+</tr>
+<tr>
+<td>delegate</td>
+<td>self</td>
+</tr>
+</tbody>
+</table>
+<p>Delegate must be assigned to same Viewcontroller to get callback action from KhaltiPayDelegate.</p>
+<h3 id="example-as-used-in-example-project">Example as used in Example Project</h3>
+<pre><code class="swift">let extra:[String : Any] =  [&quot;no&quot;:false,&quot;yes&quot;:true,&quot;int&quot; : 0, &quot;float&quot;:12.23]
+
+let jsonData = try? JSONSerialization.data(withJSONObject: extra, options: JSONSerialization.WritingOptions())
+let jsonString = String(data: jsonData!, encoding: .utf8)!
+
+let additionalData:Dictionary&lt;String,String&gt; = [
+    &quot;merchant_name&quot; : &quot;HelloPaaaaisaPVTLtd.&quot;,
+    &quot;merchant_extra&quot; : jsonString
+]
+
+Khalti.shared.appUrlScheme = khaltiUrlScheme
+let khaltiMerchantKey = &quot;test_public_key_dc74e0fd57cb46cd93832aee0a507256&quot; // This key is from local server so it won't work if you use the example as is it. Use your own public test key
+
+let TEST_CONFIG:Config = Config(publicKey: khaltiMerchantKey, amount: 1000, productId: &quot;1234567890&quot;, productName: &quot;Dragon_boss&quot;, productUrl: &quot;http://gameofthrones.wikia.com/wiki/Dragons&quot;,additionalData: additionalData)
+Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
+</code></pre>
+
+<p>Additionally, Config class also accepts a Dictionary<String,String> which you can use to pass any additional data. Make sure you add a <code>merchant_</code> prefix in your map key.</p>
+<h3 id="using-delegates">Using delegates</h3>
+<p>The viewController you implement pay action should contain KhaltiPayDelegate implementing
+ <code>onCheckOutSuccess(data: Dictionary&lt;String, Any&gt;)</code>
+ <code>onCheckOutError(action: String, message: String)</code></p>
+<p><strong>Success:</strong></p>
+<p><code>data</code> of type <code>Dictionary&lt;String,String&gt;</code> extact replication of <code>config</code> object with extra param <code>token</code></p>
+<p><strong>Error:</strong></p>
+<p><code>message</code> as error messasge 
+<code>action</code> is received as <code>""</code> as in this version. </p>
+<pre><code class="swift">extension YourViewController: KhaltiPayDelegate {
+    func onCheckOutSuccess(data: Dictionary&lt;String, Any&gt;) {
+        print(data)
+        print(&quot;Oh there is success message received&quot;)
+    }
+
+    func onCheckOutError(action: String, message: String) {
+        print(action)
+        print(message)
+        print(&quot;Oh there occure error in payment&quot;)
+    }
+}
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+<h4 id="callback-methods">Callback Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onCheckOutSuccess(data: Dictionary&lt;String, Any&gt;)</code></td>
+<td>This method is called when a transaction has been completed and confirmed by the user. A dictionary containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the <a href="../../api/verification/">verification</a> process for further instructions.</td>
+</tr>
+<tr>
+<td><code>onCheckOutError(action: String, message: String)</code></td>
+<td>This method is called when an error occurs during payment initiation and confirmation. Action and message value is passed where action defines, the current action being performed and message defines the error.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="response-sample">Response Sample</h5>
+<h6 id="success-messsage">Success Messsage</h6>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mobile</td>
+<td>98XXXXXXXX</td>
+<td>String</td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>Product Name</td>
+<td>String</td>
+</tr>
+<tr>
+<td>product_identity</td>
+<td>Product Id</td>
+<td>String</td>
+</tr>
+<tr>
+<td>product_url</td>
+<td>Product Url</td>
+<td>String</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>100</td>
+<td>Int</td>
+</tr>
+<tr>
+<td>token</td>
+<td>token</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p>The success message also contains all the <code>key</code> and <code>value</code> provide as extra data while initiating <code>Config</code> </p>
+<h6 id="error-messsage">Error Messsage</h6>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td>Action performed - initiate, confirm</td>
+<td>String</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Detail Error Message</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<h2 id="author">Author</h2>
+<p>Khalti</p>
+<h2 id="license">License</h2>
+<p>Khalti is available under the MIT license. See the LICENSE file for more info.</p>
+<p>Check out the source for <a href="https://github.com/khalti/khalti-sdk-ios">Khalti checkout on Github</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../api/verification/" class="btn btn-neutral float-right" title="Verification">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../android/" class="btn btn-neutral" title="Android"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../android/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../api/verification/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

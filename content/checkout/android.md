@@ -155,7 +155,7 @@ The success message also contains all the `key` and `value` provide as extra dat
 
 ###### Error Messsage
 |  Variable                 | Description                            |    Type   |
-|---------------------------|----------------------------------------|-----------|   
+|---------------------------|----------------------------------------|-----------|
 | action                    | Action performed - initiate, confirm   |   String  |
 | message                   | Detail Error Message                   |   String  |
 
@@ -194,6 +194,6 @@ Check out the source for [Khalti checkout on Github](https://github.com/khalti/k
 
 Check out the [Verification](http://docs.khalti.com/api/verification/) process.
 
-### [Changelog](https://github.com/khalti/khalti-sdk-android/blob/master/CHANGELOG.md)
+#### [Changelog](https://github.com/khalti/khalti-sdk-android/blob/master/CHANGELOG.md)
 
 

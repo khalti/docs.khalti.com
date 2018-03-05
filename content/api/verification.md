@@ -41,7 +41,7 @@ curl https://khalti.com/api/payment/verify/ \
     $args = http_build_query(array(
         'token' => 'QUao9cqFzxPgvWJNi9aKac',
         'amount'  => 1000
-       );
+    ));
     
     $url = "https://khalti.com/api/payment/verify/";
 

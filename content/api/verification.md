@@ -1,26 +1,49 @@
-## Verification
-After user confirms payment, it is verified server to server.
-A verification request must have following signature.
+## Introduction
+Whenever your customer pays using the Khalti widget, the client side makes a request
+to the Khalti server to initiate and confirm the payment.
 
-- `url`: "https://khalti.com/api/payment/verify/"
-- `method`: "POST"
+Once they've confirmed the payment, the client will receive a response containing unique
+token and amount for that particular transaction. Upon receiving the transaction token,
+the client will make a request to your server with the token and the payment amount.
+
+On the next step, you will need to ask the Khalti server to verify the information relayed
+by the user before completing their purchase order.
+
+
+## Why is server-to-server verification necessary?
+Since the client side makes the payment directly to Khalti without going through your
+server first, you need to be sure that the customer actually paid the money they were
+supposed to before completing their order. This type of verification can only be
+done securely from the server.
+
+
+## Verification request
+Your application server must do a `POST` request to Khalti server for the final step
+of the payment process. The structure of the request as expected by Khalti server is
+as follows.
+
+- `url`: `https://khalti.com/api/payment/verify/`
+- `method`: `POST`
 - `headers`:
 	- `Authorization`: test or live secret key in the form `Key <secret key>`
 - `payload`:
-	- `token`: Token given my Khalti after payment confirmation.
+	- `token`: Token given by Khalti after payment confirmation.
 	- `amount`: Amount (in paisa) with which payment was initiated.
 
-**Response** is in the following format:
+
+## Verification response
+Once you've made a request as specified above, Khalti server will return you a
+response in the following format.
 
 `Success`: Success response consists of the idx of transaction created.
 
-```
+```python
 {'idx': 'ymYXHiG2dYSGk1w7s2SghM'}
 ```
 
 `Error`: Error response consists of the detail of errors.
 
-```
+```python
 {'token': ['Invalid token.']}
 ```
 

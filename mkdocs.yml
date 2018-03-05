@@ -10,6 +10,7 @@ pages:
         - Verification:
                 - Verification: api/verification.md
                 - Transaction: api/transaction.md
+        - Contribution: contribution.md
 theme: readthedocs
 docs_dir: content
 site_dir: docs

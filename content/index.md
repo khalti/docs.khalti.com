@@ -1,24 +1,33 @@
 Welcome to Khalti Merchant API documentation.
 
-##Introduction
-Khalti is the new generation Payment Gateway, Digital Wallet and API provider for various services. 
-We provide you with true Payment Gateway, where you can accepts payments from:
+## Introduction
+Khalti is a new generation payment gateway, digital wallet and API provider system
+for various online services for Nepal.
+This is a technical documentation for Khalti merchants' developers. If you are looking
+to add khalti as a payment option in your e-commerce platform, this is the right place to start.
+
+With Khalti SDK, you can accepts payments from:
 
 - Khalti User
-- Net Banking customers of our partner banks (need not be Khalti user)
+- Internet Banking users of our partner banks (your customer does not  need to be a Khalti user)
 
 
-##Features
-- Highly secure
-- Easy to accept payments
-- Incase of wallet payment, Customer can pay from your software directly without redirecting to our website.
-- Netbanking users can choose their bank and make payment.
-- No hassle to integrate with individual banks
-- Transaction List, with the feature of issuing refund, filtering and download report.
-- Multi user system
-- Realtime balance
-- Withdraw fund
+## Features
+By using Khalti SDK, your customers will have the choice of paying you using Khalti partner banks'
+ebanking account along with their Khalti wallet account.
 
-**For Queries, feel free to call us at 9801165568 or email merchantapi@khalti.com**
+* Highly secure and easy to integrate and accept payments.
+* SDKs are available for Web (JavaScript), Android and iOS.
+* Your customers can make wallet payments without leaving your platform.
+* Your customers can make payment using their e-banking accounts in any of our partner banks.
+* You don't have to bother integrating with individual banks, Khalti will do that for you.
+* Khalti provides a merchant dashboard from where you can view transactions, issue refund,
+  filter and download reports etc.
+* Multi user system
+* Realtime balance
+* Withdraw fund
+
+
+** For Queries, feel free to call us at 9801165568 or email merchantapi@khalti.com **
 
 ### [Getting Started](./getting-started.md)

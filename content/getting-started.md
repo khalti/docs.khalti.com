@@ -36,7 +36,7 @@ Checkouts provide all the necessary UIs and perform necessary processes to initi
 
 - [Web](./checkout/web.md)
 - [Android](./checkout/android.md)
-- [iOS](./checkout/ios.md) (Comming soon)
+- [iOS](./checkout/ios.md)
 
 ### 3.2. Server side integration
 After user confirms payment, it has to be verified by Khalti.

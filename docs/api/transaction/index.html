@@ -205,21 +205,20 @@ A merchant should use secret test and live keys for retrieving test and live pay
 </code></pre>
 
 <h3 id="php">PHP</h3>
-<pre><code class="php">
-    $url = &quot;https://khalti.com/api/merchant-transaction/&quot;;
+<pre><code class="php">$url = &quot;https://khalti.com/api/merchant-transaction/&quot;;
 
-    # Make the call using API.
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+# Make the call using API.
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-    // Response
-    $response = curl_exec($ch);
-    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+// Response
+$response = curl_exec($ch);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
 
 </code></pre>
 
@@ -242,20 +241,20 @@ response = requests.get(url, payload, headers = headers)
 
 <h3 id="php_1">PHP</h3>
 <pre><code class="php">
-    $url = &quot;https://khalti.com/api/merchant-transaction/&lt;idx&gt;/&quot;;
+$url = &quot;https://khalti.com/api/merchant-transaction/&lt;idx&gt;/&quot;;
 
-    # Make the call using API.
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+# Make the call using API.
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-    // Response
-    $response = curl_exec($ch);
-    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+// Response
+$response = curl_exec($ch);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
 
 </code></pre>
 

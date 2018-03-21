@@ -21,7 +21,7 @@ To get the feel of how Khalti checkout looks click the button below.
 	<script>
 		var config = {
 			// replace the publicKey with yours
-			"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
+			"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a390234",
 			"productIdentity": "1234567890",
 			"productName": "Dragon",
 			"productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
@@ -69,7 +69,7 @@ import KhaltiCheckout from "khalti-web";
 
 let config = {
 	// replace this key with yours
-	"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
+	"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a390234",
 	"productIdentity": "1234567890",
 	"productName": "Drogon",
 	"productUrl": "http://gameofthrones.com/buy/Dragons",

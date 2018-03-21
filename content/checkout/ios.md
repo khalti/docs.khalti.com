@@ -111,7 +111,7 @@ let additionalData:Dictionary<String,String> = [
 ]
         
 Khalti.shared.appUrlScheme = khaltiUrlScheme
-let khaltiMerchantKey = "test_public_key_dc74e0fd57cb46cd93832aee0a507256" // This key is from local server so it won't work if you use the example as is it. Use your own public test key
+let khaltiMerchantKey = "test_public_key_dc74e0fd57cb46cd93832aee0a390234" // This key is from local server so it won't work if you use the example as is it. Use your own public test key
         
 let TEST_CONFIG:Config = Config(publicKey: khaltiMerchantKey, amount: 1000, productId: "1234567890", productName: "Dragon_boss", productUrl: "http://gameofthrones.wikia.com/wiki/Dragons",additionalData: additionalData)
 Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)

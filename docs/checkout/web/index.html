@@ -155,7 +155,7 @@
           <div role="main">
             <div class="section">
               
-                <p>Khalti checkout can be integrated with or without build tools like 
+                <p>Khalti checkout can be integrated with or without build tools like
 <a href="https://github.com/webpack/webpack">Webpack</a> and <a href="https://github.com/rollup/rollup">Rollup</a>.</p>
 <p>To get the feel of how Khalti checkout looks click the button below.</p>
 <p><button id="payment-button" style="background-color: #773292; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button></p>
@@ -213,6 +213,9 @@
 <p><code>npm install khalti-web --save</code></p>
 <h3 id="2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</h3>
 <pre><code class="javascript">import KhaltiCheckout from &quot;khalti-web&quot;;
+// for dynamic loading  
+// import * as KhaltiCheckout from &quot;khalti-web&quot;; TypeScript
+// var KhaltiCheckout = require(&quot;khalti-web&quot;); CommonJs
 
 let config = {
     // replace this key with yours
@@ -271,7 +274,7 @@ btn.onclick = function () {
 <p><code>publicKey</code>: Test or live public key which identifies the merchant.</p>
 </li>
 <li>
-<p><code>amount</code>: Amount to pay. It must be in paisa.</p>
+<p><code>amount</code>: Amount to pay <strong>in paisa</strong>. Minimum transaction amount is 1000 paisa ie Rs 10.</p>
 </li>
 <li>
 <p><code>productIdentity</code>: Unique product identifier at merchant.</p>
@@ -301,7 +304,7 @@ btn.onclick = function () {
 }
 </code></pre>
 <p>It receives transaction <code>token</code> and <code>amount</code> among other payloads.
-One should implement this method to initiate payment verification 
+One should implement this method to initiate payment verification
 at merchant which in turn will make verification request at Khalti.
 For documentation on verification follow this <a href="../../api/verification/">link</a>.</p>
 <blockquote>
@@ -321,7 +324,7 @@ For documentation on verification follow this <a href="../../api/verification/">
 <p>3) <code>onClose (optional)</code>
         This method is also optional. If implemented, this method is called when <code>close icon(X)</code> of the widget is called.</p>
 </blockquote>
-<p><strong>Additionally</strong> Configuration also accepts attribute starting with <code>merchant_</code> that can be used to pass additional (meta) data. </p>
+<p><strong>Additionally</strong> Configuration also accepts attribute starting with <code>merchant_</code> that can be used to pass additional (meta) data.</p>
 <ul>
 <li>
 <p><code>merchant_name</code>: This is merchant name</p>

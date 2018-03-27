@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/getting-started/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,19 @@
         
     <url>
      <loc>/checkout/web/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/checkout/android/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/checkout/ios/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -43,13 +43,13 @@
         
     <url>
      <loc>/api/verification/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/transaction/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -58,7 +58,7 @@
     
     <url>
      <loc>/contribution/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-03-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

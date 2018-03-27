@@ -37,6 +37,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/checkout/prestashop/</loc>
+     <lastmod>2018-03-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     

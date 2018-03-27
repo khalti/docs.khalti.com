@@ -28,6 +28,8 @@ A merchant must complete test integration using test keys. Test keys start with 
 In test mode, transactions are sandboxed, which means fund is not moved from a consumer to the merchant.
 Khalti must to be integrated at client and server. A transaction has three states initiate, confirm and complete. A client initiates and confirms payment while server verifies it and payment process is completed.
 
+Payment via E-Banking and Debit/Credit card is not supported in test environment. After you successfully integrate wallet, you need not to concern about E-Banking and Card payment integration.
+
 ### 3.1. Client side integration
 For now there is only one way to integrate Khalti at client side, through SDKs.
 We have developed SDKs for every major plaforms and we call it `Checkout`.
@@ -49,3 +51,6 @@ Verification must be done by the merchant server using a secret key.
 ## 4. Deploy integration
 After successful integration test, the merchant must replace test keys with live ones.
 Live keys start with `live_X_X`. Replace `test_public_X` and `test_secret_X` keys with `live_public_X` and `live_secret_X` keys respectively.
+
+### 4.1. Further processes
+Even successful integration itself doesn't let you receive payments above NRs. 1000 per transaction. Please fill KYC form and contact us at 9801165568 to remove the limits and accept payments without restrictions. 

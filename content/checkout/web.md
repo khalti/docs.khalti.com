@@ -1,4 +1,4 @@
-Khalti checkout can be integrated with or without build tools like 
+Khalti checkout can be integrated with or without build tools like
 [Webpack](https://github.com/webpack/webpack) and [Rollup](https://github.com/rollup/rollup).
 
 To get the feel of how Khalti checkout looks click the button below.
@@ -66,6 +66,9 @@ Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
 ### 2. Import and use it in your desired component
 ```javascript
 import KhaltiCheckout from "khalti-web";
+// for dynamic loading  
+// import * as KhaltiCheckout from "khalti-web"; TypeScript
+// var KhaltiCheckout = require("khalti-web"); CommonJs
 
 let config = {
 	// replace this key with yours
@@ -115,7 +118,7 @@ Configuration is a Javascript object with following attributes.
 
 - `publicKey`: Test or live public key which identifies the merchant.
 
-- `amount`: Amount to pay. It must be in paisa.
+- `amount`: Amount to pay **in paisa**. Minimum transaction amount is 1000 paisa ie Rs 10.
 
 - `productIdentity`: Unique product identifier at merchant.
 
@@ -139,7 +142,7 @@ Configuration is a Javascript object with following attributes.
 	}
 
 It receives transaction `token` and `amount` among other payloads.
-One should implement this method to initiate payment verification 
+One should implement this method to initiate payment verification
 at merchant which in turn will make verification request at Khalti.
 For documentation on verification follow this [link](./../api/verification.md).
 
@@ -161,7 +164,7 @@ For documentation on verification follow this [link](./../api/verification.md).
 		This method is also optional. If implemented, this method is called when `close icon(X)` of the widget is called.
 
 
-**Additionally** Configuration also accepts attribute starting with `merchant_` that can be used to pass additional (meta) data. 
+**Additionally** Configuration also accepts attribute starting with `merchant_` that can be used to pass additional (meta) data.
 
 - `merchant_name`: This is merchant name
 
@@ -170,7 +173,7 @@ For documentation on verification follow this [link](./../api/verification.md).
 The additional data starting with `merchant_` is returned in success response payload.
 
 Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-web).
-	
+
 <script src="https://khalti.com/static/khalti-checkout.js"></script>
 <script>
         var config = {
@@ -199,4 +202,3 @@ Check out the source for [Khalti checkout on Github](https://github.com/khalti/k
             checkout.show({amount: 1000});
         }
 </script>
-

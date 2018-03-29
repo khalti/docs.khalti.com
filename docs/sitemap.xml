@@ -3,16 +3,16 @@
 
     
     <url>
-     <loc>/</loc>
-     <lastmod>2018-03-27</lastmod>
+     <loc>None/</loc>
+     <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/getting-started/</loc>
-     <lastmod>2018-03-27</lastmod>
+     <loc>None/getting-started/</loc>
+     <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,51 +20,51 @@
     
         
     <url>
-     <loc>/checkout/web/</loc>
-     <lastmod>2018-03-27</lastmod>
+     <loc>None/checkout/web/</loc>
+     <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/checkout/android/</loc>
-     <lastmod>2018-03-27</lastmod>
+     <loc>None/checkout/android/</loc>
+     <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/checkout/ios/</loc>
-     <lastmod>2018-03-27</lastmod>
+     <loc>None/checkout/ios/</loc>
+     <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/checkout/prestashop/</loc>
-     <lastmod>2018-03-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/api/verification/</loc>
-     <lastmod>2018-03-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/transaction/</loc>
-     <lastmod>2018-03-27</lastmod>
+     <loc>None/checkout/prestashop/</loc>
+     <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     
 
     
+        
     <url>
-     <loc>/contribution/</loc>
-     <lastmod>2018-03-27</lastmod>
+     <loc>None/api/verification/</loc>
+     <lastmod>2018-03-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/api/transaction/</loc>
+     <lastmod>2018-03-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/contribution/</loc>
+     <lastmod>2018-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

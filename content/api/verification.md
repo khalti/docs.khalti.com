@@ -101,3 +101,47 @@ headers = {
 
 response = requests.post(url, payload, headers = headers)
 ```
+
+### Ruby
+
+```ruby
+require 'uri'
+require 'net/http'
+
+headers = {
+  Authorization: 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'
+}
+uri = URI.parse('https://khalti.com/api/payment/verify/')
+https = Net::HTTP.new(uri.host, uri.port)
+https.use_ssl = true
+request = Net::HTTP::Post.new(uri.request_uri, headers)
+request.set_form_data('token' => 'QUao9cqFzxPgvWJNi9aKac', 'amount' => 1000)
+response = https.request(request)
+
+puts response.body
+```
+
+### Node
+
+Install `axios` by running `yarn install axios`.
+
+```nodejs
+const axios = require('axios');
+
+let data = {
+    "token": "QUao9cqFzxPgvWJNi9aKac",
+    "amount": 1000
+};
+
+let config = {
+    headers: {'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'}
+};
+
+axios.post("https://khalti.com/api/payment/verify/", data, config)
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+```

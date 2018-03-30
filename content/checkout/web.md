@@ -120,17 +120,14 @@ btn.onclick = function () {
 ## Configuration
 Configuration is a Javascript object with following attributes.
 
-- `publicKey`: Test or live public key which identifies the merchant.
-
-- `amount`: Amount to pay **in paisa**. Minimum transaction amount is 1000 paisa ie Rs 10.
-
-- `productIdentity`: Unique product identifier at merchant.
-
-- `productName`: Name of product
-
-- `productUrl(optional)`: Url of the product.
-
-- `eventHandler`: It is an object with three methods:
+|Key|Required|Type|Value|
+|--|--|--|--|
+|publickKey|true|string|Test or live public key which identifies the merchant.|
+|amount|true|integer|Amount to pay ***in paisa***. Minimum transaction amount is 1000 paisa ie Rs 10|
+|productIdentity|true|string|Unique product identifier at merchant.|
+|productName|true|string|Name of product.|
+|productUrl|false|string|Url of product.|
+|eventHandler|true|object|It is a javascript object with three methods|
 
 >  1) `onSuccess`
 	This method is called once a transaction is confirmed by a user.

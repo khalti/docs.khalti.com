@@ -292,12 +292,12 @@
         },
         {
             "location": "/checkout/prestashop/",
-            "text": "Prestashop\n\n\nStay Tuned. Work-in-progress.\n\n\nCheck out the source for \nKhalti checkout on Github\n.",
+            "text": "Prestashop\n\n\nStay Tuned. Work-in-progress.\n\n\nCheck out the source for \nKhalti plugin on Github\n.",
             "title": "Prestashop"
         },
         {
             "location": "/checkout/prestashop/#prestashop",
-            "text": "Stay Tuned. Work-in-progress.  Check out the source for  Khalti checkout on Github .",
+            "text": "Stay Tuned. Work-in-progress.  Check out the source for  Khalti plugin on Github .",
             "title": "Prestashop"
         },
         {

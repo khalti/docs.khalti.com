@@ -52,21 +52,20 @@ curl https://khalti.com/api/merchant-transaction/ -H "Authorization:Key <secret 
 
 ### PHP
 ```php
-   
-    $url = "https://khalti.com/api/merchant-transaction/";
+$url = "https://khalti.com/api/merchant-transaction/";
 
-    # Make the call using API.
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+# Make the call using API.
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     
-    // Response
-    $response = curl_exec($ch);
-    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+// Response
+$response = curl_exec($ch);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
 
 ```
 
@@ -97,20 +96,20 @@ curl https://khalti.com/api/merchant-transaction/<idx>/ -H "Authorization:Key <s
 ### PHP
 ```php
    
-    $url = "https://khalti.com/api/merchant-transaction/<idx>/";
+$url = "https://khalti.com/api/merchant-transaction/<idx>/";
 
-    # Make the call using API.
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+# Make the call using API.
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    
-    // Response
-    $response = curl_exec($ch);
-    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+// Response
+$response = curl_exec($ch);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
 
 ```
 

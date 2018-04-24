@@ -1,26 +1,49 @@
-## Verification
-After user confirms payment, it is verified server to server.
-A verification request must have following signature.
+## Introduction
+Whenever your customer pays using the Khalti widget, the client side makes a request
+to the Khalti server to initiate and confirm the payment.
 
-- `url`: "https://khalti.com/api/payment/verify/"
-- `method`: "POST"
+Once they've confirmed the payment, the client will receive a response containing unique
+token and amount for that particular transaction. Upon receiving the transaction token,
+the client will make a request to your server with the token and the payment amount.
+
+On the next step, you will need to ask the Khalti server to verify the information relayed
+by the user before completing their purchase order.
+
+
+## Why is server-to-server verification necessary?
+Since the client side makes the payment directly to Khalti without going through your
+server first, you need to be sure that the customer actually paid the money they were
+supposed to before completing their order. This type of verification can only be
+done securely from the server.
+
+
+## Verification request
+Your application server must do a `POST` request to Khalti server for the final step
+of the payment process. The structure of the request as expected by Khalti server is
+as follows.
+
+- `url`: `https://khalti.com/api/payment/verify/`
+- `method`: `POST`
 - `headers`:
 	- `Authorization`: test or live secret key in the form `Key <secret key>`
 - `payload`:
-	- `token`: Token given my Khalti after payment confirmation.
+	- `token`: Token given by Khalti after payment confirmation.
 	- `amount`: Amount (in paisa) with which payment was initiated.
 
-**Response** is in the following format:
+
+## Verification response
+Once you've made a request as specified above, Khalti server will return you a
+response in the following format.
 
 `Success`: Success response consists of the idx of transaction created.
 
-```
+```python
 {'idx': 'ymYXHiG2dYSGk1w7s2SghM'}
 ```
 
 `Error`: Error response consists of the detail of errors.
 
-```
+```python
 {'token': ['Invalid token.']}
 ```
 
@@ -38,27 +61,27 @@ curl https://khalti.com/api/payment/verify/ \
 
 ### PHP
 ```php
-    $args = http_build_query(array(
-        'token' => 'QUao9cqFzxPgvWJNi9aKac',
-        'amount'  => 1000
-       );
+$args = http_build_query(array(
+    'token' => 'QUao9cqFzxPgvWJNi9aKac',
+    'amount'  => 1000
+));
     
-    $url = "https://khalti.com/api/payment/verify/";
+$url = "https://khalti.com/api/payment/verify/";
 
-    # Make the call using API.
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+# Make the call using API.
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    
-    // Response
-    $response = curl_exec($ch);
-    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+// Response
+$response = curl_exec($ch);
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
 
 ```
 
@@ -77,4 +100,48 @@ headers = {
 }
 
 response = requests.post(url, payload, headers = headers)
+```
+
+### Ruby
+
+```ruby
+require 'uri'
+require 'net/http'
+
+headers = {
+  Authorization: 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'
+}
+uri = URI.parse('https://khalti.com/api/payment/verify/')
+https = Net::HTTP.new(uri.host, uri.port)
+https.use_ssl = true
+request = Net::HTTP::Post.new(uri.request_uri, headers)
+request.set_form_data('token' => 'QUao9cqFzxPgvWJNi9aKac', 'amount' => 1000)
+response = https.request(request)
+
+puts response.body
+```
+
+### Node
+
+Install `axios` by running `yarn install axios`.
+
+```nodejs
+const axios = require('axios');
+
+let data = {
+    "token": "QUao9cqFzxPgvWJNi9aKac",
+    "amount": 1000
+};
+
+let config = {
+    headers: {'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'}
+};
+
+axios.post("https://khalti.com/api/payment/verify/", data, config)
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
 ```

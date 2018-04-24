@@ -1,501 +1,167 @@
-
-
-
-
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.6.6">
-    
-    
-      
-        <title>Web - Khalti Gateway Docs</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
-      
-    
-    
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
-    
-    
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-      
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-    
-    
-  </head>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Web - Khalti Gateway Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Web";
+    var mkdocs_page_input_path = "checkout/web.md";
+    var mkdocs_page_url = "/checkout/web/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
     
-      <a href="#without-build-tools" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Khalti Gateway Docs" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                Khalti Gateway Docs
-              </span>
-              <span class="md-header-nav__topic">
-                Web
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Khalti Gateway Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
-          
-        
       </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
           
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
-      
-        <i class="md-icon"></i>
-      
-    </span>
-    Khalti Gateway Docs
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../.." title="Welcome" class="md-nav__link">
-      Welcome
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../getting-started/" title="Getting started" class="md-nav__link">
-      Getting started
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      Widget
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Widget
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Welcome</a>
+	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../../getting-started/">Getting started</a>
+	    </li>
           
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Web
-      </label>
-    
-    <a href="./" title="Web" class="md-nav__link md-nav__link--active">
-      Web
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#without-build-tools" title="Without build tools" class="md-nav__link">
-    Without build tools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#with-build-tools" title="With build tools" class="md-nav__link">
-    With build tools
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-install-khalti-web" title="1. Install khalti-web" class="md-nav__link">
-    1. Install khalti-web
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-yarn" title="Using yarn" class="md-nav__link">
-    Using yarn
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-npm" title="Using npm" class="md-nav__link">
-    Using npm
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-import-and-use-it-in-your-desired-component" title="2. Import and use it in your desired component" class="md-nav__link">
-    2. Import and use it in your desired component
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" title="Configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../android/" title="Android" class="md-nav__link">
-      Android
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ios/" title="iOS" class="md-nav__link">
-      iOS
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Verification
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Verification
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../api/verification/" title="Verification" class="md-nav__link">
-      Verification
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../api/transaction/" title="Transaction" class="md-nav__link">
-      Transaction
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Integration</span>
+    <ul class="subnav">
+                <li class=" current">
                     
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#without-build-tools" title="Without build tools" class="md-nav__link">
-    Without build tools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#with-build-tools" title="With build tools" class="md-nav__link">
-    With build tools
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-install-khalti-web" title="1. Install khalti-web" class="md-nav__link">
-    1. Install khalti-web
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-yarn" title="Using yarn" class="md-nav__link">
-    Using yarn
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-npm" title="Using npm" class="md-nav__link">
-    Using npm
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-import-and-use-it-in-your-desired-component" title="2. Import and use it in your desired component" class="md-nav__link">
-    2. Import and use it in your desired component
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" title="Configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
+    <a class="current" href="./">Web</a>
+    <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#without-build-tools">Without build tools</a></li>
+    
+
+    <li class="toctree-l3"><a href="#with-build-tools">With build tools</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1-install-khalti-web">1. Install khalti-web</a></li>
+        
+            <li><a class="toctree-l4" href="#2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#api">API</a></li>
+    
+
+    <li class="toctree-l3"><a href="#configuration">Configuration</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../android/">Android</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ios/">iOS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../prestashop/">Prestashop</a>
+                </li>
+    </ul>
+	    </li>
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Verification</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../api/verification/">Verification</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../api/transaction/">Transaction</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contribution/">Contribution</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Khalti Gateway Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Integration &raquo;</li>
+        
+      
+    
+    <li>Web</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
               
-                
-                
-                  <h1>Web</h1>
-                
-                <p>Khalti checkout can be integrated with or without build tools like 
+                <p><a href="http://cocoapods.org/pods/Khalti"><img alt="npm" src="https://img.shields.io/badge/npm-v1.0.11-blue.svg" /></a>
+<img alt="npm" src="https://img.shields.io/npm/l/express.svg" /></p>
+<p>Khalti checkout can be integrated with or without build tools like
 <a href="https://github.com/webpack/webpack">Webpack</a> and <a href="https://github.com/rollup/rollup">Rollup</a>.</p>
 <p>To get the feel of how Khalti checkout looks click the button below.</p>
 <p><button id="payment-button" style="background-color: #773292; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button></p>
@@ -513,7 +179,7 @@
     &lt;script&gt;
         var config = {
             // replace the publicKey with yours
-            &quot;publicKey&quot;: &quot;test_public_key_dc74e0fd57cb46cd93832aee0a507256&quot;,
+            &quot;publicKey&quot;: &quot;test_public_key_dc74e0fd57cb46cd93832aee0a390234&quot;,
             &quot;productIdentity&quot;: &quot;1234567890&quot;,
             &quot;productName&quot;: &quot;Dragon&quot;,
             &quot;productUrl&quot;: &quot;http://gameofthrones.wikia.com/wiki/Dragons&quot;,
@@ -553,10 +219,13 @@
 <p><code>npm install khalti-web --save</code></p>
 <h3 id="2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</h3>
 <pre><code class="javascript">import KhaltiCheckout from &quot;khalti-web&quot;;
+// for dynamic loading  
+// import * as KhaltiCheckout from &quot;khalti-web&quot;; TypeScript
+// var KhaltiCheckout = require(&quot;khalti-web&quot;); CommonJs
 
 let config = {
     // replace this key with yours
-    &quot;publicKey&quot;: &quot;test_public_key_dc74e0fd57cb46cd93832aee0a507256&quot;,
+    &quot;publicKey&quot;: &quot;test_public_key_dc74e0fd57cb46cd93832aee0a390234&quot;,
     &quot;productIdentity&quot;: &quot;1234567890&quot;,
     &quot;productName&quot;: &quot;Drogon&quot;,
     &quot;productUrl&quot;: &quot;http://gameofthrones.com/buy/Dragons&quot;,
@@ -606,26 +275,54 @@ btn.onclick = function () {
 </ul>
 <h2 id="configuration">Configuration</h2>
 <p>Configuration is a Javascript object with following attributes.</p>
-<ul>
-<li>
-<p><code>publicKey</code>: Test or live public key which identifies the merchant.</p>
-</li>
-<li>
-<p><code>amount</code>: Amount to pay. It must be in paisa.</p>
-</li>
-<li>
-<p><code>productIdentity</code>: Unique product identifier at merchant.</p>
-</li>
-<li>
-<p><code>productName</code>: Name of product</p>
-</li>
-<li>
-<p><code>productUrl(optional)</code>: Url of the product.</p>
-</li>
-<li>
-<p><code>eventHandler</code>: It is an object with three methods:</p>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>publickKey</td>
+<td>true</td>
+<td>string</td>
+<td>Test or live public key which identifies the merchant.</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>true</td>
+<td>integer</td>
+<td>Amount to pay <strong><em>in paisa</em></strong>. Minimum transaction amount is 1000 paisa ie Rs 10</td>
+</tr>
+<tr>
+<td>productIdentity</td>
+<td>true</td>
+<td>string</td>
+<td>Unique product identifier at merchant.</td>
+</tr>
+<tr>
+<td>productName</td>
+<td>true</td>
+<td>string</td>
+<td>Name of product.</td>
+</tr>
+<tr>
+<td>productUrl</td>
+<td>false</td>
+<td>string</td>
+<td>Url of product.</td>
+</tr>
+<tr>
+<td>eventHandler</td>
+<td>true</td>
+<td>object</td>
+<td>It is a javascript object with three methods</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>1) <code>onSuccess</code>
     This method is called once a transaction is confirmed by a user.
@@ -641,7 +338,7 @@ btn.onclick = function () {
 }
 </code></pre>
 <p>It receives transaction <code>token</code> and <code>amount</code> among other payloads.
-One should implement this method to initiate payment verification 
+One should implement this method to initiate payment verification
 at merchant which in turn will make verification request at Khalti.
 For documentation on verification follow this <a href="../../api/verification/">link</a>.</p>
 <blockquote>
@@ -661,7 +358,7 @@ For documentation on verification follow this <a href="../../api/verification/">
 <p>3) <code>onClose (optional)</code>
         This method is also optional. If implemented, this method is called when <code>close icon(X)</code> of the widget is called.</p>
 </blockquote>
-<p><strong>Additionally</strong> Configuration also accepts attribute starting with <code>merchant_</code> that can be used to pass additional (meta) data. </p>
+<p><strong>Additionally</strong> Configuration also accepts attribute starting with <code>merchant_</code> that can be used to pass additional (meta) data.</p>
 <ul>
 <li>
 <p><code>merchant_name</code>: This is merchant name</p>
@@ -701,82 +398,51 @@ For documentation on verification follow this <a href="../../api/verification/">
             checkout.show({amount: 1000});
         }
 </script>
-                
-                  
-                
               
-              
-                
-              
-            </article>
+            </div>
           </div>
-        </div>
-      </main>
-      
-        
-<footer class="md-footer">
+          <footer>
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../../getting-started/" title="Getting started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Getting started
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../android/" title="Android" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Android
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../android/" class="btn btn-neutral float-right" title="Android">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../getting-started/" class="btn btn-neutral" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
   
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
-      
-        
-      
-    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
   </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
-    </div>
+	  
+        </div>
+      </div>
+
+    </section>
     
-      <script src="../../assets/javascripts/application.02434462.js"></script>
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
       
-    
-    
+        <span><a href="../../getting-started/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-    
-  </body>
+      
+        <span style="margin-left: 15px"><a href="../android/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
 </html>
+

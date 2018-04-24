@@ -3,13 +3,15 @@ site_name: Khalti Gateway Docs
 pages:
         - Welcome: index.md
         - Getting started: getting-started.md
-        - Widget:
+        - Integration:
                 - Web: checkout/web.md
                 - Android: checkout/android.md
                 - iOS: checkout/ios.md
+                - Prestashop: checkout/prestashop.md
         - Verification:
                 - Verification: api/verification.md
                 - Transaction: api/transaction.md
+        - Contribution: contribution.md
 theme: readthedocs
 docs_dir: content
 site_dir: docs

@@ -4,12 +4,12 @@ Documentation of Khalti checkout for android
 Add the following line to `dependency` section in `build.gradle` file
 
 ```
-compile 'com.khalti:khalti-android:1.2.1'
+compile 'com.khalti:khalti-android:1.2.3'
 ```
 It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.
 
 ```
-compile ('com.khalti:khalti-android:1.2.1') {
+compile ('com.khalti:khalti-android:1.2.3') {
         transitive = true
     }
 ```
@@ -104,7 +104,21 @@ HashMap<String, String> map = new HashMap<>();
         });
 
 ```
-Note : In order to preset mobile number, please use ```config.setMobile()```.
+
+#### Config
+
+| Constraint | Parameter          | Type                    | Description                                                                                                                |
+|------------|--------------------|-------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Required   | Public key         | String                  | Test or live public key which identifies the merchant                                                                      |
+| Required   | Product identity   | String                  | Unique product identifier at merchant                                                                                      |
+| Required   | Product name       | String                  | Name of product                                                                                                            |
+| Optional   | Product url        | String                  | URL of product                                                                                                             |
+| Required   | Amount (In PAISA)  | Long                    | Amount to pay in PAISA. Minimum transaction amount is 1000 PAISA i.e. Rs 10                                                |
+| Optional   | Mobile             | String                  | Mobile number to be preset in mobile fields                                                                                |
+| Optional   | Additional data    | HashMap<String, String> | Any additional data the merchant wishes to pass to the SDK                                                                 |
+| Required   | OnCheckOutListener | interface               | Java interface with 2 callback methods `onSuccess` & `onError`. For more information see [Callback Methods](#callback-methods) |
+
+Note : In order to preset mobile number, you can also use ```config.setMobile()```.
 
 ### Available Config Preset Methods
 | Constraint | Method                                    | Description                                                 |

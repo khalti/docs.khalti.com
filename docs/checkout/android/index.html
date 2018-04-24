@@ -175,11 +175,11 @@
                 <p>Documentation of Khalti checkout for android</p>
 <h2 id="installation">Installation</h2>
 <p>Add the following line to <code>dependency</code> section in <code>build.gradle</code> file</p>
-<pre><code>compile 'com.khalti:khalti-android:1.2.1'
+<pre><code>compile 'com.khalti:khalti-android:1.2.3'
 </code></pre>
 
 <p>It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.</p>
-<pre><code>compile ('com.khalti:khalti-android:1.2.1') {
+<pre><code>compile ('com.khalti:khalti-android:1.2.3') {
         transitive = true
     }
 </code></pre>
@@ -260,7 +260,68 @@ renderscriptSupportModeEnabled true
 
 </code></pre>
 
-<p>Note : In order to preset mobile number, please use <code>config.setMobile()</code>.</p>
+<h4 id="config">Config</h4>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Required</td>
+<td>Public key</td>
+<td>String</td>
+<td>Test or live public key which identifies the merchant</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Product identity</td>
+<td>String</td>
+<td>Unique product identifier at merchant</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Product name</td>
+<td>String</td>
+<td>Name of product</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td>Product url</td>
+<td>String</td>
+<td>URL of product</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Amount (In PAISA)</td>
+<td>Long</td>
+<td>Amount to pay in PAISA. Minimum transaction amount is 1000 PAISA i.e. Rs 10</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td>Mobile</td>
+<td>String</td>
+<td>Mobile number to be preset in mobile fields</td>
+</tr>
+<tr>
+<td>Optional</td>
+<td>Additional data</td>
+<td>HashMap<String, String></td>
+<td>Any additional data the merchant wishes to pass to the SDK</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>OnCheckOutListener</td>
+<td>interface</td>
+<td>Java interface with 2 callback methods <code>onSuccess</code> &amp; <code>onError</code>. For more information see <a href="#callback-methods">Callback Methods</a></td>
+</tr>
+</tbody>
+</table>
+<p>Note : In order to preset mobile number, you can also use <code>config.setMobile()</code>.</p>
 <h3 id="available-config-preset-methods">Available Config Preset Methods</h3>
 <table>
 <thead>
@@ -482,12 +543,12 @@ khaltiButton.setCheckOutConfig(config);
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -501,8 +562,10 @@ khaltiButton.setCheckOutConfig(config);
       
     </span>
 </div>
+    <script>var base_url = '../..';</script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
 
 </body>
 </html>
-

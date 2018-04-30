@@ -219,6 +219,7 @@
 <p><code>npm install khalti-web --save</code></p>
 <h3 id="2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</h3>
 <pre><code class="javascript">import KhaltiCheckout from &quot;khalti-web&quot;;
+
 // for dynamic loading  
 // import * as KhaltiCheckout from &quot;khalti-web&quot;; TypeScript
 // var KhaltiCheckout = require(&quot;khalti-web&quot;); CommonJs
@@ -262,9 +263,15 @@ btn.onclick = function () {
 </li>
 <li>
 <p><code>show(configuration?)</code></p>
-<blockquote>
-<p>Displays the Khalti checkout widget.</p>
+<ul>
+<li>Displays the Khalti checkout widget.</li>
+<li>Receives configuration as argument.</li>
+<li>Provide amount and mobile to prefill the checkout widget field<blockquote>
+<p><code>checkout.show({amount: 1000, mobile: 98XXXXXXXX})</code></p>
 </blockquote>
+</li>
+<li><strong><em>mobile</em></strong> is optional fields and expects Khalti Registered Number for wallet payment.</li>
+</ul>
 </li>
 <li>
 <p><code>hide()</code></p>
@@ -320,6 +327,12 @@ btn.onclick = function () {
 <td>true</td>
 <td>object</td>
 <td>It is a javascript object with three methods</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>false</td>
+<td>integer</td>
+<td>Mobile number of consumer.</td>
 </tr>
 </tbody>
 </table>
@@ -422,12 +435,12 @@ For documentation on verification follow this <a href="../../api/verification/">
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+	  
         </div>
       </div>
 
     </section>
-
+    
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -441,10 +454,7 @@ For documentation on verification follow this <a href="../../api/verification/">
       
     </span>
 </div>
-    <script>var base_url = '../..';</script>
     <script src="../../js/theme.js"></script>
-      <script src="../../search/require.js"></script>
-      <script src="../../search/search.js"></script>
 
 </body>
 </html>

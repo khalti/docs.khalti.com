@@ -70,6 +70,7 @@ Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
 ### 2. Import and use it in your desired component
 ```javascript
 import KhaltiCheckout from "khalti-web";
+
 // for dynamic loading  
 // import * as KhaltiCheckout from "khalti-web"; TypeScript
 // var KhaltiCheckout = require("khalti-web"); CommonJs
@@ -111,7 +112,11 @@ btn.onclick = function () {
 
 - `show(configuration?)`
 
-	> Displays the Khalti checkout widget.
+	- Displays the Khalti checkout widget.
+	- Receives configuration as argument.
+	- Provide amount and mobile to prefill the checkout widget field
+	 > ```checkout.show({amount: 1000, mobile: 98XXXXXXXX})```
+	- ***mobile*** is optional fields and expects Khalti Registered Number for wallet payment.
 
 - `hide()`
 
@@ -128,6 +133,7 @@ Configuration is a Javascript object with following attributes.
 |productName|true|string|Name of product.|
 |productUrl|false|string|Url of product.|
 |eventHandler|true|object|It is a javascript object with three methods|
+|mobile|false|integer|Mobile number of consumer.
 
 >  1) `onSuccess`
 	This method is called once a transaction is confirmed by a user.

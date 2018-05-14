@@ -113,7 +113,7 @@ HashMap<String, String> map = new HashMap<>();
 | Required   | Product identity   | String                  | Unique product identifier at merchant                                                                                      |
 | Required   | Product name       | String                  | Name of product                                                                                                            |
 | Optional   | Product url        | String                  | URL of product                                                                                                             |
-| Required   | Amount (In PAISA)  | Long                    | Amount to pay in PAISA. Minimum transaction amount is 1000 PAISA i.e. Rs 10                                                |
+| Required   | Amount (In PAISA)  | Long                    | Amount to pay in PAISA. Minimum transaction amount is 1000 PAISA i.e. Rs 10<br />For non Kyc Verified merchant, the maximum transaction amount limit is 100000 PAISA i.e. Rs 1000                                                |
 | Optional   | Mobile             | String                  | Mobile number to be preset in mobile fields                                                                                |
 | Optional   | Additional data    | HashMap<String, String> | Any additional data the merchant wishes to pass to the SDK                                                                 |
 | Required   | OnCheckOutListener | interface               | Java interface with 2 callback methods `onSuccess` & `onError`. For more information see [Callback Methods](#callback-methods) |

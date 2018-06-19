@@ -74,48 +74,27 @@
     <a class="current" href="./">iOS</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#pod-depedency">Pod Depedency</a></li>
-    
-
-    <li class="toctree-l3"><a href="#example">Example</a></li>
-    
-
-    <li class="toctree-l3"><a href="#installation-guide">Installation guide</a></li>
-    
-
-    <li class="toctree-l3"><a href="#usage">Usage</a></li>
+    <li class="toctree-l3"><a href="#khalti">Khalti</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#adding-customschme">Adding CustomSchme</a></li>
+            <li><a class="toctree-l4" href="#pod-depedency">Pod Depedency</a></li>
         
-            <li><a class="toctree-l4" href="#requirements">Requirements</a></li>
+            <li><a class="toctree-l4" href="#example">Example</a></li>
         
-            <li><a class="toctree-l4" href="#using-at-particular-viewcontroller">Using at particular ViewController</a></li>
+            <li><a class="toctree-l4" href="#installation-guide">Installation guide</a></li>
         
-            <li><a class="toctree-l4" href="#example-as-used-in-example-project">Example as used in Example Project</a></li>
+            <li><a class="toctree-l4" href="#usage">Usage</a></li>
         
-            <li><a class="toctree-l4" href="#using-delegates">Using delegates</a></li>
+            <li><a class="toctree-l4" href="#summary">Summary</a></li>
         
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#summary">Summary</a></li>
-    
-        <ul>
+            <li><a class="toctree-l4" href="#objective-c">Objective-C</a></li>
         
-            <li><a class="toctree-l4" href="#callback-methods">Callback Methods</a></li>
+            <li><a class="toctree-l4" href="#author">Author</a></li>
+        
+            <li><a class="toctree-l4" href="#support">Support</a></li>
         
         </ul>
-    
-
-    <li class="toctree-l3"><a href="#objective-c">Objective-C</a></li>
-    
-
-    <li class="toctree-l3"><a href="#author">Author</a></li>
-    
-
-    <li class="toctree-l3"><a href="#license">License</a></li>
     
 
     </ul>
@@ -183,17 +162,15 @@
           <div role="main">
             <div class="section">
               
-                <p><a href="http://cocoapods.org/pods/Khalti"><img alt="Version" src="https://img.shields.io/cocoapods/v/Khalti.svg?style=flat" /></a>
+                <h1 id="khalti">Khalti</h1>
+<p><a href="http://cocoapods.org/pods/Khalti"><img alt="Version" src="https://img.shields.io/cocoapods/v/Khalti.svg?style=flat" /></a>
 <a href="http://cocoapods.org/pods/Khalti"><img alt="License" src="https://img.shields.io/cocoapods/l/Khalti.svg?style=flat" /></a>
 <a href="http://cocoapods.org/pods/Khalti"><img alt="Platform" src="https://img.shields.io/cocoapods/p/Khalti.svg?style=flat" /></a></p>
 <h2 id="pod-depedency">Pod Depedency</h2>
-<p>Khalti has currenlty depenceny on  <code>Alamofire</code>.
-This dependency will be soon be removed.</p>
-<p>For best working with UI incorporated in this library <code>IQKeyboardManager</code> is used. Suggest using</p>
+<p>For best working with UI incorporated in this library <code>IQKeyboardManager</code> is used. Suggest using </p>
 <pre><code class="swift">pod 'IQKeyboarManager'
 </code></pre>
 
-<p>So installation of <code>Khalti</code> provides automatically dependency pod <code>Alamofire</code> but use of <code>IQKeyboardManager</code> is up to you.</p>
 <h2 id="example">Example</h2>
 <p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
 <h2 id="installation-guide">Installation guide</h2>
@@ -205,20 +182,21 @@ it, simply add the following line to your Podfile:</p>
 <h2 id="usage">Usage</h2>
 <h3 id="adding-customschme">Adding CustomSchme</h3>
 <p>Khalti uses custom Scheme: So merhant should setup <strong>URLScheme</strong> unique for their app. We have made usability as of user case.</p>
-<p><img alt="Khalti scheme setup overview" src="../../img/customUrlScheme.png" /></p>
-<p>After adding Url Scheme create global constant for same customUrlScheme as below</p>
+<p><img alt="Khalti scheme setup overview" src="../../img/customUrlScheme.png" />
+<!-- <img alt="Khalti scheme setup overview" src="https://github.com/khalti/khalti-sdk-ios/blob/master/Screenshots/customUrlScheme.png" /> --></p>
+<p>After adding Url Scheme create global constant for same customUrlScheme as below </p>
 <pre><code class="swift">let khaltiUrlScheme:String = &quot;KhaltiPayExampleScheme&quot;
 </code></pre>
 
 <h3 id="requirements">Requirements</h3>
-<p>To work around with this redirection you have to implement some openUrl in <code>Appdelegate.swift</code>.</p>
+<p>To work around with this redirection you have to implement some openUrl in <code>Appdelegate.swift</code>. </p>
 <p><code>Khalti.shared.defaultAction()</code> returns <code>true</code> if you initiate payment through Khalti.
-<code>Khalti.shared.action(with: url)</code> is needed for complete action after ebanking and card payment.</p>
+<code>Khalti.shared.action(with: url)</code> is needed for complete action after ebanking and card payment. </p>
 <p><strong>Note:</strong> Using <code>Khalti.shared.action(with: url)</code>  is mandatory.</p>
 <p>Add following code to <code>Appdelegate.swift</code></p>
 <pre><code class="swift"> func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&gt; Bool {
     Khalti.shared.action(with: url)
-    return Khalti.shared.defaultAction() // Or true
+    return Khalti.shared.defaultAction() // Or true 
 }
 </code></pre>
 
@@ -233,11 +211,11 @@ Product web url and additional data are optional.</p>
 <p><strong>Note:</strong>  Public is provided to every merchant of khalti. Intially test is available to every merchant and live key is provided after MoU signup with Khalti.</p>
 <p>At this stage the scheme named you declared earlier is passed to <code>Khatli.shared.appUrlScheme</code></p>
 <pre><code class="swift">Khalti.shared.appUrlScheme = khaltiUrlScheme // see above for file khaltiUrlScheme
-// This can be used at appdelegate during didfinishlaunching.
+// This can be used at appdelegate during didfinishlaunching. 
 // This should be mandatory
 </code></pre>
 
-<p>Finally present the khaltiPay Viewcontroller by calling public funcation</p>
+<p>Finally present the khaltiPay Viewcontroller by calling public funcation </p>
 <pre><code class="swift">Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 </code></pre>
 
@@ -283,7 +261,8 @@ let TEST_CONFIG:Config = Config(publicKey: khaltiMerchantKey, amount: 1000, prod
 Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 </code></pre>
 
-<p>Additionally, Config class also accepts a Dictionary<String,String> which you can use to pass any additional data. Make sure you add a <code>merchant_</code> prefix in your map key.</p>
+<p>Config file has property cardPayment with default value false, indication the cardPayment facility is OFF. If you want cardPayment available to your users then set cardPayment option to true while creating config object.
+Additionally, Config class also accepts a Dictionary<String,String> which you can use to pass any additional data. Make sure you add a <code>merchant_</code> prefix in your map key.</p>
 <h3 id="using-delegates">Using delegates</h3>
 <p>The viewController you implement pay action should contain KhaltiPayDelegate implementing
  <code>onCheckOutSuccess(data: Dictionary&lt;String, Any&gt;)</code>
@@ -317,8 +296,8 @@ Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 <td>This method is called when a transaction has been completed and confirmed by the user. A dictionary containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the <a href="http://docs.khalti.com/api/verification/">verification</a> process for further instructions.</td>
 </tr>
 <tr>
-<td><code>onCheckOutError(action: String, message: String)</code></td>
-<td>This method is called when an error occurs during payment initiation and confirmation. Action and message value is passed where action defines, the current action being performed and message defines the error.</td>
+<td><code>onCheckOutError(action: String, message: String, data:Dictionary&lt;String,Any&gt;?)</code></td>
+<td>This method is called when an error occurs during payment initiation and confirmation. Action, message and errordata value is passed where action defines, the current action being performed, message defines the error and data defines the errorData associated with error if exists.</td>
 </tr>
 </tbody>
 </table>
@@ -363,9 +342,14 @@ Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 <td>token</td>
 <td>String</td>
 </tr>
+<tr>
+<td>cardPayment</td>
+<td>false</td>
+<td>Bool</td>
+</tr>
 </tbody>
 </table>
-<p>The success message also contains all the <code>key</code> and <code>value</code> provide as extra data while initiating <code>Config</code></p>
+<p>The success message also contains all the <code>key</code> and <code>value</code> provide as extra data while initiating <code>Config</code>. </p>
 <h6 id="error-messsage">Error Messsage</h6>
 <table>
 <thead>
@@ -378,7 +362,7 @@ Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 <tbody>
 <tr>
 <td>action</td>
-<td>-</td>
+<td>initiate/confirm/ebanking</td>
 <td>String</td>
 </tr>
 <tr>
@@ -386,15 +370,26 @@ Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 <td>Detail Error Message</td>
 <td>String</td>
 </tr>
+<tr>
+<td>data</td>
+<td>data of error   (Optional)</td>
+<td>Dictionary<String,Any>?</td>
+</tr>
 </tbody>
 </table>
 <h2 id="objective-c">Objective-C</h2>
 <p>If you are using objective-c. See the example project <a href="https://github.com/khalti/khalti-sdk-objective-c-example.git">here</a></p>
 <h2 id="author">Author</h2>
 <p>Khalti</p>
-<h2 id="license">License</h2>
+<h2 id="support">Support</h2>
+<p>For Queries, feel free to call us at:</p>
+<p>Mobile : 9801165568</p>
+<p>Viber/Whatsapp/Skype ID: 9801165568</p>
+<p>Email: merchant@khalti.com</p>
+<p>Developer Mail: <a href="mailto:rajendrak@janakitech.com">mail</a></p>
 <p>Khalti is available under the MIT license. See the LICENSE file for more info.</p>
-<p>Check out the source for Khalti checkout on <a href="https://github.com/khalti/khalti-sdk-ios/">github </a>.</p>
+<p>Check out the source for Khalti checkout on <a href="https://github.com/khalti/khalti-sdk-ios/">github </a>.
+<!-- Check out the <a href="http://docs.khalti.com/checkout/ios/">API Documentation</a>. --></p>
               
             </div>
           </div>
@@ -419,12 +414,12 @@ Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -438,7 +433,10 @@ Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
       
     </span>
 </div>
+    <script>var base_url = '../..';</script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
 
 </body>
 </html>

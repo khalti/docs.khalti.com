@@ -30,7 +30,7 @@ pod 'Khalti'
 Khalti uses custom Scheme: So merhant should setup **URLScheme** unique for their app. We have made usability as of user case.
 
 ![Khalti scheme setup overview](../img/customUrlScheme.png)
-/![Khalti scheme setup overview](https://github.com/khalti/khalti-sdk-ios/blob/master/Screenshots/customUrlScheme.png)
+// ![Khalti scheme setup overview](https://github.com/khalti/khalti-sdk-ios/blob/master/Screenshots/customUrlScheme.png)
 
 After adding Url Scheme create global constant for same customUrlScheme as below 
 ```swift
@@ -177,5 +177,5 @@ Khalti
 Khalti is available under the MIT license. See the LICENSE file for more info.
 
 Check out the source for Khalti checkout on [github ](https://github.com/khalti/khalti-sdk-ios/).
-/Check out the [API Documentation](http://docs.khalti.com/checkout/ios/).
+// Check out the [API Documentation](http://docs.khalti.com/checkout/ios/).
 

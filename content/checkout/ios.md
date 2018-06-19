@@ -179,7 +179,9 @@ Mobile : 9801165568
 
 Viber/Whatsapp/Skype ID: 9801165568
 
-Email: merchant@khalti.com, [iOS developer](mailto://rajendrak@janakitech.com)
+Email: merchant@khalti.com
+
+Developer Mail: [mail](mailto:rajendrak@janakitech.com)
 
 Khalti is available under the MIT license. See the LICENSE file for more info.
 

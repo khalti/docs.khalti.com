@@ -47,12 +47,12 @@ Replace `<secret key>` with test or live secret key as per required.
 ### CURL
 
 ```curl
-curl https://khalti.com/api/merchant-transaction/ -H "Authorization:Key <secret key>
+curl https://khalti.com/api/v2/merchant-transaction/ -H "Authorization:Key <secret key>
 ```
 
 ### PHP
 ```php
-$url = "https://khalti.com/api/merchant-transaction/";
+$url = "https://khalti.com/api/v2/merchant-transaction/";
 
 # Make the call using API.
 $ch = curl_init();
@@ -74,7 +74,7 @@ curl_close($ch);
 ```python
 import requests
 
-url = "https://khalti.com/api/merchant-transaction/"
+url = "https://khalti.com/api/v2/merchant-transaction/"
 payload = {}
 headers = {
   "Authorization": "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b"
@@ -85,18 +85,18 @@ response = requests.get(url, payload, headers = headers)
 
 
 
-## Retrieve a payment
+## Retrieve payment
 
 ###CURL 
 
 ```curl
-curl https://khalti.com/api/merchant-transaction/<idx>/ -H "Authorization:Key <secret key>
+curl https://khalti.com/api/v2/merchant-transaction/<idx>/ -H "Authorization:Key <secret key>
 ```
 
 ### PHP
 ```php
    
-$url = "https://khalti.com/api/merchant-transaction/<idx>/";
+$url = "https://khalti.com/api/v2/merchant-transaction/<idx>/";
 
 # Make the call using API.
 $ch = curl_init();
@@ -118,7 +118,7 @@ curl_close($ch);
 ```python
 import requests
 
-url = "https://khalti.com/api/merchant-transaction/<idx>/"
+url = "https://khalti.com/api/v2/merchant-transaction/<idx>/"
 headers = {
   "Authorization": "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b"
 }

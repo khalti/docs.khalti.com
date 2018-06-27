@@ -205,11 +205,11 @@ A merchant should use secret test and live keys for retrieving test and live pay
 
 <h2 id="list-payments">List payments</h2>
 <h3 id="curl">CURL</h3>
-<pre><code class="curl">curl https://khalti.com/api/merchant-transaction/ -H &quot;Authorization:Key &lt;secret key&gt;
+<pre><code class="curl">curl https://khalti.com/api/v2/merchant-transaction/ -H &quot;Authorization:Key &lt;secret key&gt;
 </code></pre>
 
 <h3 id="php">PHP</h3>
-<pre><code class="php">$url = &quot;https://khalti.com/api/merchant-transaction/&quot;;
+<pre><code class="php">$url = &quot;https://khalti.com/api/v2/merchant-transaction/&quot;;
 
 # Make the call using API.
 $ch = curl_init();
@@ -229,7 +229,7 @@ curl_close($ch);
 <h3 id="python">Python</h3>
 <pre><code class="python">import requests
 
-url = &quot;https://khalti.com/api/merchant-transaction/&quot;
+url = &quot;https://khalti.com/api/v2/merchant-transaction/&quot;
 payload = {}
 headers = {
   &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
@@ -240,12 +240,12 @@ response = requests.get(url, payload, headers = headers)
 
 <h2 id="retrieve-a-payment">Retrieve a payment</h2>
 <h3 id="curl_1">CURL</h3>
-<pre><code class="curl">curl https://khalti.com/api/merchant-transaction/&lt;idx&gt;/ -H &quot;Authorization:Key &lt;secret key&gt;
+<pre><code class="curl">curl https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/ -H &quot;Authorization:Key &lt;secret key&gt;
 </code></pre>
 
 <h3 id="php_1">PHP</h3>
 <pre><code class="php">
-$url = &quot;https://khalti.com/api/merchant-transaction/&lt;idx&gt;/&quot;;
+$url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;;
 
 # Make the call using API.
 $ch = curl_init();
@@ -265,7 +265,7 @@ curl_close($ch);
 <h3 id="python_1">Python</h3>
 <pre><code class="python">import requests
 
-url = &quot;https://khalti.com/api/merchant-transaction/&lt;idx&gt;/&quot;
+url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;
 headers = {
   &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
 }

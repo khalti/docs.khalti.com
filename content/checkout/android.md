@@ -213,7 +213,7 @@ khaltiButton.setCheckOutConfig(config);
 
 Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-android).
 
-Check out the [Verification](http://docs.khalti.com/api/verification/) process.
+Check out the [Verification](http://docs.khalti.com/api/v2/verification/) process.
 
 ### [Changelog](https://github.com/khalti/khalti-sdk-android/blob/master/CHANGELOG.md)
 

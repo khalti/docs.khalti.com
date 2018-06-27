@@ -22,7 +22,7 @@ Your application server must do a `POST` request to Khalti server for the final 
 of the payment process. The structure of the request as expected by Khalti server is
 as follows.
 
-- `url`: `https://khalti.com/api/payment/verify/`
+- `url`: `https://khalti.com/api/v2/payment/verify/`
 - `method`: `POST`
 - `headers`:
 	- `Authorization`: test or live secret key in the form `Key <secret key>`
@@ -53,7 +53,7 @@ Assuming the token that we received is `QUao9cqFzxPgvWJNi9aKac`.
 ### CURL
 
 ```curl
-curl https://khalti.com/api/payment/verify/ \
+curl https://khalti.com/api/v2/payment/verify/ \
    -H "Authorization:Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b" \
    -d amount=1000 \
    -d token=QUao9cqFzxPgvWJNi9aKac
@@ -66,7 +66,7 @@ $args = http_build_query(array(
     'amount'  => 1000
 ));
     
-$url = "https://khalti.com/api/payment/verify/";
+$url = "https://khalti.com/api/v2/payment/verify/";
 
 # Make the call using API.
 $ch = curl_init();
@@ -90,7 +90,7 @@ curl_close($ch);
 ```python
 import requests
 
-url = "https://khalti.com/api/payment/verify/"
+url = "https://khalti.com/api/v2/payment/verify/"
 payload = {
   "token": "QUao9cqFzxPgvWJNi9aKac",
   "amount": 1000
@@ -111,7 +111,7 @@ require 'net/http'
 headers = {
   Authorization: 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'
 }
-uri = URI.parse('https://khalti.com/api/payment/verify/')
+uri = URI.parse('https://khalti.com/api/v2/payment/verify/')
 https = Net::HTTP.new(uri.host, uri.port)
 https.use_ssl = true
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -137,7 +137,7 @@ let config = {
     headers: {'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'}
 };
 
-axios.post("https://khalti.com/api/payment/verify/", data, config)
+axios.post("https://khalti.com/api/v2/payment/verify/", data, config)
     .then(response => {
         console.log(response.data);
     })

@@ -186,7 +186,7 @@ done securely from the server.</p>
 of the payment process. The structure of the request as expected by Khalti server is
 as follows.</p>
 <ul>
-<li><code>url</code>: <code>https://khalti.com/api/payment/verify/</code></li>
+<li><code>url</code>: <code>https://khalti.com/api/v2/payment/verify/</code></li>
 <li><code>method</code>: <code>POST</code></li>
 <li><code>headers</code>:<ul>
 <li><code>Authorization</code>: test or live secret key in the form <code>Key &lt;secret key&gt;</code></li>
@@ -212,7 +212,7 @@ response in the following format.</p>
 <h2 id="examples">Examples</h2>
 <p>Assuming the token that we received is <code>QUao9cqFzxPgvWJNi9aKac</code>.</p>
 <h3 id="curl">CURL</h3>
-<pre><code class="curl">curl https://khalti.com/api/payment/verify/ \
+<pre><code class="curl">curl https://khalti.com/api/v2/payment/verify/ \
    -H &quot;Authorization:Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot; \
    -d amount=1000 \
    -d token=QUao9cqFzxPgvWJNi9aKac
@@ -224,7 +224,7 @@ response in the following format.</p>
     'amount'  =&gt; 1000
 ));
 
-$url = &quot;https://khalti.com/api/payment/verify/&quot;;
+$url = &quot;https://khalti.com/api/v2/payment/verify/&quot;;
 
 # Make the call using API.
 $ch = curl_init();
@@ -246,7 +246,7 @@ curl_close($ch);
 <h3 id="python">Python</h3>
 <pre><code class="python">import requests
 
-url = &quot;https://khalti.com/api/payment/verify/&quot;
+url = &quot;https://khalti.com/api/v2/payment/verify/&quot;
 payload = {
   &quot;token&quot;: &quot;QUao9cqFzxPgvWJNi9aKac&quot;,
   &quot;amount&quot;: 1000
@@ -265,7 +265,7 @@ require 'net/http'
 headers = {
   Authorization: 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'
 }
-uri = URI.parse('https://khalti.com/api/payment/verify/')
+uri = URI.parse('https://khalti.com/api/v2/payment/verify/')
 https = Net::HTTP.new(uri.host, uri.port)
 https.use_ssl = true
 request = Net::HTTP::Post.new(uri.request_uri, headers)
@@ -288,7 +288,7 @@ let config = {
     headers: {'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'}
 };
 
-axios.post(&quot;https://khalti.com/api/payment/verify/&quot;, data, config)
+axios.post(&quot;https://khalti.com/api/v2/payment/verify/&quot;, data, config)
     .then(response =&gt; {
         console.log(response.data);
     })

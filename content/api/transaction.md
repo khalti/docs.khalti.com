@@ -84,6 +84,24 @@ response = requests.get(url, payload, headers = headers)
 ```
 
 
+### Ruby
+
+```ruby
+require 'uri'
+require 'net/http'
+
+headers = {
+  Authorization: "Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324"
+}
+uri = URI.parse("https://khalti.com/api/v2/merchant-transaction/")
+https = Net::HTTP.new(uri.host, uri.port)
+https.use_ssl = true
+request = Net::HTTP::Get.new(uri.request_uri, headers)
+response = https.request(request)
+
+puts response.body
+```
+
 
 ## Retrieve payment
 
@@ -126,3 +144,21 @@ headers = {
 response = requests.get(url, headers = headers)
 ```
 
+
+### Ruby
+
+```ruby
+require 'uri'
+require 'net/http'
+
+headers = {
+  Authorization: "Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324"
+}
+uri = URI.parse("https://khalti.com/api/v2/merchant-transaction/<idx>/")
+https = Net::HTTP.new(uri.host, uri.port)
+https.use_ssl = true
+request = Net::HTTP::Get.new(uri.request_uri, headers)
+response = https.request(request)
+
+puts response.body
+```

@@ -1,20 +1,21 @@
 # Khalti
 
+[![IDE](https://img.shields.io/badge/Xcode-8%209%2010Beta-blue.svg)](https://developer.apple.com/xcode/)
+[![Language](https://img.shields.io/badge/swift-3,%204-orange.svg)](https://swift.org)
 [![Version](https://img.shields.io/cocoapods/v/Khalti.svg?style=flat)](http://cocoapods.org/pods/Khalti)
 [![License](https://img.shields.io/cocoapods/l/Khalti.svg?style=flat)](http://cocoapods.org/pods/Khalti)
 [![Platform](https://img.shields.io/cocoapods/p/Khalti.svg?style=flat)](http://cocoapods.org/pods/Khalti)
 
 
-## Pod Depedency 
+This documentation details the process to integrate Khalti payment gateway
+in your iOS app.
 
-For best working with UI incorporated in this library ```IQKeyboardManager``` is used. Suggest using 
-```swift
-pod 'IQKeyboarManager'
-```
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+**Swift** : Clone project and use 'Example' directory. Do 'pod install'.
+
+**Objective-C** :  Clone project and use 'Example Obj-c' directory. Do 'pod install'.
 
 ## Installation guide
 
@@ -29,8 +30,7 @@ pod 'Khalti'
 ### Adding CustomSchme
 Khalti uses custom Scheme: So merhant should setup **URLScheme** unique for their app. We have made usability as of user case.
 
-![Khalti scheme setup overview](../img/customUrlScheme.png)
-<!-- ![Khalti scheme setup overview](https://github.com/khalti/khalti-sdk-ios/blob/master/Screenshots/customUrlScheme.png) -->
+![Khalti scheme setup overview](https://raw.githubusercontent.com/khalti/khalti-sdk-ios/master/Screenshots/customUrlScheme.png) 
 
 After adding Url Scheme create global constant for same customUrlScheme as below 
 ```swift
@@ -106,10 +106,10 @@ let additionalData:Dictionary<String,String> = [
 Khalti.shared.appUrlScheme = khaltiUrlScheme
 let khaltiMerchantKey = "test_public_key_dc74e0fd57cb46cd93832aee0a507256" // This key is from local server so it won't work if you use the example as is it. Use your own public test key
         
-let TEST_CONFIG:Config = Config(publicKey: khaltiMerchantKey, amount: 1000, productId: "1234567890", productName: "Dragon_boss", productUrl: "http://gameofthrones.wikia.com/wiki/Dragons",additionalData: additionalData)
+let TEST_CONFIG:Config = Config(publicKey: khaltiMerchantKey, amount: 1000, productId: "1234567890", productName: "Dragon_boss", productUrl: "http://gameofthrones.wikia.com/wiki/Dragons",additionalData: additionalData, cardPayment:false)
 Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 ```
-Config file has property cardPayment with default value false, indication the cardPayment facility is OFF. If you want cardPayment available to your users then set cardPayment option to true while creating config object.
+Config file has property cardPayment with default value false, indication the cardPayment facility is OFF. If you want cardPayment available to your users then set cardPayment option to true while creating config object. Please read merchant terms and conditions before enabling this feature.
 Additionally, Config class also accepts a Dictionary<String,String> which you can use to pass any additional data. Make sure you add a `merchant_` prefix in your map key.
 
 ### Using delegates
@@ -140,7 +140,7 @@ extension YourViewController: KhaltiPayDelegate {
 
 | Method                                   | Description                                                                                                                                                                                                                                                                                                                                                                           |
 |------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `onCheckOutSuccess(data: Dictionary<String, Any>)`                | This method is called when a transaction has been completed and confirmed by the user. A dictionary containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the [verification](http://docs.khalti.com/api/v2/verification/) process for further instructions. |
+| `onCheckOutSuccess(data: Dictionary<String, Any>)`                | This method is called when a transaction has been completed and confirmed by the user. A dictionary containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the [verification](http://docs.khalti.com/api/verification/) process for further instructions. |
 | `onCheckOutError(action: String, message: String, data:Dictionary<String,Any>?)` | This method is called when an error occurs during payment initiation and confirmation. Action, message and errordata value is passed where action defines, the current action being performed, message defines the error and data defines the errorData associated with error if exists.                                                                                                                                              |
 
 
@@ -165,26 +165,15 @@ The success message also contains all the `key` and `value` provide as extra dat
 | message                   | Detail Error Message                   |   String  |
 | data                          | data of error   (Optional)               |   Dictionary<String,Any>?  |
 
-## Objective-C
-If you are using objective-c. See the example project [here](https://github.com/khalti/khalti-sdk-objective-c-example.git)
-
-## Author
-
-Khalti
-
 ## Support
+
 For Queries, feel free to call us at:
 
 Mobile : 9801165568
-
 Viber/Whatsapp/Skype ID: 9801165568
+Email: [merchant@khalti.com](mailto:merchant@khalti.com?cc=rajendrak@janakitech.com,developers@khalti.com,support@khalti.com)
 
-Email: merchant@khalti.com
 
-Developer Mail: [mail](mailto:rajendrak@janakitech.com)
+Check out the [API Documentation](http://docs.khalti.com/checkout/ios/).
 
-Khalti is available under the MIT license. See the LICENSE file for more info.
-
-Check out the source for Khalti checkout on [github ](https://github.com/khalti/khalti-sdk-ios/).
-<!-- Check out the [API Documentation](http://docs.khalti.com/checkout/ios/). -->
-
+And you can study the source code on [github ](https://github.com/khalti/khalti-sdk-ios/) by yourself.

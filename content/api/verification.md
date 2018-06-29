@@ -1,26 +1,30 @@
 ## Introduction
-Whenever your customer pays using the Khalti widget, the client side makes a request
-to the Khalti server to initiate and confirm the payment.
+Whenever your customer pays using the Khalti widget, the client side
+makes a request to the Khalti server to initiate and confirm the
+payment.
 
-Once they've confirmed the payment, the client will receive a response containing unique
-token and amount for that particular transaction. Upon receiving the transaction token,
-the client will make a request to your server with the token and the payment amount.
+Once they've confirmed the payment, the client will receive a response
+containing unique token and amount for that particular transaction.
+Upon receiving the transaction token, the client will make a request
+to your server with the token and the payment amount.
 
-On the next step, you will need to ask the Khalti server to verify the information relayed
-by the user before completing their purchase order.
+On the next step, you will need to ask the Khalti server to verify the
+information relayed by the user before completing their purchase
+order.
 
 
 ## Why is server-to-server verification necessary?
-Since the client side makes the payment directly to Khalti without going through your
-server first, you need to be sure that the customer actually paid the money they were
-supposed to before completing their order. This type of verification can only be
-done securely from the server.
+Since the client side makes the payment directly to Khalti without
+going through your server first, you need to be sure that the customer
+actually paid the money they were supposed to before completing their
+order. This type of verification can only be done securely from the
+server.
 
 
 ## Verification request
-Your application server must do a `POST` request to Khalti server for the final step
-of the payment process. The structure of the request as expected by Khalti server is
-as follows.
+Your application server must do a `POST` request to Khalti server for
+the final step of the payment process. The structure of the request as
+expected by Khalti server is as follows.
 
 - `url`: `https://khalti.com/api/v2/payment/verify/`
 - `method`: `POST`
@@ -32,8 +36,8 @@ as follows.
 
 
 ## Verification response
-Once you've made a request as specified above, Khalti server will return you a
-response in the following format.
+Once you've made a request as specified above, Khalti server will
+return you a response in the following format.
 
 `Success`: Success response consists of the idx of transaction created.
 

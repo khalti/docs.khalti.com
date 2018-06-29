@@ -169,22 +169,26 @@
             <div class="section">
               
                 <h2 id="introduction">Introduction</h2>
-<p>Whenever your customer pays using the Khalti widget, the client side makes a request
-to the Khalti server to initiate and confirm the payment.</p>
-<p>Once they've confirmed the payment, the client will receive a response containing unique
-token and amount for that particular transaction. Upon receiving the transaction token,
-the client will make a request to your server with the token and the payment amount.</p>
-<p>On the next step, you will need to ask the Khalti server to verify the information relayed
-by the user before completing their purchase order.</p>
+<p>Whenever your customer pays using the Khalti widget, the client side
+makes a request to the Khalti server to initiate and confirm the
+payment.</p>
+<p>Once they've confirmed the payment, the client will receive a response
+containing unique token and amount for that particular transaction.
+Upon receiving the transaction token, the client will make a request
+to your server with the token and the payment amount.</p>
+<p>On the next step, you will need to ask the Khalti server to verify the
+information relayed by the user before completing their purchase
+order.</p>
 <h2 id="why-is-server-to-server-verification-necessary">Why is server-to-server verification necessary?</h2>
-<p>Since the client side makes the payment directly to Khalti without going through your
-server first, you need to be sure that the customer actually paid the money they were
-supposed to before completing their order. This type of verification can only be
-done securely from the server.</p>
+<p>Since the client side makes the payment directly to Khalti without
+going through your server first, you need to be sure that the customer
+actually paid the money they were supposed to before completing their
+order. This type of verification can only be done securely from the
+server.</p>
 <h2 id="verification-request">Verification request</h2>
-<p>Your application server must do a <code>POST</code> request to Khalti server for the final step
-of the payment process. The structure of the request as expected by Khalti server is
-as follows.</p>
+<p>Your application server must do a <code>POST</code> request to Khalti server for
+the final step of the payment process. The structure of the request as
+expected by Khalti server is as follows.</p>
 <ul>
 <li><code>url</code>: <code>https://khalti.com/api/v2/payment/verify/</code></li>
 <li><code>method</code>: <code>POST</code></li>
@@ -199,8 +203,8 @@ as follows.</p>
 </li>
 </ul>
 <h2 id="verification-response">Verification response</h2>
-<p>Once you've made a request as specified above, Khalti server will return you a
-response in the following format.</p>
+<p>Once you've made a request as specified above, Khalti server will
+return you a response in the following format.</p>
 <p><code>Success</code>: Success response consists of the idx of transaction created.</p>
 <pre><code class="python">{'idx': 'ymYXHiG2dYSGk1w7s2SghM'}
 </code></pre>

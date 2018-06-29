@@ -103,10 +103,12 @@
         
             <li><a class="toctree-l4" href="#python">Python</a></li>
         
+            <li><a class="toctree-l4" href="#ruby">Ruby</a></li>
+        
         </ul>
     
 
-    <li class="toctree-l3"><a href="#retrieve-a-payment">Retrieve a payment</a></li>
+    <li class="toctree-l3"><a href="#retrieve-payment">Retrieve payment</a></li>
     
         <ul>
         
@@ -115,6 +117,8 @@
             <li><a class="toctree-l4" href="#php_1">PHP</a></li>
         
             <li><a class="toctree-l4" href="#python_1">Python</a></li>
+        
+            <li><a class="toctree-l4" href="#ruby_1">Ruby</a></li>
         
         </ul>
     
@@ -238,7 +242,23 @@ headers = {
 response = requests.get(url, payload, headers = headers)
 </code></pre>
 
-<h2 id="retrieve-a-payment">Retrieve a payment</h2>
+<h3 id="ruby">Ruby</h3>
+<pre><code class="ruby">require 'uri'
+require 'net/http'
+
+headers = {
+  Authorization: &quot;Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324&quot;
+}
+uri = URI.parse(&quot;https://khalti.com/api/v2/merchant-transaction/&quot;)
+https = Net::HTTP.new(uri.host, uri.port)
+https.use_ssl = true
+request = Net::HTTP::Get.new(uri.request_uri, headers)
+response = https.request(request)
+
+puts response.body
+</code></pre>
+
+<h2 id="retrieve-payment">Retrieve payment</h2>
 <h3 id="curl_1">CURL</h3>
 <pre><code class="curl">curl https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/ -H &quot;Authorization:Key &lt;secret key&gt;
 </code></pre>
@@ -271,6 +291,22 @@ headers = {
 }
 
 response = requests.get(url, headers = headers)
+</code></pre>
+
+<h3 id="ruby_1">Ruby</h3>
+<pre><code class="ruby">require 'uri'
+require 'net/http'
+
+headers = {
+  Authorization: &quot;Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324&quot;
+}
+uri = URI.parse(&quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;)
+https = Net::HTTP.new(uri.host, uri.port)
+https.use_ssl = true
+request = Net::HTTP::Get.new(uri.request_uri, headers)
+response = https.request(request)
+
+puts response.body
 </code></pre>
               
             </div>

@@ -78,8 +78,6 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#pod-depedency">Pod Depedency</a></li>
-        
             <li><a class="toctree-l4" href="#example">Example</a></li>
         
             <li><a class="toctree-l4" href="#installation-guide">Installation guide</a></li>
@@ -87,10 +85,6 @@
             <li><a class="toctree-l4" href="#usage">Usage</a></li>
         
             <li><a class="toctree-l4" href="#summary">Summary</a></li>
-        
-            <li><a class="toctree-l4" href="#objective-c">Objective-C</a></li>
-        
-            <li><a class="toctree-l4" href="#author">Author</a></li>
         
             <li><a class="toctree-l4" href="#support">Support</a></li>
         
@@ -163,16 +157,16 @@
             <div class="section">
               
                 <h1 id="khalti">Khalti</h1>
-<p><a href="http://cocoapods.org/pods/Khalti"><img alt="Version" src="https://img.shields.io/cocoapods/v/Khalti.svg?style=flat" /></a>
+<p><a href="https://developer.apple.com/xcode/"><img alt="IDE" src="https://img.shields.io/badge/Xcode-8%209%2010Beta-blue.svg" /></a>
+<a href="https://swift.org"><img alt="Language" src="https://img.shields.io/badge/swift-3,%204-orange.svg" /></a>
+<a href="http://cocoapods.org/pods/Khalti"><img alt="Version" src="https://img.shields.io/cocoapods/v/Khalti.svg?style=flat" /></a>
 <a href="http://cocoapods.org/pods/Khalti"><img alt="License" src="https://img.shields.io/cocoapods/l/Khalti.svg?style=flat" /></a>
 <a href="http://cocoapods.org/pods/Khalti"><img alt="Platform" src="https://img.shields.io/cocoapods/p/Khalti.svg?style=flat" /></a></p>
-<h2 id="pod-depedency">Pod Depedency</h2>
-<p>For best working with UI incorporated in this library <code>IQKeyboardManager</code> is used. Suggest using </p>
-<pre><code class="swift">pod 'IQKeyboarManager'
-</code></pre>
-
+<p>This documentation details the process to integrate Khalti payment gateway
+in your iOS app.</p>
 <h2 id="example">Example</h2>
-<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
+<p><strong>Swift</strong> : Clone project and use 'Example' directory. Do 'pod install'.</p>
+<p><strong>Objective-C</strong> :  Clone project and use 'Example Obj-c' directory. Do 'pod install'.</p>
 <h2 id="installation-guide">Installation guide</h2>
 <p>Khalti is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
 it, simply add the following line to your Podfile:</p>
@@ -182,8 +176,7 @@ it, simply add the following line to your Podfile:</p>
 <h2 id="usage">Usage</h2>
 <h3 id="adding-customschme">Adding CustomSchme</h3>
 <p>Khalti uses custom Scheme: So merhant should setup <strong>URLScheme</strong> unique for their app. We have made usability as of user case.</p>
-<p><img alt="Khalti scheme setup overview" src="../../img/customUrlScheme.png" />
-<!-- <img alt="Khalti scheme setup overview" src="https://github.com/khalti/khalti-sdk-ios/blob/master/Screenshots/customUrlScheme.png" /> --></p>
+<p><img alt="Khalti scheme setup overview" src="https://raw.githubusercontent.com/khalti/khalti-sdk-ios/master/Screenshots/customUrlScheme.png" /> </p>
 <p>After adding Url Scheme create global constant for same customUrlScheme as below </p>
 <pre><code class="swift">let khaltiUrlScheme:String = &quot;KhaltiPayExampleScheme&quot;
 </code></pre>
@@ -257,11 +250,11 @@ let additionalData:Dictionary&lt;String,String&gt; = [
 Khalti.shared.appUrlScheme = khaltiUrlScheme
 let khaltiMerchantKey = &quot;test_public_key_dc74e0fd57cb46cd93832aee0a507256&quot; // This key is from local server so it won't work if you use the example as is it. Use your own public test key
 
-let TEST_CONFIG:Config = Config(publicKey: khaltiMerchantKey, amount: 1000, productId: &quot;1234567890&quot;, productName: &quot;Dragon_boss&quot;, productUrl: &quot;http://gameofthrones.wikia.com/wiki/Dragons&quot;,additionalData: additionalData)
+let TEST_CONFIG:Config = Config(publicKey: khaltiMerchantKey, amount: 1000, productId: &quot;1234567890&quot;, productName: &quot;Dragon_boss&quot;, productUrl: &quot;http://gameofthrones.wikia.com/wiki/Dragons&quot;,additionalData: additionalData, cardPayment:false)
 Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 </code></pre>
 
-<p>Config file has property cardPayment with default value false, indication the cardPayment facility is OFF. If you want cardPayment available to your users then set cardPayment option to true while creating config object.
+<p>Config file has property cardPayment with default value false, indication the cardPayment facility is OFF. If you want cardPayment available to your users then set cardPayment option to true while creating config object. Please read merchant terms and conditions before enabling this feature.
 Additionally, Config class also accepts a Dictionary<String,String> which you can use to pass any additional data. Make sure you add a <code>merchant_</code> prefix in your map key.</p>
 <h3 id="using-delegates">Using delegates</h3>
 <p>The viewController you implement pay action should contain KhaltiPayDelegate implementing
@@ -293,7 +286,7 @@ Additionally, Config class also accepts a Dictionary<String,String> which you ca
 <tbody>
 <tr>
 <td><code>onCheckOutSuccess(data: Dictionary&lt;String, Any&gt;)</code></td>
-<td>This method is called when a transaction has been completed and confirmed by the user. A dictionary containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the <a href="http://docs.khalti.com/api/v2/verification/">verification</a> process for further instructions.</td>
+<td>This method is called when a transaction has been completed and confirmed by the user. A dictionary containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the <a href="http://docs.khalti.com/api/verification/">verification</a> process for further instructions.</td>
 </tr>
 <tr>
 <td><code>onCheckOutError(action: String, message: String, data:Dictionary&lt;String,Any&gt;?)</code></td>
@@ -377,19 +370,13 @@ Additionally, Config class also accepts a Dictionary<String,String> which you ca
 </tr>
 </tbody>
 </table>
-<h2 id="objective-c">Objective-C</h2>
-<p>If you are using objective-c. See the example project <a href="https://github.com/khalti/khalti-sdk-objective-c-example.git">here</a></p>
-<h2 id="author">Author</h2>
-<p>Khalti</p>
 <h2 id="support">Support</h2>
 <p>For Queries, feel free to call us at:</p>
-<p>Mobile : 9801165568</p>
-<p>Viber/Whatsapp/Skype ID: 9801165568</p>
-<p>Email: merchant@khalti.com</p>
-<p>Developer Mail: <a href="mailto:rajendrak@janakitech.com">mail</a></p>
-<p>Khalti is available under the MIT license. See the LICENSE file for more info.</p>
-<p>Check out the source for Khalti checkout on <a href="https://github.com/khalti/khalti-sdk-ios/">github </a>.
-<!-- Check out the <a href="http://docs.khalti.com/checkout/ios/">API Documentation</a>. --></p>
+<p>Mobile : 9801165568
+Viber/Whatsapp/Skype ID: 9801165568
+Email: <a href="mailto:merchant@khalti.com?cc=rajendrak@janakitech.com,developers@khalti.com,support@khalti.com">merchant@khalti.com</a></p>
+<p>Check out the <a href="http://docs.khalti.com/checkout/ios/">API Documentation</a>.</p>
+<p>And you can study the source code on <a href="https://github.com/khalti/khalti-sdk-ios/">github </a> by yourself.</p>
               
             </div>
           </div>

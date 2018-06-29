@@ -8,6 +8,9 @@ pages:
                 - Android: checkout/android.md
                 - iOS: checkout/ios.md
                 - Prestashop: checkout/prestashop.md
+        - Low level API:
+                - Wallet : checkout/diy-wallet.md
+                - Ebanking : checkout/diy-ebanking.md
         - Verification:
                 - Verification: api/verification.md
                 - Transaction: api/transaction.md

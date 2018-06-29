@@ -31,6 +31,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>/checkout/diy-wallet/</loc>
+     <lastmod>2018-06-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/checkout/diy-ebanking/</loc>
+     <lastmod>2018-06-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>/api/verification/</loc>
      <lastmod>2018-06-29</lastmod>
      <changefreq>daily</changefreq>

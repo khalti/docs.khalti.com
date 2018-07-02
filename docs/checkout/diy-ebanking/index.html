@@ -253,7 +253,7 @@ with <code>merchant_</code>.</p>
 <p>With this request khalti server will redirect your client to bank portal where user can access e-banking, finally redirecting back to original/parent page with the response.</p>
 <h1 id="_1"></h1>
 <h4 id="data-retrival">Data Retrival</h4>
-<p>If transaction is initated, then user interacts with ebanking system. Now after transaction is completed getting success or failure response is tricky. There are different ways based on different <code>source</code>.</p>
+<p>Once transaction is initated, user interacts with ebanking system. After transaction is completed getting success or failure response is tricky. There are different ways based on different <code>source</code>.</p>
 <p><strong>Android</strong></p>
 <p>For <code>android</code> it returns data with the intent</p>
 <pre><code>intent://ebanking/#Intent;scheme=khalti;package=&lt;return_url&gt;;S.data=&lt;data&gt;;S.browser_fallback_url=https://khalti.com/;end
@@ -274,12 +274,13 @@ with <code>merchant_</code>.</p>
 </code></pre>
 
 <p>You will then get redirection to return_url with data as below.</p>
-<pre><code>{return_url}/?{data}
+<pre><code>&lt;return_url&gt;/?&lt;data&gt;
 </code></pre>
 
 <p><strong>Web</strong></p>
-<p>And with <code>web</code> response data is stored in local storage with <code>localstorage.setItem("confirmation-data", {{data}})</code>
-The <code>storage</code> event is fired when a storage area (localStorage or sessionStorage) has been modified. So, while implementing it needs to listen the <code>storage</code> event and read localstorage  value as data with the key <code>confirmation-data</code>. The example is like this:</p>
+<p>And with <code>web</code> response data is stored in local storage with</p>
+<p><code>localstorage.setItem("confirmation-data", {{data}})</code></p>
+<p>The <code>storage</code> event is fired when a storage area (localStorage or sessionStorage) has been modified. So, while implementing it needs to listen the <code>storage</code> event and read localstorage  value as data with the key <code>confirmation-data</code>. The example is like this:</p>
 <pre><code>window.addEventListener(&quot;storage&quot;, function (event) {
   if (event.key == &quot;confirmation-data&quot;) {
     data = JSON.parse(event.newValue);

@@ -86,7 +86,7 @@ With this request khalti server will redirect your client to bank portal where u
 
 #
 #### Data Retrival
-If transaction is initated, then user interacts with ebanking system. Now after transaction is completed getting success or failure response is tricky. There are different ways based on different `source`.
+Once transaction is initated, user interacts with ebanking system. After transaction is completed getting success or failure response is tricky. There are different ways based on different `source`.
 
 **Android**
 
@@ -114,11 +114,14 @@ If you have provided return url and source as custom as following:
 You will then get redirection to return_url with data as below.
 
 ```
-{return_url}/?{data}
+<return_url>/?<data>
 ```
 **Web**
 
-And with `web` response data is stored in local storage with `localstorage.setItem("confirmation-data", {{data}})`
+And with `web` response data is stored in local storage with
+
+```localstorage.setItem("confirmation-data", {{data}})```
+
 The `storage` event is fired when a storage area (localStorage or sessionStorage) has been modified. So, while implementing it needs to listen the `storage` event and read localstorage  value as data with the key `confirmation-data`. The example is like this:
 ```
 window.addEventListener("storage", function (event) {

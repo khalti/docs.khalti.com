@@ -1,6 +1,5 @@
 
-[![npm](https://img.shields.io/badge/npm-v1.0.11-blue.svg)](http://cocoapods.org/pods/Khalti)
-![npm](https://img.shields.io/npm/l/express.svg)
+[![npm](https://img.shields.io/badge/npm-v1.1.1-blue.svg)](https://www.npmjs.com/package/khalti-web)
 
 Khalti checkout can be integrated with or without build tools like
 [Webpack](https://github.com/webpack/webpack) and [Rollup](https://github.com/rollup/rollup).

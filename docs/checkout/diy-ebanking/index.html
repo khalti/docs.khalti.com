@@ -277,8 +277,8 @@ with <code>merchant_</code>.</p>
 <pre><code>{return_url}/?{data}
 </code></pre>
 
-<p><strong>Web</strong>
-And with <code>web</code> response data is stored in local storage with <code>localstorage.setItem("confirmation-data", {{data}})</code>
+<p><strong>Web</strong></p>
+<p>And with <code>web</code> response data is stored in local storage with <code>localstorage.setItem("confirmation-data", {{data}})</code>
 The <code>storage</code> event is fired when a storage area (localStorage or sessionStorage) has been modified. So, while implementing it needs to listen the <code>storage</code> event and read localstorage  value as data with the key <code>confirmation-data</code>. The example is like this:</p>
 <pre><code>window.addEventListener(&quot;storage&quot;, function (event) {
   if (event.key == &quot;confirmation-data&quot;) {

@@ -117,6 +117,7 @@ You will then get redirection to return_url with data as below.
 {return_url}/?{data}
 ```
 **Web**
+
 And with `web` response data is stored in local storage with `localstorage.setItem("confirmation-data", {{data}})`
 The `storage` event is fired when a storage area (localStorage or sessionStorage) has been modified. So, while implementing it needs to listen the `storage` event and read localstorage  value as data with the key `confirmation-data`. The example is like this:
 ```

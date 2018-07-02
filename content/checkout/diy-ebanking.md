@@ -19,7 +19,7 @@ This API provides the bank list. The request signature for initiation is as foll
 The response contains list of banks with the details as shown below.
 
 ```json
-{ "...": "...",
+{ ...
   "records": [
     {
         "idx":	"Yy6jFwuwssihs77PHGjwAZ",

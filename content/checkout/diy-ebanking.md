@@ -130,6 +130,8 @@ window.addEventListener("storage", function (event) {
 });
 ```
 
+Finally, a successful request will yield a response that looks something like this:
+
 ```json
 {
   "token": "VGMyaKVDQQyorBiQ3W99WL",

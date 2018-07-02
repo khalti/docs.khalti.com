@@ -77,6 +77,10 @@
                     
     <a class="" href="../prestashop/">Prestashop</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../woocommerce/">WooCommerce</a>
+                </li>
     </ul>
 	    </li>
           
@@ -94,6 +98,26 @@
     <ul class="subnav">
             
     <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+    
+
+    <li class="toctree-l3"><a href="#api">API</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1-get-bank-list">1. Get Bank List</a></li>
+        
+            <li><a class="toctree-l4" href="#2-initiate-transaction">2. Initiate transaction</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#data-retrival">Data Retrival</a></li>
+    
+
+    <li class="toctree-l3"><a href="#3-verify-transaction">3. Verify transaction</a></li>
+    
+
+    <li class="toctree-l3"><a href="#notes">Notes</a></li>
     
 
     </ul>
@@ -158,7 +182,133 @@
             <div class="section">
               
                 <h1 id="introduction">Introduction</h1>
-<p>WIP</p>
+<p>This document explains the various requests to implement ebanking
+payment system using Khalti.</p>
+<p>First and foremost, please read the docs at
+<a href="http://docs.khalti.com">http://docs.khalti.com</a> to understand
+the basic workflow of the merchant API.</p>
+<h1 id="api">API</h1>
+<h2 id="1-get-bank-list">1. Get Bank List</h2>
+<p>This API provides the bank list. The request signature for initiation is as follows:</p>
+<ul>
+<li>URL: <code>https://khalti.com/api/bank/?has_ebanking=true</code></li>
+<li>Method: <code>GET</code></li>
+</ul>
+<p>The response contains list of banks with the details as shown below.</p>
+<pre><code class="json">{ &quot;...&quot;: &quot;...&quot;,
+  &quot;records&quot;: [
+    {
+        &quot;idx&quot;:  &quot;Yy6jFwuwssihs77PHGjwAZ&quot;,
+        &quot;name&quot;: &quot;&lt;Bank Name&gt;&quot;,
+        &quot;short_name&quot;:   &quot;&lt;Truncated Name&gt;&quot;,
+        &quot;logo&quot;:     &quot;&lt;logo source&gt;&quot;,
+        &quot;has_cardpayment&quot;:  false,
+        &quot;address&quot;:  &quot;&lt;Bank address&gt;&quot;,
+        &quot;has_ebanking&quot;: true,
+        &quot;has_direct_withdraw&quot;:  false,
+        &quot;has_nchl&quot;: false,
+        &quot;has_mobile_banking&quot;:   false,
+        &quot;play_store&quot;:   &quot;&quot;,
+        &quot;app_store&quot;: &quot;&quot;
+      }
+  ]
+}
+</code></pre>
+
+<h2 id="2-initiate-transaction">2. Initiate transaction</h2>
+<p>As the title says, this API is called to initiates the transaction.</p>
+<p>E.g. When the user clicks <code>Checkout</code> button, you will need to
+prompt for their Khalti registered mobile number, and call this API once
+the payer submits.</p>
+<p>The request signature for initiation is as follows:</p>
+<ul>
+<li>URL: <code>https://khalti.com/api/ebanking/initiate/</code></li>
+<li>Method: <code>POST</code></li>
+<li>Data:</li>
+<li><code>public_key</code>: Required. Either <code>test</code> or <code>live</code> public key.</li>
+<li><code>mobile</code>: Required. The Khalti registered mobile number of payer.</li>
+<li><code>amount</code>: Required. The amount value of payment. Needs to be in paisa.</li>
+<li><code>product_identity</code>: Required. A string to identify the product.</li>
+<li><code>product_name</code>: Required. Descriptive name for the product.false</li>
+<li><code>bank</code>:Required.A bank idx,</li>
+<li><code>source</code>:Required. web, android, ios, or custom,</li>
+<li><code>return_url</code>:Optional. It is required if <code>source</code> key is <code>custom</code> or <code>ios</code>.</li>
+</ul>
+<p><code>return_url</code> for ios platform creates a url scheme for browser to open current app and if for custom redirects window to this url with data,</p>
+<p>Additional information about the product can be passed along with this
+for reporting purposes. The keys for additional data must be prefixed
+with <code>merchant_</code>.</p>
+<p>A sample request adhering to the above signature will look something like this:</p>
+<pre><code class="json">{
+  &quot;public_key&quot;: &quot;live_public_key_546eb6da05544d7d88961db04fdb9721&quot;,
+  &quot;mobile&quot;: &quot;9842XXXXXX&quot;,
+  &quot;amount&quot;: 10000,
+  &quot;product_identity&quot;: &quot;book/id-120&quot;,
+  &quot;product_name&quot;: &quot;A Song of Ice and Fire&quot;,
+  &quot;bank&quot;: &quot;Yy6jFwuwssihs77PHGjwAZ&quot;,
+  &quot;source&quot;: &quot;web&quot;
+}
+</code></pre>
+
+<p>With this request khalti server will redirect your client to bank portal where user can access e-banking, finally redirecting back to original/parent page with the response.</p>
+<h1 id="_1"></h1>
+<h4 id="data-retrival">Data Retrival</h4>
+<p>If transaction is initated, then user interacts with ebanking system. Now after transaction is completed getting success or failure response is tricky. There are different ways based on different <code>source</code>.</p>
+<p><strong>Android</strong></p>
+<p>For <code>android</code> it returns data with the intent</p>
+<pre><code>intent://ebanking/#Intent;scheme=khalti;package=&lt;return_url&gt;;S.data=&lt;data&gt;;S.browser_fallback_url=https://khalti.com/;end
+</code></pre>
+
+<p><strong>IOS</strong></p>
+<p>For <code>ios</code> you need to provide return_url and response data is binded with it. Finally, custom url for the action is</p>
+<pre><code>&lt;return_url&gt;://?&lt;data&gt;
+</code></pre>
+
+<p><strong>Custom</strong></p>
+<p>If you have provided return url and source as custom as following:</p>
+<pre><code class="json">{
+  ...
+  &quot;return_url&quot;: &quot;http://example.bookshop.com/&quot;,
+  &quot;source&quot;: &quot;custom&quot;
+}
+</code></pre>
+
+<p>You will then get redirection to return_url with data as below.</p>
+<pre><code>{return_url}/?{data}
+</code></pre>
+
+<p><strong>Web</strong>
+And with <code>web</code> response data is stored in local storage with <code>localstorage.setItem("confirmation-data", {{data}})</code>
+The <code>storage</code> event is fired when a storage area (localStorage or sessionStorage) has been modified. So, while implementing it needs to listen the <code>storage</code> event and read localstorage  value as data with the key <code>confirmation-data</code>. The example is like this:</p>
+<pre><code>window.addEventListener(&quot;storage&quot;, function (event) {
+  if (event.key == &quot;confirmation-data&quot;) {
+    data = JSON.parse(event.newValue);
+    // this is the final response with looks json shown below
+    window.localStorage.removeItem(&quot;confirmation-data&quot;);
+  }
+});
+</code></pre>
+
+<pre><code class="json">{
+  &quot;token&quot;: &quot;VGMyaKVDQQyorBiQ3W99WL&quot;,
+  &quot;amount&quot;: 10000,
+  &quot;mobile&quot;: &quot;98XXXXX099&quot;,
+  &quot;product_identity&quot;: &quot;book/id-120&quot;,
+  &quot;product_name&quot;: &quot;A Song of Ice and Fire&quot;
+}
+</code></pre>
+
+<h2 id="3-verify-transaction">3. Verify transaction</h2>
+<p>The API requests mentioned in previous steps are to be made from the
+client side i.e. from the front-end. Once those steps are complete, you
+need to make a verification request using your secret key from the server.</p>
+<p>See <a href="http://docs.khalti.com/api/verification/">http://docs.khalti.com/api/verification/</a>
+for more information on how to verify the transaction.</p>
+<h1 id="notes">Notes</h1>
+<ol>
+<li>While testing you might need to interact with actual system of banks. There is no sandbox or testing environment for using ebanking system.</li>
+<li>Prevent parent page (that initiates redirection) for closing until payment process is not completed. You will not get final response unless bank portal provides success/response message.</li>
+</ol>
               
             </div>
           </div>
@@ -183,12 +333,12 @@
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+	  
         </div>
       </div>
 
     </section>
-
+    
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -202,10 +352,7 @@
       
     </span>
 </div>
-    <script>var base_url = '../..';</script>
     <script src="../../js/theme.js"></script>
-      <script src="../../search/require.js"></script>
-      <script src="../../search/search.js"></script>
 
 </body>
 </html>

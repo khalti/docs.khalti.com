@@ -50,7 +50,7 @@ the payer submits.
 
 The request signature for initiation is as follows:
 
-* URL: `https://khalti.com/api/ebanking/initiate/`
+* URL: `https://khalti.com/ebanking/initiate/`
 * Method: `POST`
 * Data:
   * `public_key`: Required. Either `test` or `live` public key.

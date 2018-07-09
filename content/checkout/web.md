@@ -139,6 +139,7 @@ Configuration is a Javascript object with following attributes.
 	The success response is in the following format:
 
 	{
+		"idx": "8xmeJnNXfoVjCvGcZiiGe7",
 		"amount": 1000,
 		"mobile": "98XXXXX969",
 		"product_identity": "1234567890",
@@ -147,7 +148,7 @@ Configuration is a Javascript object with following attributes.
 		"token": "QUao9cqFzxPgvWJNi9aKac"
 	}
 
-It receives transaction `token` and `amount` among other payloads.
+It receives transaction `idx` of transaction, `token` and `amount` among other payloads.
 One should implement this method to initiate payment verification
 at merchant which in turn will make verification request at Khalti.
 For documentation on verification follow this [link](./../api/verification.md).

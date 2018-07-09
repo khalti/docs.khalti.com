@@ -7,7 +7,7 @@ Replace `<secret key>` with test or live secret key as per required.
 
 **Response** is paginated and in the following format:
 
-```
+```python
 {
   "total_pages": 1,
   "total_records": 2,
@@ -20,22 +20,58 @@ Replace `<secret key>` with test or live secret key as per required.
   "current_page": 1,
   "records": [
     {
-      "idx": "vXaHQXJd6Ke79By9dTHsVe",
-      "type": "Wallet payment",
-      "state": "Confirmed",
+      "idx": "8xmeJnNXfoVjCvGcZiiGe7",
+      "type": {
+        "idx": "e476BL6jt9kgagEmsakyTL",
+        "name": "Wallet payment"
+      },
+      "state": {
+        "idx": "DhvMj9hdRufLqkP8ZY4d8g",
+        "name": "Completed",
+        "template": "is complete"
+      },
       "amount": 1000,
       "fee_amount": 30,
-      "created_on": "2017-11-19T11:17:53.763052+05:45",
-      "source": "98XXXXX969"
+      "refunded": false,
+      "created_on": "2018-06-20T14:48:08.867125+05:45",
+      "ebanker": null,
+      "user": {
+        "idx": "cCaPkRPQGn5D8StkiqqMJg",
+        "name": "Test User",
+        "mobile": "98XXXXXXX9"
+      },
+      "merchant": {
+        "idx": "UM75Gm2gWmZvA4TPwkwZye",
+        "name": "Test Merchant",
+        "mobile": "testmerchant@khalti.com"
+      }
     },
     {
-      "idx": "ymYXHiG2dYSGkxw7s2SghM",
-      "type": "Wallet payment",
-      "state": "Completed",
-      "amount": 1000,
-      "fee_amount": 30,
-      "created_on": "2017-11-19T11:21:39.646256+05:45",
-      "source": "98XXXXX969"
+      "idx": "eWAyLgv9N6FjGnwYqhLpXC",
+      "type": {
+        "idx": "e476BL6jt9kgagEmsakyTL",
+        "name": "Wallet payment"
+      },
+      "state": {
+        "idx": "Dhvaj9hdRufLqkP8ZY4d8g",
+        "name": "Confirmed",
+        "template": "is confirm"
+      },
+      "amount": 10000,
+      "fee_amount": 0,
+      "refunded": false,
+      "created_on": "2018-07-06T16:54:33.361956+05:45",
+      "ebanker": null,
+      "user": {
+        "idx": "cCaPkRPQGn5D8StkiqqMJg",
+        "name": "Test User",
+        "mobile": "98XXXXXXX9"
+      },
+      "merchant": {
+        "idx": "UM75Gm2gWmZvA4TPwkwZye",
+        "name": "Test Merchant",
+        "mobile": "testmerchant@khalti.com"
+      }
     }
   ]
 }

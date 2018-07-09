@@ -7,13 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
   <title>Web - Khalti Gateway Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
+
   
   <script>
     // Current page data
@@ -24,7 +30,9 @@
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
   <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
   
 </head>
 
@@ -44,103 +52,135 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
+        <ul class="current">
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../..">Welcome</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Welcome</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../../getting-started/">Getting started</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/">Getting started</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Integration</span>
+            <li>
     <ul class="subnav">
-                <li class=" current">
-                    
-    <a class="current" href="./">Web</a>
-    <ul class="subnav">
+    <li><span>Integration</span></li>
+
+        
             
-    <li class="toctree-l3"><a href="#without-build-tools">Without build tools</a></li>
-    
-
-    <li class="toctree-l3"><a href="#with-build-tools">With build tools</a></li>
-    
-        <ul>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Web</a>
         
-            <li><a class="toctree-l4" href="#1-install-khalti-web">1. Install khalti-web</a></li>
+            <ul>
+            
+                <li class="toctree-l3"><a href="#without-build-tools">Without build tools</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#with-build-tools">With build tools</a></li>
+                
+                    <li><a class="toctree-l4" href="#1-install-khalti-web">1. Install khalti-web</a></li>
+                
+                    <li><a class="toctree-l4" href="#2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#api">API</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#configuration">Configuration</a></li>
+                
+            
+            </ul>
         
-            <li><a class="toctree-l4" href="#2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component</a></li>
+    </li>
+
         
-        </ul>
-    
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/">Android</a>
+        
+    </li>
 
-    <li class="toctree-l3"><a href="#api">API</a></li>
-    
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ios/">iOS</a>
+        
+    </li>
 
-    <li class="toctree-l3"><a href="#configuration">Configuration</a></li>
-    
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../prestashop/">Prestashop</a>
+        
+    </li>
 
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../woocommerce/">WooCommerce</a>
+        
+    </li>
+
+        
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../android/">Android</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ios/">iOS</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../prestashop/">Prestashop</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../woocommerce/">WooCommerce</a>
-                </li>
-    </ul>
-	    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Low level API</span>
+            <li>
     <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../diy-wallet/">Wallet</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../diy-ebanking/">Ebanking</a>
-                </li>
+    <li><span>Low level API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../diy-wallet/">Wallet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../diy-ebanking/">Ebanking</a>
+        
+    </li>
+
+        
     </ul>
-	    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Verification</span>
+            <li>
     <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../api/verification/">Verification</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../api/transaction/">Transaction</a>
-                </li>
+    <li><span>Verification</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/verification/">Verification</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../api/transaction/">Transaction</a>
+        
+    </li>
+
+        
     </ul>
-	    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../../contribution/">Contribution</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../contribution/">Contribution</a>
+        
+    </li>
+<li>
           
         </ul>
       </div>
@@ -360,6 +400,7 @@ btn.onclick = function () {
     The success response is in the following format:</p>
 </blockquote>
 <pre><code>{
+    "idx": "8xmeJnNXfoVjCvGcZiiGe7",
     "amount": 1000,
     "mobile": "98XXXXX969",
     "product_identity": "1234567890",
@@ -368,7 +409,7 @@ btn.onclick = function () {
     "token": "QUao9cqFzxPgvWJNi9aKac"
 }
 </code></pre>
-<p>It receives transaction <code>token</code> and <code>amount</code> among other payloads.
+<p>It receives transaction <code>idx</code> of transaction, <code>token</code> and <code>amount</code> among other payloads.
 One should implement this method to initiate payment verification
 at merchant which in turn will make verification request at Khalti.
 For documentation on verification follow this <a href="../../api/verification/">link</a>.</p>
@@ -459,10 +500,10 @@ For documentation on verification follow this <a href="../../api/verification/">
       </div>
 
     </section>
-    
+
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+<div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -473,7 +514,6 @@ For documentation on verification follow this <a href="../../api/verification/">
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
 
 </body>
 </html>

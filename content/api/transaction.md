@@ -1,5 +1,5 @@
 Khalti provides API for retrieving list of payments made to a merchant.
-A merchant should use secret test and live keys for retrieving test and live payments respectively.
+A merchant should use secret test and live keys for retrieving test and live payment list respectively.
 
 **List of transactions can also be viewed after logging on [Khalti website](https://khalti.com) with merchant account.**
 
@@ -78,7 +78,7 @@ Replace `<secret key>` with test or live secret key as per required.
 ```
 
 
-## List payments
+## API Request Examples
 
 ### CURL
 
@@ -130,67 +130,6 @@ headers = {
   Authorization: "Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324"
 }
 uri = URI.parse("https://khalti.com/api/v2/merchant-transaction/")
-https = Net::HTTP.new(uri.host, uri.port)
-https.use_ssl = true
-request = Net::HTTP::Get.new(uri.request_uri, headers)
-response = https.request(request)
-
-puts response.body
-```
-
-
-## Retrieve payment
-
-###CURL 
-
-```curl
-curl https://khalti.com/api/v2/merchant-transaction/<idx>/ -H "Authorization:Key <secret key>
-```
-
-### PHP
-```php
-   
-$url = "https://khalti.com/api/v2/merchant-transaction/<idx>/";
-
-# Make the call using API.
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-// Response
-$response = curl_exec($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
-
-```
-
-### Python
-
-```python
-import requests
-
-url = "https://khalti.com/api/v2/merchant-transaction/<idx>/"
-headers = {
-  "Authorization": "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b"
-}
-
-response = requests.get(url, headers = headers)
-```
-
-
-### Ruby
-
-```ruby
-require 'uri'
-require 'net/http'
-
-headers = {
-  Authorization: "Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324"
-}
-uri = URI.parse("https://khalti.com/api/v2/merchant-transaction/<idx>/")
 https = Net::HTTP.new(uri.host, uri.port)
 https.use_ssl = true
 request = Net::HTTP::Get.new(uri.request_uri, headers)

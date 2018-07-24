@@ -12,9 +12,10 @@ pages:
         - Low level API:
                 - Wallet : checkout/diy-wallet.md
                 - Ebanking : checkout/diy-ebanking.md
-        - Verification:
-                - Verification: api/verification.md
-                - Transaction: api/transaction.md
+        - Verification: api/verification.md
+        - Transactions:
+                - List: api/transaction.md
+                - Detail: api/transaction_details.md
         - Contribution: contribution.md
 theme: readthedocs
 docs_dir: content

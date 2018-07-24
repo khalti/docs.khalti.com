@@ -8,7 +8,7 @@
   
   
   
-  <title>Verification - Khalti Gateway Docs</title>
+  <title>Detail - Khalti Gateway Docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Verification";
-    var mkdocs_page_input_path = "api/verification.md";
-    var mkdocs_page_url = "/api/verification/";
+    var mkdocs_page_name = "Detail";
+    var mkdocs_page_input_path = "api/transaction_details.md";
+    var mkdocs_page_url = "/api/transaction_details/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -134,37 +134,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Verification</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#why-is-server-to-server-verification-necessary">Why is server-to-server verification necessary?</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#verification-request">Verification request</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#verification-response">Verification response</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#examples">Examples</a></li>
-                
-                    <li><a class="toctree-l4" href="#curl">CURL</a></li>
-                
-                    <li><a class="toctree-l4" href="#php">PHP</a></li>
-                
-                    <li><a class="toctree-l4" href="#python">Python</a></li>
-                
-                    <li><a class="toctree-l4" href="#ruby">Ruby</a></li>
-                
-                    <li><a class="toctree-l4" href="#node">Node</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../verification/">Verification</a>
         
     </li>
 <li>
@@ -182,8 +153,23 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../transaction_details/">Detail</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Detail</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#api-request-examples">API Request Examples</a></li>
+                
+                    <li><a class="toctree-l4" href="#curl">CURL</a></li>
+                
+                    <li><a class="toctree-l4" href="#php">PHP</a></li>
+                
+                    <li><a class="toctree-l4" href="#python">Python</a></li>
+                
+                    <li><a class="toctree-l4" href="#ruby">Ruby</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -219,8 +205,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Transactions &raquo;</li>
+        
+      
     
-    <li>Verification</li>
+    <li>Detail</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -230,48 +220,15 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="introduction">Introduction</h2>
-<p>Whenever your customer pays using the Khalti widget, the client side
-makes a request to the Khalti server to initiate and confirm the
-payment.</p>
-<p>Once they've confirmed the payment, the client will receive a response
-containing unique token and amount for that particular transaction.
-Upon receiving the transaction token, the client will make a request
-to your server with the token and the payment amount.</p>
-<p>On the next step, you will need to ask the Khalti server to verify the
-information relayed by the user before completing their purchase
-order.</p>
-<h2 id="why-is-server-to-server-verification-necessary">Why is server-to-server verification necessary?</h2>
-<p>Since the client side makes the payment directly to Khalti without
-going through your server first, you need to be sure that the customer
-actually paid the money they were supposed to before completing their
-order. This type of verification can only be done securely from the
-server.</p>
-<h2 id="verification-request">Verification request</h2>
-<p>Your application server must do a <code>POST</code> request to Khalti server for
-the final step of the payment process. The structure of the request as
-expected by Khalti server is as follows.</p>
-<ul>
-<li><code>url</code>: <code>https://khalti.com/api/v2/payment/verify/</code></li>
-<li><code>method</code>: <code>POST</code></li>
-<li><code>headers</code>:<ul>
-<li><code>Authorization</code>: test or live secret key in the form <code>Key &lt;secret key&gt;</code></li>
-</ul>
-</li>
-<li><code>payload</code>:<ul>
-<li><code>token</code>: Token given by Khalti after payment confirmation.</li>
-<li><code>amount</code>: Amount (in paisa) with which payment was initiated.</li>
-</ul>
-</li>
-</ul>
-<h2 id="verification-response">Verification response</h2>
-<p>Once you've made a request as specified above, Khalti server will
-return you a response in the following format.</p>
-<p><code>Success</code>: Success response consists of the transaction record.</p>
+                <p>Khalti provides API for retrieving payment made to a merchant.
+A merchant should use secret test and live keys for retrieving test and live payment respectively.</p>
+<p><strong> Payment details can also be viewed after logging on <a href="https://khalti.com">Khalti website</a> with merchant account.</strong></p>
+<p>Replace <code>&lt;secret key&gt;</code> with test or live secret key as per required.</p>
+<p><strong>Response</strong> is in the following format:</p>
 <pre><code class="python">{
-  &quot;idx&quot;: &quot;8xmeJnNXfoVjCvGcZiiGe7&quot;,
+  &quot;idx&quot;: &quot;xeR2tuRqEvBLmeJcZzMb5U&quot;,
   &quot;type&quot;: {
-    &quot;idx&quot;: &quot;e476BL6jt9kgagEmsakyTL&quot;,
+    &quot;idx&quot;: &quot;2jwzDS9wkxbkDFquJqfAEC&quot;,
     &quot;name&quot;: &quot;Wallet payment&quot;
   },
   &quot;state&quot;: {
@@ -279,13 +236,14 @@ return you a response in the following format.</p>
     &quot;name&quot;: &quot;Completed&quot;,
     &quot;template&quot;: &quot;is complete&quot;
   },
-  &quot;amount&quot;: 1000,
-  &quot;fee_amount&quot;: 30,
-  &quot;refunded&quot;: false,
-  &quot;created_on&quot;: &quot;2018-06-20T14:48:08.867125+05:45&quot;,
+  &quot;amount&quot;: 3000,
+  &quot;fee_amount&quot;: 90,
+  &quot;created_on&quot;: &quot;2018-04-16T17:04:05.204629+05:45&quot;,
+  &quot;can_refund&quot;: true,
+  &quot;can_complete&quot;: false,
   &quot;ebanker&quot;: null,
   &quot;user&quot;: {
-    &quot;idx&quot;: &quot;cCaPkRPQGn5D8StkiqqMJg&quot;,
+    &quot;idx&quot;: &quot;aVPXfJQ8HMYKhAePAU6pg5&quot;,
     &quot;name&quot;: &quot;Test User&quot;,
     &quot;mobile&quot;: &quot;98XXXXXXX9&quot;
   },
@@ -293,36 +251,61 @@ return you a response in the following format.</p>
     &quot;idx&quot;: &quot;UM75Gm2gWmZvA4TPwkwZye&quot;,
     &quot;name&quot;: &quot;Test Merchant&quot;,
     &quot;mobile&quot;: &quot;testmerchant@khalti.com&quot;
+  },
+  &quot;refunded&quot;: false,
+  &quot;child_transactions&quot;: [
+    {
+      &quot;idx&quot;: &quot;uUx2Ead8qqDuRufYh8vsYj&quot;,
+      &quot;type&quot;: {
+        &quot;idx&quot;: &quot;YpwbDVqAnH42odGZmT5vZ8&quot;,
+        &quot;name&quot;: &quot;Fee&quot;
+      },
+      &quot;state&quot;: {
+        &quot;idx&quot;: &quot;DhvMj9hdRufLqkP8ZY4d8g&quot;,
+        &quot;name&quot;: &quot;Completed&quot;,
+        &quot;template&quot;: &quot;is complete&quot;
+      },
+      &quot;amount&quot;: 90,
+      &quot;fee_amount&quot;: 0,
+      &quot;created_on&quot;: &quot;2018-07-19T12:31:55.620318+05:45&quot;,
+      &quot;can_refund&quot;: true,
+      &quot;can_complete&quot;: false,
+      &quot;ebanker&quot;: null,
+      &quot;user&quot;: {
+        &quot;idx&quot;: &quot;UM75Gm2gWmZvA4TPwkwZye&quot;,
+        &quot;name&quot;: &quot;Test Merchant&quot;,
+        &quot;mobile&quot;: &quot;testmerchant@khalti.com&quot;
+      },
+      &quot;merchant&quot;: {
+        &quot;idx&quot;: &quot;9dUzuqrLetWo9VY3fNwB2E&quot;,
+        &quot;name&quot;: &quot;&quot;,
+        &quot;mobile&quot;: &quot;wallet@khalti.com&quot;
+      },
+      &quot;refunded&quot;: false,
+      &quot;child_transactions&quot;: [],
+      &quot;meta&quot;: null
+    }
+  ],
+  &quot;meta&quot;: {
+    &quot;product_identity&quot;: &quot;369121518&quot;,
+    &quot;product_name&quot;: &quot;Test Product&quot;,
+    &quot;product_url&quot;: &quot;http://testproduct.com/wiki/khalti&quot;
   }
 }
 </code></pre>
 
-<p><code>Error</code>: Error response consists of the detail of errors.</p>
-<pre><code class="python">{'token': ['Invalid token.']}
-</code></pre>
-
-<h2 id="examples">Examples</h2>
-<p>Assuming the token that we received is <code>QUao9cqFzxPgvWJNi9aKac</code>.</p>
+<h2 id="api-request-examples">API Request Examples</h2>
 <h3 id="curl">CURL</h3>
-<pre><code class="curl">curl https://khalti.com/api/v2/payment/verify/ \
-   -H &quot;Authorization:Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot; \
-   -d amount=1000 \
-   -d token=QUao9cqFzxPgvWJNi9aKac
+<pre><code class="curl">curl https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/ -H &quot;Authorization:Key &lt;secret key&gt;
 </code></pre>
 
 <h3 id="php">PHP</h3>
-<pre><code class="php">$args = http_build_query(array(
-    'token' =&gt; 'QUao9cqFzxPgvWJNi9aKac',
-    'amount'  =&gt; 1000
-));
-
-$url = &quot;https://khalti.com/api/v2/payment/verify/&quot;;
+<pre><code class="php">
+$url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;;
 
 # Make the call using API.
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
@@ -338,16 +321,12 @@ curl_close($ch);
 <h3 id="python">Python</h3>
 <pre><code class="python">import requests
 
-url = &quot;https://khalti.com/api/v2/payment/verify/&quot;
-payload = {
-  &quot;token&quot;: &quot;QUao9cqFzxPgvWJNi9aKac&quot;,
-  &quot;amount&quot;: 1000
-}
+url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;
 headers = {
   &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
 }
 
-response = requests.post(url, payload, headers = headers)
+response = requests.get(url, headers = headers)
 </code></pre>
 
 <h3 id="ruby">Ruby</h3>
@@ -355,38 +334,15 @@ response = requests.post(url, payload, headers = headers)
 require 'net/http'
 
 headers = {
-  Authorization: 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'
+  Authorization: &quot;Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324&quot;
 }
-uri = URI.parse('https://khalti.com/api/v2/payment/verify/')
+uri = URI.parse(&quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;)
 https = Net::HTTP.new(uri.host, uri.port)
 https.use_ssl = true
-request = Net::HTTP::Post.new(uri.request_uri, headers)
-request.set_form_data('token' =&gt; 'QUao9cqFzxPgvWJNi9aKac', 'amount' =&gt; 1000)
+request = Net::HTTP::Get.new(uri.request_uri, headers)
 response = https.request(request)
 
 puts response.body
-</code></pre>
-
-<h3 id="node">Node</h3>
-<p>Install <code>axios</code> by running <code>yarn install axios</code>.</p>
-<pre><code class="nodejs">const axios = require('axios');
-
-let data = {
-    &quot;token&quot;: &quot;QUao9cqFzxPgvWJNi9aKac&quot;,
-    &quot;amount&quot;: 1000
-};
-
-let config = {
-    headers: {'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'}
-};
-
-axios.post(&quot;https://khalti.com/api/v2/payment/verify/&quot;, data, config)
-    .then(response =&gt; {
-        console.log(response.data);
-    })
-    .catch(error =&gt; {
-        console.log(error);
-    });
 </code></pre>
               
             </div>
@@ -395,10 +351,10 @@ axios.post(&quot;https://khalti.com/api/v2/payment/verify/&quot;, data, config)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../transaction/" class="btn btn-neutral float-right" title="List">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../contribution/" class="btn btn-neutral float-right" title="Contribution">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../checkout/diy-ebanking/" class="btn btn-neutral" title="Ebanking"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../transaction/" class="btn btn-neutral" title="List"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -424,10 +380,10 @@ axios.post(&quot;https://khalti.com/api/v2/payment/verify/&quot;, data, config)
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../checkout/diy-ebanking/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../transaction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../transaction/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../contribution/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

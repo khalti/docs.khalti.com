@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>None/getting-started/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,31 +21,31 @@
         
     <url>
      <loc>None/checkout/web/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/checkout/android/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/checkout/ios/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/checkout/prestashop/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/checkout/woocommerce/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -55,29 +55,37 @@
         
     <url>
      <loc>None/checkout/diy-wallet/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/checkout/diy-ebanking/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     
 
     
-        
     <url>
      <loc>None/api/verification/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/api/transaction/</loc>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/api/transaction/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>None/api/transaction_details/</loc>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -86,7 +94,7 @@
     
     <url>
      <loc>None/contribution/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

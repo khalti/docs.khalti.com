@@ -8,7 +8,7 @@
   
   
   
-  <title>Transaction - Khalti Gateway Docs</title>
+  <title>List - Khalti Gateway Docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,7 +23,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Transaction";
+    var mkdocs_page_name = "List";
     var mkdocs_page_input_path = "api/transaction.md";
     var mkdocs_page_url = "/api/transaction/";
   </script>
@@ -134,24 +134,24 @@
 <li>
           
             <li>
-    <ul class="subnav">
-    <li><span>Verification</span></li>
-
-        
-            
     <li class="toctree-l1 ">
         <a class="" href="../verification/">Verification</a>
         
     </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Transactions</span></li>
 
         
             
     <li class="toctree-l1 current">
-        <a class="current" href="./">Transaction</a>
+        <a class="current" href="./">List</a>
         
             <ul>
             
-                <li class="toctree-l3"><a href="#list-payments">List payments</a></li>
+                <li class="toctree-l3"><a href="#api-request-examples">API Request Examples</a></li>
                 
                     <li><a class="toctree-l4" href="#curl">CURL</a></li>
                 
@@ -162,18 +162,14 @@
                     <li><a class="toctree-l4" href="#ruby">Ruby</a></li>
                 
             
-                <li class="toctree-l3"><a href="#retrieve-payment">Retrieve payment</a></li>
-                
-                    <li><a class="toctree-l4" href="#curl_1">CURL</a></li>
-                
-                    <li><a class="toctree-l4" href="#php_1">PHP</a></li>
-                
-                    <li><a class="toctree-l4" href="#python_1">Python</a></li>
-                
-                    <li><a class="toctree-l4" href="#ruby_1">Ruby</a></li>
-                
-            
             </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../transaction_details/">Detail</a>
         
     </li>
 
@@ -210,11 +206,11 @@
     
       
         
-          <li>Verification &raquo;</li>
+          <li>Transactions &raquo;</li>
         
       
     
-    <li>Transaction</li>
+    <li>List</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -225,7 +221,7 @@
             <div class="section">
               
                 <p>Khalti provides API for retrieving list of payments made to a merchant.
-A merchant should use secret test and live keys for retrieving test and live payments respectively.</p>
+A merchant should use secret test and live keys for retrieving test and live payment list respectively.</p>
 <p><strong>List of transactions can also be viewed after logging on <a href="https://khalti.com">Khalti website</a> with merchant account.</strong></p>
 <p>Replace <code>&lt;secret key&gt;</code> with test or live secret key as per required.</p>
 <p><strong>Response</strong> is paginated and in the following format:</p>
@@ -298,7 +294,7 @@ A merchant should use secret test and live keys for retrieving test and live pay
 }
 </code></pre>
 
-<h2 id="list-payments">List payments</h2>
+<h2 id="api-request-examples">API Request Examples</h2>
 <h3 id="curl">CURL</h3>
 <pre><code class="curl">curl https://khalti.com/api/v2/merchant-transaction/ -H &quot;Authorization:Key &lt;secret key&gt;
 </code></pre>
@@ -348,57 +344,6 @@ response = https.request(request)
 
 puts response.body
 </code></pre>
-
-<h2 id="retrieve-payment">Retrieve payment</h2>
-<h3 id="curl_1">CURL</h3>
-<pre><code class="curl">curl https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/ -H &quot;Authorization:Key &lt;secret key&gt;
-</code></pre>
-
-<h3 id="php_1">PHP</h3>
-<pre><code class="php">
-$url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;;
-
-# Make the call using API.
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-// Response
-$response = curl_exec($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
-
-</code></pre>
-
-<h3 id="python_1">Python</h3>
-<pre><code class="python">import requests
-
-url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;
-headers = {
-  &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
-}
-
-response = requests.get(url, headers = headers)
-</code></pre>
-
-<h3 id="ruby_1">Ruby</h3>
-<pre><code class="ruby">require 'uri'
-require 'net/http'
-
-headers = {
-  Authorization: &quot;Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324&quot;
-}
-uri = URI.parse(&quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;)
-https = Net::HTTP.new(uri.host, uri.port)
-https.use_ssl = true
-request = Net::HTTP::Get.new(uri.request_uri, headers)
-response = https.request(request)
-
-puts response.body
-</code></pre>
               
             </div>
           </div>
@@ -406,7 +351,7 @@ puts response.body
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../contribution/" class="btn btn-neutral float-right" title="Contribution">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../transaction_details/" class="btn btn-neutral float-right" title="Detail">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../verification/" class="btn btn-neutral" title="Verification"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -438,7 +383,7 @@ puts response.body
         <span><a href="../verification/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../contribution/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../transaction_details/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

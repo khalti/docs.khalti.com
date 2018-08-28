@@ -3,74 +3,16 @@
 
     
     <url>
-     <loc>None/</loc>
-     <lastmod>2018-07-24</lastmod>
+     <loc>/</loc>
+     <lastmod>2018-08-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/getting-started/</loc>
-     <lastmod>2018-07-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
-     <loc>None/checkout/web/</loc>
-     <lastmod>2018-07-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/checkout/android/</loc>
-     <lastmod>2018-07-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/checkout/ios/</loc>
-     <lastmod>2018-07-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/checkout/prestashop/</loc>
-     <lastmod>2018-07-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/checkout/woocommerce/</loc>
-     <lastmod>2018-07-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>None/checkout/diy-wallet/</loc>
-     <lastmod>2018-07-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/checkout/diy-ebanking/</loc>
-     <lastmod>2018-07-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>None/api/verification/</loc>
-     <lastmod>2018-07-24</lastmod>
+     <loc>/getting-started/</loc>
+     <lastmod>2018-08-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -78,14 +20,48 @@
     
         
     <url>
-     <loc>None/api/transaction/</loc>
-     <lastmod>2018-07-24</lastmod>
+     <loc>/checkout/web/</loc>
+     <lastmod>2018-08-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/api/transaction_details/</loc>
-     <lastmod>2018-07-24</lastmod>
+     <loc>/checkout/android/</loc>
+     <lastmod>2018-08-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/checkout/ios/</loc>
+     <lastmod>2018-08-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/checkout/prestashop/</loc>
+     <lastmod>2018-08-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/checkout/woocommerce/</loc>
+     <lastmod>2018-08-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/checkout/diy-wallet/</loc>
+     <lastmod>2018-08-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/checkout/diy-ebanking/</loc>
+     <lastmod>2018-08-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -93,8 +69,32 @@
 
     
     <url>
-     <loc>None/contribution/</loc>
-     <lastmod>2018-07-24</lastmod>
+     <loc>/api/verification/</loc>
+     <lastmod>2018-08-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/api/transaction/</loc>
+     <lastmod>2018-08-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/api/transaction_details/</loc>
+     <lastmod>2018-08-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/contribution/</loc>
+     <lastmod>2018-08-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

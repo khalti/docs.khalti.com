@@ -28,6 +28,7 @@ docs_dir: content
 site_dir: docs
 repo_name: 'khalti/khalti-docs-official-repo'
 repo_url: 'https://github.com/khalti/khalti-docs-official-repo'
+edit_uri: 'edit/master/content/'
 copyright: 'Copyright &copy; 2017 Sparrow Pay Pvt. Ltd.'
 extra:
   social:

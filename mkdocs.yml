@@ -17,6 +17,28 @@ pages:
                 - List: api/transaction.md
                 - Detail: api/transaction_details.md
         - Contribution: contribution.md
-theme: material
+theme:
+  name: material
+  palette:
+    primary: deep-purple
+  favicon: 'img/favicon.png'
+  logo: 'img/logo.png'
+
 docs_dir: content
 site_dir: docs
+repo_name: 'khalti/khalti-docs-official-repo'
+repo_url: 'https://github.com/khalti/khalti-docs-official-repo'
+copyright: 'Copyright &copy; 2017 Sparrow Pay Pvt. Ltd.'
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/khalti'
+    - type: 'twitter'
+      link: 'https://twitter.com/KhaltiOfficial'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/khalti-digital-wallet'
+    - type: 'facebook'
+      link: 'https://facebook.com/khaltiofficial'
+markdown_extensions:
+  - toc:
+      permalink: true

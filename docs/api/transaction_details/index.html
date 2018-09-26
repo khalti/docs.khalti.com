@@ -42,6 +42,12 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
       
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e57c2">
       
     
     
@@ -59,11 +65,32 @@
     
   </head>
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="deep-purple" data-md-color-accent="">
   
     <svg class="md-svg">
       <defs>
         
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
         
       </defs>
     </svg>
@@ -82,7 +109,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="Khalti Gateway Docs" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">book</i>
           
         </a>
       </div>
@@ -134,6 +161,30 @@
         
       </div>
       
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/khalti/khalti-docs-official-repo/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      khalti/khalti-docs-official-repo
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
     </div>
   </nav>
 </header>
@@ -154,11 +205,33 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="Khalti Gateway Docs" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">book</i>
       
     </a>
     Khalti Gateway Docs
   </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/khalti/khalti-docs-official-repo/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      khalti/khalti-docs-official-repo
+    </div>
+  </a>
+
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -535,6 +608,8 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/khalti/khalti-docs-official-repo/edit/master/docs/api/transaction_details.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                   <h1>Detail</h1>
                 
@@ -612,12 +687,12 @@ A merchant should use secret test and live keys for retrieving test and live pay
 }
 </code></pre>
 
-<h2 id="api-request-examples">API Request Examples</h2>
-<h3 id="curl">CURL</h3>
+<h2 id="api-request-examples">API Request Examples<a class="headerlink" href="#api-request-examples" title="Permanent link">&para;</a></h2>
+<h3 id="curl">CURL<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
 <pre><code class="curl">curl https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/ -H &quot;Authorization:Key &lt;secret key&gt;
 </code></pre>
 
-<h3 id="php">PHP</h3>
+<h3 id="php">PHP<a class="headerlink" href="#php" title="Permanent link">&para;</a></h3>
 <pre><code class="php">
 $url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;;
 
@@ -636,7 +711,7 @@ curl_close($ch);
 
 </code></pre>
 
-<h3 id="python">Python</h3>
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
 <pre><code class="python">import requests
 
 url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;
@@ -647,7 +722,7 @@ headers = {
 response = requests.get(url, headers = headers)
 </code></pre>
 
-<h3 id="ruby">Ruby</h3>
+<h3 id="ruby">Ruby<a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h3>
 <pre><code class="ruby">require 'uri'
 require 'net/http'
 
@@ -718,6 +793,10 @@ puts response.body
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 Sparrow Pay Pvt. Ltd.
+          </div>
+        
         powered by
         <a href="https://www.mkdocs.org">MkDocs</a>
         and
@@ -726,6 +805,19 @@ puts response.body
       </div>
       
         
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/khalti" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/KhaltiOfficial" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/khalti-digital-wallet" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://facebook.com/khaltiofficial" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
       
     </div>
   </div>

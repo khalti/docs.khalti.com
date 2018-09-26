@@ -17,6 +17,6 @@ pages:
                 - List: api/transaction.md
                 - Detail: api/transaction_details.md
         - Contribution: contribution.md
-theme: readthedocs
+theme: material
 docs_dir: content
 site_dir: docs

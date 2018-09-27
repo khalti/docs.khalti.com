@@ -1,7 +1,7 @@
-site_name: Khalti Gateway Docs
+site_name: Khalti API docs
 
 pages:
-        - Welcome: index.md
+        - Introduction: index.md
         - Getting started: getting-started.md
         - Integration:
                 - Web: checkout/web.md
@@ -9,13 +9,13 @@ pages:
                 - iOS: checkout/ios.md
                 - Prestashop: checkout/prestashop.md
                 - WooCommerce: checkout/woocommerce.md
-        - Low level API:
-                - Wallet : checkout/diy-wallet.md
-                - Ebanking : checkout/diy-ebanking.md
         - Verification: api/verification.md
         - Transactions:
                 - List: api/transaction.md
                 - Detail: api/transaction_details.md
+        - Low level API:
+                - Wallet : checkout/diy-wallet.md
+                - Ebanking : checkout/diy-ebanking.md
         - Contribution: contribution.md
 theme:
   name: material

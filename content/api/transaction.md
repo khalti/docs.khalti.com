@@ -1,3 +1,5 @@
+# Transaction list
+
 Khalti provides API for retrieving list of payments made to a merchant.
 A merchant should use secret test and live keys for retrieving test and live payment list respectively.
 

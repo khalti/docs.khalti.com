@@ -15,7 +15,7 @@ With Khalti SDK, you can accepts payments from:
 ## Features
 By using Khalti SDK, your customers will have the choice of paying you using Khalti partner banks'
 ebanking account along with their Khalti wallet account.
-asdf asdf asdfad
+
 * Highly secure and easy to integrate and accept payments.
 * SDKs are available for Web (JavaScript), Android and iOS.
 * Your customers can make wallet payments without leaving your platform.

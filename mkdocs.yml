@@ -22,8 +22,9 @@ theme:
   palette:
     primary: deep-purple
   favicon: 'img/favicon.png'
-  logo: 'img/logo.png'
-
+  logo: 'img/khalti_logo.png'
+extra_css:
+  - style/custom.css
 docs_dir: content
 site_dir: docs
 repo_name: 'khalti/khalti-docs-official-repo'

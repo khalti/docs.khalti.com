@@ -45,8 +45,8 @@ After user confirms payment, it has to be verified by Khalti.
 **Fund from user's account is moved to merchant only if verification succeeds.**
 Verification must be done by the merchant server using a secret key.
 
-- [Verification api](./api/verification.md)
-- [Transaction api](./api/transaction.md)
+- [Verification API](./api/verification.md)
+- [Transaction API](./api/transaction.md)
 
 ## 4. Deploy integration
 After successful integration test, the merchant must replace test keys with live ones.

@@ -9,6 +9,8 @@ pages:
                 - iOS: checkout/ios.md
                 - Prestashop: checkout/prestashop.md
                 - WooCommerce: checkout/woocommerce.md
+                - Opencart: checkout/opencart.md
+                - Magneto:  checkout/magneto.md
         - Verification: api/verification.md
         - Transactions:
                 - List: api/transaction.md
@@ -16,6 +18,7 @@ pages:
         - Low level API:
                 - Wallet : checkout/diy-wallet.md
                 - Ebanking : checkout/diy-ebanking.md
+        - Resources: resources.md
         - Contribution: contribution.md
 theme:
   name: material

@@ -949,7 +949,8 @@ configuration parameters.</p>
 </code></pre>
 <p>It receives transaction <code>idx</code> of transaction, <code>token</code> and <code>amount</code> among other payloads.
 One should implement this method to initiate payment verification
-at merchant which in turn will make verification request at Khalti.
+at merchant which in turn will make verification request at Khalti.</p>
+<p>Now you should <strong>send significant info mentioned above to your server and from your server call khalti server to verify the transaction</strong>.
 For documentation on verification follow this <a href="../../api/verification/">link</a>.</p>
 <blockquote>
 <p>2) <code>onError (optional)</code>

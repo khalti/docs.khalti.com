@@ -167,6 +167,8 @@ Configuration is a Javascript object with following attributes.
 It receives transaction `idx` of transaction, `token` and `amount` among other payloads.
 One should implement this method to initiate payment verification
 at merchant which in turn will make verification request at Khalti.
+
+Now you should **send significant info mentioned above to your server and from your server call khalti server to verify the transaction**.
 For documentation on verification follow this [link](./../api/verification.md).
 
 

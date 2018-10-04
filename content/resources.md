@@ -26,4 +26,6 @@
 * [WooCommerce Docker Example yml](https://gist.github.com/chapagainmanoj/05ec82c5459d6063985abfb8f00e6a9e)
 * [Khalti integration for Laravel](https://github.com/anoopsrma/khalti)
 
-*Khalti is not liable to resources other than official resources.*
+*Khalti is not liable for maintaining resources other than official resources.*
+
+If you want to list your resource please check [contribution guide](./contribution.md) or contact [khalti merchant support](/#support)

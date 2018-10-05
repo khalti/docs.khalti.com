@@ -11,13 +11,14 @@ pages:
                 - WooCommerce: checkout/woocommerce.md
                 - Opencart: checkout/opencart.md
                 - Magneto:  checkout/magneto.md
+                - WHMCS Khalti Module: checkout/whmcs.md
         - Verification: api/verification.md
         - Transactions:
                 - List: api/transaction.md
                 - Detail: api/transaction_details.md
         - Low level API:
-                - Wallet : checkout/diy-wallet.md
-                - Ebanking : checkout/diy-ebanking.md
+                - Wallet: checkout/diy-wallet.md
+                - Ebanking: checkout/diy-ebanking.md
         - Resources: resources.md
         - Contribution: contribution.md
 theme:

@@ -9,7 +9,7 @@ integration in your website/app. We also have SDKs for Android and iOS.
 
 To get the feel of how Khalti checkout looks click the button below.
 
-<button id="payment-button" style="background-color: #773292; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
+<button id="payment-button" style="background-color: #773292; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
 
 
 ## Installation
@@ -83,8 +83,7 @@ Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
 ```javascript
 import KhaltiCheckout from "khalti-web";
 
-// for dynamic loading  
-// import * as KhaltiCheckout from "khalti-web"; TypeScript
+// import * as KhaltiCheckout from "khalti-web"; ES6 import with alias
 // var KhaltiCheckout = require("khalti-web"); CommonJs
 
 let config = {

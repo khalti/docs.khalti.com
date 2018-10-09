@@ -18,6 +18,7 @@
 #### Example Projects
 * [Web Example, Client side with Vuejs, Server side with Flask(python) and Nodejs(express)](https://github.com/chapagainmanoj/Khalti-web-sdk-example)
 * [Khalti Checkout Implementation with PHP](https://github.com/acpmasquerade/khalti-checkout-example)
+* [Khalti checkout with angular5](https://github.com/chapagainmanoj/khalti-checkout-angular5)
 * [iOS SDK Objective C Example](https://github.com/khalti/khalti-sdk-ios/tree/master/Example%20Obj-c)
 * [iOS SDK Swift Example](https://github.com/khalti/khalti-sdk-ios/tree/master/Example)
 * [Android SDK Example](https://github.com/khalti/khalti-sdk-android)

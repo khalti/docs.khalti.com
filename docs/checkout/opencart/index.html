@@ -356,9 +356,65 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Opencart
+      </label>
+    
     <a href="./" title="Opencart" class="md-nav__link md-nav__link--active">
       Opencart
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-installation" title="Manual Installation" class="md-nav__link">
+    Manual Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" title="Testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" title="Deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -541,6 +597,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-installation" title="Manual Installation" class="md-nav__link">
+    Manual Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" title="Testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" title="Deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -555,8 +654,56 @@
                 
                 
                 <h1 id="opencart">Opencart<a class="headerlink" href="#opencart" title="Permanent link">&para;</a></h1>
-<p>This is Khalti Payment Gateway plugin for Opencart.</p>
+<p>This is Khalti Payment Gateway extension for Opencart.</p>
 <p>Check out the source for <a href="https://github.com/khalti/khalti-opencart">Khalti plugin on Github</a>.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>The basic steps to follow:</p>
+<ul>
+<li>Go to <code>Extension &gt; Installer</code> in your admin dashboard</li>
+<li>Upload the zip file of module (<a href="https://github.com/khalti/khalti-opencart">link</a>)</li>
+</ul>
+<p><img alt="Upload extension" src="../../img/opencart/upload.png" /></p>
+<ul>
+<li>Now after successful upload go to <code>Extensions &gt; Extensions</code></li>
+<li>Choose <code>Payment</code> on extension type section you will get a list with Khalti in it.</li>
+<li>Select to edit button. You will see fields as below.</li>
+</ul>
+<p><img alt="Extension lists" src="../../img/opencart/khalti_extension.png" /></p>
+<ul>
+<li>Set <code>Test mode</code> to <em>Yes</em> and Status to <em>Enabled</em>. Enter your test public key and test secret key in respective fields and save. You can get keys from <code>Keys</code> section in your merchant dashboard</li>
+</ul>
+<p><img alt="Set up" src="../../img/opencart/setup.png" /></p>
+<ul>
+<li>After successful upload go to <code>Design &gt; Theme Editor</code> in dashboard side nav</li>
+<li>Select <code>common &gt; header.twig</code> from <code>Choose a template</code> section</li>
+</ul>
+<pre><code>&lt;script  &quot;https://khalti.com/static/khalti-checkout.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li>Add above line  in <code>header.twig</code> and save.</li>
+</ul>
+<p><img alt="header.twig" src="../../img/opencart/khalti_chackout.png" /></p>
+<p><em>you may need to manage permission of your project folders</em></p>
+<p><em>if downloaded zip is not compatible try compressing to zip after you uncompressing it</em></p>
+<h4 id="manual-installation">Manual Installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Extract the zip file.</li>
+<li>Copy all files on the root directory of project</li>
+<li>add script with src "https://khalti.com/static/khalti-checkout.js" on your themes header file which is located on "catalog/view/theme/YOUR_THEME_NAME/common/header.twig</li>
+<li>clear Opencart cache</li>
+</ul>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Before testing set default currency to Nepalese Rupee. (<a href="https://www.opencart.com/blog?page=4&amp;blog_id=228">How</a>)</li>
+<li>Go to your shop and complete a transaction from Wallet payment type.</li>
+</ul>
+<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>If a test is passed successfully, go to keys section in your merchant dashboard. You will get your Live keys there.</li>
+<li>Uncheck the Test Mode and enter your public and secret keys in respective fields</li>
+<li>Finally save the changes.</li>
+</ul>
                 
                   
                 

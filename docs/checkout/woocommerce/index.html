@@ -344,9 +344,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        WooCommerce
+      </label>
+    
     <a href="./" title="WooCommerce" class="md-nav__link md-nav__link--active">
       WooCommerce
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" title="Testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" title="Deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -541,6 +584,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" title="Testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" title="Deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -557,23 +630,34 @@
                 <h1 id="woocommerce">WooCommerce<a class="headerlink" href="#woocommerce" title="Permanent link">&para;</a></h1>
 <p>This is Khalti Payment Gateway extension for WooCommerce.
 Check out the source for <a href="https://github.com/khalti/khalti-woocommerce">Khalti plugin</a> on Github.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>The basic steps to follow:</p>
-<ol>
-<li>Go to the plugin section in your WordPress dashboard</li>
-<li>Click on Add New and upload the zip file of Khalti WooCommerce plugin and upload it</li>
-</ol>
+<ul>
+<li>Go to the plugin section in your WordPress admin dashboard</li>
+<li>Click on Add New and upload the zip file of Khalti WooCommerce plugin (<a href="https://github.com/khalti/khalti-woocommerce">link</a>) and upload it</li>
+</ul>
 <p><img alt="Upload Plugin" src="../../img/woocommerce/upload_khalti.png" /></p>
-<ol>
-<li>After installation is complete, go to the WooCommerce section and to Settings</li>
-<li>Go to Checkout option where you can find Khalti among other payment gateways</li>
-<li>Click on Khalti option and enter your test secret key and test public key which you can get at Keys section in your merchant account</li>
-</ol>
+<ul>
+<li>After installation is complete, go to <code>WooCommerce &gt; Settings</code></li>
+<li>Go to <code>Payments</code> option where you can find Khalti among other payment gateways</li>
+<li>Click on Khalti option and enter your test secret key and test public key in respective fields. You can get keys from <code>Keys</code> section in your merchant dashboard</li>
+</ul>
 <p><img alt="Set up Khalit" src="../../img/woocommerce/khalti_setup.png" /></p>
-<ol>
-<li>Click on save changes and complete a Khalti wallet transaction to pass the test</li>
+<ul>
+<li>Click on save changes</li>
+</ul>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Should enable khalti and Test Mode as shown in above example.</li>
+<li>Currency should be Nepalese Rupee. (<a href="https://docs.woocommerce.com/document/shop-currency/">How</a>)</li>
+<li>Go to your shop and complete a transaction from Wallet payment type.</li>
+</ul>
+<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h2>
+<ul>
 <li>If you pass the test, Go to keys section in your merchant account, you can get your Live keys their</li>
-<li>Enter your live key and click save changes</li>
-</ol>
+<li>Uncheck the Test Mode and enter your public and secret keys in respective fields</li>
+<li>Finally save the changes.</li>
+</ul>
                 
                   
                 

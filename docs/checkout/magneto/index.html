@@ -368,9 +368,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Magneto
+      </label>
+    
     <a href="./" title="Magneto" class="md-nav__link md-nav__link--active">
       Magneto
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -541,6 +570,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -557,6 +602,17 @@
                 <h1 id="magneto">Magneto<a class="headerlink" href="#magneto" title="Permanent link">&para;</a></h1>
 <p>This is Khalti Payment Gateway plugin for Magneto 2.</p>
 <p>Check out the source for <a href="https://github.com/khalti/khalti-magento">Khalti plugin on Github</a>.</p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create the following folder structure inside "app" folder and copy all the files
+  "Fourwallsinn/Khalti"</li>
+<li>After you have copied all the files the folder structure should be like this
+  "app/code/Fourwallsinn/Khalti/UPLOADED_FILES"</li>
+<li>Run the following CLI commands to complete the Plugin Installation
+  <code>php bin/magento setup:upgrade</code></li>
+<li>If you are on Production Environment, make sure you run the following command as well
+  <code>php bin/magento setup:static-content:deploy</code></li>
+</ul>
                 
                   
                 

@@ -149,7 +149,7 @@ Configuration is a Javascript object with following attributes.
 |eventHandler|true|object|It is a javascript object with three methods|
 |mobile|false|integer|Mobile number of consumer.
 
->  1) `onSuccess`
+>  1. `onSuccess`
 	This method is called once a transaction is confirmed by a user.
 	The success response is in the following format:
 
@@ -171,7 +171,7 @@ Now you should **send significant info mentioned above to your server and from y
 For documentation on verification follow this [link](./../api/verification.md).
 
 
->  2) `onError (optional)`
+>  2. `onError (optional)`
 	This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for `Invalid Transaction PIN or Confirmation Code`:
 
 	{
@@ -184,7 +184,7 @@ For documentation on verification follow this [link](./../api/verification.md).
 	}
 
 
->  3) `onClose (optional)`
+>  3. `onClose (optional)`
 		This method is also optional. If implemented, this method is called when `close icon(X)` of the widget is called.
 
 

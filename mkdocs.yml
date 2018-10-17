@@ -10,7 +10,7 @@ pages:
                 - Prestashop: checkout/prestashop.md
                 - WooCommerce: checkout/woocommerce.md
                 - Opencart: checkout/opencart.md
-                - Magneto:  checkout/magneto.md
+                - Magento:  checkout/magneto.md
                 - WHMCS Khalti Module: checkout/whmcs.md
         - Verification: api/verification.md
         - Transactions:

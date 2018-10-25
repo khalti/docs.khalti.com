@@ -479,8 +479,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../magneto/" title="Magneto" class="md-nav__link">
-      Magneto
+    <a href="../magneto/" title="Magento" class="md-nav__link">
+      Magento
     </a>
   </li>
 
@@ -944,9 +944,11 @@ configuration parameters.</p>
 </tbody>
 </table>
 <blockquote>
-<p>1) <code>onSuccess</code>
+<ol>
+<li><code>onSuccess</code>
     This method is called once a transaction is confirmed by a user.
-    The success response is in the following format:</p>
+    The success response is in the following format:</li>
+</ol>
 </blockquote>
 <pre><code>{
     "idx": "8xmeJnNXfoVjCvGcZiiGe7",
@@ -964,8 +966,10 @@ at merchant which in turn will make verification request at Khalti.</p>
 <p>Now you should <strong>send significant info mentioned above to your server and from your server call khalti server to verify the transaction</strong>.
 For documentation on verification follow this <a href="../../api/verification/">link</a>.</p>
 <blockquote>
-<p>2) <code>onError (optional)</code>
-    This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for <code>Invalid Transaction PIN or Confirmation Code</code>:</p>
+<ol>
+<li><code>onError (optional)</code>
+    This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for <code>Invalid Transaction PIN or Confirmation Code</code>:</li>
+</ol>
 </blockquote>
 <pre><code>{
   "action": "WALLET_PAYMENT_CONFIRM",
@@ -977,8 +981,10 @@ For documentation on verification follow this <a href="../../api/verification/">
 }
 </code></pre>
 <blockquote>
-<p>3) <code>onClose (optional)</code>
-        This method is also optional. If implemented, this method is called when <code>close icon(X)</code> of the widget is called.</p>
+<ol>
+<li><code>onClose (optional)</code>
+        This method is also optional. If implemented, this method is called when <code>close icon(X)</code> of the widget is called.</li>
+</ol>
 </blockquote>
 <p><strong>Additionally</strong> Configuration also accepts attribute starting with <code>merchant_</code> that can be used to pass additional (meta) data.</p>
 <ul>

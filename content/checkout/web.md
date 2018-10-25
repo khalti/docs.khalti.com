@@ -204,7 +204,7 @@ Now, for server side integration check [Verification](/api/verification.md) and 
 <script>
         var config = {
             // replace the publicKey with yours
-            "publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
+            "publicKey": "live_public_key_3e97d8268ec44c2e8301a00bbd75474c",
             "productIdentity": "1234567890",
             "productName": "Dragon",
             "productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",

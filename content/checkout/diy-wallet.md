@@ -77,7 +77,7 @@ If the user's pin has already been created, the response will look like this:
 
 In this step, you will need to prompt the user for the OTP (One Time Password),
 and their 3rd party transaction pin. Once those details are submitted, the
-request to verify trnasaction should be made like this:
+request to verify transaction should be made like this:
 
 The value in `token` key from the response in previous step is required
 to verify the transaction.
@@ -132,3 +132,4 @@ for more information on how to verify the transaction.
 2. If the transaction initiation API response has `pin_created = true`,
    you must display the content of `pin_created_message` key in that response
    to the user.
+

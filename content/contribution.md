@@ -29,6 +29,13 @@ git clone git@github.com:<YOUR_USERNAME>/khalti-docs-official-repo.git
 Install `mkdocs` using any of the methods specified in the
 [official documentation](http://www.mkdocs.org/#installation).
 
+The current theme used for mkdocs is `material`. You will need to
+install the theme as well.
+
+```bash
+pip install mkdocs-material
+```
+
 To serve the docs locally, run:
 
 ```bash

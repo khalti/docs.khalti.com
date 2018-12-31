@@ -1,14 +1,25 @@
+# Web SDK
 
 [![npm](https://img.shields.io/badge/npm-v1.1.1-blue.svg)](https://www.npmjs.com/package/khalti-web)
 
-Khalti checkout can be integrated with or without build tools like
-[Webpack](https://github.com/webpack/webpack) and [Rollup](https://github.com/rollup/rollup).
+This documentation details the process of Khalti Web/JavaScript SDK
+integration in your website/app. We also have SDKs for Android and iOS.
+
+## Demo
 
 To get the feel of how Khalti checkout looks click the button below.
 
-<button id="payment-button" style="background-color: #773292; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
+<button id="payment-button" style="background-color: #773292; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
 
-## Without build tools
+
+## Installation
+
+Khalti checkout can be integrated with or without build tools like
+[Webpack](https://github.com/webpack/webpack) and
+[Rollup](https://github.com/rollup/rollup).
+
+
+### Install Without build tools
 
 ```html
 <html>
@@ -56,22 +67,23 @@ To get the feel of how Khalti checkout looks click the button below.
 
 [Click here](#configuration) for details on config parameters.
 
-## With build tools
+### Install with build tools
+
 Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
 
-### 1. Install `khalti-web`
-#### Using yarn
+#### 1. Install `khalti-web`
+
+##### Using yarn
 `yarn add khalti-web`
 
-#### Using npm
+##### Using npm
 `npm install khalti-web --save`
 
-### 2. Import and use it in your desired component
+#### 2. Import and use it in your desired component
 ```javascript
 import KhaltiCheckout from "khalti-web";
 
-// for dynamic loading  
-// import * as KhaltiCheckout from "khalti-web"; TypeScript
+// import * as KhaltiCheckout from "khalti-web"; ES6 import with alias
 // var KhaltiCheckout = require("khalti-web"); CommonJs
 
 let config = {
@@ -107,7 +119,10 @@ btn.onclick = function () {
 
 - `KhaltiCheckout(configuration?)`
 
-	> Instantiate `KhaltiCheckout` class and pass a [configuration](#configuration).
+	This creates an instance of the `KhaltiCheckOut` class. The
+	`configuration` argument is a JavaScript object. See
+	[configuration](#configuration) for details on available
+	configuration parameters.
 
 - `show(configuration?)`
 
@@ -115,7 +130,7 @@ btn.onclick = function () {
 	- Receives configuration as argument.
 	- Provide amount and mobile to prefill the checkout widget field
 	 > ```checkout.show({amount: 1000, mobile: 98XXXXXXXX})```
-	- ***mobile*** is optional fields and expects Khalti Registered Number for wallet payment.
+	- `mobile` is an optional field and expects Khalti Registered Number for wallet payment.
 
 - `hide()`
 
@@ -134,7 +149,7 @@ Configuration is a Javascript object with following attributes.
 |eventHandler|true|object|It is a javascript object with three methods|
 |mobile|false|integer|Mobile number of consumer.
 
->  1) `onSuccess`
+>  1. `onSuccess`
 	This method is called once a transaction is confirmed by a user.
 	The success response is in the following format:
 
@@ -151,10 +166,12 @@ Configuration is a Javascript object with following attributes.
 It receives transaction `idx` of transaction, `token` and `amount` among other payloads.
 One should implement this method to initiate payment verification
 at merchant which in turn will make verification request at Khalti.
+
+Now you should **send significant info mentioned above to your server and from your server call khalti server to verify the transaction**.
 For documentation on verification follow this [link](./../api/verification.md).
 
 
->  2) `onError (optional)`
+>  2. `onError (optional)`
 	This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for `Invalid Transaction PIN or Confirmation Code`:
 
 	{
@@ -167,7 +184,7 @@ For documentation on verification follow this [link](./../api/verification.md).
 	}
 
 
->  3) `onClose (optional)`
+>  3. `onClose (optional)`
 		This method is also optional. If implemented, this method is called when `close icon(X)` of the widget is called.
 
 

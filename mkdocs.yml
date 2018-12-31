@@ -1,7 +1,7 @@
-site_name: Khalti Gateway Docs
+site_name: Khalti API docs
 
 pages:
-        - Welcome: index.md
+        - Introduction: index.md
         - Getting started: getting-started.md
         - Integration:
                 - Web: checkout/web.md
@@ -9,14 +9,42 @@ pages:
                 - iOS: checkout/ios.md
                 - Prestashop: checkout/prestashop.md
                 - WooCommerce: checkout/woocommerce.md
-        - Low level API:
-                - Wallet : checkout/diy-wallet.md
-                - Ebanking : checkout/diy-ebanking.md
+                - Opencart: checkout/opencart.md
+                - Magento:  checkout/magneto.md
+                - WHMCS Khalti Module: checkout/whmcs.md
         - Verification: api/verification.md
         - Transactions:
                 - List: api/transaction.md
                 - Detail: api/transaction_details.md
+        - Low level API:
+                - Wallet: checkout/diy-wallet.md
+                - Ebanking: checkout/diy-ebanking.md
+        - Resources: resources.md
         - Contribution: contribution.md
-theme: readthedocs
+theme:
+  name: material
+  palette:
+    primary: deep-purple
+  favicon: 'img/favicon.png'
+  logo: 'img/khalti_logo.png'
+extra_css:
+  - style/custom.css
 docs_dir: content
 site_dir: docs
+repo_name: 'khalti/khalti-docs-official-repo'
+repo_url: 'https://github.com/khalti/khalti-docs-official-repo'
+edit_uri: 'edit/master/content/'
+copyright: 'Copyright &copy; 2018 Sparrow Pay Pvt. Ltd.'
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/khalti'
+    - type: 'twitter'
+      link: 'https://twitter.com/KhaltiOfficial'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/khalti-digital-wallet'
+    - type: 'facebook'
+      link: 'https://facebook.com/khaltiofficial'
+markdown_extensions:
+  - toc:
+      permalink: true

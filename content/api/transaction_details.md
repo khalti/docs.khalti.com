@@ -1,3 +1,5 @@
+# Transaction detail
+
 Khalti provides API for retrieving payment made to a merchant.
 A merchant should use secret test and live keys for retrieving test and live payment respectively.
 

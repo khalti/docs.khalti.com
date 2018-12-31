@@ -1,4 +1,4 @@
-# Khalti
+# iOS SDK
 
 [![IDE](https://img.shields.io/badge/Xcode-8%209%2010Beta-blue.svg)](https://developer.apple.com/xcode/)
 [![Language](https://img.shields.io/badge/swift-3,%204-orange.svg)](https://swift.org)

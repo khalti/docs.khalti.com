@@ -1,88 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/getting-started/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/web/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/android/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/ios/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/prestashop/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/woocommerce/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/opencart/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/magneto/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/whmcs/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/api/verification/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/api/transaction/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/api/transaction_details/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/diy-wallet/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/checkout/diy-ebanking/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/resources/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-12</lastmod>
+     <loc>/contribution/</loc>
+     <lastmod>2018-12-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
 </urlset>

@@ -163,11 +163,11 @@ Configuration is a Javascript object with following attributes.
 		"token": "QUao9cqFzxPgvWJNi9aKac"
 	}
 
-It receives transaction `idx` of transaction, `token` and `amount` among other payloads.
+It receives transaction `idx` of transaction, `token`, `amount` and other (key/)values with payloads.
 One should implement this method to initiate payment verification
 at merchant which in turn will make verification request at Khalti.
 
-Now you should **send significant info mentioned above to your server and from your server call khalti server to verify the transaction**.
+Now you should **send these values to your server and call khalti server to verify the transaction**.
 For documentation on verification follow this [link](./../api/verification.md).
 
 
@@ -199,6 +199,22 @@ The additional data starting with `merchant_` is returned in success response pa
 Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-web).
 
 Now, for server side integration check [Verification](/api/verification.md) and [Transaction](/api/transaction.md) api.
+
+
+# gotchas
+- You need to call verification api from your server to verify, so it is necessary to pass the data to your server first.
+- If you get "Fee not found." error, than you need to check you fee. Set fee between Rs. 10 to Rs. 1000.
+- If you get error while rendering iframe, khalti is probably blocked by clickjacking protection.
+
+	>  Refused to display 'https://khalti.com/payment/widget/' in a frame because it set 'X-Frame-Options' to 'deny'.
+
+	>  Refused to display 'https://khalti.com/payment/widget/' in a frame because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'none'".
+
+	you need to allow khalti.com, your server configuration should look like
+
+	```Content-Security-Policy frame-ancestors 'self' khalti.com *.khalti.com```
+
+
 
 <script src="https://khalti.com/static/khalti-checkout.js"></script>
 <script>

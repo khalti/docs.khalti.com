@@ -171,7 +171,7 @@ For Queries, feel free to call us at:
 
 Mobile : 9801165568
 Viber/Whatsapp/Skype ID: 9801165568
-Email: [merchant@khalti.com](mailto:merchant@khalti.com?cc=rajendrak@janakitech.com,developers@khalti.com,support@khalti.com)
+Email: [ios@khalti.com](mailto:ios@khalti.com?cc=merchant@khalti.com)
 
 
 Check out the [API Documentation](http://docs.khalti.com/checkout/ios/).

@@ -636,24 +636,26 @@
 <ul>
 <li><strong>Server errors</strong></li>
 </ul>
-<p>If you get error response "Fee not found." while testing, check your fee and set fee between Rs. 10 to Rs. 1000. If you get an error while using live keys contact <a href="/#support">merchant support</a> to find your transaction limits.</p>
+<p>If you get error response "Fee not found." while testing, check your fee and set fee between Rs. 10 to Rs. 1000. If you are using live keys contact <a href="/#support">merchant support</a> to find your transaction limits.</p>
 <ul>
 <li><strong>Frame Options and Clickjacking protection</strong></li>
 </ul>
-<p><code>Refused to display 'https://khalti.com/payment/widget/' in a frame because it set 'X-Frame-Options' to 'deny'.</code></p>
-<p>You are using HTTP response header 'X-Frame-Options' that avoids <code>&lt;iframe&gt;</code> rendering when you set it to 'deny'. But Khalti gateway uses iframe payment form, to accept payment from Khalti you need to allow iframe at least for khalti.com. You have a configuration option 'allow-from' with x-frame-options to allow from a specific domain. You can simply do this in your server configuration:</p>
 <blockquote>
-<p>X-Frame-Options "allow-from https://khalti.com"</p>
+<p>Refused to display 'https://khalti.com/payment/widget/' in a frame because it set 'X-Frame-Options' to 'deny'.</p>
 </blockquote>
-<p>But using x-frame-options is not an internet standard. It is almost absolute; modern browsers like chrome and safari don't support it.  The recommended way is to use 'frame-ancestors'  CSP rule. (legacy browsers like IE do not support it )
-  So also for this error:</p>
-<pre><code>Refused to display 'https://khalti.com/payment/widget/' in a frame because an ancestor violates the following Content Security Policy directive: &quot;frame-ancestors 'none'&quot;.
+<p>You are using HTTP response header 'X-Frame-Options' that avoids <code>&lt;iframe&gt;</code> rendering when you set it to 'deny'. But Khalti gateway uses iframe payment form, to accept payment from Khalti you need to allow iframe at least for khalti.com. You have a configuration option 'allow-from' with x-frame-options to allow from a specific domain. You can simply do this in your server configuration:</p>
+<pre><code>X-Frame-Options &quot;allow-from https://khalti.com&quot;
 </code></pre>
 
-<p>You need to configure the server as:</p>
+<p>But using x-frame-options is not an internet standard. It is almost absolute; modern browsers like chrome and safari don't support it.  The recommended way is to use 'frame-ancestors'  CSP rule. (legacy browsers like IE do not support it ).
+So also for this error:</p>
 <blockquote>
-<p>Content-Security-Policy frame-ancestors 'self' khalti.com *.khalti.com</p>
+<p>Refused to display 'https://khalti.com/payment/widget/' in a frame because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'none'".</p>
 </blockquote>
+<p>You need to configure the server as:</p>
+<pre><code>Content-Security-Policy frame-ancestors 'self' khalti.com *.khalti.com
+</code></pre>
+
 <p>One can use both the options for full browser compatibility. So, please change your server configuration accordingly.</p>
                 
                   

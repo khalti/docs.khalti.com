@@ -1,26 +1,29 @@
-site_name: Khalti API docs
+site_name: Khalti Developer
 
-pages:
-        - Introduction: index.md
-        - Getting started: getting-started.md
-        - Integration:
-                - Web: checkout/web.md
-                - Android: checkout/android.md
-                - iOS: checkout/ios.md
-                - Prestashop: checkout/prestashop.md
-                - WooCommerce: checkout/woocommerce.md
-                - Opencart: checkout/opencart.md
-                - Magento:  checkout/magneto.md
-                - WHMCS Khalti Module: checkout/whmcs.md
+nav:
+    - Introduction: index.md
+    - Getting Started: getting-started.md
+    - Client Integration:
+        - Web SDK: checkout/web.md
+        - Android SDK: checkout/android.md
+        - iOS SDK: checkout/ios.md
+        - API Reference:
+            - Wallet: checkout/diy-wallet.md
+            - Ebanking: checkout/diy-ebanking.md
+    - Server Integration:
         - Verification: api/verification.md
-        - Transactions:
-                - List: api/transaction.md
-                - Detail: api/transaction_details.md
-        - Low level API:
-                - Wallet: checkout/diy-wallet.md
-                - Ebanking: checkout/diy-ebanking.md
-        - Resources: resources.md
-        - Contribution: contribution.md
+        - Transaction:
+            - List: api/transaction.md
+            - Detail: api/transaction_details.md
+    - Plug and Play:
+        - WooCommerce: plugins/woocommerce.md
+        - Opencart: plugins/opencart.md
+        - Magento:  plugins/magneto.md
+        - Prestashop: plugins/prestashop.md
+        - WHMCS Khalti Module: plugins/whmcs.md
+    - Resources: resources.md
+    - FAQ's and Gotchas: gotchas.md
+    - Contribution: contribution.md
 theme:
   name: material
   palette:

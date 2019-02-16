@@ -36,21 +36,21 @@ We have developed SDKs for every major plaforms and we call it `Checkout`.
 
 Checkouts provide all the necessary UIs and perform necessary processes to initiate and confirm payment.
 
-- [Web](./checkout/web.md)
-- [Android](./checkout/android.md)
-- [iOS](./checkout/ios.md)
+- [Web kit](./checkout/web.md)
+- [Android kit](./checkout/android.md)
+- [iOS kit](./checkout/ios.md)
 
 ### 3.2. Server side integration
 After user confirms payment, it has to be verified by Khalti.
-**Fund from user's account is moved to merchant only if verification succeeds.**
+**Fund from user account is moved to merchant only if verification succeeds.**
 Verification must be done by the merchant server using a secret key.
 
 - [Verification API](./api/verification.md)
 - [Transaction API](./api/transaction.md)
 
-## 4. Deploy integration
-After successful integration test, the merchant must replace test keys with live ones.
+## 4. Go live
+After successful integration test, the merchant must **replace test keys with live ones**.
 Live keys start with `live_X_X`. Replace `test_public_X` and `test_secret_X` keys with `live_public_X` and `live_secret_X` keys respectively.
 
 ### 4.1. Further processes
-Even successful integration itself doesn't let you receive payments above NRs. 1000 per transaction. Please fill KYC form and contact us at 9801165568 to remove the limits and accept payments without restrictions. 
+Even successful integration itself doesn't let you receive payments above NRs. 1000 per transaction. Please fill KYC form and contact us at 9801165568 to remove the limits and accept payments without restrictions.

@@ -1,4 +1,7 @@
+# Learn more about Khalti integration
+Here are few demo projects and resources in various plaforms.
 #### Official Resources
+
 * [Khalti Javascript SDK](https://github.com/khalti/khalti-sdk-web)
 * [Khalti Android SDK](https://github.com/khalti/khalti-sdk-android)
 * [Khalti iOS SDK](https://github.com/khalti/khalti-sdk-ios)
@@ -26,7 +29,5 @@
 * [Opencart Docker Example](https://github.com/chapagainmanoj/khalti-opencart-docker)
 * [WooCommerce Docker Example yml](https://gist.github.com/chapagainmanoj/05ec82c5459d6063985abfb8f00e6a9e)
 * [Khalti integration for Laravel](https://github.com/anoopsrma/khalti)
-
-<sub>**Khalti is not liable for resources other than official resources.*</sub>
 
 If you want to list your resource please check [contribution guide](./contribution.md) or contact [khalti merchant support](/#support)

@@ -1,3 +1,10 @@
 [data-md-color-primary="deep-purple"] .md-header {
-	background-color:#4d286d !important;
+	background-color: #4F276E !important;
+}
+.md-footer-nav {
+	background-color: #f9f9f9 !important;
+	color: #7E57CB;
+}
+.md-footer-meta {
+	background-color:#4F276E !important;
 }

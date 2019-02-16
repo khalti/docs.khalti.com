@@ -201,20 +201,6 @@ Check out the source for [Khalti checkout on Github](https://github.com/khalti/k
 Now, for server side integration check [Verification](/api/verification.md) and [Transaction](/api/transaction.md) api.
 
 
-# gotchas
-- You need to call verification api from your server to verify, so it is necessary to pass the data to your server first.
-- If you get "Fee not found." error, than you need to check you fee. Set fee between Rs. 10 to Rs. 1000.
-- If you get error while rendering iframe, khalti is probably blocked by clickjacking protection.
-
-	>  Refused to display 'https://khalti.com/payment/widget/' in a frame because it set 'X-Frame-Options' to 'deny'.
-
-	>  Refused to display 'https://khalti.com/payment/widget/' in a frame because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'none'".
-
-	you need to allow khalti.com, your server configuration should look like
-
-	```Content-Security-Policy frame-ancestors 'self' khalti.com *.khalti.com```
-
-
 
 <script src="https://khalti.com/static/khalti-checkout.js"></script>
 <script>

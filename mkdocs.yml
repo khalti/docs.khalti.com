@@ -1,4 +1,4 @@
-site_name: Khalti for Developers
+site_name: Khalti Payment Gateway
 
 nav:
     - Introduction: index.md
@@ -18,7 +18,7 @@ nav:
     - Plug and Play:
         - WooCommerce: plugins/woocommerce.md
         - Opencart: plugins/opencart.md
-        - Magento:  plugins/magneto.md
+        - Magento 2:  plugins/magneto.md
         - Prestashop: plugins/prestashop.md
         - WHMCS Khalti Module: plugins/whmcs.md
     - Resources: resources.md

@@ -21,14 +21,45 @@ Please follow links below to create a merchant and a consumer accounts if you ha
 
 ![Khalti payment overview](./img/khalti-payment-overview.png)
 
+### 2.1. Transaction States
+#### 1. Initiated
+
+It is the first state of a transaction. Transactions are initiated after mobile number and other transaction details are provided.
+
+#### 2. Confirmed
+
+A transaction is confirmed after transaction details (transaction token, confirmation_code and  3rd party transaction_pin) are provided by the consumer.
+[Check how to set and update transaction pin here.](https://www.youtube.com/watch?v=KeX7j_hp_sk)
+
+#### 3. Completed
+
+Merchant server then requests khalti server to verify the transaction. After the transaction is in completed state consumer is informed the transaction was successfully completed.
+
+#### 4. Disabled
+
+A transaction could be disabled due to the possibility of 'confirmation_code' exploitation.
+
+#### 5. Refunded
+
+A merchant can refund the successful payments within a limited period of time.
+
+#### 6. Partially refunded
+
+A completed transaction also can be partially refunded.
+
+#### 7. Failed
+
+Normally, a successful transaction has at least three states initiate, confirm and complete. A client initiates and confirms payment while the server verifies it and the payment process is completed.
+
 ## 3. Test integration
 Now that you know how Khalti payment works. Its time to integrate it into your system.
-A merchant must complete test integration using test keys. Test keys start with `test_`.
+A merchant must complete test integration using **test keys**. Test keys start with `test_`.
 
 In test mode, transactions are sandboxed, which means fund is not moved from a consumer to the merchant.
-Khalti must to be integrated at client and server. A transaction has three states initiate, confirm and complete. A client initiates and confirms payment while server verifies it and payment process is completed.
+Khalti must to be integrated at client and server.
 
-Payment via E-Banking and Debit/Credit card is not supported in test environment. After you successfully integrate wallet, you need not to concern about E-Banking and Card payment integration.
+
+Payment via E-Banking and Debit/Credit card is not supported in the test environment. After you successfully integrate wallet, you need not to concern about E-Banking and Card payment integration.
 
 ### 3.1. Client side integration
 For now there is only one way to integrate Khalti at client side, through SDKs.
@@ -47,6 +78,7 @@ Verification must be done by the merchant server using a secret key.
 
 - [Verification API](./api/verification.md)
 - [Transaction API](./api/transaction.md)
+
 
 ## 4. Go live
 After successful integration test, the merchant must **replace test keys with live ones**.

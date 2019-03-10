@@ -4,7 +4,7 @@ Khalti is a new generation payment gateway, digital wallet and API
 provider system for various online services for Nepal.
 
 This site hosts documentation for developers who are looking to
-integrate khalti as a payment option in their e-commerce platform.
+integrate khalti as a payment option in their online platform.
 If you fall into that category, please keep reading.
 
 With Khalti SDK/API, you can accepts payments from:

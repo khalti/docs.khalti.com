@@ -49,7 +49,7 @@ A completed transaction also can be partially refunded.
 
 #### 7. Failed
 
-Normally, a successful transaction at least three changes of states initiate, confirm and complete. A client first initiates and then confirms payment while the server finally verifies it and the payment process is completed.
+Normally, a successful transaction has at least three changes of states initiate, confirm and complete. A client first initiates and then confirms payment while the server finally verifies it and the payment process is completed.
 
 ## 3. Test integration
 Now that you know how Khalti payment works. Its time to integrate it into your system.

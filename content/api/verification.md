@@ -32,7 +32,8 @@ expected by Khalti server is as follows.
 	- `Authorization`: test or live secret key in the form `Key <secret key>`
 - `payload`:
 	- `token`: Token given by Khalti after payment confirmation.
-	- `amount`: Amount (in paisa) with which payment was initiated.
+	- `amount`: Amount (in paisa) with which payment was initiated. (Important !!
+	Cross check the amount from client side to amount from server.)
 
 
 ## Verification response
@@ -95,7 +96,7 @@ $args = http_build_query(array(
     'token' => 'QUao9cqFzxPgvWJNi9aKac',
     'amount'  => 1000
 ));
-    
+
 $url = "https://khalti.com/api/v2/payment/verify/";
 
 # Make the call using API.

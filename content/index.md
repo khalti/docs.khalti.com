@@ -43,7 +43,7 @@ wallet account.
 ##Support
 ** For Queries, feel free to call us at: **
 
-* Mobile (Viber / Whatsapp / Skype): 9801165568, 9801165557
+* Mobile (Viber / Whatsapp / Skype): 9801165565, 9801052293
 
 * Email: merchant@khalti.com
 

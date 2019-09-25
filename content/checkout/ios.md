@@ -30,18 +30,18 @@ pod 'Khalti'
 ### Adding CustomSchme
 Khalti uses custom Scheme: So merhant should setup **URLScheme** unique for their app. We have made usability as of user case.
 
-![Khalti scheme setup overview](https://raw.githubusercontent.com/khalti/khalti-sdk-ios/master/Screenshots/customUrlScheme.png) 
+![Khalti scheme setup overview](https://raw.githubusercontent.com/khalti/khalti-sdk-ios/master/Screenshots/customUrlScheme.png)
 
-After adding Url Scheme create global constant for same customUrlScheme as below 
+After adding Url Scheme create global constant for same customUrlScheme as below
 ```swift
 let khaltiUrlScheme:String = "KhaltiPayExampleScheme"
 ```
 
 ### Requirements
-To work around with this redirection you have to implement some openUrl in ```Appdelegate.swift```. 
+To work around with this redirection you have to implement some openUrl in ```Appdelegate.swift```.
 
 ```Khalti.shared.defaultAction()``` returns `true` if you initiate payment through Khalti.
-```Khalti.shared.action(with: url)``` is needed for complete action after ebanking and card payment. 
+```Khalti.shared.action(with: url)``` is needed for complete action after ebanking and card payment.
 
 **Note:** Using ```Khalti.shared.action(with: url)```  is mandatory.
 
@@ -49,7 +49,7 @@ Add following code to `Appdelegate.swift`
 ```swift
  func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
     Khalti.shared.action(with: url)
-    return Khalti.shared.defaultAction() // Or true 
+    return Khalti.shared.defaultAction() // Or true
 }
 ```
 
@@ -71,11 +71,11 @@ At this stage the scheme named you declared earlier is passed to `Khatli.shared.
 
 ```swift
 Khalti.shared.appUrlScheme = khaltiUrlScheme // see above for file khaltiUrlScheme
-// This can be used at appdelegate during didfinishlaunching. 
+// This can be used at appdelegate during didfinishlaunching.
 // This should be mandatory
 ```
 
- Finally present the khaltiPay Viewcontroller by calling public funcation 
+ Finally present the khaltiPay Viewcontroller by calling public funcation
 ```swift
 Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 ```
@@ -94,18 +94,18 @@ Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 ### Example as used in Example Project
 ```swift
 let extra:[String : Any] =  ["no":false,"yes":true,"int" : 0, "float":12.23]
-        
+
 let jsonData = try? JSONSerialization.data(withJSONObject: extra, options: JSONSerialization.WritingOptions())
 let jsonString = String(data: jsonData!, encoding: .utf8)!
-        
+
 let additionalData:Dictionary<String,String> = [
     "merchant_name" : "HelloPaaaaisaPVTLtd.",
     "merchant_extra" : jsonString
 ]
-        
+
 Khalti.shared.appUrlScheme = khaltiUrlScheme
 let khaltiMerchantKey = "test_public_key_dc74e0fd57cb46cd93832aee0a507256" // This key is from local server so it won't work if you use the example as is it. Use your own public test key
-        
+
 let TEST_CONFIG:Config = Config(publicKey: khaltiMerchantKey, amount: 1000, productId: "1234567890", productName: "Dragon_boss", productUrl: "http://gameofthrones.wikia.com/wiki/Dragons",additionalData: additionalData, cardPayment:false)
 Khalti.present(caller: self, with: TEST_CONFIG, delegate: self)
 ```
@@ -124,7 +124,7 @@ extension YourViewController: KhaltiPayDelegate {
         print(data)
         print("Oh there is success message received")
     }
-    
+
     func onCheckOutError(action: String, message: String) {
         print(action)
         print(message)
@@ -153,27 +153,21 @@ extension YourViewController: KhaltiPayDelegate {
 | product_identity  | Product Id                   |           String        |
 | product_url       | Product Url                  |           String        |
 | amount            | 100                          |            Int          |
-| token             | token                        |           String        | 
-| cardPayment       | false                        |           Bool          | 
+| token             | token                        |           String        |
+| cardPayment       | false                        |           Bool          |
 
-The success message also contains all the `key` and `value` provide as extra data while initiating `Config`. 
+The success message also contains all the `key` and `value` provide as extra data while initiating `Config`.
 
 ###### Error Messsage
 |  Variable                 | Description                            |    Type   |
-|---------------------------|----------------------------------------|-----------| 
+|---------------------------|----------------------------------------|-----------|
 | action                       | initiate/confirm/ebanking             |   String  |
 | message                   | Detail Error Message                   |   String  |
 | data                          | data of error   (Optional)               |   Dictionary<String,Any>?  |
 
 ## Support
 
-For Queries, feel free to call us at:
+For Queries, feel free to mail us at: [merchant@khalti.com](mailto:merchant@khalti.com?cc=ios@khalti.com,rajendrakarki@khalti.com,bikashgiri@khalti.com,developers@khalti.com,support@khalti.com)
 
-Mobile : 9801165568
-Viber/Whatsapp/Skype ID: 9801165568
-Email: [ios@khalti.com](mailto:ios@khalti.com?cc=merchant@khalti.com)
-
-
+<!-- Check out the source for Khalti checkout on [github ](https://github.com/khalti/khalti-sdk-ios/). -->
 Check out the [API Documentation](http://docs.khalti.com/checkout/ios/).
-
-And you can study the source code on [github ](https://github.com/khalti/khalti-sdk-ios/) by yourself.

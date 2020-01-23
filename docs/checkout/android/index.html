@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -933,13 +933,14 @@
                   <h1>Android SDK</h1>
                 
                 <p>Documentation of Khalti checkout for android</p>
+<p><a href="https://bintray.com/khalti-official/khalti/khalti-android/_latestVersion"> <img alt="Download" src="https://api.bintray.com/packages/khalti-official/khalti/khalti-android/images/download.svg" /> </a></p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Add the following line to <code>dependency</code> section in <code>build.gradle</code> file</p>
-<pre><code>compile 'com.khalti:khalti-android:1.2.8'
+<pre><code>implementation 'com.khalti:khalti-android:1.02.09'
 </code></pre>
 
 <p>It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.</p>
-<pre><code>compile ('com.khalti:khalti-android:1.2.8') {
+<pre><code>implementation ('com.khalti:khalti-android:1.02.09') {
         transitive = true
     }
 </code></pre>
@@ -949,7 +950,7 @@
 <pre><code>compileSdkVersion 29
 buildToolsVersion '29.0.0'
 
-compile 'com.android.support:appcompat-v7:28.0.0'
+implementation 'com.android.support:appcompat-v7:28.0.0'
 </code></pre>
 
 <p>In order to add support library 28, add the Google's maven url in <code>build.gradle</code></p>
@@ -1227,6 +1228,7 @@ khaltiButton.setCheckOutConfig(config);
                 
                   
                 
+                
               
               
                 
@@ -1312,7 +1314,7 @@ khaltiButton.setCheckOutConfig(config);
       
     </div>
     
-      <script src="../../assets/javascripts/application.c648116f.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

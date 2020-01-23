@@ -1,15 +1,17 @@
 Documentation of Khalti checkout for android
 
+[ ![Download](https://api.bintray.com/packages/khalti-official/khalti/khalti-android/images/download.svg) ](https://bintray.com/khalti-official/khalti/khalti-android/_latestVersion)
+
 ## Installation
 Add the following line to `dependency` section in `build.gradle` file
 
 ```
-compile 'com.khalti:khalti-android:1.2.8'
+compile 'com.khalti:khalti-android:1.02.09'
 ```
 It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.
 
 ```
-compile ('com.khalti:khalti-android:1.2.8') {
+compile ('com.khalti:khalti-android:1.02.') {
         transitive = true
     }
 ```

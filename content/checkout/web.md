@@ -191,7 +191,7 @@ The error response during confirmation will be somethig like this:
 	"action": "WALLET_PAYMENT_CONFIRM",
 	"message": undefined,
 	"payload": {
-	"detail": "Confirmation code or transaction pin does not match."
+		"detail": "Confirmation code or transaction pin does not match."
 	},
 	"status_code": 400
 }

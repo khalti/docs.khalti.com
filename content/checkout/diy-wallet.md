@@ -115,8 +115,6 @@ for more information on how to verify the transaction.
 
 # Notes
 
-1. Initiate and verify api requests should be made from the front-end.
-2. If the transaction initiation API response has `pin_created = true`,
-   you must display the content of `pin_created_message` key in that response
-   to the user.
+1. Initiate and confirm api requests should be made from the front-end.
+
 

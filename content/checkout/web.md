@@ -211,7 +211,7 @@ The additional data starting with `merchant_` is returned in success response pa
 
 Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-web).
 
-Now, for server side integration check [Verification](/api/verification.md) and [Transaction](/api/transaction.md) api.
+Now, for server side integration check [Verification](/api/verification) and [Transaction](/api/transaction) api.
 
 
 

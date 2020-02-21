@@ -99,7 +99,7 @@ Create an instance of Builder class. Pass `public key`, `product id`, `product n
 ```java
 Map<String, Object> map = new HashMap<>();
         map.put("merchant_extra", "This is extra data");
-        
+
 Builder builder = new Config.Builder(Constant.pub, "Product ID", "Main", 1100L, new OnCheckOutListener() {
             @Override
             public void onError(@NonNull String action, @NonNull Map<String, String> errorMap) {
@@ -233,11 +233,11 @@ khaltiButton.setCustomView(view);
 khaltiButton.setCheckOutConfig(config);
 ```
 
-Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-android).
+Check out the source for <a target="_blank" href="https://github.com/khalti/khalti-sdk-android">Khalti checkout on Github</a>.
 
-Check out the [Verification](http://docs.khalti.com/api/verification/) process.
+Check out the <a href="http://docs.khalti.com/api/verification/" target="_blank">Verification</a> process.
 
-#### [Changelog](https://github.com/khalti/khalti-sdk-android/blob/master/CHANGELOG.md)
+#### <a href="https://github.com/khalti/khalti-sdk-android/blob/master/CHANGELOG.md" target="_blank">Changelog</a>
 
 #### Screenshots
 
@@ -247,4 +247,3 @@ Check out the [Verification](http://docs.khalti.com/api/verification/) process.
 <img width="150" height="300" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/mobile_banking.png"/> &nbsp;
 <img width="150" height="300" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/connect_ips.png"/> &nbsp;
 <img width="150" height="300" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/sct.png"/> &nbsp;
-

@@ -1,189 +1,215 @@
-Documentation of Khalti checkout for android
+[<img width="302.6" height="115" src="https://khalti.com/logo/khalti-logo-color.png"/>](https://khalti.com/)
 
-[ ![Download](https://api.bintray.com/packages/khalti-official/khalti/khalti-android/images/download.svg) ](https://bintray.com/khalti-official/khalti/khalti-android/_latestVersion)
+# Khalti Android SDK
 
-## Installation
-Add the following line to `dependency` section in `build.gradle` file
+[![Download](https://api.bintray.com/packages/khalti-official/khalti/khalti-android/images/download.svg)](https://bintray.com/khalti-official/khalti/khalti-android/_latestVersion)
+
+Welcome to Khalti's checkout documentation
+
+### Installation
+
+#### Requirements
+
+- Android 4.0 and above
+- AndroidX (as of v2.00.00)
+- Android Studio 3 and above
+
+#### Configuration
+
+Add `khalti-android` to your `build.gradle` dependencies
 
 ```
-implementation 'com.khalti:khalti-android:1.02.09'
-```
-It is recommended that you update your support libraries to the latest version. However, if you're unable to update the libraries add the following line instead.
-
-```
-implementation ('com.khalti:khalti-android:1.02.09') {
+implementation ('com.khalti:khalti-android:$latest_version') {
         transitive = true
     }
 ```
-Note : We recommend you to use the latest version of `Build tools` and `Support libraries` for maximum compatibility.
 
-In order to build and run this project, please use `Android Studio 3` and please note that the minimum `Build tools` and `Support libraries` version should be `28`.
-
-```
-compileSdkVersion 29
-buildToolsVersion '29.0.0'
-
-implementation 'com.android.support:appcompat-v7:28.0.0'
-```
-
-In order to add support library 28, add the Google's maven url in `build.gradle`
+Also add the following lines inside the `android` block of your `build.gradle` file
 
 ```
-repositories {
-        jcenter()
-        mavenCentral()
-        maven { url "https://maven.google.com" }
-    }
-```
-
-`Important` Add the lines inside android of your app 'build.gradle'
-``` java
 compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
    }
 ```
 
-`Important` Add the lines inside your 'gradle.properties'
-``` java
+Disable R8 by adding the following lines inside your `gradle.properties`
+
+```
 android.enableR8 = false
 ```
 
-## Usage
+#### Setup
 
-### Layout
+Add KhaltiButton in your xml layout as follows
 
-You can add KhaltiButton to your xml layout
 ```xml
-<khalti.widget.KhaltiButton
+<com.khalti.widget.KhaltiButton
             android:id="@+id/khalti_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            khalti:button_style="khalti"/>
 
 ```
-And, Locate your xml Khalti Button in your Java
-``` java
+
+Add the following line in your root layout in your xml file if you're going to use `khalti` attribute.
+
+```xml
+xmlns:khalti="http://schemas.android.com/apk/res-auto"
+```
+
+Then, Locate your xml Khalti Button in your Java
+
+```java
 KhaltiButton khaltiButton = (KhaltiButton) findViewById(R.id.khalti_button);
 ```
 
-Or, use it in Java
+##### XML Attribute
 
-``` java
+| Attribute             | Description                                              |
+|:----------------------|:---------------------------------------------------------|
+| `khalti:text`         | Text to display                                          |
+| `khalti:button_style` | Set the style of KhaltiButton from the available options |
+
+Use the `button_style` attribute in your xml file to select a button style for your Khalti button. Or you can use the `setButtonStyle()` function in khalti button to set the style programmatically.
+
+###### Available button styles
+
+| Button style | Image                                                                                                                            |
+|:-------------|:---------------------------------------------------------------------------------------------------------------------------------|
+| basic        | <img width="150" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/button_basic.png"/>          |
+| khalti       | <img width="150" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/button_khalti.png"/>         |
+| e_banking    | <img width="150" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/button_ebanking.png"/>       |
+| m_banking    | <img width="150" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/button_mobile_banking.png"/> |
+| sct          | <img width="150" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/button_sct.png"/>            |
+| connect_ips  | <img width="150" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/button_connect_ips.png"/>    |
+
+Alternatively you can also inflate KhaltiButton in your java class as follows
+
+```java
 KhaltiButton khaltiButton = new KhaltiButton();
 ```
-And, add this java KhaltiButton into your layout container.
 
+In order for Khalti button to be functional you'll need to pass an instance of `Config`.
 
-### Configure
+##### Building Config
 
-Configure Khalti Checkout by passing an instance of Config class
+Create an instance of Builder class. Pass `public key`, `product id`, `product name`, `amount (in paisa)` and an implementation of `OnCheckOutListener` to the builder constructor.
 
-When instantiating Config class pass public key, product id, product name, product web url, amount (in paisa) and a new instance of OnCheckOutListener.
 ```java
-Config config = new Config("Public Key", "Product ID", "Product Name", "Product Url", amount, new OnCheckOutListener() {
-
-            @Override
-            public void onSuccess(HashMap<String, Object> data) {
-                Log.i("Payment confirmed", data+"");
-            }
-
-            @Override
-            public void onError(String action, String message) {
-                Log.i(action, message);
-            }
-        });
-```
-Additionally, Config class also accepts a HashMap parameter which you can use to pass any additional data. Make sure you add a `merchant_` prefix in your map key.
-
-``` java
-HashMap<String, String> map = new HashMap<>();
+Map<String, Object> map = new HashMap<>();
         map.put("merchant_extra", "This is extra data");
-
-        Config config = new Config("Public Key", "Product ID", "Product Name", "Product Url", amount, map, new OnCheckOutListener() {
-
+        
+Builder builder = new Config.Builder(Constant.pub, "Product ID", "Main", 1100L, new OnCheckOutListener() {
             @Override
-            public void onSuccess(HashMap<String, Object> data) {
-                Log.i("Payment confirmed", data);
+            public void onError(@NonNull String action, @NonNull Map<String, String> errorMap) {
+                Log.i(action, errorMap.toString());
             }
 
             @Override
-            public void onError(String action, String message) {
-                Log.i(action, message);
+            public void onSuccess(@NonNull Map<String, Object> data) {
+                Log.i("success", data.toString());
             }
-        });
-
+        })
+                .paymentPreferences(new ArrayList<PaymentPreference>() {{
+                    add(PaymentPreference.KHALTI);
+                    add(PaymentPreference.EBANKING);
+                    add(PaymentPreference.MOBILE_BANKING);
+                    add(PaymentPreference.CONNECT_IPS);
+                    add(PaymentPreference.SCT);
+                }})
+                .additionalData(map)
+                .productUrl("http://example.com/product")
+                .mobile("9800000000");
 ```
-Note : In order to preset mobile number, please use ```config.setMobile()```.
 
-### Available Config Preset Methods
-| Constraint | Method                                    | Description                                                 |
-|------------|-------------------------------------------|-------------------------------------------------------------|
-| Optional   | `setMobile()`                             | Preset mobile number                                        |
+Here, the functions `paymentPreferences()`,`additionalData()`,`productUrl()` and `mobile()` are optional and are not required to build the config. When passing additionalData through `additionalData()` functions make sure you add a `merchant_` prefix in your map key.
 
-#### Set Config
-Finally set your config in your KhaltiButton.
+Finally, call the `build()` function in builder to build the config.
 
-``` java
+```java
+Config config = builder.build();
+```
+
+###### Available Config Builder Methods
+
+| Constraint | Method                | Description                                   |
+|:-----------|:----------------------|:----------------------------------------------|
+| Optional   | `paymentPreference()` | Set which payment option tabs are to be shown |
+| Optional   | `additionalData()`    | Set additional data                           |
+| Optional   | `productUrl()`        | Add url of product                            |
+| Optional   | `mobile()`            | Preset mobile number in mobile field          |
+| Required   | `build()`             | Build config                                  |
+
+###### Available payment preferences
+
+| Preferences                        | Description                     |
+|:-----------------------------------|:--------------------------------|
+| `PaymentPreference.KHALTI`         | Show Khalti payment tab         |
+| `PaymentPreference.EBANKING`       | Show E-banking payment tab      |
+| `PaymentPreference.MOBILE_BANKING` | Show Mobile banking payment tab |
+| `PaymentPreference.CONNECT_IPS`    | Show Connect IPS payment tab    |
+| `PaymentPreference.SCT`            | Show SCT card payment tab       |
+
+##### Set Config
+
+Set your config in your KhaltiButton.
+
+```java
 khaltiButton.setCheckOutConfig(config);
 ```
 
-## Summary
+#### Public Methods in KhaltiButton
 
-#### XML Attribute
-
-| Attribute                 | Description                                  |
-|---------------------------|----------------------------------------------|
-| `khalti:text`             | Text to display                              |
-| `khalti:button_style`     | Set the style of KhaltiButton from 2 options |
-
-
-#### Public Methods
-
-| Constraint | Method                                    | Description                                                 |
-|------------|-------------------------------------------|-------------------------------------------------------------|
-| Required   | `setCheckOutConfig(Config config)`        | Set configuration required by Khalti checkout               |
-| Optional   | `setText(String text)`                    | Set text to display in KhaltiButton                         |
-| Optional   | `setCustomView(View view)`                | Replace KhaltiButton's default view with your custom view   |
-| Optional   | `setButtonStyle(ButtonStyle buttonStyle)` | Select between 2 options to set KhaltiButton's style        |
-| Optional   | `showCheckOut()`                          | Use this method to show Khalti checkout UI                  |
-| Optional   | `destroyCheckOut()`                       | Use this method to close Khalti checkout UI                 |
+| Constraint | Method                                    | Description                                                      |
+|:-----------|:------------------------------------------|:-----------------------------------------------------------------|
+| Required   | `setCheckOutConfig(Config config)`        | Set configuration required by Khalti checkout                    |
+| Optional   | `setText(String text)`                    | Set text to display in KhaltiButton                              |
+| Optional   | `setCustomView(View view)`                | Replace KhaltiButton's default view with your custom view        |
+| Optional   | `setButtonStyle(ButtonStyle buttonStyle)` | Select between the available options to set KhaltiButton's style |
 
 #### Callback Methods
 
-| Method                                   | Description                                                                                                                                                                                                                                                                                                                                                                           |
-|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `onSuccess(HashMap data)`                | This method is called when a transaction has been completed and confirmed by the user. A map containing an access token, required to verify the transaction and data passed through Config instance is returned. Once this method is called, use the access token to verify the transaction. Please follow the [verification](./../api/verification.md) process for further instructions. |
-| `onError(String action, String message)` | This method is called when an error occurs during payment initiation and confirmation. Action and message value is passed where action defines, the current action being performed and message defines the error.                                                                                                                                                                      |
+| Method                                 | Description                                                                                                                                                                                                                                                                                                                                                                                               |
+|:---------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `onSuccess(Map data)`                  | This method is called when a transaction has been completed and confirmed by the user. A map containing an access token, required to verify the transaction and data passed to the Config through the Config bulder is returned. Once this method is called, use the access token to verify the transaction. Please follow the [verification](./../api/verification.md) process for further instructions. |
+| `onError(String action, Map errorMap)` | This method is called when an error occurs during payment initiation or confirmation. Action and errorMap value is passed where action defines the current action being performed and errorMap has the necessary information on the error.                                                                                                                                                                |
 
+#### Response Sample
 
-##### Response Sample
 ###### Success Message
-| Key               |        Value                 |            Type         |
-|-------------------|------------------------------|-------------------------|
-| mobile            | 98XXXXXXXX                   |           String        |
-| product_name      | Product Name                 |           String        |
-| product_identity  | Product Id                   |           String        |
-| product_url       | Product Url                  |           String        |
-| amount            | 100                          |            Long         |
-| token             | token                        |           String        |
 
-The success message also contains all the `key` and `value` provide as extra data while initiating `Config`
+| Key                    | Value        | Type   |
+|:-----------------------|:-------------|:-------|
+| mobile                 | 98XXXXXXXX   | String |
+| product_name           | Product Name | String |
+| product_identity       | Product Id   | String |
+| product_url(if passed) | Product Url  | String |
+| amount                 | 100          | Long   |
+| token                  | token        | String |
+
+The success message also contains all the `key` and `value` provided as extra data while building the `Config`.
 
 ###### Error Message
-|  Variable                 | Description                            |    Type   |
-|---------------------------|----------------------------------------|-----------|   
-| action                    | Action performed - initiate, confirm   |   String  |
-| message                   | Detail Error Message                   |   String  |
+
+| Variable | Description                            | Type   |
+|:---------|:---------------------------------------|:-------|
+| action   | Action performed - (initiate, confirm) | String |
+| errorMap | Detail Error map                       | Map    |
 
 #### More Implementations
+
 ##### Method 1: With Custom Click Listener
 
 Initialize the KhaltiCheckout Object
-``` java
+
+```java
 KhaltiCheckOut khaltiCheckOut = new KhaltiCheckOut(this, config);
 ```
-Use `khaltiCheckout.show()` to display khalti widget
-``` java
+
+Use `khaltiCheckout.show()` to display Khalti widget
+
+```java
 khaltiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -195,19 +221,28 @@ khaltiButton.setOnClickListener(new View.OnClickListener() {
 ##### Method 2: With Custom View
 
 Get your custom view
-``` java
+
+```java
 View view = LayoutInflater.from(this).inflate(R.layout.custom_khalti_button, container, false);
 ```
+
 Set custom view to your khalti button
+
 ```java
 khaltiButton.setCustomView(view);
 khaltiButton.setCheckOutConfig(config);
 ```
 
-
-
-Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-android).
-
 Check out the [Verification](http://docs.khalti.com/api/verification/) process.
 
-### [Changelog](https://github.com/khalti/khalti-sdk-android/blob/master/CHANGELOG.md)
+#### [Changelog](https://github.com/khalti/khalti-sdk-android/blob/master/CHANGELOG.md)
+
+#### Screenshots
+
+<img width="150" height="300" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/all.png"/> &nbsp;
+<img width="150" height="300" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/khalti.png"/> &nbsp;
+<img width="150" height="300" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/ebanking.png"/> &nbsp;
+<img width="150" height="300" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/mobile_banking.png"/> &nbsp;
+<img width="150" height="300" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/connect_ips.png"/> &nbsp;
+<img width="150" height="300" src="https://raw.githubusercontent.com/khalti/khalti-sdk-android/master/images/sct.png"/> &nbsp;
+

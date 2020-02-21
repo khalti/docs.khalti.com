@@ -172,17 +172,30 @@ For documentation on verification follow this [link](./../api/verification.md).
 
 
 >  2. `onError (optional)`
-	This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for `Invalid Transaction PIN or Confirmation Code`:
+	This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for `Invalid Khalti PIN or Confirmation Code`:
 
-	{
-	  "action": "WALLET_PAYMENT_CONFIRM",
-	  "message": undefined,
-	  "payload": {
-	    "detail": "Confirmation code or transaction pin does not match."
-	  },
-	  "status_code": 400
-	}
+The error response during initiation will be something like this:
+	
+```json
+{
+	"detail":"Mobile or pin invalid.",
+	"tries_remaining":"2",
+	"error_key":"validation_error"
+}
+```
 
+The error response during confirmation will be somethig like this:
+
+```json
+{
+	"action": "WALLET_PAYMENT_CONFIRM",
+	"message": undefined,
+	"payload": {
+		"detail": "Confirmation code or transaction pin does not match."
+	},
+	"status_code": 400
+}
+```
 
 >  3. `onClose (optional)`
 		This method is also optional. If implemented, this method is called when `close icon(X)` of the widget is called.
@@ -198,7 +211,7 @@ The additional data starting with `merchant_` is returned in success response pa
 
 Check out the source for [Khalti checkout on Github](https://github.com/khalti/khalti-sdk-web).
 
-Now, for server side integration check [Verification](/api/verification.md) and [Transaction](/api/transaction.md) api.
+Now, for server side integration check [Verification](/api/verification) and [Transaction](/api/transaction) api.
 
 
 

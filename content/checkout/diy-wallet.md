@@ -13,7 +13,6 @@ the basic workflow of the merchant API.
 
 # API
 
-
 ## 1. Initiate transaction
 
 As the title says, this API is called to initiates the transaction.
@@ -24,14 +23,16 @@ the payer submits.
 
 The request signature for initiation is as follows:
 
-* URL: `https://khalti.com/api/payment/initiate/`
+* URL: `https://khalti.com/api/v2/payment/initiate/`
 * Method: `POST`
 * Data:
   * `public_key`: Required. Either `test` or `live` public key.
   * `mobile`: Required. The Khalti registered mobile number of payer.
+  * `transaction_pin`: Required. Third party khalti pin submitted by the user.
   * `amount`: Required. The amount value of payment. Needs to be in paisa.
   * `product_identity`: Required. A string to identify the product.
   * `product_name`: Required. Descriptive name for the product.
+  * `product_url`: Optional. Url of the product.
 
 Additional information about the product can be passed along with this
 for reporting purposes. The keys for additional data must be prefixed
@@ -43,9 +44,11 @@ A sample request adhering to the above signature will look something like this:
 {
   "public_key": "live_public_key_546eb6da05544d7d88961db04fdb9721",
   "mobile": "9842XXXXXX",
+  "transaction_pin": "1234",
   "amount": 10000,
   "product_identity": "book/id-120",
-  "product_name": "A Song of Ice and Fire"
+  "product_name": "A Song of Ice and Fire",
+  "product_url": "http://bookexample.com"
 }
 ```
 
@@ -54,29 +57,13 @@ The response will be something like this:
 ```json
 {
   "token": "BVNKCiLZhZipkMGws5hgS8",
-  "pin_created": true,
-  "pin_created_message": "Your third party transaction pin has been generated and sent to your mobile number."
-}
-```
-
-The response will contain `pin_created` and `pin_created_message` if this is
-the user's first ever third party transaction. You should display the message
-if `pin_created = true` and ignore it otherwise.
-
-If the user's pin has already been created, the response will look like this:
-
-```json
-{
-  "token": "VGMyaKVDQQyorBiQ3W99WL",
-  "pin_created": false,
-  "pin_created_message": ""
 }
 ```
 
 ## 2. Confirm transaction
 
 In this step, you will need to prompt the user for the OTP (One Time Password),
-and their 3rd party transaction pin. Once those details are submitted, the
+and their 3rd party khalti pin. Once those details are submitted, the
 request to verify transaction should be made like this:
 
 The value in `token` key from the response in previous step is required
@@ -84,13 +71,13 @@ to verify the transaction.
 
 Request signature:
 
-* URL: `https://khalti.com/api/payment/confirm/`
+* URL: `https://khalti.com/api/v2/payment/confirm/`
 * Method: `POST`
 * Data:
   * `public_key`: Required. Should be same as the key used for transaction initiation.
   * `token`: Required. Transaction initiation token.
   * `confirmation_code`: Required. OTP submitted by the user.
-  * `transaction_pin`: Required. Third party transaction pin submitted by the user.
+  * `transaction_pin`: Required. Third party khalti pin submitted by the user.
 
 A sample request adhering to above signature will look like this:
 
@@ -99,7 +86,7 @@ A sample request adhering to above signature will look like this:
 "public_key": "live_public_key_546eb6da05544d7d88961db04fdb9721",
 "token": "VGMyaKVDQQyorBiQ3W99WL",
 "confirmation_code": "206964",
-"transaction_pin": "4791"
+"transaction_pin": "1234"
 }
 
 ```
@@ -128,8 +115,6 @@ for more information on how to verify the transaction.
 
 # Notes
 
-1. Initiate and verify api requests should be made from the front-end.
-2. If the transaction initiation API response has `pin_created = true`,
-   you must display the content of `pin_created_message` key in that response
-   to the user.
+1. Initiate and confirm api requests should be made from the front-end.
+
 

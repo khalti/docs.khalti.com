@@ -29,6 +29,8 @@ wallet account.
 * SDKs are available for Web (JavaScript), Android and iOS.
 * Your customers can make wallet payments without leaving your
   platform.
+* Transaction processing will be disabled, on muliple request with
+  wrong khalti pin.
 * Your customers can make payment using their e-banking accounts in
   any of our partner banks.
 * You don't have to bother integrating with individual banks, Khalti

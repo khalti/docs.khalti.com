@@ -19,17 +19,17 @@ Please follow links below to create a merchant and a consumer accounts if you ha
 
 ## 2. Understand Khalti payment process
 
-![Khalti payment overview](./img/khalti-payment-overview.png)
+![Khalti payment overview](./img/khalti-payment-new-overview.png)
 
 ### 2.1. Transaction States
 #### 1. Initiated
 
-It is the first state of a transaction. Transactions are initiated after mobile number and other transaction details are provided.
+It is the first state of a transaction. Transactions are initiated after mobile number and khalti pin along with other transaction details are provided.
 
 #### 2. Confirmed
 
 A transaction is confirmed after transaction details (transaction token, confirmation_code and  3rd party transaction_pin) are provided by the consumer.
-[Check how to set and update transaction pin here.](https://www.youtube.com/watch?v=KeX7j_hp_sk)
+[Check how to set and update khalti pin here.](https://www.youtube.com/watch?v=KeX7j_hp_sk)
 
 #### 3. Completed
 

@@ -1,6 +1,7 @@
 {
   "dev-dependencies": [],
   "dependencies": [
-    "mkdocs==0.16.3"
+    "mkdocs==1.0.4",
+    "mkdocs-material==4.6.0"
   ]
 }

@@ -15,6 +15,7 @@ nav:
         - Transaction:
             - List: api/transaction.md
             - Detail: api/transaction_details.md
+            - Status: api/transaction_status.md
     - Plug and Play:
         - WooCommerce: plugins/woocommerce.md
         - Opencart: plugins/opencart.md

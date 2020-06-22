@@ -25,6 +25,7 @@ nav:
     - Resources: resources.md
     - FAQ's and Gotchas: gotchas.md
     - Contribution: contribution.md
+    - Contact Us: contact-us.md
 theme:
   name: material
   palette:

@@ -1,6 +1,6 @@
 # Web SDK
 
-[![npm](https://img.shields.io/badge/npm-v1.1.1-blue.svg)](https://www.npmjs.com/package/khalti-web)
+[![npm](https://img.shields.io/badge/npm-v2.0.2-blue.svg)](https://www.npmjs.com/package/khalti-web)
 
 This documentation details the process of Khalti Web/JavaScript SDK
 integration in your website/app. We also have SDKs for Android and iOS.
@@ -24,7 +24,7 @@ Khalti checkout can be integrated with or without build tools like
 ```html
 <html>
 <head>
-	<script src="https://khalti.com/static/khalti-checkout.js"></script>
+	<script src="https://unpkg.com/khalti-checkout-web@2.0.1/dist/khalti-checkout.iffe.js"></script>
 </head>
 <body>
 	...
@@ -74,14 +74,14 @@ Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
 #### 1. Install `khalti-web`
 
 ##### Using yarn
-`yarn add khalti-web`
+`yarn add khalti-checkout-web`
 
 ##### Using npm
-`npm install khalti-web --save`
+`npm install khalti-checkout-web --save`
 
 #### 2. Import and use it in your desired component
 ```javascript
-import KhaltiCheckout from "khalti-web";
+import KhaltiCheckout from "khalti-checkout-web";
 
 // import * as KhaltiCheckout from "khalti-web"; ES6 import with alias
 // var KhaltiCheckout = require("khalti-web"); CommonJs
@@ -105,7 +105,8 @@ let config = {
 		onClose () {
 			console.log('widget is closing');
 		}
-	}
+	},
+	"paymentPreference": ["KHALTI", "CONNECT_IPS", "SCT"],
 };
 
 let checkout = new KhaltiCheckout(config);
@@ -148,6 +149,7 @@ Configuration is a Javascript object with following attributes.
 |productUrl|false|string|Url of product.|
 |eventHandler|true|object|It is a javascript object with three methods|
 |mobile|false|integer|Mobile number of consumer.
+|paymentPreference|false|array|If not provided all the payment options will be rendered. It is javascript array with these options ```"KHALTI", "EBANKING", "MOBILE_BANKING" "CONNECT_IPS", "SCT"```
 
 >  1. `onSuccess`
 	This method is called once a transaction is confirmed by a user.
@@ -175,7 +177,7 @@ For documentation on verification follow this [link](./../api/verification.md).
 	This method is optional. If implemented, it will receive errors that occured during payment initiation and confirmation. Example error format for `Invalid Khalti PIN or Confirmation Code`:
 
 The error response during initiation will be something like this:
-	
+
 ```json
 {
 	"detail":"Mobile or pin invalid.",
@@ -215,7 +217,7 @@ Now, for server side integration check [Verification](/api/verification) and [Tr
 
 
 
-<script src="https://khalti.com/static/khalti-checkout.js"></script>
+<script src="https://unpkg.com/khalti-checkout-web@2.0.1/dist/khalti-checkout.iffe.js"></script>
 <script>
         var config = {
             // replace the publicKey with yours
@@ -234,7 +236,8 @@ Now, for server side integration check [Verification](/api/verification) and [Tr
                 onClose () {
                 	console.log('widget is closing');
                 }
-            }
+            },
+						paymentPreference: ["KHALTI", "CONNECT_IPS", "SCT"],
         };
 
         var checkout = new KhaltiCheckout(config);

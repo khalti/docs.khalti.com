@@ -815,7 +815,7 @@
                 
                 
                 <h1 id="web-sdk">Web SDK<a class="headerlink" href="#web-sdk" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.npmjs.com/package/khalti-web"><img alt="npm" src="https://img.shields.io/badge/npm-v1.1.1-blue.svg" /></a></p>
+<p><a href="https://www.npmjs.com/package/khalti-web"><img alt="npm" src="https://img.shields.io/badge/npm-v2.0.2-blue.svg" /></a></p>
 <p>This documentation details the process of Khalti Web/JavaScript SDK
 integration in your website/app. We also have SDKs for Android and iOS.</p>
 <h2 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">&para;</a></h2>
@@ -828,7 +828,7 @@ integration in your website/app. We also have SDKs for Android and iOS.</p>
 <h3 id="install-without-build-tools">Install Without build tools<a class="headerlink" href="#install-without-build-tools" title="Permanent link">&para;</a></h3>
 <pre><code class="html">&lt;html&gt;
 &lt;head&gt;
-    &lt;script src=&quot;https://khalti.com/static/khalti-checkout.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://unpkg.com/khalti-checkout-web@2.0.1/dist/khalti-checkout.iffe.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
     ...
@@ -874,11 +874,11 @@ integration in your website/app. We also have SDKs for Android and iOS.</p>
 <p>Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.</p>
 <h4 id="1-install-khalti-web">1. Install <code>khalti-web</code><a class="headerlink" href="#1-install-khalti-web" title="Permanent link">&para;</a></h4>
 <h5 id="using-yarn">Using yarn<a class="headerlink" href="#using-yarn" title="Permanent link">&para;</a></h5>
-<p><code>yarn add khalti-web</code></p>
+<p><code>yarn add khalti-checkout-web</code></p>
 <h5 id="using-npm">Using npm<a class="headerlink" href="#using-npm" title="Permanent link">&para;</a></h5>
-<p><code>npm install khalti-web --save</code></p>
+<p><code>npm install khalti-checkout-web --save</code></p>
 <h4 id="2-import-and-use-it-in-your-desired-component">2. Import and use it in your desired component<a class="headerlink" href="#2-import-and-use-it-in-your-desired-component" title="Permanent link">&para;</a></h4>
-<pre><code class="javascript">import KhaltiCheckout from &quot;khalti-web&quot;;
+<pre><code class="javascript">import KhaltiCheckout from &quot;khalti-checkout-web&quot;;
 
 // import * as KhaltiCheckout from &quot;khalti-web&quot;; ES6 import with alias
 // var KhaltiCheckout = require(&quot;khalti-web&quot;); CommonJs
@@ -902,7 +902,8 @@ let config = {
         onClose () {
             console.log('widget is closing');
         }
-    }
+    },
+    &quot;paymentPreference&quot;: [&quot;KHALTI&quot;, &quot;CONNECT_IPS&quot;, &quot;SCT&quot;],
 };
 
 let checkout = new KhaltiCheckout(config);
@@ -994,6 +995,12 @@ configuration parameters.</p>
 <td>integer</td>
 <td>Mobile number of consumer.</td>
 </tr>
+<tr>
+<td>paymentPreference</td>
+<td>false</td>
+<td>array</td>
+<td>If not provided all the payment options will be rendered. It is javascript array with these options <code>"KHALTI", "EBANKING", "MOBILE_BANKING" "CONNECT_IPS", "SCT"</code></td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -1061,7 +1068,7 @@ For documentation on verification follow this <a href="../../api/verification/">
 <p>The additional data starting with <code>merchant_</code> is returned in success response payload.</p>
 <p>Check out the source for <a href="https://github.com/khalti/khalti-sdk-web">Khalti checkout on Github</a>.</p>
 <p>Now, for server side integration check <a href="/api/verification">Verification</a> and <a href="/api/transaction">Transaction</a> api.</p>
-<script src="https://khalti.com/static/khalti-checkout.js"></script>
+<script src="https://unpkg.com/khalti-checkout-web@2.0.1/dist/khalti-checkout.iffe.js"></script>
 
 <script>
         var config = {
@@ -1081,7 +1088,8 @@ For documentation on verification follow this <a href="../../api/verification/">
                 onClose () {
                     console.log('widget is closing');
                 }
-            }
+            },
+                        paymentPreference: ["KHALTI", "CONNECT_IPS", "SCT"],
         };
 
         var checkout = new KhaltiCheckout(config);

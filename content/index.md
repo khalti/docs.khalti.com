@@ -1,11 +1,11 @@
 # Introduction
 
-Khalti is a new generation payment gateway, digital wallet and API
-provider system for various online services for Nepal.
+This site hosts documentation for developers who are looking to integrate 
+Khalti as a Payment Option in their online platform. If you fall into that 
+category, please keep reading.
 
-This site hosts documentation for developers who are looking to
-integrate khalti as a payment option in their online platform.
-If you fall into that category, please keep reading.
+Khalti is a payment gateway, digital wallet and API provider system for
+various online services for Nepal.
 
 With Khalti SDK/API, you can accepts payments from:
 
@@ -14,33 +14,21 @@ With Khalti SDK/API, you can accepts payments from:
 3. Mobile banking users of our mobile banking partner banks.
 4. SCT/VISA card holders.
 
-By using Khalti, you will have the luxury of accepting payments from
-account holders of more than a dozen Nepali banks, and as well as
-SCT/VISA card holders. This comes without the hassle of integrating
-with individual banks on your own.
+Using Khalti Payment Gateway, you do not need to integrate with individual banks.
 
 ## Features
 
-By using Khalti SDK, your customers will have the choice of paying you
-using Khalti partner banks' ebanking account along with their Khalti
-wallet account.
-
-* Highly secure and easy to integrate and accept payments.
+* Multiple Payment Options for Customers
+* Highly secure and Easy Integrations
 * SDKs are available for Web (JavaScript), Android and iOS.
-* Your customers can make wallet payments without leaving your
+* Customers can make wallet payments without leaving your
   platform.
-* Transaction processing will be disabled, on muliple request with
-  wrong khalti pin.
-* Your customers can make payment using their e-banking accounts in
-  any of our partner banks.
-* You don't have to bother integrating with individual banks, Khalti
-  will do that for you.
-* Khalti provides a merchant dashboard from where you can view
-  transactions, issue refund, filter and download reports etc.
-* Multi user system
-* Realtime balance
-* Withdraw fund
-
+* Secured Transaction uses 2 step authentication i.e Khalti Pin and Khalti Password. 
+  Transaction Processing is disabled on multiple request for wrong Khalti Pin.
+* Merchant Dashboard to view transactions, issue refunds, filter and download reports etc.
+* Multi User System 
+* Realtime Balance updates in Merchant Dashboard on every successful payments made by customers
+* Amount collected in Merchant Dashboard can we deposited/transferred to bank accounts anytime
 
 ##Support
 ** For Queries, feel free to call us at: **

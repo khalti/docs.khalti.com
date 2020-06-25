@@ -1,4 +1,4 @@
-[<img width="302.6" height="115" src="https://khalti.com/logo/khalti-logo-color.png"/>](https://khalti.com/)
+[<img width="302.6" height="115" src="https://campaigns.khalti.com/brandbook/logo/khalti-logo-transparent-h125.png"/>](https://khalti.com/)
 
 # Khalti Android SDK
 

@@ -21,7 +21,14 @@ For debugging paste this in your code to get the configuration and predefined va
 ```
 Also, see your server log.
 
-**5. I need to refund payment to the user. How can I refund a transaction?**
+**5. What is Khalti PIN?**
+
+Khalti pin is the four digit pin, used by the user while making payment of third party transactions.
+
+It can created or changed at the Transaction Pin section under Account in khalti web and Settings in khalti app.
+
+
+**6. I need to refund payment to the user. How can I refund a transaction?**
 
 You can refund the payment to the user from your dashboard.
 

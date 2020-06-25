@@ -326,8 +326,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-install-khalti-web" class="md-nav__link">
-    1. Install khalti-web
+  <a href="#1-install-khalti-checkout-web" class="md-nav__link">
+    1. Install khalti-checkout-web
   </a>
   
     <nav class="md-nav">
@@ -738,8 +738,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-install-khalti-web" class="md-nav__link">
-    1. Install khalti-web
+  <a href="#1-install-khalti-checkout-web" class="md-nav__link">
+    1. Install khalti-checkout-web
   </a>
   
     <nav class="md-nav">
@@ -872,7 +872,7 @@ integration in your website/app. We also have SDKs for Android and iOS.</p>
 <p><a href="#configuration">Click here</a> for details on config parameters.</p>
 <h3 id="install-with-build-tools">Install with build tools<a class="headerlink" href="#install-with-build-tools" title="Permanent link">&para;</a></h3>
 <p>Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.</p>
-<h4 id="1-install-khalti-web">1. Install <code>khalti-web</code><a class="headerlink" href="#1-install-khalti-web" title="Permanent link">&para;</a></h4>
+<h4 id="1-install-khalti-checkout-web">1. Install <code>khalti-checkout-web</code><a class="headerlink" href="#1-install-khalti-checkout-web" title="Permanent link">&para;</a></h4>
 <h5 id="using-yarn">Using yarn<a class="headerlink" href="#using-yarn" title="Permanent link">&para;</a></h5>
 <p><code>yarn add khalti-checkout-web</code></p>
 <h5 id="using-npm">Using npm<a class="headerlink" href="#using-npm" title="Permanent link">&para;</a></h5>
@@ -903,7 +903,7 @@ let config = {
             console.log('widget is closing');
         }
     },
-    &quot;paymentPreference&quot;: [&quot;KHALTI&quot;, &quot;CONNECT_IPS&quot;, &quot;SCT&quot;],
+    &quot;paymentPreference&quot;: [&quot;KHALTI&quot;, &quot;EBANKING&quot;, &quot;CONNECT_IPS&quot;, &quot;SCT&quot;],
 };
 
 let checkout = new KhaltiCheckout(config);
@@ -1068,7 +1068,7 @@ For documentation on verification follow this <a href="../../api/verification/">
 <p>The additional data starting with <code>merchant_</code> is returned in success response payload.</p>
 <p>Check out the source for <a href="https://github.com/khalti/khalti-sdk-web">Khalti checkout on Github</a>.</p>
 <p>Now, for server side integration check <a href="/api/verification">Verification</a> and <a href="/api/transaction">Transaction</a> api.</p>
-<script src="https://unpkg.com/khalti-checkout-web@2.0.1/dist/khalti-checkout.iffe.js"></script>
+<script src="https://unpkg.com/khalti-checkout-web@2.0.3/dist/khalti-checkout.iffe.js"></script>
 
 <script>
         var config = {
@@ -1089,7 +1089,7 @@ For documentation on verification follow this <a href="../../api/verification/">
                     console.log('widget is closing');
                 }
             },
-                        paymentPreference: ["KHALTI", "CONNECT_IPS", "SCT"],
+                        paymentPreference: ["KHALTI", "EBANKING", "CONNECT_IPS", "SCT"],
         };
 
         var checkout = new KhaltiCheckout(config);

@@ -71,7 +71,7 @@ Khalti checkout can be integrated with or without build tools like
 
 Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
 
-#### 1. Install `khalti-web`
+#### 1. Install `khalti-checkout-web`
 
 ##### Using yarn
 `yarn add khalti-checkout-web`
@@ -106,7 +106,7 @@ let config = {
 			console.log('widget is closing');
 		}
 	},
-	"paymentPreference": ["KHALTI", "CONNECT_IPS", "SCT"],
+	"paymentPreference": ["KHALTI", "EBANKING", "CONNECT_IPS", "SCT"],
 };
 
 let checkout = new KhaltiCheckout(config);
@@ -217,7 +217,7 @@ Now, for server side integration check [Verification](/api/verification) and [Tr
 
 
 
-<script src="https://unpkg.com/khalti-checkout-web@2.0.1/dist/khalti-checkout.iffe.js"></script>
+<script src="https://unpkg.com/khalti-checkout-web@2.0.3/dist/khalti-checkout.iffe.js"></script>
 <script>
         var config = {
             // replace the publicKey with yours
@@ -237,7 +237,7 @@ Now, for server side integration check [Verification](/api/verification) and [Tr
                 	console.log('widget is closing');
                 }
             },
-						paymentPreference: ["KHALTI", "CONNECT_IPS", "SCT"],
+						paymentPreference: ["KHALTI", "EBANKING", "CONNECT_IPS", "SCT"],
         };
 
         var checkout = new KhaltiCheckout(config);

@@ -13,6 +13,7 @@ With Khalti SDK/API, you can accepts payments from:
 2. eBanking users of our partner banks.
 3. Mobile banking users of our mobile banking partner banks.
 4. SCT/VISA card holders.
+5. connectIPS users.
 
 By using Khalti, you will have the luxury of accepting payments from
 account holders of more than a dozen Nepali banks, and as well as

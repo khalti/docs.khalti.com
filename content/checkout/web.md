@@ -24,7 +24,7 @@ Khalti checkout can be integrated with or without build tools like
 ```html
 <html>
 <head>
-	<script src="https://unpkg.com/khalti-checkout-web@2.0.1/dist/khalti-checkout.iffe.js"></script>
+	<script src="https://unpkg.com/khalti-checkout-web@latest/dist/khalti-checkout.iffe.js"></script>
 </head>
 <body>
 	...
@@ -82,9 +82,6 @@ Khalti checkout can be bundled with build tools like Webpack, Rollup, etc.
 #### 2. Import and use it in your desired component
 ```javascript
 import KhaltiCheckout from "khalti-checkout-web";
-
-// import * as KhaltiCheckout from "khalti-web"; ES6 import with alias
-// var KhaltiCheckout = require("khalti-web"); CommonJs
 
 let config = {
 	// replace this key with yours
@@ -217,7 +214,7 @@ Now, for server side integration check [Verification](/api/verification) and [Tr
 
 
 
-<script src="https://unpkg.com/khalti-checkout-web@2.0.3/dist/khalti-checkout.iffe.js"></script>
+<script src="https://unpkg.com/khalti-checkout-web@latest/dist/khalti-checkout.iffe.js"></script>
 <script>
         var config = {
             // replace the publicKey with yours

@@ -1,6 +1,6 @@
 # Web SDK
 
-[![npm](https://img.shields.io/badge/npm-v2.0.2-blue.svg)](https://www.npmjs.com/package/khalti-web)
+[![npm](https://img.shields.io/badge/npm-v2.0.3-blue.svg)](https://www.npmjs.com/package/khalti-web)
 
 This documentation details the process of Khalti Web/JavaScript SDK
 integration in your website/app. We also have SDKs for Android and iOS.
@@ -103,7 +103,7 @@ let config = {
 			console.log('widget is closing');
 		}
 	},
-	"paymentPreference": ["KHALTI", "EBANKING", "CONNECT_IPS", "SCT"],
+	"paymentPreference": ["KHALTI", "EBANKING","MOBILE_BANKING", "CONNECT_IPS", "SCT"],
 };
 
 let checkout = new KhaltiCheckout(config);
@@ -234,7 +234,7 @@ Now, for server side integration check [Verification](/api/verification) and [Tr
                 	console.log('widget is closing');
                 }
             },
-						paymentPreference: ["KHALTI", "EBANKING", "CONNECT_IPS", "SCT"],
+						paymentPreference: ["KHALTI", "EBANKING","MOBILE_BANKING", "CONNECT_IPS", "SCT"],
         };
 
         var checkout = new KhaltiCheckout(config);

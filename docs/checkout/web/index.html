@@ -827,7 +827,7 @@
                 
                 
                 <h1 id="web-sdk">Web SDK<a class="headerlink" href="#web-sdk" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.npmjs.com/package/khalti-web"><img alt="npm" src="https://img.shields.io/badge/npm-v2.0.2-blue.svg" /></a></p>
+<p><a href="https://www.npmjs.com/package/khalti-web"><img alt="npm" src="https://img.shields.io/badge/npm-v2.0.3-blue.svg" /></a></p>
 <p>This documentation details the process of Khalti Web/JavaScript SDK
 integration in your website/app. We also have SDKs for Android and iOS.</p>
 <h2 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">&para;</a></h2>
@@ -912,7 +912,7 @@ let config = {
             console.log('widget is closing');
         }
     },
-    &quot;paymentPreference&quot;: [&quot;KHALTI&quot;, &quot;EBANKING&quot;, &quot;CONNECT_IPS&quot;, &quot;SCT&quot;],
+    &quot;paymentPreference&quot;: [&quot;KHALTI&quot;, &quot;EBANKING&quot;,&quot;MOBILE_BANKING&quot;, &quot;CONNECT_IPS&quot;, &quot;SCT&quot;],
 };
 
 let checkout = new KhaltiCheckout(config);
@@ -1098,7 +1098,7 @@ For documentation on verification follow this <a href="../../api/verification/">
                     console.log('widget is closing');
                 }
             },
-                        paymentPreference: ["KHALTI", "EBANKING", "CONNECT_IPS", "SCT"],
+                        paymentPreference: ["KHALTI", "EBANKING","MOBILE_BANKING", "CONNECT_IPS", "SCT"],
         };
 
         var checkout = new KhaltiCheckout(config);

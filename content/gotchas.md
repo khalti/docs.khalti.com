@@ -43,6 +43,7 @@ If you are getting CORS issues, read the docs again very thoroughly. You need to
 If you get error response "Fee not found." while testing, check your fee and set fee between Rs. 10 to Rs. 1000. If you are using live keys contact [merchant support](/#support) to find your transaction limits.
 
 - **Payment errors**
+
 If you get error response "Amount must be less than 1000." while testing, check you have complete all the contract process. If you are using live keys contact [merchant support](/#support) for further details.
 
 

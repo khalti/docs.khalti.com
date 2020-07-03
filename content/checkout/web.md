@@ -9,7 +9,8 @@ integration in your website/app. We also have SDKs for Android and iOS.
 
 To get the feel of how Khalti checkout looks click the button below.
 
-<button id="payment-button" style="background-color: #773292; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
+<button id="payment-button" style="background-color: #5C2D91; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
+<button id="ebanking-button" style="background-color: #FAA61A; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Ebanking</button>
 
 
 ## Installation
@@ -246,9 +247,34 @@ Now, for server side integration check [Verification](/api/verification) and [Tr
 						paymentPreference: ["KHALTI", "EBANKING","MOBILE_BANKING", "CONNECT_IPS", "SCT"],
         };
 
+				var ebanking_config = {
+					"publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a507256",
+					"productIdentity": "1234567890",
+					"productName": "Dragon",
+					"productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+					"eventHandler": {
+							onSuccess (payload) {
+									// hit merchant api for initiating verfication
+									console.log(payload);
+							},
+							onError (error) {
+									console.log(error);
+							},
+							onClose () {
+								console.log('widget is closing');
+							}
+					},
+					paymentPreference: ["EBANKING"],
+				}
+
         var checkout = new KhaltiCheckout(config);
+				var eBankingCheckout = new KhaltiCheckout(ebanking_config);
         var btn = document.getElementById("payment-button");
+				var btn2 = document.getElementById('ebanking-button');
         btn.onclick = function () {
             checkout.show({amount: 1000});
+        }
+				btn2.onclick = function () {
+            eBankingCheckout.show({amount: 1000});
         }
 </script>

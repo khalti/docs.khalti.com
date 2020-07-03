@@ -55,7 +55,7 @@ The request signature for initiation is as follows:
 * Data:
   * `public_key`: Required. Either `test` or `live` public key.
   * `mobile`: Required. The Khalti registered mobile number of payer.
-  * `amount`: Required. The amount value of payment. Needs to be in paisa.
+  * `amount`: Required. The amount value of payment(minimum amount must be 10, i.e 1000 in paisa.). Needs to be in paisa.
   * `product_identity`: Required. A string to identify the product.
   * `product_name`: Required. Descriptive name for the product.false
   * `bank`:Required.A bank idx,
@@ -84,7 +84,6 @@ A sample request adhering to the above signature will look something like this:
 
 With this request khalti server will redirect your client to bank portal where user can access e-banking, finally redirecting back to original/parent page with the response.
 
-#
 #### Data Retrival
 Once transaction is initated, user interacts with ebanking system. After transaction is completed getting success or failure response is tricky. There are different ways based on different `source`.
 

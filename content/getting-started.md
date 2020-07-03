@@ -59,7 +59,7 @@ In test mode, transactions are sandboxed, which means fund is not moved from a c
 Khalti must to be integrated at client and server.
 
 
-Payment via E-Banking and Debit/Credit card is not supported in the test environment. After you successfully integrate wallet, you need not to concern about E-Banking and Card payment integration.
+**Payment via E-Banking and Debit/Credit card is not supported in the test environment.** After you successfully integrate wallet, you need not to concern about E-Banking and Card payment integration.
 
 ### 3.1. Client side integration
 For now there is only one way to integrate Khalti at client side, through SDKs.
@@ -81,8 +81,8 @@ Verification must be done by the merchant server using a secret key.
 
 
 ## 4. Go live
-After successful integration test, the merchant must **replace test keys with live ones**.
-Live keys start with `live_X_X`. Replace `test_public_X` and `test_secret_X` keys with `live_public_X` and `live_secret_X` keys respectively.
+After successful integration test, live keys will be generated in the merchant dashboard. The merchant must **replace test keys with live ones**.
+Live keys start with `live_X`. Replace `test_public_X` and `test_secret_X` keys with `live_public_X` and `live_secret_X` keys respectively.
 
 ### 4.1. Further processes
 Even successful integration itself doesn't let you receive payments above NRs. 1000 per transaction. Please fill KYC form and contact us at 9801165568 to remove the limits and accept payments without restrictions.

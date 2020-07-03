@@ -1,6 +1,6 @@
 # Web SDK
 
-[![npm](https://img.shields.io/badge/npm-v2.0.3-blue.svg)](https://www.npmjs.com/package/khalti-web)
+[![npm](https://img.shields.io/badge/npm-v2.0.5-blue.svg)](https://www.npmjs.com/package/khalti-checkout-web)
 
 This documentation details the process of Khalti Web/JavaScript SDK
 integration in your website/app. We also have SDKs for Android and iOS.
@@ -39,6 +39,13 @@ Khalti checkout can be integrated with or without build tools like
 			"productIdentity": "1234567890",
 			"productName": "Dragon",
 			"productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
+			"paymentPreference": [
+				"MOBILE_BANKING",
+				"KHALTI",
+				"EBANKING",
+				"CONNECT_IPS",
+				"SCT",
+				],
 			"eventHandler": {
 				onSuccess (payload) {
 					// hit merchant api for initiating verfication
@@ -56,6 +63,7 @@ Khalti checkout can be integrated with or without build tools like
 		var checkout = new KhaltiCheckout(config);
 		var btn = document.getElementById("payment-button");
 		btn.onclick = function () {
+			// minimum transaction amount must be 10, i.e 1000 in paisa.
 			checkout.show({amount: 1000});
 		}
 	</script>
@@ -109,6 +117,7 @@ let config = {
 let checkout = new KhaltiCheckout(config);
 let btn = document.getElementById("payment-button");
 btn.onclick = function () {
+	// minimum transaction amount must be 10, i.e 1000 in paisa.
 	checkout.show({amount: 1000});
 }
 ```

@@ -827,7 +827,7 @@
                 
                 
                 <h1 id="web-sdk">Web SDK<a class="headerlink" href="#web-sdk" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.npmjs.com/package/khalti-web"><img alt="npm" src="https://img.shields.io/badge/npm-v2.0.3-blue.svg" /></a></p>
+<p><a href="https://www.npmjs.com/package/khalti-checkout-web"><img alt="npm" src="https://img.shields.io/badge/npm-v2.0.5-blue.svg" /></a></p>
 <p>This documentation details the process of Khalti Web/JavaScript SDK
 integration in your website/app. We also have SDKs for Android and iOS.</p>
 <h2 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">&para;</a></h2>
@@ -855,6 +855,13 @@ integration in your website/app. We also have SDKs for Android and iOS.</p>
             &quot;productIdentity&quot;: &quot;1234567890&quot;,
             &quot;productName&quot;: &quot;Dragon&quot;,
             &quot;productUrl&quot;: &quot;http://gameofthrones.wikia.com/wiki/Dragons&quot;,
+            &quot;paymentPreference&quot;: [
+                &quot;MOBILE_BANKING&quot;,
+                &quot;KHALTI&quot;,
+                &quot;EBANKING&quot;,
+                &quot;CONNECT_IPS&quot;,
+                &quot;SCT&quot;,
+                ],
             &quot;eventHandler&quot;: {
                 onSuccess (payload) {
                     // hit merchant api for initiating verfication
@@ -872,6 +879,7 @@ integration in your website/app. We also have SDKs for Android and iOS.</p>
         var checkout = new KhaltiCheckout(config);
         var btn = document.getElementById(&quot;payment-button&quot;);
         btn.onclick = function () {
+            // minimum transaction amount must be 10, i.e 1000 in paisa.
             checkout.show({amount: 1000});
         }
     &lt;/script&gt;
@@ -918,6 +926,7 @@ let config = {
 let checkout = new KhaltiCheckout(config);
 let btn = document.getElementById(&quot;payment-button&quot;);
 btn.onclick = function () {
+    // minimum transaction amount must be 10, i.e 1000 in paisa.
     checkout.show({amount: 1000});
 }
 </code></pre>

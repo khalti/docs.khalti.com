@@ -667,7 +667,7 @@ the payer submits.</p>
 <li>Data:</li>
 <li><code>public_key</code>: Required. Either <code>test</code> or <code>live</code> public key.</li>
 <li><code>mobile</code>: Required. The Khalti registered mobile number of payer.</li>
-<li><code>amount</code>: Required. The amount value of payment. Needs to be in paisa.</li>
+<li><code>amount</code>: Required. The amount value of payment(minimum amount must be 10, i.e 1000 in paisa.). Needs to be in paisa.</li>
 <li><code>product_identity</code>: Required. A string to identify the product.</li>
 <li><code>product_name</code>: Required. Descriptive name for the product.false</li>
 <li><code>bank</code>:Required.A bank idx,</li>
@@ -691,7 +691,6 @@ with <code>merchant_</code>.</p>
 </code></pre>
 
 <p>With this request khalti server will redirect your client to bank portal where user can access e-banking, finally redirecting back to original/parent page with the response.</p>
-<h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h4 id="data-retrival">Data Retrival<a class="headerlink" href="#data-retrival" title="Permanent link">&para;</a></h4>
 <p>Once transaction is initated, user interacts with ebanking system. After transaction is completed getting success or failure response is tricky. There are different ways based on different <code>source</code>.</p>
 <p><strong>Android</strong></p>

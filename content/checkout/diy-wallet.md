@@ -29,7 +29,8 @@ The request signature for initiation is as follows:
   * `public_key`: Required. Either `test` or `live` public key.
   * `mobile`: Required. The Khalti registered mobile number of payer.
   * `transaction_pin`: Required. Third party khalti pin submitted by the user.
-  * `amount`: Required. The amount value of payment. Needs to be in paisa.
+  * `amount`: Required. The amount value of payment (minimum amount must be 10, i.e 1000 in paisa.
+). Needs to be in paisa.
   * `product_identity`: Required. A string to identify the product.
   * `product_name`: Required. Descriptive name for the product.
   * `product_url`: Optional. Url of the product.

@@ -153,7 +153,7 @@ Configuration is a Javascript object with following attributes.
 |amount|true|integer|Amount to pay ***in paisa***. Minimum transaction amount is 1000 paisa ie Rs 10|
 |productIdentity|true|string|Unique product identifier at merchant.|
 |productName|true|string|Name of product.|
-|productUrl|false|string|Url of product.|
+|productUrl|true|string|Url of product.|
 |eventHandler|true|object|It is a javascript object with three methods|
 |mobile|false|integer|Mobile number of consumer.
 |paymentPreference|false|array|If not provided all the payment options will be rendered. It is javascript array with these options ```"KHALTI", "EBANKING", "MOBILE_BANKING" "CONNECT_IPS", "SCT"```

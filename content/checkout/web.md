@@ -136,7 +136,7 @@ btn.onclick = function () {
 
 	- Displays the Khalti checkout widget.
 	- Receives configuration as argument.
-	- Provide amount and mobile to prefill the checkout widget field
+	- Provide amount and mobile to prefill the checkout widget field. ***Amount must be in paisa and greater than equal to 1000 i.e Rs 10.***
 	 > ```checkout.show({amount: 1000, mobile: 98XXXXXXXX})```
 	- `mobile` is an optional field and expects Khalti Registered Number for wallet payment.
 
@@ -150,7 +150,7 @@ Configuration is a Javascript object with following attributes.
 |Key|Required|Type|Value|
 |--|--|--|--|
 |publickKey|true|string|Test or live public key which identifies the merchant.|
-|amount|true|integer|Amount to pay ***in paisa***. Minimum transaction amount is 1000 paisa ie Rs 10|
+|amount|true|integer|***Amount to pay must be in paisa. Minimum transaction amount is 1000 paisa ie Rs 10***|
 |productIdentity|true|string|Unique product identifier at merchant.|
 |productName|true|string|Name of product.|
 |productUrl|true|string|Url of product.|

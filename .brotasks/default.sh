@@ -25,7 +25,7 @@ env () {
 
 build () {
 	mkdocs build --clean
-	echo "docs.khalti.com" > docs/CNAME
+	echo docs.khalti.com > docs/CNAME
 }
 
 publish () {

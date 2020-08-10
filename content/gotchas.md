@@ -9,7 +9,7 @@ For the hybrid app, we don't have a specific SDK. Find options in `Client Integr
 
 **3. Can I integrate Khalti in my static/HTML website?**
 
-Complete Khalti integration in Static/HTML site is not possible. If the currently available options failed to meet your requirement leave us your [feedback.](/#support).
+Complete Khalti integration in Static/HTML site is not possible. If the currently available options failed to meet your requirement leave us your [feedback](/#support).
 
 **4. While installing the plugin I got an issue. How can I resolve it?**
 

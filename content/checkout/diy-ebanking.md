@@ -55,7 +55,7 @@ The request signature for initiation is as follows:
 * Data:
   * `public_key`: Required. Either `test` or `live` public key.
   * `mobile`: Required. The Khalti registered mobile number of payer.
-  * `amount`: Required. The amount value of payment(minimum amount must be 10, i.e 1000 in paisa.). Needs to be in paisa.
+  * `amount`: Required. The amount value of payment. ***Amount must be in paisa and greater than equal to 1000 i.e Rs 10.***
   * `product_identity`: Required. A string to identify the product.
   * `product_name`: Required. Descriptive name for the product.false
   * `bank`:Required.A bank idx,

@@ -41,9 +41,9 @@ Khalti checkout can be integrated with or without build tools like
 			"productName": "Dragon",
 			"productUrl": "http://gameofthrones.wikia.com/wiki/Dragons",
 			"paymentPreference": [
-				"MOBILE_BANKING",
 				"KHALTI",
 				"EBANKING",
+				"MOBILE_BANKING",
 				"CONNECT_IPS",
 				"SCT",
 				],

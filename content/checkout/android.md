@@ -1,8 +1,8 @@
-[<img width="302.6" height="115" src="https://campaigns.khalti.com/brandbook/logo/khalti-logo-transparent-h125.png"/>](https://khalti.com/)
+[<img width="302.6" height="115" src="https://d7vw40z4bofef.cloudfront.net/static/2.69.07-web19/images/khalti-logo.svg"/>](https://khalti.com/)
 
 # Khalti Android SDK
 
-[![Download](https://api.bintray.com/packages/khalti-official/khalti/khalti-android/images/download.svg)](https://bintray.com/khalti-official/khalti/khalti-android/_latestVersion)
+![Maven Central](https://img.shields.io/maven-central/v/com.khalti/khalti-android?color=%235C2D91)
 
 Welcome to Khalti's checkout documentation
 
@@ -10,9 +10,12 @@ Welcome to Khalti's checkout documentation
 
 #### Requirements
 
-- Android 4.0 and above
+- Android 5.0 and above
 - AndroidX (as of v2.00.00)
 - Android Studio 3 and above
+
+#### Quick Note
+- We've dropped support of Android 4 since version `2.01.00`
 
 #### Configuration
 
@@ -48,14 +51,14 @@ Add KhaltiButton in your xml layout as follows
             android:id="@+id/khalti_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            khalti:button_style="khalti"/>
+            app:khalti_button_style="khalti"/>
 
 ```
 
 Add the following line in your root layout in your xml file if you're going to use `khalti` attribute.
 
 ```xml
-xmlns:khalti="http://schemas.android.com/apk/res-auto"
+xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 
 Then, Locate your xml Khalti Button in your Java
@@ -68,10 +71,11 @@ KhaltiButton khaltiButton = (KhaltiButton) findViewById(R.id.khalti_button);
 
 | Attribute             | Description                                              |
 |:----------------------|:---------------------------------------------------------|
-| `khalti:text`         | Text to display                                          |
-| `khalti:button_style` | Set the style of KhaltiButton from the available options |
+| `app:text`         | Text to display                                          |
+| `app:khalti_button_style` | Set the style of KhaltiButton from the available options |
 
-Use the `button_style` attribute in your xml file to select a button style for your Khalti button. Or you can use the `setButtonStyle()` function in khalti button to set the style programmatically.
+Use the `khalti_button_style` attribute in your xml file to select a button style for your Khalti button. Or you can use the 
+`setButtonStyle()` function in khalti button to set the style programmatically.
 
 ###### Available button styles
 
@@ -99,7 +103,7 @@ Create an instance of Builder class. Pass `public key`, `product id`, `product n
 ```java
 Map<String, Object> map = new HashMap<>();
         map.put("merchant_extra", "This is extra data");
-
+        
 Builder builder = new Config.Builder(Constant.pub, "Product ID", "Main", 1100L, new OnCheckOutListener() {
             @Override
             public void onError(@NonNull String action, @NonNull Map<String, String> errorMap) {
@@ -174,6 +178,7 @@ khaltiButton.setCheckOutConfig(config);
 |:---------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `onSuccess(Map data)`                  | This method is called when a transaction has been completed and confirmed by the user. A map containing an access token, required to verify the transaction and data passed to the Config through the Config bulder is returned. Once this method is called, use the access token to verify the transaction. Please follow the [verification](./../api/verification.md) process for further instructions. |
 | `onError(String action, Map errorMap)` | This method is called when an error occurs during payment initiation or confirmation. Action and errorMap value is passed where action defines the current action being performed and errorMap has the necessary information on the error.                                                                                                                                                                |
+| `onCancel()` | This method is called when the user dismisses or cancels the checkout process. (When the user presses back button).                                                                                                                                                                |
 
 #### Response Sample
 

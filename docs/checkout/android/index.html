@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-4.6.0">
     
     
       
@@ -323,6 +323,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quick-note" class="md-nav__link">
+    Quick Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     Configuration
   </a>
@@ -466,7 +473,7 @@
         
           <li class="md-nav__item">
   <a href="#changelog" class="md-nav__link">
-    Changelog
+    wzxhzdk:19Changelogwzxhzdk:20
   </a>
   
 </li>
@@ -823,6 +830,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quick-note" class="md-nav__link">
+    Quick Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     Configuration
   </a>
@@ -966,7 +980,7 @@
         
           <li class="md-nav__item">
   <a href="#changelog" class="md-nav__link">
-    Changelog
+    wzxhzdk:19Changelogwzxhzdk:20
   </a>
   
 </li>
@@ -1002,16 +1016,20 @@
                   <a href="https://github.com/khalti/khalti-docs-official-repo/edit/master/content/checkout/android.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <p><a href="https://khalti.com/"><img width="302.6" height="115" src="https://campaigns.khalti.com/brandbook/logo/khalti-logo-transparent-h125.png"/></a></p>
+                <p><a href="https://khalti.com/"><img width="302.6" height="115" src="https://d7vw40z4bofef.cloudfront.net/static/2.69.07-web19/images/khalti-logo.svg"/></a></p>
 <h1 id="khalti-android-sdk">Khalti Android SDK<a class="headerlink" href="#khalti-android-sdk" title="Permanent link">&para;</a></h1>
-<p><a href="https://bintray.com/khalti-official/khalti/khalti-android/_latestVersion"><img alt="Download" src="https://api.bintray.com/packages/khalti-official/khalti/khalti-android/images/download.svg" /></a></p>
+<p><img alt="Maven Central" src="https://img.shields.io/maven-central/v/com.khalti/khalti-android?color=%235C2D91" /></p>
 <p>Welcome to Khalti's checkout documentation</p>
 <h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
 <h4 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Android 4.0 and above</li>
+<li>Android 5.0 and above</li>
 <li>AndroidX (as of v2.00.00)</li>
 <li>Android Studio 3 and above</li>
+</ul>
+<h4 id="quick-note">Quick Note<a class="headerlink" href="#quick-note" title="Permanent link">&para;</a></h4>
+<ul>
+<li>We've dropped support of Android 4 since version <code>2.01.00</code></li>
 </ul>
 <h4 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h4>
 <p>Add <code>khalti-android</code> to your <code>build.gradle</code> dependencies</p>
@@ -1037,12 +1055,12 @@
             android:id=&quot;@+id/khalti_button&quot;
             android:layout_width=&quot;wrap_content&quot;
             android:layout_height=&quot;wrap_content&quot;
-            khalti:button_style=&quot;khalti&quot;/&gt;
+            app:khalti_button_style=&quot;khalti&quot;/&gt;
 
 </code></pre>
 
 <p>Add the following line in your root layout in your xml file if you're going to use <code>khalti</code> attribute.</p>
-<pre><code class="xml">xmlns:khalti=&quot;http://schemas.android.com/apk/res-auto&quot;
+<pre><code class="xml">xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
 </code></pre>
 
 <p>Then, Locate your xml Khalti Button in your Java</p>
@@ -1059,16 +1077,17 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>khalti:text</code></td>
+<td align="left"><code>app:text</code></td>
 <td align="left">Text to display</td>
 </tr>
 <tr>
-<td align="left"><code>khalti:button_style</code></td>
+<td align="left"><code>app:khalti_button_style</code></td>
 <td align="left">Set the style of KhaltiButton from the available options</td>
 </tr>
 </tbody>
 </table>
-<p>Use the <code>button_style</code> attribute in your xml file to select a button style for your Khalti button. Or you can use the <code>setButtonStyle()</code> function in khalti button to set the style programmatically.</p>
+<p>Use the <code>khalti_button_style</code> attribute in your xml file to select a button style for your Khalti button. Or you can use the 
+<code>setButtonStyle()</code> function in khalti button to set the style programmatically.</p>
 <h6 id="available-button-styles">Available button styles<a class="headerlink" href="#available-button-styles" title="Permanent link">&para;</a></h6>
 <table>
 <thead>
@@ -1264,6 +1283,10 @@ Builder builder = new Config.Builder(Constant.pub, &quot;Product ID&quot;, &quot
 <td align="left"><code>onError(String action, Map errorMap)</code></td>
 <td align="left">This method is called when an error occurs during payment initiation or confirmation. Action and errorMap value is passed where action defines the current action being performed and errorMap has the necessary information on the error.</td>
 </tr>
+<tr>
+<td align="left"><code>onCancel()</code></td>
+<td align="left">This method is called when the user dismisses or cancels the checkout process. (When the user presses back button).</td>
+</tr>
 </tbody>
 </table>
 <h4 id="response-sample">Response Sample<a class="headerlink" href="#response-sample" title="Permanent link">&para;</a></h4>
@@ -1458,7 +1481,7 @@ khaltiButton.setCheckOutConfig(config);
     
       <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.2.2",url:{base:"../.."}})</script>
       
     
   </body>

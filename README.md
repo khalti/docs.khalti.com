@@ -1,4 +1,4 @@
-# Khalti Merchant API docs
+# Khalti Merchant API document
 
 This repository contains the source files for the official documentation of Khalti Merchant API and SDKs.
 

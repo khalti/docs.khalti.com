@@ -36,7 +36,7 @@
     
     
       
-        <title>Detail - Khalti Payment Gateway</title>
+        <title>Flutter SDK - Khalti Payment Gateway</title>
       
     
     
@@ -87,7 +87,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#transaction-detail" tabindex="1" class="md-skip">
+      <a href="#khalti-payment-gateway" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -113,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Detail
+                Flutter SDK
               
             </span>
           
@@ -246,10 +246,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Client Integration
@@ -267,7 +269,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../checkout/web/" title="Web SDK" class="md-nav__link">
+    <a href="../web/" title="Web SDK" class="md-nav__link">
       Web SDK
     </a>
   </li>
@@ -279,7 +281,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../checkout/android/" title="Android SDK" class="md-nav__link">
+    <a href="../android/" title="Android SDK" class="md-nav__link">
       Android SDK
     </a>
   </li>
@@ -291,7 +293,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../checkout/ios/" title="iOS SDK" class="md-nav__link">
+    <a href="../ios/" title="iOS SDK" class="md-nav__link">
       iOS SDK
     </a>
   </li>
@@ -301,11 +303,104 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../checkout/flutter/" title="Flutter SDK" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Flutter SDK
+      </label>
+    
+    <a href="./" title="Flutter SDK" class="md-nav__link md-nav__link--active">
       Flutter SDK
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-public-key" class="md-nav__link">
+    Set up public key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initiating-payment-using-wallet" class="md-nav__link">
+    Initiating payment using Wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirming-transaction" class="md-nav__link">
+    Confirming Transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-url-for-bank-payment" class="md-nav__link">
+    Building URL for bank payment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-available-banks-for-receiving-payment" class="md-nav__link">
+    Fetching available banks for receiving payment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#khalti-docs" class="md-nav__link">
+    Khalti Docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -334,7 +429,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../checkout/diy-wallet/" title="Wallet" class="md-nav__link">
+    <a href="../diy-wallet/" title="Wallet" class="md-nav__link">
       Wallet
     </a>
   </li>
@@ -346,7 +441,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../checkout/diy-ebanking/" title="Ebanking" class="md-nav__link">
+    <a href="../diy-ebanking/" title="Ebanking" class="md-nav__link">
       Ebanking
     </a>
   </li>
@@ -366,12 +461,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Server Integration
@@ -389,7 +482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../verification/" title="Verification" class="md-nav__link">
+    <a href="../../api/verification/" title="Verification" class="md-nav__link">
       Verification
     </a>
   </li>
@@ -399,12 +492,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
     
     <label class="md-nav__link" for="nav-4-2">
       Transaction
@@ -422,7 +513,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../transaction/" title="List" class="md-nav__link">
+    <a href="../../api/transaction/" title="List" class="md-nav__link">
       List
     </a>
   </li>
@@ -432,83 +523,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Detail
-      </label>
-    
-    <a href="./" title="Detail" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../api/transaction_details/" title="Detail" class="md-nav__link">
       Detail
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api-request-examples" class="md-nav__link">
-    API Request Examples
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#curl" class="md-nav__link">
-    CURL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#php" class="md-nav__link">
-    PHP
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ruby" class="md-nav__link">
-    Ruby
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -518,7 +537,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../transaction_status/" title="Status" class="md-nav__link">
+    <a href="../../api/transaction_status/" title="Status" class="md-nav__link">
       Status
     </a>
   </li>
@@ -687,43 +706,64 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#api-request-examples" class="md-nav__link">
-    API Request Examples
+  <a href="#setup" class="md-nav__link">
+    Setup
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#curl" class="md-nav__link">
-    CURL
+  <a href="#set-up-public-key" class="md-nav__link">
+    Set up public key
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#php" class="md-nav__link">
-    PHP
+  <a href="#initiating-payment-using-wallet" class="md-nav__link">
+    Initiating payment using Wallet
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
+  <a href="#confirming-transaction" class="md-nav__link">
+    Confirming Transaction
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ruby" class="md-nav__link">
-    Ruby
+  <a href="#building-url-for-bank-payment" class="md-nav__link">
+    Building URL for bank payment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching-available-banks-for-receiving-payment" class="md-nav__link">
+    Fetching available banks for receiving payment
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#khalti-docs" class="md-nav__link">
+    Khalti Docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
   
 </li>
       
@@ -743,134 +783,103 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/khalti/khalti-docs-official-repo/edit/master/content/api/transaction_details.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/khalti/khalti-docs-official-repo/edit/master/content/checkout/flutter.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="transaction-detail">Transaction detail<a class="headerlink" href="#transaction-detail" title="Permanent link">&para;</a></h1>
-<p>Khalti provides API for retrieving payment made to a merchant.
-A merchant should use secret test and live keys for retrieving test and live payment respectively.</p>
-<p><strong> Payment details can also be viewed after logging on <a href="https://khalti.com">Khalti website</a> with merchant account.</strong></p>
-<p>Replace <code>&lt;secret key&gt;</code> with test or live secret key as per required.</p>
-<p><strong>Response</strong> is in the following format:</p>
-<pre><code class="python">{
-  &quot;idx&quot;: &quot;xeR2tuRqEvBLmeJcZzMb5U&quot;,
-  &quot;type&quot;: {
-    &quot;idx&quot;: &quot;2jwzDS9wkxbkDFquJqfAEC&quot;,
-    &quot;name&quot;: &quot;Wallet payment&quot;
-  },
-  &quot;state&quot;: {
-    &quot;idx&quot;: &quot;DhvMj9hdRufLqkP8ZY4d8g&quot;,
-    &quot;name&quot;: &quot;Completed&quot;,
-    &quot;template&quot;: &quot;is complete&quot;
-  },
-  &quot;amount&quot;: 3000,
-  &quot;fee_amount&quot;: 90,
-  &quot;created_on&quot;: &quot;2018-04-16T17:04:05.204629+05:45&quot;,
-  &quot;can_refund&quot;: true,
-  &quot;can_complete&quot;: false,
-  &quot;ebanker&quot;: null,
-  &quot;user&quot;: {
-    &quot;idx&quot;: &quot;aVPXfJQ8HMYKhAePAU6pg5&quot;,
-    &quot;name&quot;: &quot;Test User&quot;,
-    &quot;mobile&quot;: &quot;98XXXXXXX9&quot;
-  },
-  &quot;merchant&quot;: {
-    &quot;idx&quot;: &quot;UM75Gm2gWmZvA4TPwkwZye&quot;,
-    &quot;name&quot;: &quot;Test Merchant&quot;,
-    &quot;mobile&quot;: &quot;testmerchant@khalti.com&quot;
-  },
-  &quot;refunded&quot;: false,
-  &quot;child_transactions&quot;: [
-    {
-      &quot;idx&quot;: &quot;uUx2Ead8qqDuRufYh8vsYj&quot;,
-      &quot;type&quot;: {
-        &quot;idx&quot;: &quot;YpwbDVqAnH42odGZmT5vZ8&quot;,
-        &quot;name&quot;: &quot;Fee&quot;
+                <h1 id="khalti-payment-gateway">Khalti Payment Gateway<a class="headerlink" href="#khalti-payment-gateway" title="Permanent link">&para;</a></h1>
+<p>Note: <em>This is an alpha release of the package and the APIs might slightly change with the stable release.</em></p>
+<p>Khalti is a payment gateway, digital wallet and API provider system for various online services for Nepal.</p>
+<p>With this package, you can accepts payments from:
+- Khalti users.
+- eBanking users of our partner banks.
+- Mobile banking users of our mobile banking partner banks.
+- SCT/VISA card holders.
+- connectIPS users.</p>
+<p>Using Khalti Payment Gateway, you do not need to integrate with individual banks.</p>
+<p>Note: <em>This package only provides set of methods for client integration of Khalti Payment Gateway.
+If custom UI is not required then prefer using <a href="https://pub.dev/packages/khalti_flutter">khalti_flutter</a> instead (currently in development).</em></p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<h3 id="set-up-public-key">Set up public key<a class="headerlink" href="#set-up-public-key" title="Permanent link">&para;</a></h3>
+<p>The first step is to grab public key from merchant dashboard. Read the <a href="https://docs.khalti.com/getting-started/">getting started</a>
+to learn about the integration process and grabbing public key.</p>
+<pre><code class="dart">  KhaltiService.publicKey = &lt;your-public-key-here&gt;;
+</code></pre>
+
+<p>Note: <em>During integration, use test keys instead of live one.</em></p>
+<h3 id="initiating-payment-using-wallet">Initiating payment using Wallet<a class="headerlink" href="#initiating-payment-using-wallet" title="Permanent link">&para;</a></h3>
+<pre><code class="dart">final service = KhaltiService(client: KhaltiHttpClient());
+
+final initiationModel = await service.initiatePayment(
+    request: PaymentInitiationRequestModel(
+      amount: 1000, // in paisa
+      mobile: &lt;khalti-mobile-number&gt;,
+      productIdentity: 'mac-mini',
+      productName: 'Apple Mac Mini',
+      transactionPin: &lt;khalti-mpin&gt;,
+      productUrl: 'https://khalti.com/bazaar/mac-mini-16-512-m1',
+      additionalData: {
+        'vendor': 'Oliz Store',
+        'manufacturer': 'Apple Inc.',
       },
-      &quot;state&quot;: {
-        &quot;idx&quot;: &quot;DhvMj9hdRufLqkP8ZY4d8g&quot;,
-        &quot;name&quot;: &quot;Completed&quot;,
-        &quot;template&quot;: &quot;is complete&quot;
-      },
-      &quot;amount&quot;: 90,
-      &quot;fee_amount&quot;: 0,
-      &quot;created_on&quot;: &quot;2018-07-19T12:31:55.620318+05:45&quot;,
-      &quot;can_refund&quot;: true,
-      &quot;can_complete&quot;: false,
-      &quot;ebanker&quot;: null,
-      &quot;user&quot;: {
-        &quot;idx&quot;: &quot;UM75Gm2gWmZvA4TPwkwZye&quot;,
-        &quot;name&quot;: &quot;Test Merchant&quot;,
-        &quot;mobile&quot;: &quot;testmerchant@khalti.com&quot;
-      },
-      &quot;merchant&quot;: {
-        &quot;idx&quot;: &quot;9dUzuqrLetWo9VY3fNwB2E&quot;,
-        &quot;name&quot;: &quot;&quot;,
-        &quot;mobile&quot;: &quot;wallet@khalti.com&quot;
-      },
-      &quot;refunded&quot;: false,
-      &quot;child_transactions&quot;: [],
-      &quot;meta&quot;: null
-    }
-  ],
-  &quot;meta&quot;: {
-    &quot;product_identity&quot;: &quot;369121518&quot;,
-    &quot;product_name&quot;: &quot;Test Product&quot;,
-    &quot;product_url&quot;: &quot;http://testproduct.com/wiki/khalti&quot;
-  }
-}
+    ),
+  );
 </code></pre>
 
-<h2 id="api-request-examples">API Request Examples<a class="headerlink" href="#api-request-examples" title="Permanent link">&para;</a></h2>
-<h3 id="curl">CURL<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
-<pre><code class="curl">curl https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/ -H &quot;Authorization:Key &lt;secret key&gt;
+<p>After successful call to the method, an OTP is sent to the mobile number provided.</p>
+<h3 id="confirming-transaction">Confirming Transaction<a class="headerlink" href="#confirming-transaction" title="Permanent link">&para;</a></h3>
+<pre><code class="dart">final confirmationModel = await service.confirmPayment(
+  request: PaymentConfirmationRequestModel(
+    confirmationCode: &lt;otp-code&gt;, // the OTP code received through previous step
+    token: initiationModel.token,
+    transactionPin: &lt;khalti-mpin&gt;,
+  ),
+);
 </code></pre>
 
-<h3 id="php">PHP<a class="headerlink" href="#php" title="Permanent link">&para;</a></h3>
-<pre><code class="php">
-$url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;;
-
-# Make the call using API.
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-// Response
-$response = curl_exec($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
-
+<h3 id="building-url-for-bank-payment">Building URL for bank payment<a class="headerlink" href="#building-url-for-bank-payment" title="Permanent link">&para;</a></h3>
+<pre><code class="dart">final bankPaymentUrl = service.buildBankUrl(
+    bankId: '1234567890',
+    amount: 1000,
+    mobile: mobile,
+    productIdentity: 'macbook-pro-21',
+    productName: 'Macbook Pro 2021',
+    paymentType: BankPaymentType.eBanking,
+  );
 </code></pre>
 
-<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
-<pre><code class="python">import requests
-
-url = &quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;
-headers = {
-  &quot;Authorization&quot;: &quot;Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b&quot;
-}
-
-response = requests.get(url, headers = headers)
+<p>The URL obtained can be launched using <a href="https://pub.dev/packages/url_launcher">url_launcher</a> 
+and the Khalti server will redirect your client to bank portal where user can access e-banking, 
+finally redirecting back to original/parent page with the response.</p>
+<h3 id="fetching-available-banks-for-receiving-payment">Fetching available banks for receiving payment<a class="headerlink" href="#fetching-available-banks-for-receiving-payment" title="Permanent link">&para;</a></h3>
+<pre><code class="dart">final banks = await service.getBanks(paymentType: BankPaymentType.eBanking);
 </code></pre>
 
-<h3 id="ruby">Ruby<a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h3>
-<pre><code class="ruby">require 'uri'
-require 'net/http'
-
-headers = {
-  Authorization: &quot;Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324&quot;
-}
-uri = URI.parse(&quot;https://khalti.com/api/v2/merchant-transaction/&lt;idx&gt;/&quot;)
-https = Net::HTTP.new(uri.host, uri.port)
-https.use_ssl = true
-request = Net::HTTP::Get.new(uri.request_uri, headers)
-response = https.request(request)
-
-puts response.body
+<h2 id="khalti-docs">Khalti Docs<a class="headerlink" href="#khalti-docs" title="Permanent link">&para;</a></h2>
+<p>Visit <a href="https://docs.khalti.com/">https://docs.khalti.com/</a>.</p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>Copyright 2021 The Khalti Authors. All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:</p>
+<pre><code>* Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above
+  copyright notice, this list of conditions and the following
+  disclaimer in the documentation and/or other materials provided
+  with the distribution.
+* Neither the name of Sparrow Pay Pvt. Ltd. nor the names of its
+  contributors may be used to endorse or promote products derived
+  from this software without specific prior written permission.
 </code></pre>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
                 
                   
                 
@@ -892,7 +901,7 @@ puts response.body
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../transaction/" title="List" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ios/" title="iOS SDK" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -901,19 +910,19 @@ puts response.body
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                List
+                iOS SDK
               </span>
             </div>
           </a>
         
         
-          <a href="../transaction_status/" title="Status" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../diy-wallet/" title="Wallet" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Status
+                Wallet
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

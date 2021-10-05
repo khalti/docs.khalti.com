@@ -7,7 +7,6 @@ nav:
         - Web SDK: checkout/web.md
         - Android SDK: checkout/android.md
         - iOS SDK: checkout/ios.md
-        - Flutter SDK: checkout/flutter.md
         - API Reference:
             - Wallet: checkout/diy-wallet.md
             - Ebanking: checkout/diy-ebanking.md

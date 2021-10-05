@@ -184,14 +184,15 @@ khaltiButton.setCheckOutConfig(config);
 
 ###### Success Message
 
-| Key                    | Value        | Type   |
-|:-----------------------|:-------------|:-------|
-| mobile                 | 98XXXXXXXX   | String |
-| product_name           | Product Name | String |
-| product_identity       | Product Id   | String |
-| product_url(if passed) | Product Url  | String |
-| amount                 | 100          | Long   |
-| token                  | token        | String |
+| Key                    | Value             | Type   |
+|:-----------------------|:------------------|:-------|
+| mobile                 | 98XXXXXXXX        | String |
+| product_name           | Product Name      | String |
+| product_identity       | Product Id        | String |
+| product_url(if passed) | Product Url       | String |
+| amount                 | 100               | Long   |
+| token                  | token             | String |
+| idx                    | Unique identifier | String |
 
 The success message also contains all the `key` and `value` provided as extra data while building the `Config`.
 

@@ -5,6 +5,7 @@ Here are few demo projects and resources in various plaforms.
 * [Khalti Javascript SDK](https://github.com/khalti/khalti-sdk-web)
 * [Khalti Android SDK](https://github.com/khalti/khalti-sdk-android)
 * [Khalti iOS SDK](https://github.com/khalti/khalti-sdk-ios)
+* [Khalti official Flutter SDK](https://pub.dev/packages/khalti)
 
 * [Khalti WooCommerce Plugin](https://github.com/khalti/khalti-woocommerce)
 * [Khalti Opencart Plugin](https://github.com/khalti/khalti-opencart)

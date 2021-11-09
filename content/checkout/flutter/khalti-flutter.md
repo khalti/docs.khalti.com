@@ -1,4 +1,7 @@
 # Khalti Flutter SDK (with Payment Interface)
+Khalti Payment Gateway SDK for Flutter with default payment interface, works out of the box without having to add any additional user interface.
+
+---
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/khalti/khalti-flutter-sdk/master/assets/khalti_logo.png" height="150" alt="Khalti Payment Gateway" />
@@ -21,17 +24,6 @@
 </p>
 
 ---
-
-Khalti is a payment gateway, digital wallet and API provider system for various online services for Nepal.
-
-With this package, you can accepts payments from:
-- Khalti users.
-- eBanking users of our partner banks.
-- Mobile banking users of our mobile banking partner banks.
-- SCT/VISA card holders.
-- connectIPS users.
-
-Using Khalti Payment Gateway, you do not need to integrate with individual banks.
 
 ## Introduction
 Read the introduction [here](https://docs.khalti.com/).

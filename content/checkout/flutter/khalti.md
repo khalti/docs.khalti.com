@@ -101,9 +101,6 @@ finally redirecting back to original/parent page with the response.
 final banks = await service.getBanks(paymentType: BankPaymentType.eBanking);
 ```
 
-## Khalti Docs
-Visit [https://docs.khalti.com/](https://docs.khalti.com/).
-
 ## License
 ```
 Copyright (c) 2021 The Khalti Authors. All rights reserved.

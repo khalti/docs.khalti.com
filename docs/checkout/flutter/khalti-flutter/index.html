@@ -1198,7 +1198,6 @@ And add supported locales and <code>KhaltiLocalizations.delegate</code> as shown
 <h3 id="router-approach">Router Approach<a class="headerlink" href="#router-approach" title="Permanent link">&para;</a></h3>
 <p>When using <code>MaterialApp.router</code> or siblings.</p>
 <pre><code class="dart">final routerDelegate = YourRouterDelegate();
-
 KhaltiScope(
   publicKey: &lt;public-key&gt;,
   navigatorKey: routerDelegate.navigatorKey, 
@@ -1232,7 +1231,6 @@ KhaltiScope(
     'vendor': 'Khalti Bazaar',
   },
 )
-
 KhaltiButton(
   config: config,
   preferences: [ // Not providing this will enable all the payment methods.
@@ -1318,11 +1316,11 @@ This type of verification can only be done securely from the server.</p>
 </li>
 <li>
 <p>Add entry to <code>_localizations</code> map inside <code>khalti_localizations.dart</code>.
-     <code>dart
-     const Map&lt;String, KhaltiLocalizations&gt; _localizations = {
-         'en': _KhaltiLocalizationsEn(),
-         'ne': _KhaltiLocalizationsNe(), // Newly added entry
-     };</code></p>
+      <code>dart
+        const Map&lt;String, KhaltiLocalizations&gt; _localizations = {
+            'en': _KhaltiLocalizationsEn(),
+            'ne': _KhaltiLocalizationsNe(), // Newly added entry
+        };</code></p>
 </li>
 <li>
 <p>Submit a Pull Request with the changes. But ensure that the code changes are well formatted.
@@ -1344,10 +1342,8 @@ This type of verification can only be done securely from the server.</p>
 <p>(For payment gateway integration support.)</p>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <pre><code>Copyright (c) 2021 The Khalti Authors. All rights reserved.
-
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
-
     * Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above
@@ -1357,7 +1353,6 @@ are permitted provided that the following conditions are met:
     * Neither the name of Sparrow Pay Pvt. Ltd. nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE

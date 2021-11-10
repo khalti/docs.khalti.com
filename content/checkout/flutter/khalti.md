@@ -1,20 +1,34 @@
-# Khalti Payment Gateway
+# Khalti Flutter SDK (without Payment Interface)
+Khalti Payment Gateway SDK for Flutter without payment interface, a custom user interface is required.
 
-Note: _This is an alpha release of the package and the APIs might slightly change with the stable release._
+---
 
-Khalti is a payment gateway, digital wallet and API provider system for various online services for Nepal.
+<p align="center">
+<img src="https://raw.githubusercontent.com/khalti/khalti-flutter-sdk/master/assets/khalti_logo.png" height="150" alt="Khalti Payment Gateway" />
+</p>
 
-With this package, you can accepts payments from:
-- Khalti users.
-- eBanking users of our partner banks.
-- Mobile banking users of our mobile banking partner banks.
-- SCT/VISA card holders.
-- connectIPS users.
+<p align="center">
+<strong>Khalti Payment Gateway</strong>
+</p>
 
-Using Khalti Payment Gateway, you do not need to integrate with individual banks.
+<p align="center">
+<a href="https://pub.dartlang.org/packages/khalti"><img src="https://img.shields.io/pub/v/khalti" alt="Pub"></a>
+<a href="https://docs.khalti.com/"><img src="https://img.shields.io/badge/Khalti-Docs-blueviolet" alt="Khalti Docs"></a>
+<a href="https://github.com/khalti/khalti-flutter-sdk/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-BSD--3-informational" alt="BSD-3 License"></a>
+<a href="https://github.com/khalti/khalti-flutter-sdk/issues"><img src="https://img.shields.io/github/issues/khalti/khalti-flutter-sdk" alt="GitHub issues"></a>
+<a href="https://khalti.com"><img src="https://img.shields.io/website?url=https%3A%2F%2Fdocs.khalti.com" alt="Website"></a>
+<a href="https://www.facebook.com/khalti.official"><img src="https://img.shields.io/badge/follow--000?style=social&logo=facebook" alt="Follow Khalti in Facebook"></a>
+<a href="https://www.instagram.com/khaltiofficial"><img src="https://img.shields.io/badge/follow--000?style=social&logo=instagram" alt="Follow Khalti in Instagram"></a>
+<a href="https://twitter.com/intent/follow?screen_name=khaltiofficial"><img src="https://img.shields.io/twitter/follow/khaltiofficial?style=social" alt="Follow Khalti in Twitter"></a>
+<a href="https://www.youtube.com/channel/UCrXM4HqK9th3E2a04Z9Lh-Q"><img src="https://img.shields.io/youtube/channel/subscribers/UCrXM4HqK9th3E2a04Z9Lh-Q?label=Subscribe&style=social" alt="Subscribe Youtube Channel"></a>
+</p>
 
-Note: _This package only provides set of methods for client integration of Khalti Payment Gateway.
-If custom UI is not required then prefer using [khalti_flutter](https://pub.dev/packages/khalti_flutter) instead (currently in development)._
+---
+
+## Want easier integration?
+This package only provides set of methods for client integration of Khalti Payment Gateway.
+
+If custom UI is not required then prefer using [khalti_flutter](https://pub.dev/packages/khalti_flutter) instead.
 
 ## Setup
 
@@ -32,7 +46,6 @@ Note: _During integration, use test keys instead of live one._
 
 ```dart
 final service = KhaltiService(client: KhaltiHttpClient());
-
 final initiationModel = await service.initiatePayment(
     request: PaymentInitiationRequestModel(
       amount: 1000, // in paisa
@@ -77,8 +90,8 @@ final bankPaymentUrl = service.buildBankUrl(
   );
 ```
 
-The URL obtained can be launched using [url_launcher](https://pub.dev/packages/url_launcher) 
-and the Khalti server will redirect your client to bank portal where user can access e-banking, 
+The URL obtained can be launched using [url_launcher](https://pub.dev/packages/url_launcher)
+and the Khalti server will redirect your client to bank portal where user can access e-banking,
 finally redirecting back to original/parent page with the response.
 
 ### Fetching available banks for receiving payment
@@ -87,15 +100,11 @@ finally redirecting back to original/parent page with the response.
 final banks = await service.getBanks(paymentType: BankPaymentType.eBanking);
 ```
 
-## Khalti Docs
-Visit [https://docs.khalti.com/](https://docs.khalti.com/).
-
 ## License
-Copyright 2021 The Khalti Authors. All rights reserved.
-
+```
+Copyright (c) 2021 The Khalti Authors. All rights reserved.
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
-
     * Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above
@@ -105,7 +114,6 @@ are permitted provided that the following conditions are met:
     * Neither the name of Sparrow Pay Pvt. Ltd. nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -116,3 +124,4 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```

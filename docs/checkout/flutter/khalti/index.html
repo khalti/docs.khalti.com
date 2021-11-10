@@ -861,7 +861,6 @@ to learn about the integration process and grabbing public key.</p>
 <p>Note: <em>During integration, use test keys instead of live one.</em></p>
 <h3 id="initiating-payment-using-wallet">Initiating payment using Wallet<a class="headerlink" href="#initiating-payment-using-wallet" title="Permanent link">&para;</a></h3>
 <pre><code class="dart">final service = KhaltiService(client: KhaltiHttpClient());
-
 final initiationModel = await service.initiatePayment(
     request: PaymentInitiationRequestModel(
       amount: 1000, // in paisa
@@ -909,10 +908,8 @@ finally redirecting back to original/parent page with the response.</p>
 
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <pre><code>Copyright (c) 2021 The Khalti Authors. All rights reserved.
-
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
-
     * Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above
@@ -922,7 +919,6 @@ are permitted provided that the following conditions are met:
     * Neither the name of Sparrow Pay Pvt. Ltd. nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE

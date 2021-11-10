@@ -5,4 +5,4 @@ mkdocs-material/
 build.sh
 *.orig
 docs/
-.idea
+.idea/

@@ -1,7 +1,8 @@
 # FAQ's
 **1. Does Khalti have SDK for hybrid Apps?**
 
-For the hybrid app, we don't have a specific SDK. Find options in `Client Integration`, which support Khalti checkout integration with your app.
+We do have SDK for [Flutter](https://flutter.dev/). But for hybrid apps based on other frameworks, we don't have a specific SDK. 
+Find options in `Client Integration`, which support Khalti checkout integration with your app.
 
 **2. Can I share merchant keys?**
 

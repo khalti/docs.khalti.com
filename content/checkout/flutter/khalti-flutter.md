@@ -4,7 +4,7 @@ Khalti Payment Gateway SDK for Flutter with default payment interface, works out
 ---
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/khalti/khalti-flutter-sdk/master/assets/khalti_logo.png" height="150" alt="Khalti Payment Gateway" />
+<img src="https://raw.githubusercontent.com/khalti/khalti-flutter-sdk/master/assets/khalti_logo.png" height="100" alt="Khalti Payment Gateway" />
 </p>
 
 <p align="center">
@@ -43,6 +43,10 @@ Mobile Banking |    ✔️    |  ✔️  |  ✔️  |                ❌
 Connect IPS    |    ✔️    |  ✔️  |  ✔️  |                ❌
 SCT            |    ✔️    |  ✔️  |  ✔️  |                ❌
 
+## Migrating to 2.0
+Version 1.0 had an issue where multiple app with the package integrated, could interfere with each other's deeplink.
+Please follow the [new setup](#setup) after upgrading to 2.0 in order to fix the issue.
+
 ## Setup
 Detailed setup for each platform.
 
@@ -55,7 +59,7 @@ In your app's `AndroidManifest.xml`, add these lines inside `<activity>...</acti
     <action android:name="android.intent.action.VIEW" />
     <category android:name="android.intent.category.DEFAULT" />
     <category android:name="android.intent.category.BROWSABLE" />
-    <data android:scheme="khalti" android:host="pay" />
+    <data android:scheme="kpg" android:host="{your package name}" />
 </intent-filter>
 ```
 
@@ -72,10 +76,10 @@ In your app's `Info.plist`, add these properties:
         <string>Editor</string>
         <key>CFBundleURLSchemes</key>
         <array>
-            <string>khalti</string>
+            <string>kpg</string>
         </array>
         <key>CFBundleURLName</key>
-        <string>pay</string>
+        <string>{your package name}</string>
     </dict>
 </array>
 ```
@@ -252,12 +256,12 @@ Steps to add support for new language
 3. Replace all the strings with the localized strings inside the file.
 
 4. Add entry to `_localizations` map inside `khalti_localizations.dart`.
-	  ```dart
-		const Map<String, KhaltiLocalizations> _localizations = {
-			'en': _KhaltiLocalizationsEn(),
-			'ne': _KhaltiLocalizationsNe(), // Newly added entry
-		};
-		```
+	 	```dart
+		 const Map<String, KhaltiLocalizations> _localizations = {
+			 'en': _KhaltiLocalizationsEn(),
+			 'ne': _KhaltiLocalizationsNe(), // Newly added entry
+		 };
+		 ```
 
 4. Submit a Pull Request with the changes. But ensure that the code changes are well formatted.
 	 Format the generated code if needed: `flutter format .`

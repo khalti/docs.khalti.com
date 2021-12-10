@@ -5,13 +5,12 @@ Here are few demo projects and resources in various plaforms.
 * [Khalti Javascript SDK](https://github.com/khalti/khalti-sdk-web)
 * [Khalti Android SDK](https://github.com/khalti/khalti-sdk-android)
 * [Khalti iOS SDK](https://github.com/khalti/khalti-sdk-ios)
-
+* [Khalti Flutter SDK](https://github.com/khalti/khalti-flutter-sdk)
 * [Khalti WooCommerce Plugin](https://github.com/khalti/khalti-woocommerce)
 * [Khalti Opencart Plugin](https://github.com/khalti/khalti-opencart)
 * [Khalti PrestaShop Plugin](https://github.com/khalti/khalti-prestashop)
 * [Khalti Mangeto 2 Plugin ](https://github.com/khalti/khalti-magento)
 * [WHMCS Khalti Gateway Plugin](https://github.com/khalti/whmcs-khaltigateway-plugin)
-
 * [Khalti Docs Repository](https://github.com/khalti/khalti-docs-official-repo)
 
 #### Related Projects
@@ -29,5 +28,7 @@ Here are few demo projects and resources in various plaforms.
 * [Opencart Docker Example](https://github.com/chapagainmanoj/khalti-opencart-docker)
 * [WooCommerce Docker Example yml](https://gist.github.com/chapagainmanoj/05ec82c5459d6063985abfb8f00e6a9e)
 * [Khalti integration for Laravel](https://github.com/anoopsrma/khalti)
+* [Khalti Flutter SDK Example (Default Payment Interface)](https://github.com/khalti/khalti-flutter-sdk/tree/master/packages/khalti_flutter/example)
+* [Khalti Flutter SDK Example (Custom Payment Interface)](https://github.com/khalti/khalti-flutter-sdk/tree/master/packages/khalti/example)
 
 If you want to list your resource please check [contribution guide](./contribution.md) or contact [khalti merchant support](/#support)

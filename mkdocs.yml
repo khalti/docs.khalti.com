@@ -10,7 +10,7 @@ nav:
         - Flutter SDK: checkout/flutter.md
         - API Reference:
             - Wallet: checkout/diy-wallet.md
-            - Ebanking: checkout/diy-ebanking.md
+            - Banking: checkout/diy-banking.md
     - Server Integration:
         - Verification: api/verification.md
         - Transaction:

@@ -100,7 +100,7 @@ When using `MaterialApp` or siblings.
 ```dart
 KhaltiScope(
   publicKey: <public-key>,
-  child: (context, navigatorKey) {
+  builder: (context, navigatorKey) {
     return MaterialApp(
       navigatorKey: navigatorKey,
       supportedLocales: const [

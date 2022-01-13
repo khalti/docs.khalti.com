@@ -125,7 +125,7 @@ final routerDelegate = YourRouterDelegate();
 KhaltiScope(
   publicKey: <public-key>,
   navigatorKey: routerDelegate.navigatorKey, 
-  child: (context, _) {
+  builder: (context, _) {
     return MaterialApp.router(
       routerDelegate: routerDelegate,
       supportedLocales: const [

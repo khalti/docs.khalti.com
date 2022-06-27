@@ -9,7 +9,7 @@ There are four steps for integrating Khalti payment to a merchant system.
 	- [3.2. Server side integration](##3.2-server-side-integration)
 - [4. Deploy integration](#4-deploy-integration)
 
-## 1. Signup as merchant
+## 1. Signup as a merchant and  as a User
 First of all you will need a merchant and a consumer accounts.
 **Merchant** is an online business service like e-commerce websites, ISP online payment, Movie online purchase etc.
 **Consumer** is an end user who uses Khalti to purchase products or services from merchants.

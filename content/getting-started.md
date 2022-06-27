@@ -1,5 +1,7 @@
 There are four steps for integrating Khalti payment to a merchant system.
 
+
+
 - [1. Signup as merchant](#1-signup-as-merchant)
 - [2. Understand how khalti payment works](#2-understand-khalti-payment-process)
 - [3. Test integration](#3-test-integration)

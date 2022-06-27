@@ -121,7 +121,7 @@ response = requests.get(url, params, headers = headers)
 
 ### Node
 
-Install `axios` by running `yarn install axios`.
+Install `axios` by running `yarn add axios`.
 
 ```nodejs
 const axios = require('axios');
@@ -143,8 +143,3 @@ axios.get("https://khalti.com/api/v2/payment/status/", data, config)
         console.log(error);
     });
 ```
-
-
-
-
-

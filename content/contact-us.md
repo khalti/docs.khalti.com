@@ -8,7 +8,7 @@
 
 **Contact Our Merchant Support**
 
-* Mobile (Viber / Whatsapp): 9801165565, 9801856315
+* Mobile (Viber / Whatsapp): 9801165565, 9801856383, 9801856451
 
 * Email: merchantcare@khalti.com
 

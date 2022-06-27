@@ -1,6 +1,6 @@
 # Introduction
 
-This document explains the various requests to implement ebanking
+This document explains the various requests to implement banking
 payment system using Khalti.
 
 First and foremost, please read the docs at
@@ -61,6 +61,7 @@ The request signature for initiation is as follows:
   * `bank`:Required.A bank idx,
   * `source`:Required. web, android, ios, or custom,
   * `return_url`:Optional. It is required if `source` key is `custom` or `ios`.
+  * `payment_type`: Possible values: `connectips` or `ebanking` or `mobilecheckout` or `sct`
 
 `return_url` for ios platform creates a url scheme for browser to open current app and if for custom redirects window to this url with data,
 
@@ -85,7 +86,7 @@ A sample request adhering to the above signature will look something like this:
 With this request khalti server will redirect your client to bank portal where user can access e-banking, finally redirecting back to original/parent page with the response.
 
 #### Data Retrival
-Once transaction is initated, user interacts with ebanking system. After transaction is completed getting success or failure response is tricky. There are different ways based on different `source`.
+Once transaction is initated, user interacts with banking system. After transaction is completed getting success or failure response is tricky. There are different ways based on different `source`.
 
 **Android**
 
@@ -156,5 +157,5 @@ for more information on how to verify the transaction.
 
 # Notes
 
-1. While testing you might need to interact with actual system of banks. There is no sandbox or testing environment for using ebanking system.
+1. While testing you might need to interact with actual system of banks. There is no sandbox or testing environment for using banking system.
 2. Prevent parent page (that initiates redirection) for closing until payment process is not completed. You will not get final response unless bank portal provides success/response message.

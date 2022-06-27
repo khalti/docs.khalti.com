@@ -4,3 +4,5 @@ mkdocs-material/
 .brotasks/suren.sh
 build.sh
 *.orig
+docs/
+.idea/

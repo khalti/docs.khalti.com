@@ -32,8 +32,11 @@ expected by Khalti server is as follows.
 	- `Authorization`: test or live secret key in the form `Key <secret key>`
 - `payload`:
 	- `token`: Token given by Khalti after payment confirmation.
-	- `amount`: Amount (in paisa) with which payment was initiated. (Important !!
-	Cross check the amount from client side to amount from server.)
+	- `amount`: Amount (in paisa) with which payment was initiated. 
+	
+**(Important !!	Cross check the amount from client side to amount from server.)**
+
+**(Disclaimer: If any negative consequences occur due to incomplete API integration, Khalti won’t be liable for any such losses.)**
 
 
 ## Verification response

@@ -1,18 +1,45 @@
 # FAQ's
-**1. Does Khalti have SDK for hybrid Apps?**
+
+**1. How can I sign up as a merchant?**
+
+Please go this link for a merchant sign up: https://khalti.com/join/merchant/
+
+**2. How to integrate KPG?**
+
+Based on your requirement please visit following links for Khalti integration:
+Web integration: https://docs.khalti.com/checkout/web/
+Android integration: https://docs.khalti.com/checkout/android/
+iOS integration: https://docs.khalti.com/checkout/ios/
+Flutter integration (with Payment interface): https://docs.khalti.com/checkout/flutter/khalti-flutter/
+Flutter integration (without Payment interface): 
+https://docs.khalti.com/checkout/flutter/khalti/
+Khalti integration for custom payment interface:
+For Khalti wallet: https://docs.khalti.com/checkout/diy-wallet/
+For Ebanking wallet: https://docs.khalti.com/checkout/diy-banking/ 
+Khalti integration via plugins:
+	For WooCommerce: https://docs.khalti.com/plugins/woocommerce/
+	For Opencart: https://docs.khalti.com/plugins/opencart/
+	For Magneto: https://docs.khalti.com/plugins/magneto/
+	For Prestashop: https://docs.khalti.com/plugins/prestashop/
+	For WHMCS: https://docs.khalti.com/plugins/whmcs/
+
+**3. hat to do after a successful test transaction?**
+After a successful test transaction, you will able to accept payments live. However, before going live, please contact our team for the necessary coordination: https://docs.khalti.com/contact-us/
+
+**4. Does Khalti have SDK for hybrid Apps?**
 
 We do have SDK for [Flutter](https://flutter.dev/). But for hybrid apps based on other frameworks, we don't have a specific SDK. 
 Find options in `Client Integration`, which support Khalti checkout integration with your app.
 
-**2. Can I share merchant keys?**
+**5. Can I share merchant keys?**
 
 *Secret key* must not be shared with anyone. Ensure it does not get leaked by any means. If you key got compromised you can regenerate new one from your merchant dashboard.
 
-**3. Can I integrate Khalti in my static/HTML website?**
+**6. Can I integrate Khalti in my static/HTML website?**
 
 Complete Khalti integration in Static/HTML site is not possible. If the currently available options failed to meet your requirement leave us your [feedback](/#support).
 
-**4. While installing the plugin I got an issue. How can I resolve it?**
+**7. While installing the plugin I got an issue. How can I resolve it?**
 
 First, check if cURL is enabled. You should check if you miss out any dependency or extension. There might be common SSL issues. You can also tweak the code (of the plugin you got from GitHub) on your own.
 
@@ -22,14 +49,14 @@ For debugging paste this in your code to get the configuration and predefined va
 ```
 Also, see your server log.
 
-**5. What is Khalti PIN?**
+**8. What is Khalti PIN?**
 
 Khalti pin is the four digit pin, used by the user while making payment of third party transactions.
 
 It can created or changed at the Transaction Pin section under Account in khalti web and Settings in khalti app.
 
 
-**6. I need to refund payment to the user. How can I refund a transaction?**
+**9. I need to refund payment to the user. How can I refund a transaction?**
 
 You can refund the payment to the user from your dashboard.
 
@@ -41,11 +68,11 @@ If you are getting CORS issues, read the docs again very thoroughly. You need to
 
 - **Server errors**
 
-If you get error response "Fee not found." while testing, check your fee and set fee between Rs. 10 to Rs. 1000. If you are using live keys contact [merchant support](/#support) to find your transaction limits.
+If you get error response "Fee not found." while testing, check your fee and set fee between Rs. 10 to Rs. 200. If you are using live keys contact merchant support to find your transaction limits.
 
 - **Payment errors**
 
-If you get error response "Amount must be less than 1000." while testing, check you have complete all the contract process. If you are using live keys contact [merchant support](/#support) for further details.
+If you get error response "Amount must be less than 200." while testing, check you have complete all the contract process. If you are using live keys contact merchant support for further details.
 
 
 - **Frame Options and Clickjacking protection**

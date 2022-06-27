@@ -88,4 +88,4 @@ After successful integration test, live keys will be generated in the merchant d
 Live keys start with `live_X`. Replace `test_public_X` and `test_secret_X` keys with `live_public_X` and `live_secret_X` keys respectively.
 
 ### 4.1. Further processes
-Even successful integration itself doesn't let you receive payments above NRs. 1000 per transaction. Please fill KYC form and contact us at 9801165568 to remove the limits and accept payments without restrictions.
+Even successful integration itself doesn't let you receive payments above NRs. 200 per transaction. Please fill KYC form and contact us at 9801165565/9801856440/9801165558/9801165557 to remove the limits and accept payments without restrictions.

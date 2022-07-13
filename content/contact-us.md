@@ -9,12 +9,12 @@
 
 **Contact Our Merchant Support**
 
-* Mobile (Viber / Whatsapp): 9801165565, 9801856383, 9851314754
+* Mobile (Viber / Whatsapp): 9801165557, 9801165565
 * Email: merchantcare@khalti.com
 
 **Contact Our Technical Team**
 
-* Mobile (Viber / Whatsapp): 9801856451, 9801165565
+* Mobile (Viber / Whatsapp): 9801165557, 9801165565
 
 * Email / Skype: saphal.shrestha@khalti.com, merchant@khalti.com
 (For payment gateway integration support.)

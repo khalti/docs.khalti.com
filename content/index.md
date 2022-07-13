@@ -34,7 +34,7 @@ Using Khalti Payment Gateway, you do not need to integrate with individual banks
 ##Support
 ** For Queries, feel free to call us at: **
 
-* Mobile (Viber / Whatsapp / Skype): 9801165565, 9801052293
+* Mobile (Viber / Whatsapp / Skype): 9801165557, 9801165565
 
 * Email: merchant@khalti.com
 

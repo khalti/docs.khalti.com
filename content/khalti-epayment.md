@@ -1,3 +1,4 @@
+
 # Web Checkout (New E-Payment Version)
 
 This documentation details the process of implementing the latest e-Payment Checkout platform released by Khalti.The latest version is accessible through [pay.khalti.com](https://pay.khalti.com)
@@ -67,7 +68,7 @@ Every payment request should be first initiated from the merchant as a server si
 ### Sample Request Payload
 ```
 {
-  "return_url": "https://example.com/",
+  "return_url": "https://example.com/payment/",
   "website_url": "https://example.com/",
   "amount": 1300,
   "purchase_order_id": "test12",
@@ -224,12 +225,24 @@ Sample of success response return URL.
 
 ### Sample Callback Request
 ```
-https://example.com/?pidx=EwGKrbdaYLTQ4rmWtNAMEJ
+https://example.com/payment?pidx=EwGKrbdaYLTQ4rmWtNAMEJ
 	&amount=1300
 	&mobile=98XXXXX403
 	&purchase_order_id=test12
 	&purchase_order_name=test
 	&transaction_id=MJbBJDKYziWqgvkgjxhS2W
+```
+## Payment Failure Callback
+If, in-case, due to some problem, user transaction does not go through, the failure response is obtained in the return URL specified during payment initiate.
+Sample of failure response return URL. 
+
+- The callback url `return_url` should support `GET` method
+- User shall be redirected to the `return_url` with following parameters for confirmation
+    + message - _Failure message_
+
+### Sample Callback Request
+```
+https://example.com/payment?message=Could%20not%20process%20the%20payment.
 ```
 
 ## Payment Verification (Lookup)

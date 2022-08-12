@@ -1,60 +1,66 @@
 site_name: Khalti Payment Gateway
 
 nav:
-    - Introduction: index.md
-    - Getting Started: getting-started.md
-    - Client Integration:
-        - Web SDK: checkout/web.md
-        - Android SDK: checkout/android.md
-        - iOS SDK: checkout/ios.md
-        - Flutter/Dart SDK:
-            - khalti: checkout/flutter/khalti.md
-            - khalti_flutter: checkout/flutter/khalti-flutter.md
-        - API Reference:
-            - Wallet: checkout/diy-wallet.md
-            - Banking: checkout/diy-banking.md
-    - Server Integration:
-        - Verification: api/verification.md
-        - Transaction:
-            - List: api/transaction.md
-            - Detail: api/transaction_details.md
-            - Status: api/transaction_status.md
-    - Plug and Play:
-        - WooCommerce: plugins/woocommerce.md
-        - Opencart: plugins/opencart.md
-        - Magento 2:  plugins/magneto.md
-        - Prestashop: plugins/prestashop.md
-        - WHMCS Khalti Module: plugins/whmcs.md
-    - Resources: resources.md
-    - FAQ's and Gotchas: gotchas.md
-    - Contribution: contribution.md
-    - Contact Us: contact-us.md
+  - Introduction: index.md
+  - Getting Started: getting-started.md
+  - Client Integration:
+      - Web SDK (NEW): checkout/khalti-epayment.md
+      - Android SDK: checkout/android.md
+      - iOS SDK: checkout/ios.md
+      - Flutter/Dart SDK:
+          - khalti: checkout/flutter/khalti.md
+          - khalti_flutter: checkout/flutter/khalti-flutter.md
+      - API Reference:
+          - Wallet: checkout/diy-wallet.md
+          - Banking: checkout/diy-banking.md
+      - Deprecated:
+        - Web SDK (Widget Version) : checkout/web.md
+  - Server Integration:
+      - Verification: api/verification.md
+      - Transaction:
+          - List: api/transaction.md
+          - Detail: api/transaction_details.md
+          - Status: api/transaction_status.md
+  - Plug and Play:
+      - WooCommerce: plugins/woocommerce.md
+      - Opencart: plugins/opencart.md
+      - Magento 2: plugins/magneto.md
+      - Prestashop: plugins/prestashop.md
+      - WHMCS Khalti Module: plugins/whmcs.md
+  - Resources: resources.md
+  - FAQ's and Gotchas: gotchas.md
+  - Contribution: contribution.md
+  - Contact Us: contact-us.md
 theme:
   name: material
+  custom_dir: overrides
   palette:
     primary: deep-purple
-  favicon: 'img/favicon.png'
-  logo: 'img/khalti_logo.png'
+  favicon: "img/favicon.png"
+  icon:
+    logo: "img/khalti_logo.png"
 extra_css:
   - style/custom.css
 docs_dir: content
 site_dir: docs
-repo_name: 'khalti/khalti-docs-official-repo'
-repo_url: 'https://github.com/khalti/khalti-docs-official-repo'
-edit_uri: 'edit/master/content/'
-copyright: 'Copyright &copy; 2019 Sparrow Pay Pvt. Ltd.'
+repo_name: "khalti/docs.khalti.com"
+repo_url: "https://github.com/khalti/docs.khalti.com"
+edit_uri: "edit/master/content/"
+copyright: "Copyright &copy; 2022 Khalti Private Limited"
+# plugins:
+#   - social
 extra:
   social:
-    - type: 'github'
-      link: 'https://github.com/khalti'
-    - type: 'twitter'
-      link: 'https://twitter.com/KhaltiOfficial'
-    - type: 'linkedin'
-      link: 'https://www.linkedin.com/company/khalti-digital-wallet'
-    - type: 'facebook'
-      link: 'https://facebook.com/khaltiofficial'
-    - type: 'instagram'
-      link: 'https://www.instagram.com/khaltiofficial/'
+    - icon: "fontawesome/brands/github"
+      link: "https://github.com/khalti"
+    - icon: "fontawesome/brands/twitter"
+      link: "https://twitter.com/KhaltiOfficial"
+    - icon: "fontawesome/brands/linkedin"
+      link: "https://www.linkedin.com/company/khalti-digital-wallet"
+    - icon: "fontawesome/brands/facebook"
+      link: "https://facebook.com/khaltiofficial"
+    - icon: "fontawesome/brands/instagram"
+      link: "https://www.instagram.com/khaltiofficial/"
 markdown_extensions:
   - toc:
       permalink: true

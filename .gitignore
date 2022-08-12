@@ -6,3 +6,4 @@ build.sh
 *.orig
 docs/
 .idea/
+.vscode

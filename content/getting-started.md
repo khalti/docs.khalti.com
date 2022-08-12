@@ -2,12 +2,21 @@ There are four steps for integrating Khalti payment to a merchant system.
 
 
 
-- [1. Signup as merchant](#1-signup-as-merchant)
-- [2. Understand how khalti payment works](#2-understand-khalti-payment-process)
+- [1. Signup as a merchant and  as a User](#1-signup-as-a-merchant-and--as-a-user)
+- [2. Understand Khalti payment process](#2-understand-khalti-payment-process)
+	- [2.1. Transaction States](#21-transaction-states)
+		- [1. Initiated](#1-initiated)
+		- [2. Confirmed](#2-confirmed)
+		- [3. Completed](#3-completed)
+		- [4. Disabled](#4-disabled)
+		- [5. Refunded](#5-refunded)
+		- [6. Partially refunded](#6-partially-refunded)
+		- [7. Failed](#7-failed)
 - [3. Test integration](#3-test-integration)
-	- [3.1. Client side integration](##3.1-client-side-integration)
-	- [3.2. Server side integration](##3.2-server-side-integration)
-- [4. Deploy integration](#4-deploy-integration)
+	- [3.1. Client side integration](#31-client-side-integration)
+	- [3.2. Server side integration](#32-server-side-integration)
+- [4. Go live](#4-go-live)
+	- [4.1. Further processes](#41-further-processes)
 
 ## 1. Signup as a merchant and  as a User
 First of all you will need a merchant and a consumer accounts.
@@ -18,6 +27,10 @@ Please follow links below to create a merchant and a consumer accounts if you ha
 
 - [Create a merchant account](https://khalti.com/join/merchant/)
 - [Create a consumer account](https://khalti.com/join/)
+
+<div class="important mg-top-5">
+For the latest version of Khalti Payment Gateway on web, Please visit <a href="/khalti-epayment">ePayment Checkout</a> 
+</div>
 
 ## 2. Understand Khalti payment process
 

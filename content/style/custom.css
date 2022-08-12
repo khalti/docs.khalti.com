@@ -16,3 +16,28 @@
 	background-color: antiquewhite;
 	margin-bottom: 5em;
 }
+
+.important{
+	font-weight: bold;
+	border:1px solid navy;
+	padding:2em;
+	background-color: rgba(8, 127, 212, 0.132);
+	margin-bottom: 5em;
+}
+
+.mg-top-10{
+	margin-top: 10em;
+}
+
+.mg-top-5{
+	margin-top: 5em;
+}
+
+.mg-top-2{
+	margin-top: 2em;
+}
+
+.md-sidebar a.md-nav__link:nth-child(3){
+	color: deeppink !important;
+	font-weight: bold;
+}

@@ -3,8 +3,8 @@ site_name: Khalti Payment Gateway
 nav:
   - Introduction: index.md
   - Getting Started: getting-started.md
+  - ePayment Gateway (NEW): khalti-epayment.md
   - Client Integration:
-      - Web SDK (NEW): checkout/khalti-epayment.md
       - Android SDK: checkout/android.md
       - iOS SDK: checkout/ios.md
       - Flutter/Dart SDK:

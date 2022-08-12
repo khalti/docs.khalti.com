@@ -23,26 +23,27 @@ To get the feel of how Khalti checkout looks click the button below.
 
 There is no special installation plugin or SDK required for this provided you are able to make a POST request from your web application. However, we shall come up with handy plugins in coming days.
 
-A merchant account is required if you haven't created at. 
+> A merchant account is required if you haven't created at. 
 
- - __For sandbox access__ <br />Signup from [https://a.khalti.com/join/merchant/](https://a.khalti.com/join/merchant/) as a merchant
- - __For Production access__ <br />Please visit [https://admin.khalti.com](https://admin.khalti.com)
+> __For sandbox access__ <br />Signup from [https://a.khalti.com/join/merchant/](https://a.khalti.com/join/merchant/) as a merchant
+
+> __For Production access__ <br />Please visit [https://admin.khalti.com](https://admin.khalti.com)
 
 ## API Authorization
 HTTP Authorization for api requests is done using Auth Keys. Auth Key must be passed in the  header for authorization in the following format 
 
-`
+```
 {
  	"Authorization": "Key <LIVE_SECRET_KEY>"  
 }  
-`
+```
 
-PS : Use `live_secret_key` from __a.khalti.com__ during sandbox testing and use `live_secret_key` from __khalti.com__ for production environments
+> PS : Use `live_secret_key` from __a.khalti.com__ during sandbox testing and use `live_secret_key` from __khalti.com__ for production environments
 
 ## API Endpoints
-__Live__ <br /> [https://khalti.com/api/v2/](https://khalti.com/api/v2/)
+> __Live__ <br /> [https://khalti.com/api/v2/](https://khalti.com/api/v2/)
 
-__Sandbox__ <br /> [https://a.khalti.com/api/v2/](https://a.khalti.com/api/v2/)
+> __Sandbox__ <br /> [https://a.khalti.com/api/v2/](https://a.khalti.com/api/v2/)
 
 ## Initiating a Payment request
 Every payment request should be first initiated from the merchant as a server side `POST` request. Upon success, a unique request identifier is provided called `pidx` that should be used for any future references
@@ -290,7 +291,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
    "fee": 0,
    "refunded": false }
 ```
-PS : Links expire in 60 minutes in production
+> PS : Links expire in 60 minutes in production
 
 
 ### Lookup Payload Details

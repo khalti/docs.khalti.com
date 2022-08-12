@@ -8,3 +8,11 @@
 .md-footer-meta {
 	background-color:#4F276E !important;
 }
+
+.deprecated{
+	font-weight: bold;
+	border:1px solid chocolate;
+	padding:2em;
+	background-color: antiquewhite;
+	margin-bottom: 5em;
+}

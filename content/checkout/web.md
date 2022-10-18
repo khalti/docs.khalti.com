@@ -3,7 +3,7 @@
 <div class='deprecated'>
 This version of Web SDK has been deprecated and replaced by e-Payment (checkout) version.
 <br />
-Please refer to <a href="/checkout/khalti-epayment/">checkout/khalti-epayment</a> for the latest version
+Please refer to <a href="/khalti-epayment/">checkout/khalti-epayment</a> for the latest version
 </div>
 
 [![npm](https://img.shields.io/badge/npm-v2.2.0-blue.svg)](https://www.npmjs.com/package/khalti-checkout-web)

@@ -46,9 +46,9 @@ theme:
         icon: material/weather-night
         name: Switch to dark mode
 
-  favicon: "img/favicon.png"
+  favicon: "https://d7vw40z4bofef.cloudfront.net/static/2.59.12-web19/images/favicon.png"
   icon:
-    logo: "img/khalti_logo.png"
+    logo: "img/khalti_logo"
 extra_css:
   - style/custom.css
 docs_dir: content

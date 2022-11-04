@@ -38,7 +38,7 @@ Welcome to Khalti Android SDK's official documentation.
 In your root-level (project-level) Gradle file (build.gradle), add rules to include the Android Gradle plugin.
 Check that you have Google's Maven repository as well.
 
-```groovy title="bubble_sort.py" hl_lines="4 5"
+```groovy title="build.gradle (project-level)" hl_lines="4 5"
 buildscript {
 	repositories {
 		// Check that you have the following line (if not, add it):
@@ -51,29 +51,39 @@ buildscript {
 }
 ```
 
-Also add the following lines inside the `android` block of your `build.gradle` file
+#### Add the Khalti Android SDK to your app
+In your module (app-level) Gradle file (usually app/build.gradle), add these lines.
 
-## Tabs
+```groovy title="build.gradle (app-level)" hl_lines="8 9 15"
+android {
+	defaultConfig {
+		minSdkVersion 16 // or greater
+	}
 
-```groovy
-compileOptions {
-	sourceCompatibility JavaVersion.VERSION_1_8
-	targetCompatibility JavaVersion.VERSION_1_8
+	// Enable Java 8 support for the SDK to work
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+}
+
+dependencies {
+	// ...
+	implementation 'com.khalti:khalti-android:<insert latest version>'
 }
 ```
 
-#### Usage
+#### Register a contract for Activity Result
 
-First, create an Activity Result Contract.
-
-=== "Kotlin"
+=== "Kotlin" 
 
     ``` kotlin
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
+    private val khaltiPay = registerForActivityResult(OpenKhaltiPay()) {
+        when (it) {
+            is PaymentSuccess -> // Handle success
+            is PaymentError -> // Handle error
+            is PaymentCancelled -> // Handle cancellation
+        }
     }
     ```
 
@@ -82,15 +92,9 @@ First, create an Activity Result Contract.
     ``` kotlin
     val khaltiPay = rememberLauncherForActivityResult(OpenKhaltiPay()) {
         when (it) {
-            is PaymentSuccess -> {
-                // Handle success
-            }
-            is PaymentError -> {
-                // Handle error
-            }
-            is PaymentCancelled -> {
-                // Handle cancellation
-            }
+            is PaymentSuccess -> // Handle success
+            is PaymentError -> // Handle error
+            is PaymentCancelled -> // Handle cancellation
         }
     }
     ```
@@ -98,12 +102,69 @@ First, create an Activity Result Contract.
 === "Java"
 
     ``` java
-    #include <iostream>
-
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
+    private ActivityResultLauncher<PaymentResult> khaltiPay = registerForActivityResult(new OpenKhaltiPay(),
+      result -> {
+        if (result instanceof PaymentSuccess) {
+          // Handle success
+        } else if (result instanceof PaymentError) {
+          // Handle error
+        } else {
+          // Handle cancellation
+        }
+      }
+    );
     ```
- 
 
+
+#### Launch Khalti Pay Activity
+
+=== "Kotlin"
+
+    ``` kotlin
+    val config = KhaltiPayConfiguration(
+      "https://pay.khalti.com/?pidx=id",
+      "https://redirect.khalti.com"
+    )
+
+    khaltiPay.launch(config)
+    ```
+
+=== "Jetpack Compose"
+
+    ``` kotlin
+    val config = KhaltiPayConfiguration(
+      "https://pay.khalti.com/?pidx=id",
+      "https://redirect.khalti.com"
+    )
+
+    khaltiPay.launch(config)
+    ```
+
+=== "Java"
+
+    ``` java
+    KhaltiPayConfiguration config = new KhaltiPayConfiguration(
+      "https://pay.khalti.com/?pidx=id",
+      "https://redirect.khalti.com"
+    )
+
+    khaltiPay.launch(config)
+    ```
+
+!!! tip "How do I generate the payment URL?"
+
+    Read the [Initiating Payment](https://docs.khalti.com/khalti-epayment/#initiating-a-payment-request) section,
+    in order to generate the payment URL.
+
+At this point, the pay activity will open, and will return a success result
+if the user successfully completes the payment flow.
+
+#### Server Verification
+After successful client side payment, the next step is to perform server verification.
+
+!!! note "Server verification is mandatory."
+
+		As the client side makes the payment directly to Khalti without going through your server first, you need to be sure that the customer actually paid the money they were supposed to before completing their order.
+    This type of verification can only be done securely from the server.
+
+    Know [how to perform server verification here](https://docs.khalti.com/api/verification/).

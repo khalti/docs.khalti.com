@@ -48,7 +48,7 @@ theme:
 
   favicon: "img/favicon.png"
   icon:
-    logo: "img/khalti_logo.png"
+    logo: "img/khalti_logo"
 extra_css:
   - style/custom.css
 docs_dir: content

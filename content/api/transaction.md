@@ -9,7 +9,7 @@ Replace `<secret key>` with test or live secret key as per required.
 
 **Response** is paginated and in the following format:
 
-```python
+```json
 {
   "total_pages": 1,
   "total_records": 2,
@@ -82,60 +82,61 @@ Replace `<secret key>` with test or live secret key as per required.
 
 ## API Request Examples
 
-### CURL
+=== "cURL"
 
-```curl
-curl https://khalti.com/api/v2/merchant-transaction/ -H "Authorization:Key <secret key>
-```
+    ``` bash
+    curl https://khalti.com/api/v2/merchant-transaction/ \
+    -H "Authorization:Key <secret key>
+    ```
 
-### PHP
-```php
-$url = "https://khalti.com/api/v2/merchant-transaction/";
+=== "php"
 
-# Make the call using API.
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    ``` php
+    <?php
+    $url = "https://khalti.com/api/v2/merchant-transaction/";
 
-$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    
-// Response
-$response = curl_exec($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
+    # Make the call using API.
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-```
+    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-### Python
+    // Response
+    $response = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    ```
 
-```python
-import requests
+=== "Python"
 
-url = "https://khalti.com/api/v2/merchant-transaction/"
-payload = {}
-headers = {
-  "Authorization": "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b"
-}
+    ``` python
+    import requests
 
-response = requests.get(url, payload, headers = headers)
-```
+    url = "https://khalti.com/api/v2/merchant-transaction/"
+    payload = {}
+    headers = {
+      "Authorization": "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b"
+    }
 
+    response = requests.get(url, payload, headers = headers)
+    ```
 
-### Ruby
+=== "Ruby"
 
-```ruby
-require 'uri'
-require 'net/http'
+    ``` ruby
+    require 'uri'
+    require 'net/http'
 
-headers = {
-  Authorization: "Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324"
-}
-uri = URI.parse("https://khalti.com/api/v2/merchant-transaction/")
-https = Net::HTTP.new(uri.host, uri.port)
-https.use_ssl = true
-request = Net::HTTP::Get.new(uri.request_uri, headers)
-response = https.request(request)
+    headers = {
+      Authorization: "Key live_secret_key_fc1207298be544b99fa3ad41c7d7b324"
+    }
+    uri = URI.parse("https://khalti.com/api/v2/merchant-transaction/")
+    https = Net::HTTP.new(uri.host, uri.port)
+    https.use_ssl = true
+    request = Net::HTTP::Get.new(uri.request_uri, headers)
+    response = https.request(request)
 
-puts response.body
-```
+    puts response.body
+    ```

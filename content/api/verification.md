@@ -34,10 +34,14 @@ expected by Khalti server is as follows.
 	- `token`: Token given by Khalti after payment confirmation.
 	- `amount`: Amount (in paisa) with which payment was initiated. 
 	
-**(Important !!	Cross check the amount from client side to amount from server.)**
+!!! important	
 
-**(Disclaimer: If any negative consequences occur due to incomplete API integration, Khalti won’t be liable for any such losses.)**
+    Cross check the amount from client side to amount from server.
 
+!!! warning "Disclaimer"
+
+    If any negative consequences occur due to incomplete API integration,
+    Khalti won’t be liable for any such losses.
 
 ## Verification response
 Once you've made a request as specified above, Khalti server will
@@ -84,98 +88,100 @@ return you a response in the following format.
 ## Examples
 Assuming the token that we received is `QUao9cqFzxPgvWJNi9aKac`.
 
-### CURL
+=== "cURL"
 
-```curl
-curl https://khalti.com/api/v2/payment/verify/ \
-   -H "Authorization:Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b" \
-   -d amount=1000 \
-   -d token=QUao9cqFzxPgvWJNi9aKac
-```
+    ``` bash
+    curl https://khalti.com/api/v2/payment/verify/ \
+		-H "Authorization:Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b" \
+		-d amount=1000 \
+		-d token=QUao9cqFzxPgvWJNi9aKac
+    ```
 
-### PHP
-```php
-$args = http_build_query(array(
-    'token' => 'QUao9cqFzxPgvWJNi9aKac',
-    'amount'  => 1000
-));
+=== "php"
 
-$url = "https://khalti.com/api/v2/payment/verify/";
+    ``` php
+    <?php
+    $args = http_build_query(array(
+      'token' => 'QUao9cqFzxPgvWJNi9aKac',
+      'amount'  => 1000
+    ));
 
-# Make the call using API.
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $url = "https://khalti.com/api/v2/payment/verify/";
 
-$headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    # Make the call using API.
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-// Response
-$response = curl_exec($ch);
-$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
+    $headers = ['Authorization: Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'];
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-```
+    // Response
+    $response = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    ```
 
-### Python
+=== "Python"
 
-```python
-import requests
+    ``` python
+    #include <stdio.h>
 
-url = "https://khalti.com/api/v2/payment/verify/"
-payload = {
-  "token": "QUao9cqFzxPgvWJNi9aKac",
-  "amount": 1000
-}
-headers = {
-  "Authorization": "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b"
-}
+    url = "https://khalti.com/api/v2/payment/verify/"
 
-response = requests.post(url, payload, headers = headers)
-```
+    payload = {
+      'token': 'QUao9cqFzxPgvWJNi9aKac',
+      'amount': 1000
+    }
 
-### Ruby
+    headers = {
+      'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'
+    }
 
-```ruby
-require 'uri'
-require 'net/http'
+    response = requests.request("POST", url, headers=headers, data=payload)
+    ```
 
-headers = {
-  Authorization: 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'
-}
-uri = URI.parse('https://khalti.com/api/v2/payment/verify/')
-https = Net::HTTP.new(uri.host, uri.port)
-https.use_ssl = true
-request = Net::HTTP::Post.new(uri.request_uri, headers)
-request.set_form_data('token' => 'QUao9cqFzxPgvWJNi9aKac', 'amount' => 1000)
-response = https.request(request)
+=== "Ruby"
 
-puts response.body
-```
+    ``` ruby
+    require 'uri'
+    require 'net/http'
 
-### Node
+    headers = {
+      Authorization: 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'
+    }
 
-Install `axios` by running `yarn install axios`.
+    uri = URI.parse('https://khalti.com/api/v2/payment/verify/')
+    https = Net::HTTP.new(uri.host, uri.port)
+    https.use_ssl = true
+    request = Net::HTTP::Post.new(uri.request_uri, headers)
+    request.set_form_data('token' => 'QUao9cqFzxPgvWJNi9aKac', 'amount' => 1000)
+    response = https.request(request)
 
-```nodejs
-const axios = require('axios');
+    puts response.body
+    ```
 
-let data = {
-    "token": "QUao9cqFzxPgvWJNi9aKac",
-    "amount": 1000
-};
+=== "Node.js"
 
-let config = {
-    headers: {'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'}
-};
+    ``` javascript
+    const axios = require('axios');
 
-axios.post("https://khalti.com/api/v2/payment/verify/", data, config)
+    let data = {
+      "token": "QUao9cqFzxPgvWJNi9aKac",
+      "amount": 1000
+    };
+
+    let config = {
+      headers: {'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'}
+    };
+
+    axios.post("https://khalti.com/api/v2/payment/verify/", data, config)
     .then(response => {
-        console.log(response.data);
+      console.log(response.data);
     })
     .catch(error => {
-        console.log(error);
+      console.log(error);
     });
-```
+    ```

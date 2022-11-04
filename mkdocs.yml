@@ -34,8 +34,18 @@ nav:
 theme:
   name: material
   custom_dir: overrides
+  features:
+    - content.code.annotate
   palette:
-    primary: deep-purple
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
   favicon: "img/favicon.png"
   icon:
     logo: "img/khalti_logo.png"
@@ -62,5 +72,13 @@ extra:
     - icon: "fontawesome/brands/instagram"
       link: "https://www.instagram.com/khaltiofficial/"
 markdown_extensions:
+  - admonition
   - toc:
       permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true

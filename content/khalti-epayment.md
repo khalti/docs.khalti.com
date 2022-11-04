@@ -3,14 +3,7 @@
 
 This documentation details the process of implementing the latest e-Payment Checkout platform released by Khalti.The latest version is accessible through [pay.khalti.com](https://pay.khalti.com)
 
-<!-- ## Demo
-To get the feel of how Khalti checkout looks click the button below.
-
-<button id="payment-button" style="background-color: #5C2D91; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
-<button id="ebanking-button" style="background-color: #FAA61A; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Ebanking</button> -->
-
 ## How it works?  
-
 
 - User visits the merchant's website to make some purchase
 - A unique `purchase_order_id` is generated at merchant's system
@@ -24,27 +17,46 @@ To get the feel of how Khalti checkout looks click the button below.
 
 There is no special installation plugin or SDK required for this provided you are able to make a POST request from your web application. However, we shall come up with handy plugins in coming days.
 
-> A merchant account is required if you haven't created at. 
+!!! tip
 
-> __For sandbox access__ <br />Signup from [https://a.khalti.com/join/merchant/](https://a.khalti.com/join/merchant/) as a merchant
+    A merchant account is required if you haven't created at.
 
-> __For Production access__ <br />Please visit [https://admin.khalti.com](https://admin.khalti.com)
+!!! info "Access Information"
+
+    > **For Sandbox Access**
+
+    Signup from [https://a.khalti.com/join/merchant/](https://a.khalti.com/join/merchant/) as a merchant.
+
+    > **For Production Access**
+
+    Please visit [https://admin.khalti.com](https://admin.khalti.com)
 
 ## API Authorization
 HTTP Authorization for api requests is done using Auth Keys. Auth Key must be passed in the  header for authorization in the following format 
 
-```
+```json
 {
  	"Authorization": "Key <LIVE_SECRET_KEY>"  
 }  
 ```
 
-> PS : Use `live_secret_key` from __a.khalti.com__ during sandbox testing and use `live_secret_key` from __khalti.com__ for production environments
+!!! tip
+
+    Use `live_secret_key` from __a.khalti.com__ during sandbox testing and use `live_secret_key` from __khalti.com__ for production environments.
+
 
 ## API Endpoints
-> __Live__ <br /> [https://khalti.com/api/v2/](https://khalti.com/api/v2/)
 
-> __Sandbox__ <br /> [https://a.khalti.com/api/v2/](https://a.khalti.com/api/v2/)
+!!! info "API Endpoints"
+
+		> **Sandbox**
+
+		[https://a.khalti.com/api/v2/](https://a.khalti.com/api/v2/)
+
+		> **Production**
+
+		[https://khalti.com/api/v2/](https://khalti.com/api/v2/)
+
 
 ## Initiating a Payment request
 Every payment request should be first initiated from the merchant as a server side `POST` request. Upon success, a unique request identifier is provided called `pidx` that should be used for any future references
@@ -66,7 +78,7 @@ Every payment request should be first initiated from the merchant as a server si
 | product_details | No | No of set is unlimited
 
 ### Sample Request Payload
-```
+```json
 {
   "return_url": "https://example.com/payment/",
   "website_url": "https://example.com/",
@@ -100,105 +112,117 @@ Every payment request should be first initiated from the merchant as a server si
 }
 ```
 
-### Success Response
-```
-{
-   "pidx": "S8QJg2VALZGTJRkKqVxjqB",
-   "payment_url": "https://test-pay.khalti.com/?pidx=S8QJg2VALZGTJRkKqVxjqB/"
-}
-```
+!!! success "Success Response"
+		```json
+		{
+		    "pidx": "S8QJg2VALZGTJRkKqVxjqB",
+		    "payment_url": "https://test-pay.khalti.com/?pidx=S8QJg2VALZGTJRkKqVxjqB/"
+		}
+		```
 
 After getting the success response, the user should be redirected to the `payment_url` obtained in the success response.
 
 ### Error Responses
-__return_url is blank__
-```
-{
-   "return_url": [
-       "This field may not be blank."
-   ],
-   "error_key": "validation_error"
-}
-```
 
-__return_url is invalid__
-````
-{
-   "return_url": [
-       "Enter a valid URL."
-   ],
-   "error_key": "validation_error"
-}
-````
-__website_url is blank__
-```
-{
-   "website_url": [
-       "This field may not be blank."
-   ],
-   "error_key": "validation_error"
-}
-```
+!!! failure "return_url is blank"
 
-__website_url is invalid)__
-```
-{
-   "website_url": [
-       "Enter a valid URL."
-   ],
-   "error_key": "validation_error"
-}
-```
+    ``` json
+    {
+        "return_url": [
+            "This field may not be blank."
+        ],
+        "error_key": "validation_error"
+    }
+    ```
 
-__Amount is less than 10__
-```
-{
-   "amount": [
-       "Amount should be greater than Rs. 1, that is 100 paisa."
-   ],
-   "error_key": "validation_error"
-}
-```
+!!! failure "return_url is invalid"
 
-__Amount is invalid__
-```
-{
-   "amount": [
-       "A valid integer is required."
-   ],
-   "error_key": "validation_error"
-}
-```
+    ``` json
+    {
+        "return_url": [
+            "Enter a valid URL."
+        ],
+        "error_key": "validation_error"
+    }
+    ```
 
-__purchase_order_id is blank__
-```
-{
-   "purchase_order_id": [
-       "This field may not be blank."
-   ],
-   "error_key": "validation_error"
-}
-```
+!!! failure "website_url is blank"
 
-__purchase_order_name is blank__
-```
-{
-   "purchase_order_name": [
-       "This field may not be blank."
-   ],
-   "error_key": "validation_error"
-}
-```
+    ``` json
+    {
+        "website_url": [
+            "This field may not be blank."
+        ],
+        "error_key": "validation_error"
+    }
+    ```
 
-__Amount breakdown doesn't total to the amount passed__
-```
-{
-   "amount": [
-       "Amount Breakdown mismatch."
-   ],
-   "error_key": "validation_error"
-}
-```
+!!! failure "website_url is invalid"
+
+    ``` json
+    {
+        "website_url": [
+            "Enter a valid URL."
+        ],
+        "error_key": "validation_error"
+    }
+    ```
+
+!!! failure "Amount is less than 10"
+
+    ``` json
+    {
+        "amount": [
+            "Amount should be greater than Rs. 1, that is 100 paisa."
+        ],
+        "error_key": "validation_error"
+    }
+    ```
+
+!!! failure "Amount is invalid"
+
+    ``` json
+    {
+        "amount": [
+            "A valid integer is required."
+        ],
+        "error_key": "validation_error"
+    }
+    ```
+
+!!! failure "purchase_order_id is blank"
+
+    ``` json
+    {
+        "purchase_order_id": [
+            "This field may not be blank."
+        ],
+        "error_key": "validation_error"
+    }
+    ```
+
+!!! failure "purchase_order_name is blank"
+
+    ``` json
+    {
+        "purchase_order_name": [
+            "This field may not be blank."
+        ],
+        "error_key": "validation_error"
+    }
+    ```
+
+!!! failure "Amount breakdown doesn't total to the amount passed"
+
+    ``` json
+    {
+        "amount": [
+            "Amount Breakdown mismatch."
+        ],
+        "error_key": "validation_error"
+    }
+    ```
+
 
 <!-- **Additionally** Configuration also accepts attribute starting with `merchant_` that can be used to pass additional (meta) data.
 
@@ -253,13 +277,13 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 /epayment/lookup/ |  POST | Required | application/json
 
 #### Request Data
-`
+```json
 {
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5"
 }
-`
-#### Success Response
 ```
+#### Success Response
+```json
 {
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
    "total_amount": 1000,
@@ -271,7 +295,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```
  
 #### Failed / Pending  Response
-```
+```json
 {
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
    "total_amount": 1000,
@@ -283,7 +307,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```
 
 #### Refunded  Response
-```
+```json
 {
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
    "total_amount": 1000,
@@ -295,16 +319,21 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```
  
 #### Expired Response 
-```
+```json
 {
    "pidx": "H889Er9gq4j92oCrePrDwf",
    "total_amount": 1000,
    "status": "Expired",
    "transaction_id": null,
    "fee": 0,
-   "refunded": false }
+   "refunded": false
+}
 ```
-> PS : Links expire in 60 minutes in production
+
+!!! note
+
+    Links expire in 60 minutes in production.
+
 
 
 ### Lookup Payload Details
@@ -319,16 +348,20 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 
 ## Generic Errors
 #### When an incorrect Authorization key is passed. 
-`{
+```json
+{
    "detail": "Invalid token.",
    "status_code": 401
-}`
+}
+```
 
 #### If incorrect payment_id is passed. 
-`{
+```json
+{
    "detail": "Not found.",
    "error_key": "validation_error"
-}`
+}
+```
 
 
 &nbsp; 

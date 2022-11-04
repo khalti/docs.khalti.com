@@ -73,6 +73,9 @@ dependencies {
 }
 ```
 
+!!! info "Latest version"
+		[![Maven Central](https://img.shields.io/maven-central/v/com.khalti/khalti-android?color=%235C2D91)](https://mvnrepository.com/artifact/com.khalti/khalti-android)
+
 #### Register a contract for Activity Result
 
 === "Kotlin" 

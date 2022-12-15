@@ -28,9 +28,10 @@ Please follow links below to create a merchant and a consumer accounts if you ha
 - [Create a merchant account](https://khalti.com/join/merchant/)
 - [Create a consumer account](https://khalti.com/join/)
 
-<div class="important mg-top-5">
-For the latest version of Khalti Payment Gateway on web, Please visit <a href="/khalti-epayment">ePayment Checkout</a> 
-</div>
+!!! info 
+
+    For the latest version of Khalti Payment Gateway on web,
+    Please visit <a href="/khalti-epayment">ePayment Checkout</a>
 
 ## 2. Understand Khalti payment process
 

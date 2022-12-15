@@ -24,7 +24,7 @@ Once you've made a request as specified above, Khalti server will return you a r
 Success response consists of the `Complete` state.
 
 #### Completed State
-```
+```json
 {
     "status": true,
     "detail": "Transaction complete.",
@@ -34,10 +34,10 @@ Success response consists of the `Complete` state.
 
 ### Error Response
 
-#### 1. Trasaction Not Found
+#### 1. Transaction Not Found
 An error occurs, if wrong token/idx or wrong amount is passed in the parameter. It consist of the detail of error.
 
-```
+```json
 {
     "status": false,
     "state": "Error",
@@ -48,7 +48,7 @@ An error occurs, if wrong token/idx or wrong amount is passed in the parameter. 
 #### 2. Failed State
 A transaction could be failed due to the possibility of 'confirmation_code' exploitation.
 
-```
+```json
 {
     "status": false,
     "detail": "Transaction failed.",
@@ -62,7 +62,7 @@ A transaction could be failed due to the possibility of 'confirmation_code' expl
 
 Transactions are initiated after mobile number and khalti pin along with other transaction details are provided.
 
-```
+```json
 {
     "status": true,
     "detail": "Transaciton initiated.",
@@ -73,7 +73,7 @@ Transactions are initiated after mobile number and khalti pin along with other t
 #### 2. Confirmed State
 A transaction is confirmed after transaction details (transaction token, confirmation_code and 3rd party transaction_pin) are provided by the consumer.
 
-```
+```json
 {
     "status": true,
     "detail": "Transaciton not verified.",
@@ -82,7 +82,7 @@ A transaction is confirmed after transaction details (transaction token, confirm
 ```
 
 #### 3. Refunded State
-```
+```json
 {
     "status": false,
     "detail": "Transaciton refunded.",
@@ -91,7 +91,7 @@ A transaction is confirmed after transaction details (transaction token, confirm
 ```
 
 #### 4. Partially Refunded State
-```
+```json
 {
     "status": false,
     "detail": "Transaction partially refunded.",
@@ -102,44 +102,42 @@ A transaction is confirmed after transaction details (transaction token, confirm
 ## Example Requests
 Assuming the token/idx that we received is `XPPrDcwtHUg4UQbWEnxRzA`.
 
-### Python
+=== "Python"
 
-```python
-import requests
+    ``` python
+    import requests
 
-url = "https://khalti.com/api/v2/payment/status/"
-params = {
-  "token": "XPPrDcwtHUg4UQbWEnxRzA",
-  "amount": 1000
-}
-headers = {
-  "Authorization": "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b"
-}
+    url = "https://khalti.com/api/v2/payment/status/"
+    params = {
+      "token": "XPPrDcwtHUg4UQbWEnxRzA",
+      "amount": 1000
+    }
+    headers = {
+      "Authorization": "Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b"
+    }
 
-response = requests.get(url, params, headers = headers)
-```
+    response = requests.get(url, params, headers = headers)
+    ```
 
-### Node
+=== "Node.js"
 
-Install `axios` by running `yarn add axios`.
+    ``` javascript
+    const axios = require('axios');
 
-```nodejs
-const axios = require('axios');
+    let data = {
+      "token": "XPPrDcwtHUg4UQbWEnxRzA",
+      "amount": 1000
+    };
 
-let data = {
-    "token": "XPPrDcwtHUg4UQbWEnxRzA",
-    "amount": 1000
-};
+    let config = {
+      headers: {'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'}
+    };
 
-let config = {
-    headers: {'Authorization': 'Key test_secret_key_f59e8b7d18b4499ca40f68195a846e9b'}
-};
-
-axios.get("https://khalti.com/api/v2/payment/status/", data, config)
+    axios.get("https://khalti.com/api/v2/payment/status/", data, config)
     .then(response => {
-        console.log(response.data);
+      console.log(response.data);
     })
     .catch(error => {
-        console.log(error);
+      console.log(error);
     });
-```
+    ```

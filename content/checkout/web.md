@@ -1,12 +1,11 @@
 # Web SDK (Deprecated)
 
-<div class='deprecated'>
-This version of Web SDK has been deprecated and replaced by e-Payment (checkout) version.
-<br />
-Please refer to <a href="/checkout/khalti-epayment/">checkout/khalti-epayment</a> for the latest version
-</div>
-
 [![npm](https://img.shields.io/badge/npm-v2.2.0-blue.svg)](https://www.npmjs.com/package/khalti-checkout-web)
+
+!!! warning "This version of Web SDK has been deprecated and replaced by e-Payment (checkout) version."
+
+		Please refer to <a href="/khalti-epayment/">ePayment Checkout</a> for the latest version.
+
 
 This documentation details the process of Khalti Web/JavaScript SDK
 integration in your website/app. We also have SDKs for Android and iOS.

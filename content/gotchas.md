@@ -87,7 +87,7 @@ You are using HTTP response header 'X-Frame-Options' that avoids `<iframe>` rend
 X-Frame-Options "allow-from https://khalti.com"
 ```
 
-But using x-frame-options is not an internet standard. It is almost absolute; modern browsers like chrome and safari don't support it.  The recommended way is to use 'frame-ancestors'  CSP rule. (legacy browsers like IE do not support it ).
+But using x-frame-options is not an internet standard. It is almost obsolete; modern browsers like chrome and safari don't support it.  The recommended way is to use 'frame-ancestors'  CSP rule. (legacy browsers like IE do not support it ).
 So also for this error:
 
 > Refused to display 'https://khalti.com/payment/widget/' in a frame because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'none'".

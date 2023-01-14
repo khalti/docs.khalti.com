@@ -341,7 +341,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 | -- | -- | -- | 
 | pidx | This is the payment id of the transaction. 
 | total_amount | This is the total amount of the transaction
-| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded
+| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded<br />`Expired` - Transaction has expired
 | transaction_id | This is the transaction id for the transaction. <br />This is the unique identifier. 
 | fee | The fee that has been set for the merchant.
 | refunded | `True` - The transaction has been refunded. <br />`False` - The transaction has not been refunded.

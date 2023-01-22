@@ -1,5 +1,5 @@
 
-# Web Checkout (New E-Payment Version)
+# Web Checkout (KPG-2)
 
 This documentation details the process of implementing the latest e-Payment Checkout platform released by Khalti.The latest version is accessible through [pay.khalti.com](https://pay.khalti.com)
 

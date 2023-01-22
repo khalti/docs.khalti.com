@@ -25,7 +25,8 @@ There is no special installation plugin or SDK required for this provided you ar
 
     > **For Sandbox Access**
 
-    Signup from [https://a.khalti.com/join/merchant/](https://a.khalti.com/join/merchant/) as a merchant.
+    Signup from 
+    [https://test-web.khalti.com/#/join/merchant](https://test-web.khalti.com/#/join/merchant) as a merchant.
 
     > **For Production Access**
 

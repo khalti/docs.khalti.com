@@ -31,6 +31,24 @@ There is no special installation plugin or SDK required for this provided you ar
     > **For Production Access**
 
     Please visit [https://admin.khalti.com](https://admin.khalti.com)
+    
+!!! info "Test Credentials for sandbox environment"
+
+    > **Test Khalti ID for**
+    9800000000
+    9800000001
+    9800000002
+    9800000003
+    9800000004
+    9800000005
+    
+    > **Test MPIN**
+    1111
+    
+    > **Test OTP**
+    987654
+
+
 
 ## API Authorization
 HTTP Authorization for api requests is done using Auth Keys. Auth Key must be passed in the  header for authorization in the following format 

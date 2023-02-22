@@ -1,7 +1,7 @@
 
 # Web Checkout (KPG-2)
 
-This documentation details the process of implementing the latest e-Payment Checkout platform released by Khalti.The latest version is accessible through [pay.khalti.com](https://pay.khalti.com)
+This documentation details the process of implementing the latest e-Payment Checkout platform released by Khalti.
 
 ## How it works?  
 
@@ -61,7 +61,7 @@ HTTP Authorization for api requests is done using Auth Keys. Auth Key must be pa
 
 !!! tip
 
-    Use `live_secret_key` from __a.khalti.com__ during sandbox testing and use `live_secret_key` from __khalti.com__ for production environments.
+    Use `live_secret_key` from __test-web.khalti.com__ during sandbox testing and use `live_secret_key` from __khalti.com__ for production environments.
 
 
 ## API Endpoints
@@ -268,12 +268,13 @@ Sample of success response return URL.
 
 ### Sample Callback Request
 ```
-https://example.com/payment?pidx=EwGKrbdaYLTQ4rmWtNAMEJ
-	&amount=1300
-	&mobile=98XXXXX403
-	&purchase_order_id=test12
-	&purchase_order_name=test
-	&transaction_id=MJbBJDKYziWqgvkgjxhS2W
+https://test.com.np/?pidx=WZgaWsREXe6zZrBHtRmkbE
+    &txnId=f7rpJjgE6raExeH2f67j5k
+    &amount=1042
+    &mobile=98XXXXX904
+    &purchase_order_id=test12
+    &purchase_order_name=test
+    &transaction_id=f7rpJjgE6raExeH2f67j5k
 ```
 ## Payment Failure Callback
 If, in-case, due to some problem, user transaction does not go through, the failure response is obtained in the return URL specified during payment initiate.

@@ -132,12 +132,14 @@ Every payment request should be first initiated from the merchant as a server si
 ```
 
 !!! success "Success Response"
-		```json
-		{
-		    "pidx": "S8QJg2VALZGTJRkKqVxjqB",
-		    "payment_url": "https://test-pay.khalti.com/?pidx=S8QJg2VALZGTJRkKqVxjqB/"
-		}
-		```
+```json
+{
+    "pidx": "e8N7bbWaqKGSTURULAvgo3",
+    "payment_url": "https://test-pay.khalti.com/?pidx=e8N7bbWaqKGSTURULAvgo3",
+    "expires_at": "2023-03-14T11:17:28.954732+05:45",
+    "expires_in": 1800
+}
+```
 
 After getting the success response, the user should be redirected to the `payment_url` obtained in the success response.
 
@@ -145,102 +147,102 @@ After getting the success response, the user should be redirected to the `paymen
 
 !!! failure "return_url is blank"
 
-    ``` json
-    {
-        "return_url": [
-            "This field may not be blank."
-        ],
-        "error_key": "validation_error"
-    }
-    ```
+```json
+{
+    "return_url": [
+        "This field may not be blank."
+    ],
+    "error_key": "validation_error"
+}
+```
 
 !!! failure "return_url is invalid"
 
-    ``` json
-    {
-        "return_url": [
-            "Enter a valid URL."
-        ],
-        "error_key": "validation_error"
-    }
-    ```
+``` json
+{
+    "return_url": [
+        "Enter a valid URL."
+    ],
+    "error_key": "validation_error"
+}
+```
 
 !!! failure "website_url is blank"
 
-    ``` json
-    {
-        "website_url": [
-            "This field may not be blank."
-        ],
-        "error_key": "validation_error"
-    }
-    ```
+``` json
+{
+    "website_url": [
+        "This field may not be blank."
+    ],
+    "error_key": "validation_error"
+}
+```
 
 !!! failure "website_url is invalid"
 
-    ``` json
-    {
-        "website_url": [
-            "Enter a valid URL."
-        ],
-        "error_key": "validation_error"
-    }
-    ```
+``` json
+{
+    "website_url": [
+        "Enter a valid URL."
+    ],
+    "error_key": "validation_error"
+}
+```
 
 !!! failure "Amount is less than 10"
 
-    ``` json
-    {
-        "amount": [
-            "Amount should be greater than Rs. 1, that is 100 paisa."
-        ],
-        "error_key": "validation_error"
-    }
-    ```
+``` json
+{
+    "amount": [
+        "Amount should be greater than Rs. 1, that is 100 paisa."
+    ],
+    "error_key": "validation_error"
+}
+```
 
 !!! failure "Amount is invalid"
 
-    ``` json
-    {
-        "amount": [
-            "A valid integer is required."
-        ],
-        "error_key": "validation_error"
-    }
-    ```
+``` json
+{
+    "amount": [
+        "A valid integer is required."
+    ],
+    "error_key": "validation_error"
+}
+```
 
 !!! failure "purchase_order_id is blank"
 
-    ``` json
-    {
-        "purchase_order_id": [
-            "This field may not be blank."
-        ],
-        "error_key": "validation_error"
-    }
-    ```
+``` json
+{
+    "purchase_order_id": [
+        "This field may not be blank."
+    ],
+    "error_key": "validation_error"
+}
+```
 
 !!! failure "purchase_order_name is blank"
 
-    ``` json
-    {
-        "purchase_order_name": [
-            "This field may not be blank."
-        ],
-        "error_key": "validation_error"
-    }
-    ```
+``` json
+{
+    "purchase_order_name": [
+        "This field may not be blank."
+    ],
+    "error_key": "validation_error"
+}
+```
 
 !!! failure "Amount breakdown doesn't total to the amount passed"
 
-    ``` json
-    {
-        "amount": [
-            "Amount Breakdown mismatch."
-        ],
-        "error_key": "validation_error"
-    }
-    ```
+``` json
+{
+    "amount": [
+        "Amount Breakdown mismatch."
+    ],
+    "error_key": "validation_error"
+}
+```
 
 
 <!-- **Additionally** Configuration also accepts attribute starting with `merchant_` that can be used to pass additional (meta) data.

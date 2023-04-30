@@ -29,7 +29,7 @@ Using Khalti Payment Gateway, you do not need to integrate with individual banks
 * Merchant Dashboard to view transactions, issue refunds, filter and download reports etc.
 * Multi User System 
 * Realtime Balance updates in Merchant Dashboard on every successful payments made by customers
-* Amount collected in Merchant Dashboard can we deposited/transferred to bank accounts anytime
+* Amount collected in Merchant Dashboard can be deposited/transferred to bank accounts anytime
 
 ##Support
 ** For Queries, feel free to call us at: **

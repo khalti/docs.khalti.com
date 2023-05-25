@@ -1,7 +1,7 @@
 
 # Web Checkout (KPG-2)
 
-This documentation details the process of implementing the latest e-Payment Checkout platform released by Khalti.The latest version is accessible through [pay.khalti.com](https://pay.khalti.com)
+This documentation details the process of implementing the latest e-Payment Checkout platform released by Khalti.
 
 ## How it works?  
 
@@ -26,11 +26,11 @@ There is no special installation plugin or SDK required for this provided you ar
     > **For Sandbox Access**
 
     Signup from 
-    [https://test-web.khalti.com/#/join/merchant](https://test-web.khalti.com/#/join/merchant) as a merchant.
+    [here](https://test-admin.khalti.com/#/join/merchant) as a merchant.
 
     > **For Production Access**
 
-    Please visit [https://admin.khalti.com](https://admin.khalti.com)
+    Please visit [here](https://admin.khalti.com)
     
 !!! info "Test Credentials for sandbox environment"
 
@@ -61,7 +61,7 @@ HTTP Authorization for api requests is done using Auth Keys. Auth Key must be pa
 
 !!! tip
 
-    Use `live_secret_key` from __a.khalti.com__ during sandbox testing and use `live_secret_key` from __khalti.com__ for production environments.
+    Use `live_secret_key` from __test-admin.khalti.com__ during sandbox testing and use `live_secret_key` from __admin.khalti.com__ for production environments.
 
 
 ## API Endpoints
@@ -134,9 +134,11 @@ Every payment request should be first initiated from the merchant as a server si
 !!! success "Success Response"
 		```json
 		{
-		    "pidx": "S8QJg2VALZGTJRkKqVxjqB",
-		    "payment_url": "https://test-pay.khalti.com/?pidx=S8QJg2VALZGTJRkKqVxjqB/"
-		}
+            "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+            "payment_url": "https://test-pay.khalti.com/?pidx=bZQLD9wRVWo4CdESSfuSsB",
+            "expires_at": "2023-05-25T16:26:16.471649+05:45",
+            "expires_in": 1800
+        }
 		```
 
 After getting the success response, the user should be redirected to the `payment_url` obtained in the success response.
@@ -268,12 +270,13 @@ Sample of success response return URL.
 
 ### Sample Callback Request
 ```
-https://example.com/payment?pidx=EwGKrbdaYLTQ4rmWtNAMEJ
-	&amount=1300
-	&mobile=98XXXXX403
-	&purchase_order_id=test12
-	&purchase_order_name=test
-	&transaction_id=MJbBJDKYziWqgvkgjxhS2W
+http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
+&txnId=4H7AhoXDJWg5WjrcPT9ixW
+&amount=1000
+&mobile=98XXXXX904
+&purchase_order_id=test12
+&purchase_order_name=test
+&transaction_id=4H7AhoXDJWg5WjrcPT9ixW
 ```
 ## Payment Failure Callback
 If, in-case, due to some problem, user transaction does not go through, the failure response is obtained in the return URL specified during payment initiate.

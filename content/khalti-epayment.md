@@ -327,6 +327,17 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
    "refunded": false
 }
 ```
+#### Initiated / Pending  Response
+```json
+{
+   "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
+   "total_amount": 1000,
+   "status": "Initiated",
+   "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
+   "fee": 0,
+   "refunded": false
+}
+```
 
 #### Refunded  Response
 ```json

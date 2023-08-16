@@ -48,6 +48,9 @@ There is no special installation plugin or SDK required for this provided you ar
     > **Test OTP**
     987654
 
+Demo Flow for Checkout
+
+<button onclick="dummyPay()" id="payment-button" style="background-color: #5C2D91; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
 
 
 ## API Authorization
@@ -131,6 +134,205 @@ Every payment request should be first initiated from the merchant as a server si
 }
 ```
 
+Examples
+=== "cURL"
+
+    ``` bash
+    curl --location 'https://a.khalti.com/api/v2/epayment/initiate/' \
+    --header 'Authorization: key live_secret_key_68791341fdd94846a146f0457ff7b455' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+    "return_url": "http://example.com/",
+    "website_url": "http://example.com/",
+    "amount": "1000",
+    "purchase_order_id": "Ordwer01",
+    "purchase_order_name": "Test",
+    "customer_info": {
+        "name": "Test Bahadur",
+        "email": "test@khalti.com",
+        "phone": "9800000001"
+    }
+    }'
+    ```
+=== "php"
+
+    ``` php
+    <?php
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://a.khalti.com/api/v2/epayment/initiate/',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+        "return_url": "http://example.com/",
+        "website_url": "https://example.com/",
+        "amount": "1000",
+        "purchase_order_id": "Order01",
+            "purchase_order_name": "test",
+
+        "customer_info": {
+            "name": "Test Bahadur",
+            "email": "test@khalti.com",
+            "phone": "9800000001"
+        }
+        }
+
+        ',
+        CURLOPT_HTTPHEADER => array(
+            'Authorization: key live_secret_key_68791341fdd94846a146f0457ff7b455',
+            'Content-Type: application/json',
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
+    ```
+=== "python"
+    ```py
+    import requests
+    import json
+
+    url = "https://a.khalti.com/api/v2/epayment/initiate/"
+
+    payload = json.dumps({
+        "return_url": "http://example.com/",
+        "website_url": "https://example.com/",
+        "amount": "1000",
+        "purchase_order_id": "Order01",
+        "purchase_order_name": "test",
+        "customer_info": {
+        "name": "Ram Bahadur",
+        "email": "test@khalti.com",
+        "phone": "9800000001"
+        }
+    })
+    headers = {
+        'Authorization': 'key live_secret_key_68791341fdd94846a146f0457ff7b455',
+        'Content-Type': 'application/json',
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload)
+
+    print(response.text)
+    ```
+=== "C#"
+    ```py
+    using System;
+    using System.Net.Http;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Newtonsoft.Json;
+    namespace KhaltiApiExample
+    {
+        class Program
+        {
+            static async Task Main(string[] args)
+            {
+                var url = "https://a.khalti.com/api/v2/epayment/initiate/";
+    
+                var payload = new
+                {
+                    return_url = "http://example.com/",
+                    website_url = "https://example.com/",
+                    amount = "1000",
+                    purchase_order_id = "Order01",
+                    purchase_order_name = "test",
+                    customer_info = new
+                    {
+                        name = "Ram Bahadur",
+                        email = "test@khalti.com",
+                        phone = "9800000001"
+                    }
+                };
+    
+                var jsonPayload = JsonConvert.SerializeObject(payload);
+                var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+    
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Authorization", "key live_secret_key_68791341fdd94846a146f0457ff7b455");
+    
+                var response = await client.PostAsync(url, content);
+                var responseContent = await response.Content.ReadAsStringAsync();
+    
+                Console.WriteLine(responseContent);
+            }
+        }
+    }
+    ```
+=== "NodeJs"
+
+    ``` js
+    var request = require('request');
+    var options = {
+        'method': 'POST',
+        'url': 'https://a.khalti.com/api/v2/epayment/initiate/',
+        'headers': {
+        'Authorization': 'key live_secret_key_68791341fdd94846a146f0457ff7b455',
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+        "return_url": "http://example.com/",
+        "website_url": "https://example.com/",
+        "amount": "1000",
+        "purchase_order_id": "Order01",
+        "purchase_order_name": "test",
+        "customer_info": {
+            "name": "Ram Bahadur",
+            "email": "test@khalti.com",
+            "phone": "9800000001"
+        }
+        })
+
+    };
+    request(options, function (error, response) {
+        if (error) throw new Error(error);
+        console.log(response.body);
+    });
+    
+    ```
+
+<script>
+    function dummyPay() {
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "key live_secret_key_68791341fdd94846a146f0457ff7b455");
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+        "return_url": "https://docs.khalti.com/khalti-epayment/",
+        "website_url": "https://example.com/",
+        "amount": "1000",
+        "purchase_order_id": "Order01",
+        "purchase_order_name": "test",
+        "customer_info": {
+            "name": "Test Bahadur",
+            "email": "test@khalti.com",
+            "phone": "9800000001"
+        }
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("https://a.khalti.com/api/v2/epayment/initiate/", requestOptions)
+        .then(result => result.json())
+        .then(json => window.open(json.payment_url, '_blank'))
+        .catch(error => console.log('error', error));
+    }
+</script>
+
+
+    
 !!! success "Success Response"
 		```json
 		{

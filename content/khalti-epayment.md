@@ -309,6 +309,7 @@ Examples
         "website_url": "https://example.com/",
         "amount": "1000",
         "purchase_order_id": "Order01",
+        "modes":["KHALTI"],
         "purchase_order_name": "test",
         "customer_info": {
             "name": "Test Bahadur",

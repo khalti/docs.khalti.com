@@ -36,6 +36,7 @@ theme:
   custom_dir: overrides
   features:
     - content.code.annotate
+    - content.tabs.link
   palette:
     - scheme: slate
       toggle:

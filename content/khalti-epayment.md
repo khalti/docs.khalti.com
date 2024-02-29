@@ -97,6 +97,7 @@ Every payment request should be first initiated from the merchant as a server si
 | product_details | No | No of set is unlimited
 
 ### Sample Request Payload
+
 ```json
 {
   "return_url": "https://example.com/payment/",
@@ -301,6 +302,9 @@ http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
 &purchase_order_id=test12
 &purchase_order_name=test
 ```
+!!! note
+    + Only the status with **Completed** must be treated as success. 
+    + Links expire in 60 minutes in production.
 
 <!-- ## 
 - The callback url `return_url` should support `GET` method
@@ -381,9 +385,8 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```
 
 !!! note
-
-    Links expire in 60 minutes in production.
-
+    + Only the status with **Completed** must be treated as success. 
+    + Links expire in 60 minutes in production.
 
 
 ### Lookup Payload Details

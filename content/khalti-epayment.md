@@ -105,9 +105,9 @@ Every payment request should be first initiated from the merchant as a server si
   "purchase_order_id": "test12",
   "purchase_order_name": "test",
   "customer_info": {
-      "name": "Ashim Upadhaya",
+      "name": "Test Bahadur",
       "email": "example@gmail.com",
-      "phone": "9811496763"
+      "phone": "9800000123"
   },
   "amount_breakdown": [
       {
@@ -260,7 +260,12 @@ Sample of success response return URL.
 - The callback url `return_url` should support `GET` method
 - User shall be redirected to the `return_url` with following parameters for confirmation
     + pidx - _The initial payment identifier_
-    + transaction_id - _The transaction identifier at Khalti after successful payment
+    + status - _Status of the transaction_
+        + Completed - Transaction is success
+        + Pending - Transaction is in pending state, request for lookup API. 
+        + Canceled - Transaction has been canceled by user.
+    + transaction_id - _The transaction identifier at Khalti after successful payment_
+    + tidx - _Same value as transaction id_
     + amount - _Amount paid in paisa_
     + mobile - _Payer Mobile_
     + purchase_order_id - _The initial purchase_order_id provided during payment initiate_
@@ -269,27 +274,38 @@ Sample of success response return URL.
 - It's recommended that during implementation, payment lookup API is checked for confirmation after the redirect callback is received
 
 ### Sample Callback Request
+
+- Success transaction callback
 ```
 http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
 &txnId=4H7AhoXDJWg5WjrcPT9ixW
 &amount=1000
+&total_amount=1000
+&status=Completed
 &mobile=98XXXXX904
+&tidx=NpGHGRhYtDNA5z39cVM596
 &purchase_order_id=test12
 &purchase_order_name=test
 &transaction_id=4H7AhoXDJWg5WjrcPT9ixW
 ```
-## Payment Failure Callback
-If, in-case, due to some problem, user transaction does not go through, the failure response is obtained in the return URL specified during payment initiate.
-Sample of failure response return URL. 
 
+- Canceled transaction callback
+```
+http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
+&transaction_id=
+&tidx=
+&amount=1000
+&total_amount=1000
+&mobile=
+&status=Canceled
+&purchase_order_id=test12
+&purchase_order_name=test
+```
+
+<!-- ## 
 - The callback url `return_url` should support `GET` method
 - User shall be redirected to the `return_url` with following parameters for confirmation
-    + message - _Failure message_
-
-### Sample Callback Request
-```
-https://example.com/payment?message=Could%20not%20process%20the%20payment.
-```
+    + message - _Failure message_ -->
 
 ## Payment Verification (Lookup)
 After a callback is received, You can use the `pidx` provided earlier, to lookup and reassure the payment status.
@@ -352,6 +368,18 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 }
 ```
 
+#### Canceled Response 
+```json
+{
+   "pidx": "vNTeXkSEaEXK2J4i7cQU6e",
+   "total_amount": 1000,
+   "status": "Canceled",
+   "transaction_id": null,
+   "fee": 0,
+   "refunded": false
+}
+```
+
 !!! note
 
     Links expire in 60 minutes in production.
@@ -363,7 +391,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 | -- | -- | -- | 
 | pidx | This is the payment id of the transaction. 
 | total_amount | This is the total amount of the transaction
-| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded
+| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded<br />`Expired` - This payment link has expired <br />`Canceled` - Transaction has been canceled by the user
 | transaction_id | This is the transaction id for the transaction. <br />This is the unique identifier. 
 | fee | The fee that has been set for the merchant.
 | refunded | `True` - The transaction has been refunded. <br />`False` - The transaction has not been refunded.

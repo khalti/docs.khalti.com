@@ -512,8 +512,8 @@ http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
 
 !!! Important
     + Please use the lookup API for tha final validation of the transaction.
-    + Only the status with **Completed** must be treated as success. 
-    + Khalti payment link expires in 60 minutes in production(default).
+    + Khalti payment link expires in 60 minutes in production (default).
+    
 
 <!-- ## 
 - The callback url `return_url` should support `GET` method
@@ -605,13 +605,8 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 }
 ```
 
-!!! note
-    + Only the status with **Completed** must be treated as success. 
-    + Links expire in 60 minutes in production.
-
-
-### Lookup Payload Details
-| Field | Description | -- 
+### Lookup Payload Details  
+| Status | Description | -- 
 | -- | -- | -- | 
 | pidx | This is the payment id of the transaction. 
 | total_amount | This is the total amount of the transaction
@@ -619,6 +614,26 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 | transaction_id | This is the transaction id for the transaction. <br />This is the unique identifier. 
 | fee | The fee that has been set for the merchant.
 | refunded | `True` - The transaction has been refunded. <br />`False` - The transaction has not been refunded.
+
+### Lookup status
+| Field | Description | -- 
+| -- | -- | -- | 
+| Completed | Provide service to user. 
+| Pending | Hold, do not provide service. And contact Khalti team. 
+| Refunded | Transaction has been refunded to user. Do not provide service.
+| Expired | User have not made the payment, Do not provide the service.
+| Canceled | User have canceled the payment, Do not provide the service.
+
+!!! Important note
+    + Khalti shall not be liable 
+        + For any mishaps if the service is provided before requesting lookup API.
+        + If service is provided when the status is not **Completed**
+    + Only the status with **Completed** must be treated as success. 
+    + Status **Canceled** , **Expired** , **Failed** must be treated as failed.
+    + For status other than these, hold the transaction and contact **KHALTI** team.
+    + Payment link expires in 60 minutes in production.
+
+
 
 ## Generic Errors
 #### When an incorrect Authorization key is passed. 

@@ -19,7 +19,7 @@ There is no special installation plugin or SDK required for this provided you ar
 
 !!! tip
 
-    A merchant account is required if you haven't created at.
+    A merchant account is required for integration.
 
 !!! info "Access Information"
 
@@ -467,11 +467,11 @@ Sample of success response return URL.
 
 - The callback url `return_url` should support `GET` method
 - User shall be redirected to the `return_url` with following parameters for confirmation
-    + pidx - _The initial payment identifier_
+    + pidx - _The initial payment identifier    _
     + status - _Status of the transaction_
         + Completed - Transaction is success
         + Pending - Transaction is in pending state, request for lookup API. 
-        + Canceled - Transaction has been canceled by user.
+        + User canceled - Transaction has been canceled by user.
     + transaction_id - _The transaction identifier at Khalti after successful payment_
     + tidx - _Same value as transaction id_
     + amount - _Amount paid in paisa_
@@ -505,7 +505,7 @@ http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
 &amount=1000
 &total_amount=1000
 &mobile=
-&status=Canceled
+&status=User canceled
 &purchase_order_id=test12
 &purchase_order_name=test
 ```
@@ -598,7 +598,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 {
    "pidx": "vNTeXkSEaEXK2J4i7cQU6e",
    "total_amount": 1000,
-   "status": "Canceled",
+   "status": "User canceled",
    "transaction_id": null,
    "fee": 0,
    "refunded": false
@@ -610,7 +610,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 | -- | -- | -- | 
 | pidx | This is the payment id of the transaction. 
 | total_amount | This is the total amount of the transaction
-| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded<br />`Expired` - This payment link has expired <br />`Canceled` - Transaction has been canceled by the user
+| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded<br />`Expired` - This payment link has expired <br />`User canceled` - Transaction has been canceled by the user
 | transaction_id | This is the transaction id for the transaction. <br />This is the unique identifier. 
 | fee | The fee that has been set for the merchant.
 | refunded | `True` - The transaction has been refunded. <br />`False` - The transaction has not been refunded.
@@ -622,14 +622,12 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 | Pending | Hold, do not provide service. And contact Khalti team. 
 | Refunded | Transaction has been refunded to user. Do not provide service.
 | Expired | User have not made the payment, Do not provide the service.
-| Canceled | User have canceled the payment, Do not provide the service.
+| User canceled | User have canceled the payment, Do not provide the service.
 
-!!! Important note
-    + Khalti shall not be liable 
-        + For any mishaps if the service is provided before requesting lookup API.
-        + If service is provided when the status is not **Completed**
+!!! Important note  
     + Only the status with **Completed** must be treated as success. 
     + Status **Canceled** , **Expired** , **Failed** must be treated as failed.
+    + If any negative consequences occur due to incomplete API integration or providing service without checking lookup status, Khalti won’t be accountable for any such losses.  
     + For status other than these, hold the transaction and contact **KHALTI** team.
     + Payment link expires in 60 minutes in production.
 

@@ -19,7 +19,7 @@ There is no special installation plugin or SDK required for this provided you ar
 
 !!! tip
 
-    A merchant account is required if you haven't created at.
+    A merchant account is required for integration.
 
 !!! info "Access Information"
 
@@ -28,6 +28,8 @@ There is no special installation plugin or SDK required for this provided you ar
     Signup from 
     [here](https://test-admin.khalti.com/#/join/merchant) as a merchant.
 
+    Please use 987654 as login OTP for sandbox env.
+    
     > **For Production Access**
 
     Please visit [here](https://admin.khalti.com)
@@ -47,6 +49,10 @@ There is no special installation plugin or SDK required for this provided you ar
     
     > **Test OTP**
     987654
+
+Demo Flow for Checkout
+
+<button onclick="dummyPay()" id="payment-button" style="background-color: #5C2D91; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
 
 Demo Flow for Checkout
 
@@ -100,6 +106,7 @@ Every payment request should be first initiated from the merchant as a server si
 | product_details | No | No of set is unlimited
 
 ### Sample Request Payload
+
 ```json
 {
   "return_url": "https://example.com/payment/",
@@ -108,9 +115,9 @@ Every payment request should be first initiated from the merchant as a server si
   "purchase_order_id": "test12",
   "purchase_order_name": "test",
   "customer_info": {
-      "name": "Ashim Upadhaya",
+      "name": "Khalti Bahadur",
       "email": "example@gmail.com",
-      "phone": "9811496763"
+      "phone": "9800000123"
   },
   "amount_breakdown": [
       {
@@ -332,17 +339,16 @@ Examples
     }
 </script>
 
-
-    
 !!! success "Success Response"
-		```json
+
+	``` json
 		{
             "pidx": "bZQLD9wRVWo4CdESSfuSsB",
             "payment_url": "https://test-pay.khalti.com/?pidx=bZQLD9wRVWo4CdESSfuSsB",
             "expires_at": "2023-05-25T16:26:16.471649+05:45",
             "expires_in": 1800
         }
-		```
+	```
 
 After getting the success response, the user should be redirected to the `payment_url` obtained in the success response.
 
@@ -462,8 +468,13 @@ Sample of success response return URL.
 
 - The callback url `return_url` should support `GET` method
 - User shall be redirected to the `return_url` with following parameters for confirmation
-    + pidx - _The initial payment identifier_
-    + transaction_id - _The transaction identifier at Khalti after successful payment
+    + pidx - _The initial payment identifier    _
+    + status - _Status of the transaction_
+        + Completed - Transaction is success
+        + Pending - Transaction is in pending state, request for lookup API. 
+        + User canceled - Transaction has been canceled by user.
+    + transaction_id - _The transaction identifier at Khalti after successful payment_
+    + tidx - _Same value as transaction id_
     + amount - _Amount paid in paisa_
     + mobile - _Payer Mobile_
     + purchase_order_id - _The initial purchase_order_id provided during payment initiate_
@@ -472,27 +483,43 @@ Sample of success response return URL.
 - It's recommended that during implementation, payment lookup API is checked for confirmation after the redirect callback is received
 
 ### Sample Callback Request
+
+- Success transaction callback
 ```
 http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
 &txnId=4H7AhoXDJWg5WjrcPT9ixW
 &amount=1000
+&total_amount=1000
+&status=Completed
 &mobile=98XXXXX904
+&tidx=NpGHGRhYtDNA5z39cVM596
 &purchase_order_id=test12
 &purchase_order_name=test
 &transaction_id=4H7AhoXDJWg5WjrcPT9ixW
 ```
-## Payment Failure Callback
-If, in-case, due to some problem, user transaction does not go through, the failure response is obtained in the return URL specified during payment initiate.
-Sample of failure response return URL. 
 
+- Canceled transaction callback
+```
+http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
+&transaction_id=
+&tidx=
+&amount=1000
+&total_amount=1000
+&mobile=
+&status=User canceled
+&purchase_order_id=test12
+&purchase_order_name=test
+```
+
+!!! Important
+    + Please use the lookup API for tha final validation of the transaction.
+    + Khalti payment link expires in 60 minutes in production (default).
+    
+
+<!-- ## 
 - The callback url `return_url` should support `GET` method
 - User shall be redirected to the `return_url` with following parameters for confirmation
-    + message - _Failure message_
-
-### Sample Callback Request
-```
-https://example.com/payment?message=Could%20not%20process%20the%20payment.
-```
+    + message - _Failure message_ -->
 
 ## Payment Verification (Lookup)
 After a callback is received, You can use the `pidx` provided earlier, to lookup and reassure the payment status.
@@ -519,12 +546,24 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 }
 ```
  
-#### Failed / Pending  Response
+#### Pending  Response
 ```json
 {
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
    "total_amount": 1000,
    "status": "Pending",
+   "transaction_id": "",
+   "fee": 0,
+   "refunded": false
+}
+```
+
+#### Failed  Response
+```json
+{
+   "pidx": "HT6o6PEZRWFJ5ygavwww5",
+   "total_amount": 1000,
+   "status": "Failed",
    "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
    "fee": 0,
    "refunded": false
@@ -566,21 +605,45 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 }
 ```
 
-!!! note
+#### Canceled Response 
+```json
+{
+   "pidx": "vNTeXkSEaEXK2J4i7cQU6e",
+   "total_amount": 1000,
+   "status": "User canceled",
+   "transaction_id": null,
+   "fee": 0,
+   "refunded": false
+}
+```
 
-    Links expire in 60 minutes in production.
-
-
-
-### Lookup Payload Details
-| Field | Description | -- 
+### Lookup Payload Details  
+| Status | Description | -- 
 | -- | -- | -- | 
 | pidx | This is the payment id of the transaction. 
 | total_amount | This is the total amount of the transaction
-| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded
+| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded<br />`Expired` - This payment link has expired <br />`User canceled` - Transaction has been canceled by the user
 | transaction_id | This is the transaction id for the transaction. <br />This is the unique identifier. 
 | fee | The fee that has been set for the merchant.
 | refunded | `True` - The transaction has been refunded. <br />`False` - The transaction has not been refunded.
+
+### Lookup status
+| Field | Description | -- 
+| -- | -- | -- | 
+| Completed | Provide service to user. 
+| Pending | Hold, do not provide service. And contact Khalti team. 
+| Refunded | Transaction has been refunded to user. Do not provide service.
+| Expired | User have not made the payment, Do not provide the service.
+| User canceled | User have canceled the payment, Do not provide the service.
+
+!!! Important note  
+    + Only the status with **Completed** must be treated as success. 
+    + Status **Canceled** , **Expired** , **Failed** must be treated as failed.
+    + If any negative consequences occur due to incomplete API integration or providing service without checking lookup status, Khalti won’t be accountable for any such losses.  
+    + For status other than these, hold the transaction and contact **KHALTI** team.
+    + Payment link expires in 60 minutes in production.
+
+
 
 ## Generic Errors
 #### When an incorrect Authorization key is passed. 
@@ -591,7 +654,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 }
 ```
 
-#### If incorrect payment_id is passed. 
+#### If incorrect pidx is passed. 
 ```json
 {
    "detail": "Not found.",
@@ -599,5 +662,12 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 }
 ```
 
+#### If key is not passed as prefix in Authorization key
+```json
+{
+    "detail": "Authentication credentials were not provided.",
+    "status_code": 401
+}
+```
 
 &nbsp; 

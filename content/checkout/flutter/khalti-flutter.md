@@ -280,8 +280,8 @@ _**Contact Our Merchant Support**_
 * Email: merchantcare@khalti.com
 
 _**Contact Our Technical Team**_
-* Mobile (Viber / Whatsapp): 9843007232
-* Email / Skype: sashant@khalti.com
+* Mobile (Viber / Whatsapp): 9801856451
+* Email / Skype: techsupport@khalti.com
 
 (For payment gateway integration support.)
 

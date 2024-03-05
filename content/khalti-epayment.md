@@ -50,6 +50,9 @@ There is no special installation plugin or SDK required for this provided you ar
     > **Test OTP**
     987654
 
+Demo Flow for Checkout
+
+<button onclick="dummyPay()" id="payment-button" style="background-color: #5C2D91; cursor: pointer; color: #fff; border: none; padding: 5px 10px; border-radius: 2px">Pay with Khalti</button>
 
 Demo Flow for Checkout
 
@@ -137,7 +140,6 @@ Every payment request should be first initiated from the merchant as a server si
   ]
 }
 ```
-
 
 Examples
 === "cURL"
@@ -336,7 +338,6 @@ Examples
         .catch(error => console.log('error', error));
     }
 </script>
-
 
 !!! success "Success Response"
 
@@ -563,6 +564,17 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
    "pidx": "HT6o6PEZRWFJ5ygavwww5",
    "total_amount": 1000,
    "status": "Failed",
+   "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
+   "fee": 0,
+   "refunded": false
+}
+```
+#### Initiated / Pending  Response
+```json
+{
+   "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
+   "total_amount": 1000,
+   "status": "Initiated",
    "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
    "fee": 0,
    "refunded": false

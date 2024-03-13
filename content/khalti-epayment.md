@@ -534,6 +534,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```
 #### Success Response
 ```json
+
 {
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
    "total_amount": 1000,
@@ -545,6 +546,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```
  
 #### Pending  Response
+
 ```json
 {
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
@@ -556,17 +558,6 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 }
 ```
 
-#### Failed  Response
-```json
-{
-   "pidx": "HT6o6PEZRWFJ5ygavwww5",
-   "total_amount": 1000,
-   "status": "Failed",
-   "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
-   "fee": 0,
-   "refunded": false
-}
-```
 #### Initiated / Pending  Response
 ```json
 {
@@ -614,16 +605,27 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
    "refunded": false
 }
 ```
+### Payment Status Code
+| Status | Status Code | --
+| -- | -- | -- | 
+| Completed | 200
+| Pending | 200
+| Expired |  400
+| Initiated | 200
+| Refunded | 200
+| User canceled | 400
+| Partially Refunded | 200
 
 ### Lookup Payload Details  
 | Status | Description | -- 
 | -- | -- | -- | 
 | pidx | This is the payment id of the transaction. 
 | total_amount | This is the total amount of the transaction
-| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded<br />`Expired` - This payment link has expired <br />`User canceled` - Transaction has been canceled by the user
+| status | `Completed` - Transaction is success <br />`Pending` - Transaction is failed or is in pending state <br />`Refunded` - Transaction has been refunded<br />`Expired` - This payment link has expired <br />`User canceled` - Transaction has been canceled by the user <br />`Partially refunded` - Transaction has been partially refunded by the user
 | transaction_id | This is the transaction id for the transaction. <br />This is the unique identifier. 
 | fee | The fee that has been set for the merchant.
 | refunded | `True` - The transaction has been refunded. <br />`False` - The transaction has not been refunded.
+
 
 ### Lookup status
 | Field | Description | -- 

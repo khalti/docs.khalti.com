@@ -464,12 +464,12 @@ Sample of success response return URL.
 
 - The callback url `return_url` should support `GET` method
 - User shall be redirected to the `return_url` with following parameters for confirmation
-    + pidx - _The initial payment identifier    _
+    + pidx - _The initial payment identifier_
     + status - _Status of the transaction_
         + Completed - Transaction is success
         + Pending - Transaction is in pending state, request for lookup API. 
         + User canceled - Transaction has been canceled by user.
-    + transaction_id - _The transaction identifier at Khalti after successful payment_
+    + transaction_id - _The transaction identifier at Khalti_
     + tidx - _Same value as transaction id_
     + txnId - _Same value as transaction id_
     + amount - _Amount paid in paisa_

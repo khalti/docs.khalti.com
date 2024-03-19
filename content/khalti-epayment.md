@@ -471,7 +471,6 @@ Sample of success response return URL.
         + User canceled - Transaction has been canceled by user.
     + transaction_id - _The transaction identifier at Khalti_
     + tidx - _Same value as transaction id_
-    + txnId - _Same value as transaction id_
     + amount - _Amount paid in paisa_
     + mobile - _Payer KHALTI ID_
     + purchase_order_id - _The initial purchase_order_id provided during payment initiate_

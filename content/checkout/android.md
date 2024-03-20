@@ -40,10 +40,10 @@ Create an instance of `KhaltiPayConfig` with `publicKey`, `pidx`,  `returnUrl`, 
 
 ```kotlin
 val config = KhaltiPayConfig(  
-publicKey = "<your_public_key>",  
-pidx = "<your_pidx>",  
-returnUrl = Uri.parse("your_return_url"),  
-environment = Environment.TEST  
+	publicKey = "<your_public_key>",  
+	pidx = "<your_pidx>",  
+	returnUrl = Uri.parse("your_return_url"),  
+	environment = Environment.TEST  
 )
 ```
 

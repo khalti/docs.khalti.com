@@ -58,19 +58,19 @@ val config = KhaltiPayConfig(
 Create an instance of `Khalti`, using `init` function, with the above `config` as parameter along with the callbacks `onPaymentResult`, `onMessage` and `onReturn`. Here, `onReturn` is optional and can be skipped.
 
 ```kotlin
-	Khalti.init(  
-	    LocalContext.current,  // context
-	    config,  
-	    onPaymentResult = { paymentResult, khalti ->  
-		     // your implementation here     
-	    },  
-	    onMessage = { payload, khalti ->  
-		     // your implementation here     
-	    },  
-	    onReturn = { khalti ->  
-		     // your implementation here     
-	    }  
-	)
+Khalti.init(  
+    LocalContext.current,  // context
+    config,  
+    onPaymentResult = { paymentResult, khalti ->  
+	     // your implementation here     
+    },  
+    onMessage = { payload, khalti ->  
+	     // your implementation here     
+    },  
+    onReturn = { khalti ->  
+	     // your implementation here     
+    }  
+)
 ```
 
 > Note : Make sure the context you passed to `Khalti` can be used to open an activity.

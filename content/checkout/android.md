@@ -33,7 +33,11 @@ compileOptions {
    }
 ```
 
+#### Fetching `pidx`
+
+Please go through the <a target="_blank" href="https://docs.khalti.com/khalti-epayment/#initiating-a-payment-request">Initiating a Payment request</a> to learn how to request the `pidx`
 #### Setup
+
 ##### Building Config
 
 Create an instance of `KhaltiPayConfig` with `publicKey`, `pidx`,  `returnUrl`, `environment` as parameters.

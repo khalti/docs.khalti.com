@@ -39,11 +39,11 @@ compileOptions {
 Create an instance of `KhaltiPayConfig` with `publicKey`, `pidx`,  `returnUrl`, `environment` as parameters.
 
 ```kotlin
-	val config = KhaltiPayConfig(  
-    publicKey = "<your_public_key>",  
-    pidx = "<your_pidx>",  
-    returnUrl = Uri.parse("your_return_url"),  
-    environment = Environment.TEST  
+val config = KhaltiPayConfig(  
+publicKey = "<your_public_key>",  
+pidx = "<your_pidx>",  
+returnUrl = Uri.parse("your_return_url"),  
+environment = Environment.TEST  
 )
 ```
 
@@ -51,7 +51,7 @@ Create an instance of `KhaltiPayConfig` with `publicKey`, `pidx`,  `returnUrl`, 
 
 ##### Building Khalti
 
-Create an instance of `Khalti`, using `init` function, with the above config as parameter along with the callbacks `onPaymentResult`, `onMessage` and `onReturn`. Here, `onReturn` is optional and can be skipped.
+Create an instance of `Khalti`, using `init` function, with the above `config` as parameter along with the callbacks `onPaymentResult`, `onMessage` and `onReturn`. Here, `onReturn` is optional and can be skipped.
 
 ```kotlin
 	Khalti.init(  
@@ -60,7 +60,7 @@ Create an instance of `Khalti`, using `init` function, with the above config as 
 	    onPaymentResult = { paymentResult, khalti ->  
 		     // your implementation here     
 	    },  
-	    onMessage = { payload ->  
+	    onMessage = { payload, khalti ->  
 		     // your implementation here     
 	    },  
 	    onReturn = { khalti ->  
@@ -69,15 +69,14 @@ Create an instance of `Khalti`, using `init` function, with the above config as 
 	)
 ```
 
-> Note : Make sure the context your passed to `Khalti` can be used to open an activity.
-
+> Note : Make sure the context you passed to `Khalti` can be used to open an activity.
 
 ##### Callbacks
 
 | Callback                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `onPaymentResult(result: PaymentResult, khalti: Khalti)` | Invoked on completion of payment. Inside this callback you'll have access to `PaymentResult` object and `Khalti` object<br><br>After completion of payment process, `khalti` will internally trigger the verification API. It's result is then propagated through the `onPaymentResult` callback. You'll receive an object of `PaymentPayload`.<br>                                                                                                                              |
-| `onMessage(payload: OnMessagePayload)`                   | Invoked on failures and exceptions at any point of time. Inside this callback you'll have access to `OnMessagePayload` and `Khalti` object<br><br>`OnMessagePalyload` contains `onMessageEvent` that dictates what type of event triggered the callback. It also contains a flag `needsPaymentConfirmation` which if `true` indicates that you must verify the status of the payment. It can be done through the `Khalti` object passed to this callback. Use `khalti.verify()`. |
+| `onPaymentResult(result: PaymentResult, khalti: Khalti)` | Invoked on completion of payment. Inside this callback you'll have access to `PaymentResult` object and `Khalti` object<br><br>After completion of payment process, `khalti` will internally trigger the verification API. It's result is then propagated through the `onPaymentResult` callback. You'll receive an object of `PaymentResult`.<br>                                                                                                                               |
+| `onMessage(payload: OnMessagePayload, khalti: Khalti)`   | Invoked on failures and exceptions at any point of time. Inside this callback you'll have access to `OnMessagePayload` and `Khalti` object<br><br>`OnMessagePalyload` contains `onMessageEvent` that dictates what type of event triggered the callback. It also contains a flag `needsPaymentConfirmation` which if `true` indicates that you must verify the status of the payment. It can be done through the `Khalti` object passed to this callback. Use `khalti.verify()`. |
 | `onReturn(khalti: Khalti)`                               | This is an optional callback that is invoked when `return_url`'s page is successfully loaded. Inside this callback you'll have access to `Khalti` object                                                                                                                                                                                                                                                                                                                         |
 ##### Schema
 
@@ -144,6 +143,9 @@ val khalti = Khalti.init(
     onMessage = { payload, khalti ->  
         // Your implementation  
     },  
+    onReturn = { khalti ->  
+        // Your implementation  
+    } 
 )
 ```
 
@@ -165,10 +167,7 @@ val khalti = Khalti.init(
     },  
     onMessage = { payload, khalti ->  
         // Your implementation  
-    },  
-    onReturn = { khalti ->  
-        // Your implementation  
-    }  
+    } 
 )
 ```
 

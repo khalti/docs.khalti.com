@@ -2,7 +2,7 @@
 
 # Khalti Android SDK
 
-![Maven Central](https://img.shields.io/maven-central/v/com.khalti/khalti-android?color=%235C2D91)
+![Maven Central](https://img.shields.io/maven-central/v/com.khalti/checkout-android?color=%235C2D91)
 
 Welcome to Khalti's checkout documentation
 ### Installation

@@ -10,18 +10,14 @@ Welcome to Khalti's checkout documentation
 #### Requirements
 
 - Android 5.0 and above
-- AndroidX (as of v2.00.00)
+- AndroidX
 - Android Studio 3 and above
-#### Quick Note
-- We've dropped support of Android 4 since version `2.01.00`
 #### Configuration
 
 Add `khalti-android` to your `build.gradle` dependencies
 
 ```
-implementation ('com.khalti:khalti-android:$latest_version') {
-        transitive = true
-    }
+implementation "com.khalti:checkout-android:$latest_version"
 ```
 
 Also add the following lines inside the `android` block of your `build.gradle` file
@@ -178,4 +174,4 @@ val khalti = Khalti.init(
 Use `khalti.open()`, `khalti.verify()`, `khalti.close()` wherever appropriate.
 
 Check out the source for <a target="_blank" href="https://github.com/khalti/checkout-sdk-android">Khalti checkout on Github</a>.
-#### <a href="https://github.com/khalti/khalti-sdk-android/blob/master/CHANGELOG.md" target="_blank">Changelog</a>
+#### <a href="https://github.com/khalti/checkout-sdk-android/blob/master/CHANGELOG.md" target="_blank">Changelog</a>

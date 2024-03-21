@@ -14,7 +14,7 @@ Welcome to Khalti's checkout documentation
 - Android Studio 3 and above
 #### Configuration
 
-Add `khalti-android` to your `build.gradle` dependencies
+Add `checkout-android` to your `build.gradle` dependencies
 
 ```
 implementation "com.khalti:checkout-android:$latest_version"

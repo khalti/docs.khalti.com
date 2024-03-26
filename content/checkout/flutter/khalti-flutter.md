@@ -1,4 +1,4 @@
-# Khalti Flutter SDK (with Payment Interface)
+# Khalti Flutter SDK (with Payment Interface) (Deprecated)
 Khalti Payment Gateway SDK for Flutter with default payment interface, works out of the box without having to add any additional user interface.
 
 ---
@@ -47,10 +47,10 @@ SCT            |    ✔️    |  ✔️  |  ✔️  |                ❌
 Version 1.0 had an issue where multiple app with the package integrated, could interfere with each other's deeplink.
 Please follow the [new setup](#setup) after upgrading to 2.0 in order to fix the issue.
 
-## Setup
+  ## Setup
 Detailed setup for each platform.
 
-### Android
+  ### Android
 In your app's `AndroidManifest.xml`, add these lines inside `<activity>...</activity>` tag:
 
 ```xml
@@ -63,7 +63,7 @@ In your app's `AndroidManifest.xml`, add these lines inside `<activity>...</acti
 </intent-filter>
 ```
 
-### iOS
+    - ### iOS
 In your app's `Info.plist`, add these properties:
 
 ```xml

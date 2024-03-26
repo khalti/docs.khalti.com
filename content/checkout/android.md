@@ -1,11 +1,60 @@
-[<img width="302.6" height="115" src="https://d7vw40z4bofef.cloudfront.net/static/2.69.07-web19/images/khalti-logo.svg"/>](https://khalti.com/)
-
 # Khalti Android SDK
+
+Khalti Payment Gateway SDK for Andriod with default payment interface, works out of the box without having to add any additional user interface.
+
+---
+<p align="center">
+<img width="302.6" height="115" src="https://raw.githubusercontent.com/khalti/checkout-sdk-flutter/main/assets/khalti_logo.png" height="100" alt="Khalti Payment Gateway" />
+</p>
+
+
 
 ![Maven Central](https://img.shields.io/maven-central/v/com.khalti/checkout-android?color=%235C2D91)
 
-Welcome to Khalti's checkout documentation
-### Installation
+
+
+<!-- Welcome to Khalti's checkout documentation -->
+## Installation
+Read the introduction [here](https://docs.khalti.com/).
+
+## Getting Started
+Integrating Khalti Payment Gateway requires merchant account. 
+You can always [create one easily from here](https://khalti.com/join/merchant/#/).
+!!! tip
+
+    A merchant account is required for integration.
+
+!!! info "Access Information"
+
+    > **For Sandbox Access**
+
+    Signup from 
+    [here](https://test-admin.khalti.com/#/join/merchant) as a merchant.
+
+    Please use 987654 as login OTP for sandbox env.
+    
+    > **For Production Access**
+
+    Please visit [here](https://admin.khalti.com)
+    
+!!! info "Test Credentials for sandbox environment"
+
+    > **Test Khalti ID for**
+    9800000000
+    9800000001
+    9800000002
+    9800000003
+    9800000004
+    9800000005
+    
+    > **Test MPIN**
+    1111
+    
+    > **Test OTP**
+    987654
+
+Read the steps to integrate Khalti Payment Gateway in details [here](https://docs.khalti.com/getting-started/).
+
 
 #### Requirements
 
@@ -77,9 +126,9 @@ Khalti.init(
 | :------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `onPaymentResult(result: PaymentResult, khalti: Khalti)` | Invoked on completion of payment. Inside this callback you'll have access to `PaymentResult` object and `Khalti` object<br><br>After completion of payment process, `khalti` will internally trigger the verification API. It's result is then propagated through the `onPaymentResult` callback. You'll receive an object of `PaymentResult`.<br>                                                                                                                               |
 | `onMessage(payload: OnMessagePayload, khalti: Khalti)`   | Invoked on failures and exceptions at any point of time. Inside this callback you'll have access to `OnMessagePayload` and `Khalti` object<br><br>`OnMessagePalyload` contains `onMessageEvent` that dictates what type of event triggered the callback. It also contains a flag `needsPaymentConfirmation` which if `true` indicates that you must verify the status of the payment. It can be done through the `Khalti` object passed to this callback. Use `khalti.verify()`. |
-| `onReturn(khalti: Khalti)`                               | This is an optional callback that is invoked when `return_url`'s page is successfully loaded. Inside this callback you'll have access to `Khalti` object                                                                                                                                                                                                                                                                                                                         |
-##### Schema
+| `onReturn(khalti: Khalti)`                               | This is an optional callback that is invoked when `return_url`'s page is successfully loaded. Inside this callback you'll have access to `Khalti` object                                                                                                                                                                                                                                                                                                                         
 
+#### Schema
 ```
 PaymentResult {
 	status: String,
@@ -120,7 +169,7 @@ OnMessageEvent {
 | `init(Context, KhaltiPayConfig, OnPaymentResult, OnMessage, OnReturn)` | Creates an instance of `Khalti`. Use this function to create an object of `Khalti`<br><br>`val khalti = Khalti.init()`                                                                                                                                                                                                                                                         |
 | `open()`                                                               | Opens the payment page. After creating an object of `Khalti`. Use the said object to open the payment page.<br><br>`khalti.open()`                                                                                                                                                                                                                                             |
 | `verify()`                                                             | Looks up of the payment status. `Khalti` sdk internally verifies the status of the payment, but if required the status lookup can be triggered again. The result is propagated through the callbacks passed during `init()`.  Use this function to confirm the payment status if and when `needsPaymentConfirmation` is `true` in `OnMessagePayload`.<br><br>`khalti.verify()` |
-| `close()`                                                              | Closes the payment page. `Khalti` does not closes the payment page and it's sole responsibility lies on the merchant. Use this function to close the payment page when required.<br><br>`khalti.close()`                                                                                                                                                                       |
+| `close()`                                                              | Closes the payment page. `Khalti` does not close the payment page and it's sole responsibility lies on the merchant. Use this function to close the payment page when required.<br><br>`khalti.close()`                                                                                                                                                                       |
 
 #### Sample Implementations
 

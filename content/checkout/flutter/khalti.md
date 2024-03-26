@@ -1,4 +1,4 @@
-# Khalti Flutter SDK (without Payment Interface)
+# Khalti Flutter SDK (without Payment Interface) (Deprecated)
 Khalti Payment Gateway SDK for Flutter without payment interface, a custom user interface is required.
 
 ---

@@ -4,7 +4,7 @@
 
 !!! warning "This version of Web SDK has been deprecated and replaced by e-Payment (checkout) version."
 
-		Please refer to <a href="/khalti-epayment/">ePayment Checkout</a> for the latest version.
+	Please refer to <a href="/khalti-epayment/">ePayment Checkout</a> for the latest version.
 
 
 This documentation details the process of Khalti Web/JavaScript SDK

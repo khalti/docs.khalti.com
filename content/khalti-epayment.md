@@ -556,7 +556,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
    "refunded": false
 }
 ```
-
+#### Initiated  Response
 ```json
 {
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
@@ -604,7 +604,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 }
 ```
 ### Payment Status Code
-| Status | Status Code | --
+| Status | Status Code | |
 | -- | -- | -- | 
 | Completed | 200
 | Pending | 200
@@ -615,7 +615,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 | Partially Refunded | 200
 
 ### Lookup Payload Details  
-| Status | Description | -- 
+| Status | Description | | 
 | -- | -- | -- | 
 | pidx | This is the payment id of the transaction. 
 | total_amount | This is the total amount of the transaction
@@ -626,7 +626,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 
 
 ### Lookup status
-| Field | Description | -- 
+| Field | Description | | 
 | -- | -- | -- | 
 | Completed | Provide service to user. 
 | Pending | Hold, do not provide service. And contact Khalti team. 

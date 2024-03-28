@@ -551,13 +551,12 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
    "total_amount": 1000,
    "status": "Pending",
-   "transaction_id": "",
+   "transaction_id": null,
    "fee": 0,
    "refunded": false
 }
 ```
 
-#### Initiated / Pending  Response
 ```json
 {
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",

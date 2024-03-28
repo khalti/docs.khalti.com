@@ -35,7 +35,7 @@ Please follow links below to create a merchant and a consumer accounts if you ha
 
 ## 2. Understand Khalti payment process
 
-![Khalti payment overview](./img/khalti-payment-new-overview.png)
+![Khalti payment overview](./img/khalti-payment-new-overview.jpg)
 
 ### 2.1. Transaction States
 #### 1. Initiated

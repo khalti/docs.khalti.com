@@ -562,7 +562,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
    "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
    "total_amount": 1000,
    "status": "Initiated",
-   "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
+   "transaction_id": null,
    "fee": 0,
    "refunded": false
 }

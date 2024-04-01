@@ -83,10 +83,10 @@ We have developed SDKs for every major plaforms and we call it `Checkout`.
 
 Checkouts provide all the necessary UIs and perform necessary processes to initiate and confirm payment.
 
-- [Web kit](./checkout/web.md)
-- [Android kit](./checkout/android.md)
-- [iOS kit](./checkout/ios.md)
-- [Flutter kit](./checkout/flutter/khalti-flutter.md)
+- [ePayment Gateway Kit](./khalti-epayment.md)
+- [Android Kit](./checkout/android.md)
+- [iOS Kit](./checkout/ios.md)
+- [Flutter Kit](./checkout/flutter/khalti-checkout.md)
 
 ### 3.2. Server side integration
 After user confirms payment, it has to be verified by Khalti.

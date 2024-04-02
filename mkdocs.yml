@@ -9,9 +9,9 @@ nav:
         
         - Android SDK: checkout/android.md 
         - Flutter SDK: checkout/flutter/khalti-checkout.md
-          
+      - Plug and Play:
+        - WooCommerce: plugins/woocommerce.md    
   - API Reference:
-      - Wallet: checkout/diy-wallet.md
       - Banking: checkout/diy-banking.md
   - Deprecated:
       - Andriod: checkout/deprecated_android.md
@@ -20,19 +20,19 @@ nav:
           - khalti: checkout/flutter/khalti.md
           - khalti_flutter: checkout/flutter/khalti-flutter.md
       - Web SDK (Widget Version) : checkout/web.md
+      - API Reference:
+        - Wallet: checkout/diy-wallet.md
       - Server Integration (Deprecated):
         - Verification: api/verification.md
         - Transaction:
           - List: api/transaction.md
           - Detail: api/transaction_details.md
           - Status: api/transaction_status.md
-  
-  - Plug and Play:
-      - WooCommerce: plugins/woocommerce.md
-      - Opencart: plugins/opencart.md
-      - Magento 2: plugins/magneto.md
-      - Prestashop: plugins/prestashop.md
-      - WHMCS Khalti Module: plugins/whmcs.md
+      - Plug and Play:
+        - Opencart: plugins/opencart.md
+        - Magento 2: plugins/magneto.md
+        - Prestashop: plugins/prestashop.md
+        - WHMCS Khalti Module: plugins/whmcs.md        
   - Resources: resources.md
   - FAQ's and Gotchas: gotchas.md
   - Contribution: contribution.md

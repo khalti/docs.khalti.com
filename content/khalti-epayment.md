@@ -133,9 +133,18 @@ Every payment request should be first initiated from the merchant as a server si
           "quantity": 1,
    "unit_price": 1300
       }
-  ]
+  ],
+  "merchant_username": "merchant_name",
+  "merchant_extra": "merchant_extra"
 }
 ```
+**Additionally** Configuration also accepts attribute starting with `merchant_` that can be used to pass additional (meta) data.
+
+- `merchant_name`: This is merchant name
+
+- `merchant_extra`: This is extra data
+
+The additional data starting with `merchant_` is returned in success response payload.
 
 Examples
 === "cURL"

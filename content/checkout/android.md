@@ -168,7 +168,7 @@ OnMessagePayload {
 
 ```
 OnMessageEvent {
-	BackPressed, ReturnUrlLoadFailure, NetworkFailure, PaymentLookUpFailure, Unknown
+	KPGDisposed, ReturnUrlLoadFailure, NetworkFailure, PaymentLookUpFailure, Unknown
 }
 ```
 #### Public functions in `Khalti`

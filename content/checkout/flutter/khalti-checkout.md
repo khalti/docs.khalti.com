@@ -177,7 +177,7 @@ The static `init()` method takes in a few arguments:
   
 - **onReturn**: A callback function that gets triggered when the retunr_url is successfully loaded.
 
-- **onMessage**: A callback function that is triggered if any error is encountered. This callback provides error informations such as error description and status code. It also provides information about why the error occured via `KhaltiEvent` enum. This enum consists of:
+- **onMessage**: A callback function that is triggered to convey any message. It gets triggered when any issue is encountered or when any general message is to be conveyed. In case of error, this callback provides error informations such as error description and status code. It also provides information about why the error occured via `KhaltiEvent` enum. This enum consists of:
   
     ```dart
     enum KhaltiEvent {

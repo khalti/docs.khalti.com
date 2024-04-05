@@ -1,105 +1,128 @@
-There are four steps for integrating Khalti payment to a merchant system.
+This document serves as a comprehensive guide to integrating the Khalti Payment Gateway (KPG) into your system. The integration process involves signing up as a merchant, understanding the integration methods for web and mobile, and transitioning to a live environment after successful testing.
 
 
 
-- [1. Signup as a merchant and  as a User](#1-signup-as-a-merchant-and--as-a-user)
-- [2. Understand Khalti payment process](#2-understand-khalti-payment-process)
-	- [2.1. Transaction States](#21-transaction-states)
-		- [1. Initiated](#1-initiated)
-		- [2. Confirmed](#2-confirmed)
-		- [3. Completed](#3-completed)
-		- [4. Disabled](#4-disabled)
-		- [5. Refunded](#5-refunded)
-		- [6. Partially refunded](#6-partially-refunded)
-		- [7. Failed](#7-failed)
-- [3. Test integration](#3-test-integration)
-	- [3.1. Client side integration](#31-client-side-integration)
-	- [3.2. Server side integration](#32-server-side-integration)
-- [4. Go live](#4-go-live)
-	- [4.1. Further processes](#41-further-processes)
+- [1. Signup as a Merchant in Khalti](#1-signup-as-a-merchant-in-khalti)
+- [2. ePayment Gateway Integration](#2-epayment-gateway-integration) <br>
+	- [2.1. Web](#21-web-checkout)<br>
+	- [2.2. Mobile](#22-mobile-checkout) <br>
+- [3. Test Environment](#3-test-environment)<br>
+- [4. Going Live](#4-go-live)
 
-## 1. Signup as a merchant and  as a User
-First of all you will need a merchant and a consumer accounts.
-**Merchant** is an online business service like e-commerce websites, ISP online payment, Movie online purchase etc.
-**Consumer** is an end user who uses Khalti to purchase products or services from merchants.
 
-Please follow links below to create a merchant and a consumer accounts if you have not already.
+## 1. Signup as a Merchant in Khalti
+
+Before proceeding with the integration, it's essential to understand the terms used throughout the documentation:<br>
+
++ **Merchant :** Online business services such as e-commerce websites, ISP online payment portals, or online movie ticket platforms seeking to receive online payments via KPG.<br>
+
+
+If you're new to Khalti Payment Gateway service, familiarize yourself with its offerings by reading [here](./index.md)  for a better understanding.
+
+To initiate the integration process, sign up  as a merchant account :
+
 
 - [Create a merchant account](https://khalti.com/join/merchant/)
-- [Create a consumer account](https://khalti.com/join/)
-
-!!! info 
-
-    For the latest version of Khalti Payment Gateway on web,
-    Please visit <a href="/khalti-epayment">ePayment Checkout</a>
-
-## 2. Understand Khalti payment process
-
-![Khalti payment overview](./img/khalti-payment-new-overview.png)
-
-### 2.1. Transaction States
-#### 1. Initiated
-
-It is the first state of a transaction. Transactions are initiated after mobile number and khalti pin along with other transaction details are provided.
-
-#### 2. Confirmed
-
-A transaction is confirmed after transaction details (transaction token, confirmation_code and  3rd party transaction_pin) are provided by the consumer.
-[Check how to set and update khalti pin here.](https://www.youtube.com/watch?v=KeX7j_hp_sk)
-
-#### 3. Completed
-
-Merchant server then requests khalti server to verify the transaction. After the transaction is in completed state consumer is informed the transaction was successfully completed.
-
-#### 4. Disabled
-
-A transaction could be disabled due to the possibility of 'confirmation_code' exploitation.
-
-#### 5. Refunded
-
-A merchant can refund the successful payments within a limited period of time.
-
-#### 6. Partially refunded
-
-A completed transaction also can be partially refunded.
-
-#### 7. Failed
-
-Normally, a successful transaction has at least three changes of states initiate, confirm and complete. A client first initiates and then confirms payment while the server finally verifies it and the payment process is completed.
-
-## 3. Test integration
-Now that you know how Khalti payment works. Its time to integrate it into your system.
-A merchant must complete test integration using **test keys**. Test keys start with `test_`.
-
-In test mode, transactions are sandboxed, which means fund is not moved from a consumer to the merchant.
-Khalti must to be integrated at client and server.
 
 
-**Payment via E-Banking and Debit/Credit card is not supported in the test environment.** After you successfully integrate wallet, you need not to concern about E-Banking and Card payment integration.
 
-### 3.1. Client side integration
-For now there is only one way to integrate Khalti at client side, through SDKs.
-We have developed SDKs for every major plaforms and we call it `Checkout`.
-
-Checkouts provide all the necessary UIs and perform necessary processes to initiate and confirm payment.
-
-- [web Kit](./khalti-epayment.md)
-- [Android Kit](./checkout/android.md)
-- [iOS Kit](./checkout/ios.md)
-- [Flutter Kit](./checkout/flutter/khalti-checkout.md)
-
-### 3.2. Server side integration
-After user confirms payment, it has to be verified by Khalti.
-**Fund from user account is moved to merchant only if verification succeeds.**
-Verification must be done by the merchant server using a secret key.
-
-- [Verification API](./api/verification.md)
-- [Transaction API](./api/transaction.md)
+## 2. ePayment Gateway Integration 
+The integration process varies depending on whether you're integrating KPG on a web or mobile platform. Follow the steps outlined below accordingly:
 
 
-## 4. Go live
-After successful integration test, live keys will be generated in the merchant dashboard. The merchant must **replace test keys with live ones**.
-Live keys start with `live_X`. Replace `test_public_X` and `test_secret_X` keys with `live_public_X` and `live_secret_X` keys respectively.
 
-### 4.1. Further processes
-Even successful integration itself doesn't let you receive payments above NRs. 200 per transaction. Please fill KYC form and contact us at 9801165565/9801856440/9801165558/9801165557 to remove the limits and accept payments without restrictions.
+### 2.1. Web Checkout 
+![Khalti payment overview](./img/kpgv2-light.png) 
+The payment process flow of KPG Web Checkout is as follows: 
+
+
+1. Merchant requests Khalti  to initiate the online payment. 
+2. Khalti system returns with `pidx` and `payment_url`.
+3. The user must be redirected to `payment_url`.
+4. After payment, callback is received from Khalti system.
+5. Merchant side must hit the lookup API to get the status of the transaction.
+
+
+If you are looking to integrate KPG on web application, then the integration must be done by integrating the web checkout. Please follow the documentation here to proceed [Web Checkout](./khalti-epayment.md).
+ 
+Checkout provides all the necessary Uls and perform necessary processes to initiate and confirm the payment.
+
+
+### 2.2. Mobile Checkout
+![Khalti payment overview](./img/kpg _mobilesdk.png) 
+
+
+The payment process flow of KPG SDK (Android & Flutter) is as follows: 
+
+1. Merchant requests Khalti  to initiate the online payment. 
+2. Khalti system returns with `pidx` and `payment_url`.
+3. The merchant system must pass `pidx`, `keys` and `return URL` in client side SDK (Android and Flutter) for initiating the online payment.
+4. After payment, the return message is obtained on the client side along with extra SDK offerings.
+
+
+5. Merchant side must hit the lookup API to get the status of the transaction.
+!!! info "Note" 
+    The return url  must be same while generating PIDX and in SDK To get callback or SDK offering 
+
+If you are looking to integrate KPG in mobile, then the integration must be done by integrating the provided SDKs. Please follow the documentation here to proceed:<br>
+
+- [Android SDK](./checkout/android.md)<br>
+- [Flutter SDK](./checkout/flutter/khalti-checkout.md)
+
+Checkout provides all the necessary Uls and perform necessary processes to initiate and confirm the payment.
+
+
+
+
+
+## 3. Test Environment
+
+ 
+
+!!! info "Access Information"
+
+    > **For Sandbox Access**
+
+    > Signup from 
+        [here](https://test-admin.khalti.com/#/join/merchant) as a merchant.<br>
+
+    > **URL :** https://a.khalti.com/  <br>
+    > **Server Side Authorization Key :**  Live secret key<br>
+    > **Client Side Authorization Key (Android / Flutter SDK):** Live public key
+    
+!!! info "Test Credentials for sandbox environment"
+
+    > **Test Khalti ID for**
+    9800000000
+    9800000001
+    9800000002
+    9800000003
+    9800000004
+    9800000005
+    
+    > **Test MPIN**
+    1111
+    
+    > **Test OTP**
+    987654
+
+!!! Important Note 
+	Payment via E-Banking and Debit/Credit card is not supported in the test environment. However, after successful integration with KPG, this functionality will be enabled.
+## 4. Going Live
+After a successful integration test, a live merchant account must be created from here. The merchant must replace the Sandbox URL and authorization key with productions. Live keys will be generated in the merchant dashboard.
+!!! info "Access Information"
+
+    > **For Production**
+
+    > Signup from 
+        [here](https://admin.khalti.com/) as a merchant.<br>
+        
+    > **URL :** https://khalti.com/  <br>
+    > **Server Side Authorization Key :**  Live secret key<br>
+    > **Client Side Authorization Key (Android / Flutter SDK):** Live public key   
+
+
+
+
+!!! Important note
+	Even after successful integration, you won't be able to receive payments above NPR 200 per transaction. Fill the KYC form and contact us at 9801890085 / 9801856440 / 9801165558 / 9801165557 to remove the limits and accept payments without restrictions.

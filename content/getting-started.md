@@ -86,7 +86,7 @@ Checkout provides all the necessary Uls and perform necessary processes to initi
     > Signup from 
         [here](https://test-admin.khalti.com/#/join/merchant) as a merchant.<br>
 
-    > **URL :** https://a.khalti.com/  <br>
+    > **URL :** https://dev.khalti.com/  <br>
     > **Server Side Authorization Key :**  Live secret key<br>
     > **Client Side Authorization Key (Android / Flutter SDK):** Live public key
     

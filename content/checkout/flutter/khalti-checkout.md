@@ -68,7 +68,7 @@ Read the steps to integrate Khalti Payment Gateway in details [here](https://doc
 ## Supported Platforms
 Android | iOS | Web | Desktop (macOS, Linux, Windows)
 :-----: | :-: | :-: | :-----------------------------:
-  ✔️    |  ✔️ |  ✔️ |                ❌
+  ✔️    |  ✔️ |  ❌ |                ❌
 
 ## Setup
 Detailed setup for each platform.
@@ -78,9 +78,6 @@ No configuration is required for android.
 
 - ### iOS
 No configuration is required for iOS.
-
-- ### Web
-Since, the SDK uses [flutter_inappwebview](https://pub.dev/packages/flutter_inappwebview) internally to load the payment gateway, check its doc for the necessary web setup.
 
 ## Launching Payment Interface
 
@@ -157,7 +154,7 @@ The static `init()` method takes in a few arguments:
   
     - **publicKey**: Merchant's live or test public key provided by Khalti.
     - **pidx**: Unique product identifier received after initiating the payment via a server-side POST request.
-    - **returnUrl**: Merchant's URL where the user must be redirected after the payment is unsuccessfully made.
+    - **returnUrl**: Merchant's URL where the user must be redirected after the payment is successfully or unsuccessfully made. This value should correspond to the `return_url` specified during the initiation of the payment through a server-side POST request.
     - **environment**: An enum that determines whether test API or production API should be invoked. Can be either `Environment.prod` or `Environment.test`. Set to `Environment.prod` by default.
 
 - **onPaymentResult**: A callback function that is triggered if the payment is successfully made and redirected to merchant's return URL. The callback takes in two arguments.
@@ -175,7 +172,7 @@ The static `init()` method takes in a few arguments:
     }
     ```
   
-- **onReturn**: A callback function that gets triggered when the retunr_url is successfully loaded.
+- **onReturn**: A callback function that gets triggered when the return_url is successfully loaded.
 
 - **onMessage**: A callback function that is triggered to convey any message. It gets triggered when any issue is encountered or when any general message is to be conveyed. In case of error, this callback provides error informations such as error description and status code. It also provides information about why the error occured via `KhaltiEvent` enum. This enum consists of:
   

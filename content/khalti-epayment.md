@@ -151,7 +151,7 @@ Examples
 
     ``` bash
     curl --location 'https://a.khalti.com/api/v2/epayment/initiate/' \
-    --header 'Authorization: key live_secret_key_68791341fdd94846a146f0457ff7b455' \
+    --header 'Authorization: key 05bf95cc57244045b8df5fad06748dab' \
     --header 'Content-Type: application/json' \
     --data-raw '{
     "return_url": "http://example.com/",

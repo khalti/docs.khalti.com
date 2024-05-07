@@ -21,8 +21,6 @@ Integration with Khalti Payment Gateway (KPG) streamlines the process of receivi
 
 ### For consumers
 
-- **Convenient Wallet Payments**: Customers can make payments without leaving your platform.
-
 - **Multiple Payment Options**: Provides various payment options for customers.
 
 - **Secured Transactions**: Utilizes 2-step authentication (Khalti Pin and Khalti Password) for enhanced security. 		Transaction processing is disabled after multiple incorrect pin attempts.

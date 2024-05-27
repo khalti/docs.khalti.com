@@ -99,7 +99,6 @@ Create an instance of `KhaltiPayConfig` with `publicKey`, `pidx`,  `returnUrl`, 
 val config = KhaltiPayConfig(  
 	publicKey = "<your_public_key>",  
 	pidx = "<your_pidx>",  
-	returnUrl = Uri.parse("your_return_url"),  
 	environment = Environment.TEST  
 )
 ```
@@ -128,7 +127,6 @@ Khalti.init(
 
 > Note : Make sure the context you passed to `Khalti` can be used to open an activity.
 
-> Note: Make sure you are passing the exact same value for `returnUrl` that you used while requesting for `pidx`
 ##### Callbacks
 
 | Callback                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -153,6 +151,9 @@ PaymentPayload {
 	transactionId: String,
 	fee: Long,
 	refunded: Boolean
+	purchaseOrderId: String,
+	purchaseOrderName: String,
+	extraMerchantParams: Map<String, Object>
 }
 ```
 
@@ -178,7 +179,7 @@ OnMessageEvent {
 | `init(Context, KhaltiPayConfig, OnPaymentResult, OnMessage, OnReturn)` | Creates an instance of `Khalti`. Use this function to create an object of `Khalti`<br><br>`val khalti = Khalti.init()`                                                                                                                                                                                                                                                         |
 | `open()`                                                               | Opens the payment page. After creating an object of `Khalti`. Use the said object to open the payment page.<br><br>`khalti.open()`                                                                                                                                                                                                                                             |
 | `verify()`                                                             | Looks up of the payment status. `Khalti` sdk internally verifies the status of the payment, but if required the status lookup can be triggered again. The result is propagated through the callbacks passed during `init()`.  Use this function to confirm the payment status if and when `needsPaymentConfirmation` is `true` in `OnMessagePayload`.<br><br>`khalti.verify()` |
-| `close()`                                                              | Closes the payment page. `Khalti` does not close the payment page and it's sole responsibility lies on the merchant. Use this function to close the payment page when required.<br><br>`khalti.close()`                                                                                                                                                                       |
+| `close()`                                                              | Closes the payment page. `Khalti` does not close the payment page and it's sole responsibility lies on the merchant. Use this function to close the payment page when required.<br><br>`khalti.close()`                                                                                                                                                                        |
 
 #### Sample Implementations
 
@@ -192,7 +193,6 @@ val khalti = Khalti.init(
     KhaltiPayConfig(  
         publicKey = "<public_key>",  
         pidx = "<pidx>",  
-        returnUrl = Uri.parse("<return_url>"),  
         environment = Environment.TEST // Or Environment.Prod for production  
     ),  
     onPaymentResult = { paymentResult, khalti ->  
@@ -217,7 +217,6 @@ val khalti = Khalti.init(
     KhaltiPayConfig(  
         publicKey = "<public_key>",  
         pidx = "<pidx>",  
-        returnUrl = Uri.parse("<return_url>"),  
         environment = Environment.TEST // Or Environment.Prod for production  
     ),  
     onPaymentResult = { paymentResult, khalti ->  

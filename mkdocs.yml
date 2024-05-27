@@ -32,8 +32,9 @@ nav:
         - Opencart: plugins/opencart.md
         - Magento 2: plugins/magneto.md
         - Prestashop: plugins/prestashop.md
-        - WHMCS Khalti Module: plugins/whmcs.md        
-  - Resources: resources.md
+        - WHMCS Khalti Module: plugins/whmcs.md     
+      - Resources: resources.md   
+  
   - FAQ's and Gotchas: gotchas.md
   - Contribution: contribution.md
   - Contact Us: contact-us.md
@@ -43,11 +44,11 @@ theme:
   features:
     - content.code.annotate
   palette:
-    - scheme: slate
+    - scheme: default
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-    - scheme: default
+    - scheme: slate
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
@@ -62,7 +63,7 @@ site_dir: docs
 repo_name: "khalti/docs.khalti.com"
 repo_url: "https://github.com/khalti/docs.khalti.com"
 edit_uri: "edit/master/content/"
-copyright: "Copyright &copy; 2023 Khalti Private Limited"
+copyright: "Copyright &copy; 2024 Khalti Private Limited"
 # plugins:
 #   - social
 extra:

@@ -1,13 +1,11 @@
 # Introduction
 
-This site hosts documentation for developers who are looking to integrate 
-Khalti as a Payment Option in their online platform. If you fall into that 
-category, please keep reading.
 
-Khalti is a payment gateway, digital wallet and API provider system for
-various online services for Nepal.
+## What is Khalti Payment Gateway(KPG)?
 
-With Khalti SDK/API, you can accepts payments from:
+Khalti Payment Gateway (KPG) is a comprehensive payment solution, digital wallet, and API provider designed specifically for online services in Nepal. Whether you have a web application or a mobile application, integrating KPG enables you to seamlessly accept online payments. This documentation serves as your comprehensive guide through the integration process.
+
+By incorporating the KPG ePayment Gateway (for web) and SDKs (for mobile), you can accept payments from various sources:
 
 1. Khalti users.
 2. eBanking users of our partner banks.
@@ -15,25 +13,33 @@ With Khalti SDK/API, you can accepts payments from:
 4. SCT/VISA card holders.
 5. connectIPS users.
 
-Using Khalti Payment Gateway, you do not need to integrate with individual banks.
+Integration with Khalti Payment Gateway (KPG) streamlines the process of receiving online payments by eliminating the need to integrate individually with multiple banks.
+
+
 
 ## Features
 
-* Multiple Payment Options for Customers
-* Highly secure and Easy Integrations
-* SDKs are available for Web (JavaScript), Android and iOS.
-* Customers can make wallet payments without leaving your
-  platform.
-* Secured Transaction uses 2 step authentication i.e Khalti Pin and Khalti Password. 
-  Transaction Processing is disabled on multiple request for wrong Khalti Pin.
-* Merchant Dashboard to view transactions, issue refunds, filter and download reports etc.
-* Multi User System 
-* Realtime Balance updates in Merchant Dashboard on every successful payments made by customers
-* Amount collected in Merchant Dashboard can we deposited/transferred to bank accounts anytime
+### For consumers
 
-##Support
-** For Queries, feel free to call us at: **
+- **Multiple Payment Options**: Provides various payment options for customers.
 
-* Mobile (Viber / Whatsapp / Skype): 9801165557, 9801165565
+- **Secured Transactions**: Utilizes 2-step authentication (Khalti Pin and Khalti Password) for enhanced security. 		Transaction processing is disabled after multiple incorrect pin attempts.
 
-* Email: merchant@khalti.com
+### For merchants
+
+- **Highly Secure and Easy Integrations**: Offers seamless integration with strong security measures.
+- **SDK Availability**: SDKs are available for Web Flutter and Android.
+- **Merchant Dashboard**: Allows merchants to view transactions, issue refunds, filter and download reports, etc.
+- **Multi-User System**: Supports multiple users within a single account.
+- **Real-Time Balance Updates**: Provides real-time updates on balances in the Merchant Dashboard for every successful customer transaction.
+- **Flexibility in Fund Transfer**: Amount collected in the Merchant Dashboard can be deposited or transferred to bank    accounts at any time.
+
+
+## Support
+
+For any inquiries regarding Khalti Payment Gateway, feel free to reach out to us through:
+
++ Mobile (Viber / Whatsapp / Skype): 9801165557, 9801890085
++ Email: merchant@khalti.com
+
+We are here to assist you with any questions or concerns you may have.

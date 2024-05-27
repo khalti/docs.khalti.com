@@ -151,6 +151,9 @@ PaymentPayload {
 	transactionId: String,
 	fee: Long,
 	refunded: Boolean
+	purchaseOrderId: String,
+	purchaseOrderName: String,
+	extraMerchantParams: Map<String, Object>
 }
 ```
 

@@ -3,7 +3,7 @@ site_name: Khalti Payment Gateway
 nav:
   - Introduction: index.md
   - Getting Started: getting-started.md
-  - ePayment Gateway (NEW):
+  - ePayment Gateway :
       - Web Checkout: khalti-epayment.md 
       - Client Integration:
         
@@ -13,27 +13,27 @@ nav:
         - WooCommerce: plugins/woocommerce.md    
   - API Reference:
       - Banking: checkout/diy-banking.md
-  - Deprecated:
-      - Andriod: checkout/deprecated_android.md
-      - iOS SDK: checkout/ios.md
-      - Flutter/Dart SDK:
-          - khalti: checkout/flutter/khalti.md
-          - khalti_flutter: checkout/flutter/khalti-flutter.md
-      - Web SDK (Widget Version) : checkout/web.md
-      - API Reference:
-        - Wallet: checkout/diy-wallet.md
-      - Server Integration (Deprecated):
-        - Verification: api/verification.md
-        - Transaction:
-          - List: api/transaction.md
-          - Detail: api/transaction_details.md
-          - Status: api/transaction_status.md
-      - Plug and Play:
-        - Opencart: plugins/opencart.md
-        - Magento 2: plugins/magneto.md
-        - Prestashop: plugins/prestashop.md
-        - WHMCS Khalti Module: plugins/whmcs.md     
-      - Resources: resources.md   
+  # - Deprecated:
+  #     - Andriod: checkout/deprecated_android.md
+  #     - iOS SDK: checkout/ios.md
+  #     - Flutter/Dart SDK:
+  #         - khalti: checkout/flutter/khalti.md
+  #         - khalti_flutter: checkout/flutter/khalti-flutter.md
+  #     - Web SDK (Widget Version) : checkout/web.md
+  #     - API Reference:
+  #       - Wallet: checkout/diy-wallet.md
+  #     - Server Integration (Deprecated):
+  #       - Verification: api/verification.md
+  #       - Transaction:
+  #         - List: api/transaction.md
+  #         - Detail: api/transaction_details.md
+  #         - Status: api/transaction_status.md
+  #     - Plug and Play:
+  #       - Opencart: plugins/opencart.md
+  #       - Magento 2: plugins/magneto.md
+  #       - Prestashop: plugins/prestashop.md
+  #       - WHMCS Khalti Module: plugins/whmcs.md     
+  #     - Resources: resources.md   
   
   - FAQ's and Gotchas: gotchas.md
   - Contribution: contribution.md

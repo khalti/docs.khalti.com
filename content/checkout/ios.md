@@ -17,16 +17,18 @@ in your iOS app.
 
 **Objective-C** :  Clone project and use 'KhaltiCheckoutObjectiveC ' directory. Do 'pod install'.
 
-## Usage
 
-![Khalti scheme setup overview](https://raw.githubusercontent.com/khalti/khalti-sdk-ios/master/Screenshots/customUrlScheme.png)
+## Example on how to change swift and objective c targets
+![Targets](https://raw.githubusercontent.com/khalti/checkout-sdk-ios/master/Example/ScreenShots/targets.png)
+
+Select Objectivec
 
 Read the steps to integrate Khalti Payment Gateway in details [here](https://docs.khalti.com/getting-started/).
 
 
-#### Tested on 
+#### Tested on
 
-- Xcode 14,15
+- Xcode 15
 - swift 5
 
 ## Installation guide
@@ -70,43 +72,7 @@ onPaymentResult: {[weak self] (paymentResult,khalti) in
 | `onMessage(payload: OnMessagePayload, khalti: Khalti)`   | Invoked on failures, exceptions or to convey message at any point of time. Inside this callback you'll have access to `OnMessagePayload` and `Khalti` object<br><br>`OnMessagePayload` contains `onMessageEvent` that dictates what type of event triggered the callback. It also contains a flag `needsPaymentConfirmation` which if `true` indicates that you must verify the status of the payment. It can be done through the `Khalti` object passed to this callback. Use `khalti.verify()`.<br><br>`onMessage` should not be considered as an error by itself. Always consult the `OnMessageEvent` for further clarification. |
 | `onReturn(khalti: Khalti)`                               | This is an optional callback that is invoked when `return_url`'s page is successfully loaded. Inside this callback you'll have access to `Khalti` object                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 
-#### Schema
-```
-PaymentResult {
-	status: String,
-	payload: PaymentPayload,
-}
-```
 
-```
-PaymentPayload {
-	pidx: String,
-	totalAmount: Long,
-	status: String,
-	transactionId: String,
-	fee: Long,
-	refunded: Boolean
-	purchaseOrderId: String,
-	purchaseOrderName: String,
-	extraMerchantParams: Map<String, Object>
-}
-```
-
-```
-OnMessagePayload {
-	event: OnMessageEvent,
-	message: String,
-	throwable: Throwable,
-	code: Number,
-	needsPaymentConfirmation: Boolean
-}
-```
-
-```
-OnMessageEvent {
-	KPGDisposed, ReturnUrlLoadFailure, NetworkFailure, PaymentLookUpFailure, Unknown
-}
-```
 #### Public functions in `Khalti`
 
 | Function                                                               | Description                                                                                                                                                                                                                                                                                                                                                                    |

@@ -9,6 +9,7 @@ nav:
         
         - Android SDK: checkout/android.md 
         - Flutter SDK: checkout/flutter/khalti-checkout.md
+        - iOS SDK: checkout/iOS.md
       - Plug and Play:
         - WooCommerce: plugins/woocommerce.md    
   - API Reference:

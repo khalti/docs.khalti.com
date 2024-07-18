@@ -1,10 +1,14 @@
 # iOS SDK
 
-[![IDE](https://img.shields.io/badge/Xcode-8%209%2010Beta-blue.svg)](https://developer.apple.com/xcode/)
-[![Language](https://img.shields.io/badge/swift-3,%204-orange.svg)](https://swift.org)
-[![Version](https://img.shields.io/cocoapods/v/Khalti.svg?style=flat)](http://cocoapods.org/pods/Khalti)
-[![License](https://img.shields.io/cocoapods/l/Khalti.svg?style=flat)](http://cocoapods.org/pods/Khalti)
-[![Platform](https://img.shields.io/cocoapods/p/Khalti.svg?style=flat)](http://cocoapods.org/pods/Khalti)
+[//]: # ([![IDE]&#40;https://img.shields.io/badge/Xcode-8%209%2010Beta-blue.svg&#41;]&#40;https://developer.apple.com/xcode/&#41;)
+
+[//]: # ([![Language]&#40;https://img.shields.io/badge/swift-3,%204-orange.svg&#41;]&#40;https://swift.org&#41;)
+
+[//]: # ([![Version]&#40;https://img.shields.io/cocoapods/v/Khalti.svg?style=flat&#41;]&#40;http://cocoapods.org/pods/Khalti&#41;)
+
+[//]: # ([![License]&#40;https://img.shields.io/cocoapods/l/Khalti.svg?style=flat&#41;]&#40;http://cocoapods.org/pods/Khalti&#41;)
+
+[//]: # ([![Platform]&#40;https://img.shields.io/cocoapods/p/Khalti.svg?style=flat&#41;]&#40;http://cocoapods.org/pods/Khalti&#41;)
 
 
 This documentation details the process to integrate Khalti payment gateway

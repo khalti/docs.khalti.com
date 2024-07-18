@@ -62,8 +62,6 @@ onPaymentResult: {[weak self] (paymentResult,khalti) in
 })
 ```
 
-> Note : Make sure the context you passed to `Khalti` can be used to open an activity.
-
 ##### Callbacks
 
 | Callback                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |

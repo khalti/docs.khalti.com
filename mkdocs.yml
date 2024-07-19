@@ -9,14 +9,15 @@ nav:
         
         - Android SDK: checkout/android.md 
         - Flutter SDK: checkout/flutter/khalti-checkout.md
-#        - iOS SDK: checkout/iOS.md
+        - iOS SDK: checkout/ios.md     
       - Plug and Play:
         - WooCommerce: plugins/woocommerce.md    
   - API Reference:
       - Banking: checkout/diy-banking.md
+      - Refund: api/refund.md
   # - Deprecated:
   #     - Andriod: checkout/deprecated_android.md
-  #     - iOS SDK: checkout/ios.md
+  #     - iOS SDK: checkout/deprecated_ios.md
   #     - Flutter/Dart SDK:
   #         - khalti: checkout/flutter/khalti.md
   #         - khalti_flutter: checkout/flutter/khalti-flutter.md

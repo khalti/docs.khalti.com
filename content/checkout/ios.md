@@ -1,16 +1,28 @@
 # iOS SDK
 
-[//]: # ([![IDE]&#40;https://img.shields.io/badge/Xcode-8%209%2010Beta-blue.svg&#41;]&#40;https://developer.apple.com/xcode/&#41;)
 
-[//]: # ([![Language]&#40;https://img.shields.io/badge/swift-3,%204-orange.svg&#41;]&#40;https://swift.org&#41;)
+<p align="center">
+<img src="https://raw.githubusercontent.com/khalti/khalti-flutter-sdk/master/assets/khalti_logo.png" height="100" alt="Khalti Payment Gateway" />
+</p>
 
-[//]: # ([![Version]&#40;https://img.shields.io/cocoapods/v/Khalti.svg?style=flat&#41;]&#40;http://cocoapods.org/pods/Khalti&#41;)
+<p align="center">
+<strong>Khalti Payment Gateway</strong><br>
+<small>iOS SDK</small>
+</p>
 
-[//]: # ([![License]&#40;https://img.shields.io/cocoapods/l/Khalti.svg?style=flat&#41;]&#40;http://cocoapods.org/pods/Khalti&#41;)
+<p align="center">
+<a href="https://docs.khalti.com/"><img src="https://img.shields.io/badge/Khalti-Docs-blueviolet" alt="Khalti Docs"></a>
+<a href="https://github.com/khalti/checkout-sdk-ios/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-BSD--3-informational" alt="BSD-3 License"></a>
+<a href="https://github.com/khalti/checkout-sdk-ios/issues"><img src="https://img.shields.io/github/issues/khalti/checkout-sdk-ios" alt="GitHub issues"></a>
+<a href="https://khalti.com"><img src="https://img.shields.io/website?url=https%3A%2F%2Fdocs.khalti.com" alt="Website"></a>
+<a href="https://github.com/khalti/checkout-sdk-ios/releases"><img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/khalti/checkout-sdk-ios"></a>
+<a href="https://www.facebook.com/khalti.official"><img src="https://img.shields.io/badge/follow--000?style=social&logo=facebook" alt="Follow Khalti in Facebook"></a>
+<a href="https://www.instagram.com/khaltiofficial"><img src="https://img.shields.io/badge/follow--000?style=social&logo=instagram" alt="Follow Khalti in Instagram"></a>
+<a href="https://twitter.com/intent/follow?screen_name=khaltiofficial"><img src="https://img.shields.io/twitter/follow/khaltiofficial?style=social" alt="Follow Khalti in Twitter"></a>
+<a href="https://www.youtube.com/channel/UCrXM4HqK9th3E2a04Z9Lh-Q"><img src="https://img.shields.io/youtube/channel/subscribers/UCrXM4HqK9th3E2a04Z9Lh-Q?label=Subscribe&style=social" alt="Subscribe Youtube Channel"></a>
+</p>
 
-[//]: # ([![Platform]&#40;https://img.shields.io/cocoapods/p/Khalti.svg?style=flat&#41;]&#40;http://cocoapods.org/pods/Khalti&#41;)
-
-
+---
 This documentation details the process to integrate Khalti payment gateway
 in your iOS app.
 

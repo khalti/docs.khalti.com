@@ -73,13 +73,14 @@ HTTP Authorization for api requests is done using Auth Keys. Auth Key must be pa
 
 !!! info "API Endpoints"
 
-		> **Sandbox**
+    **Sandbox**
 
-		[https://a.khalti.com/api/v2/](https://a.khalti.com/api/v2/)
+    [https://a.khalti.com/api/v2/](https://a.khalti.com/api/v2/)
 
-		> **Production**
+    **Production**
 
-		[https://khalti.com/api/v2/](https://khalti.com/api/v2/)
+    [https://khalti.com/api/v2/](https://khalti.com/api/v2/)
+
 
 
 ## Initiating a Payment request
@@ -408,7 +409,7 @@ After getting the success response, the user should be redirected to the `paymen
     ``` json
     {
         "amount": [
-            "Amount should be greater than Rs. 1, that is 100 paisa."
+            "Amount should be greater than Rs. 10, that is 1000 paisa."
         ],
         "error_key": "validation_error"
     }
@@ -518,7 +519,7 @@ http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
 ```
 
 !!! Important
-    + Please use the lookup API for tha final validation of the transaction.
+    + Please use the lookup API for the final validation of the transaction.
     + Khalti payment link expires in 60 minutes in production (default).
     
 

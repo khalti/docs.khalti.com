@@ -61,37 +61,40 @@ For more information [click here](https://docs.khalti.com/khalti-epayment/#initi
 
 ```json
 {
-  "return_url": "https://example.com/payment/",
-  "website_url": "https://example.com/",
-  "amount": 1300,
-  "purchase_order_id": "test12",
-  "purchase_order_name": "test",
-  "bank":"<bank idx>"
-  "modes":["mode"],     // EBANKING : for ebanking , MOBILE_BANKING : for m-banking
-  "customer_info": {
-      "name": "Test Shrestha",
-      "email": "example@gmail.com",
-      "phone": "9280118700"
-  },
-  "amount_breakdown": [
-      {
-          "label": "Mark Price",
-          "amount": 1000
-      },
-      {
-          "label": "VAT",
-          "amount": 300
-      }
-  ],
-  "product_details": [
-      {
-          "identity": "1234567890",
-          "name": "Khalti logo",
-          "total_price": 1300,
-          "quantity": 1,
-   "unit_price": 1300
-      }
-  ]
+    "return_url": "https://testing.com/",
+    "website_url": "https://testing.com/",
+    "amount": "10000",
+    "ttl": 1000,
+    "bank": "ayCEFuEpkmkjBj3WVWRh32",
+    "modes": [
+        "MOBILE_BANKING"
+    ],
+        "purchase_order_id": "wakanada_01",
+        "purchase_order_name": "wakanda 02",
+    "customer_info": {
+        "name": "test shrestha",
+        "email": "example@gmail.com",
+        "phone": "9801856451"
+    },
+    "amount_breakdown": [
+        {
+            "label": "Mark Price",
+            "amount": "10000"
+        },
+        {
+            "label": "VAT",
+            "amount": 0
+        }
+    ],
+    "product_details": [
+        {
+            "identity": "shark_1",
+            "name": "shark_2",
+            "total_price": 10000,
+            "quantity": 1,
+            "unit_price": 10000
+        }
+    ]
 }
 ```
 
@@ -159,7 +162,7 @@ After getting the success response, the user should be redirected to the `paymen
     ``` json
     {
         "amount": [
-            "Amount should be greater than Rs. 10, that is 100 paisa."
+            "Amount should be greater than Rs. 100, that is 1000 paisa."
         ],
         "error_key": "validation_error"
     }
@@ -238,8 +241,8 @@ Sample of success response return URL.
 ```
 http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
 &txnId=4H7AhoXDJWg5WjrcPT9ixW
-&amount=1000
-&total_amount=1000
+&amount=10000
+&total_amount=10000
 &status=Completed
 &mobile=98XXXXX904
 &tidx=4H7AhoXDJWg5WjrcPT9ixW
@@ -254,8 +257,8 @@ http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
 http://example.com/?pidx=bZQLD9wRVWo4CdESSfuSsB
 &transaction_id=
 &tidx=
-&amount=1000
-&total_amount=1000
+&amount=10000
+&total_amount=10000
 &mobile=
 &status=User canceled
 &purchase_order_id=test12
@@ -290,7 +293,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```json
 {
   "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
-  "total_amount": 1000,
+  "total_amount": 10000,
   "status": "Completed",
   "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
   "fee": 0,
@@ -303,7 +306,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```json
 {
   "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
-  "total_amount": 1000,
+  "total_amount": 10000,
   "status": "Pending",
   "transaction_id": null,
   "fee": 0,
@@ -316,7 +319,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```json
 {
   "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
-  "total_amount": 1000,
+  "total_amount": 10000,
   "status": "Initiated",
   "transaction_id": null,
   "fee": 0,
@@ -329,7 +332,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```json
 {
   "pidx": "HT6o6PEZRWFJ5ygavzHWd5",
-  "total_amount": 1000,
+  "total_amount": 10000,
   "status": "Refunded",
   "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
   "fee": 0,
@@ -342,7 +345,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```json
 {
   "pidx": "H889Er9gq4j92oCrePrDwf",
-  "total_amount": 1000,
+  "total_amount": 10000,
   "status": "Expired",
   "transaction_id": null,
   "fee": 0,
@@ -355,7 +358,7 @@ After a callback is received, You can use the `pidx` provided earlier, to lookup
 ```json
 {
   "pidx": "vNTeXkSEaEXK2J4i7cQU6e",
-  "total_amount": 1000,
+  "total_amount": 10000,
   "status": "User canceled",
   "transaction_id": null,
   "fee": 0,

@@ -162,7 +162,7 @@ After getting the success response, the user should be redirected to the `paymen
     ``` json
     {
         "amount": [
-            "Amount should be greater than Rs. 100, that is 1000 paisa."
+            "Amount should be greater than Rs. 100, that is 10000 paisa."
         ],
         "error_key": "validation_error"
     }

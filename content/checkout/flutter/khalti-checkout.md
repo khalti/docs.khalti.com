@@ -106,7 +106,6 @@ class _KhaltiSDKDemoState extends State<KhaltiSDKDemo> {
     final payConfig = KhaltiPayConfig(
       publicKey: '__live_public_key__', // Merchant's public key
       pidx: pidx, // This should be generated via a server side POST request.
-      returnUrl: Uri.parse('https://your_return_url'),
       environment: Environment.prod,
     );
 
@@ -138,6 +137,10 @@ class _KhaltiSDKDemoState extends State<KhaltiSDKDemo> {
 }
 ```
 
+!!! warning "BREAKING CHANGE"
+
+    Starting with version `1.0.0-dev.5`, it is no longer necessary for the developers to manually add `return_url` within `KhaltiPayConfig`. The SDK handles the fetching and proper usage of `return_url`.
+    
 The static `init()` method takes in a few arguments:
 
 - **enableDebugging**: A boolean argument that is when set to true can be used to view network logs in the debug console. It is set to `false` by default.
@@ -147,28 +150,25 @@ The static `init()` method takes in a few arguments:
     final payConfig = KhaltiPayConfig(
       publicKey: '__live_public_key__', // Merchant's public key
       pidx: pidx, // This should be generated via a server side POST request.
-      returnUrl: Uri.parse('https://your_return_url'),
       environment: Environment.prod,
     );
     ```
   
     - **publicKey**: Merchant's live or test public key provided by Khalti.
     - **pidx**: Unique product identifier received after initiating the payment via a server-side POST request.
-    - **returnUrl**: Merchant's URL where the user must be redirected after the payment is successfully or unsuccessfully made. This value should correspond to the `return_url` specified during the initiation of the payment through a server-side POST request.
     - **environment**: An enum that determines whether test API or production API should be invoked. Can be either `Environment.prod` or `Environment.test`. Set to `Environment.prod` by default.
 
 - **onPaymentResult**: A callback function that is triggered if the payment is successfully made and redirected to merchant's return URL. The callback takes in two arguments.
     - **paymentResult**: An instance of `PaymentResult` class. It provides some informations about the payment after it is successfully made. Following data is provided by this instance.
-        - **status**: A string representing the status of the payment.
-        - **payload**: An instance of `PaymentPayload`. It contains general informations such as `pidx`, `amount` and `transactionId` regarding the payment made. 
+        - **payload**: An instance of `PaymentPayload`. It contains general informations such as `pidx`, `totalAmount`, `transactionId`, `status`, `fee`, `refunded`, `purchaseOrderId`, `purchaseOrderName` and `extraMerchantParams` regarding the payment made. 
     - **khalti**: An instance of `Khalti`. Can be used to invoke any methods provided by this instance.
 
     ```dart
     onPaymentResult(paymentResult, khalti) {
-      print(paymentResult.status);
-      print(paymentResult.payload.pidx);
-      print(paymentResult.payload.amount);
-      print(paymentResult.payload.transactionId);
+      print(paymentResult.payload?.status);
+      print(paymentResult.payload?.pidx);
+      print(paymentResult.payload?.totalAmount);
+      print(paymentResult.payload?.transactionId);
     }
     ```
   
@@ -181,13 +181,13 @@ The static `init()` method takes in a few arguments:
       /// Event for when khalti payment page is disposed.
       kpgDisposed,
 
-      /// Event for when return url fails to load.
+      /// Event for when return url fails to load from the API.
       returnUrlLoadFailure,
 
       /// Event for when there's an exception when making a network call.
       networkFailure,
 
-      /// Event for when there's a HTTP failure when making a network call.
+      /// Event for when there's a HTTP failure when making a network call for verifying payment status.
       paymentLookupfailure,
 
       /// An unknown event.

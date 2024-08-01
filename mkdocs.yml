@@ -11,7 +11,8 @@ nav:
         - Flutter SDK: checkout/flutter/khalti-checkout.md
         - iOS SDK: checkout/ios.md     
       - Plug and Play:
-        - WooCommerce: plugins/woocommerce.md    
+        - WooCommerce: plugins/woocommerce.md
+        - WHMCS Khalti Module: plugins/whmcs.md 
   - API Reference:
       - Banking: checkout/diy-banking.md
       - Refund: api/refund.md
@@ -34,7 +35,7 @@ nav:
   #       - Opencart: plugins/opencart.md
   #       - Magento 2: plugins/magneto.md
   #       - Prestashop: plugins/prestashop.md
-  #       - WHMCS Khalti Module: plugins/whmcs.md     
+  #          
   #     - Resources: resources.md   
   
   - FAQ's and Gotchas: gotchas.md

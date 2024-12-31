@@ -69,6 +69,7 @@ edit_uri: "edit/master/content/"
 copyright: "Copyright &copy; 2024 Khalti Private Limited"
 # plugins:
 #   - social
+
 extra:
   social:
     - icon: "fontawesome/brands/github"

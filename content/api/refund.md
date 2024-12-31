@@ -8,7 +8,7 @@ The Refund API allows merchants to process refunds for transactions. Refunds can
 
     **Sandbox**
 
-    [https://a.khalti.com/api/merchant-transaction/{{transaction_id}}/refund/](https://a.khalti.com/api/merchant-transaction/{{transaction_id}}/refund/)
+    [https://dev.khalti.com/api/merchant-transaction/{{transaction_id}}/refund/](https://dev.khalti.com/api/merchant-transaction/{{transaction_id}}/refund/)
 
     **Production**
 

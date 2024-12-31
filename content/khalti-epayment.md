@@ -75,7 +75,7 @@ HTTP Authorization for api requests is done using Auth Keys. Auth Key must be pa
 
     **Sandbox**
 
-    [https://a.khalti.com/api/v2/](https://a.khalti.com/api/v2/)
+    [https://dev.khalti.com/api/v2/](https://dev.khalti.com/api/v2/)
 
     **Production**
 
@@ -151,7 +151,7 @@ Examples
 === "cURL"
 
     ``` bash
-    curl --location 'https://a.khalti.com/api/v2/epayment/initiate/' \
+    curl --location 'https://dev.khalti.com/api/v2/epayment/initiate/' \
     --header 'Authorization: key 05bf95cc57244045b8df5fad06748dab' \
     --header 'Content-Type: application/json' \
     --data-raw '{
@@ -173,7 +173,7 @@ Examples
     <?php
         $curl = curl_init();
         curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://a.khalti.com/api/v2/epayment/initiate/',
+        CURLOPT_URL => 'https://dev.khalti.com/api/v2/epayment/initiate/',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -212,7 +212,7 @@ Examples
     import requests
     import json
 
-    url = "https://a.khalti.com/api/v2/epayment/initiate/"
+    url = "https://dev.khalti.com/api/v2/epayment/initiate/"
 
     payload = json.dumps({
         "return_url": "http://example.com/",
@@ -248,7 +248,7 @@ Examples
         {
             static async Task Main(string[] args)
             {
-                var url = "https://a.khalti.com/api/v2/epayment/initiate/";
+                var url = "https://dev.khalti.com/api/v2/epayment/initiate/";
     
                 var payload = new
                 {
@@ -285,7 +285,7 @@ Examples
     var request = require('request');
     var options = {
         'method': 'POST',
-        'url': 'https://a.khalti.com/api/v2/epayment/initiate/',
+        'url': 'https://dev.khalti.com/api/v2/epayment/initiate/',
         'headers': {
         'Authorization': 'key live_secret_key_68791341fdd94846a146f0457ff7b455',
         'Content-Type': 'application/json',
@@ -338,7 +338,7 @@ Examples
             redirect: 'follow'
         };
 
-        fetch("https://a.khalti.com/api/v2/epayment/initiate/", requestOptions)
+        fetch("https://dev.khalti.com/api/v2/epayment/initiate/", requestOptions)
         .then(result => result.json())
         .then(json => window.open(json.payment_url, '_blank'))
         .catch(error => console.log('error', error));

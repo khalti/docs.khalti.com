@@ -82,16 +82,16 @@ Replace `<secret key>` with test or live secret key as per required.
 
 ## API Request Examples
 
-=== "cURL"
+# cURL
 
-    ``` bash
+   ```bash
     curl https://khalti.com/api/v2/merchant-transaction/ \
     -H "Authorization:Key <secret key>
-    ```
+   ```
 
-=== "php"
+# PHP
 
-    ``` php
+   ```php
     <?php
     $url = "https://khalti.com/api/v2/merchant-transaction/";
 
@@ -107,11 +107,11 @@ Replace `<secret key>` with test or live secret key as per required.
     $response = curl_exec($ch);
     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-    ```
+   ```
 
-=== "Python"
+# Python
 
-    ``` python
+   ```python
     import requests
 
     url = "https://khalti.com/api/v2/merchant-transaction/"
@@ -121,11 +121,11 @@ Replace `<secret key>` with test or live secret key as per required.
     }
 
     response = requests.get(url, payload, headers = headers)
-    ```
+   ```
 
-=== "Ruby"
+# Ruby
 
-    ``` ruby
+   ```ruby
     require 'uri'
     require 'net/http'
 
@@ -139,4 +139,4 @@ Replace `<secret key>` with test or live secret key as per required.
     response = https.request(request)
 
     puts response.body
-    ```
+   ```

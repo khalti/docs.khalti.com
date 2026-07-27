@@ -46,6 +46,7 @@ theme:
   custom_dir: overrides
   features:
     - content.code.annotate
+    - content.action.edit
   palette:
     - scheme: default
       toggle:
@@ -67,7 +68,14 @@ repo_name: "khalti/docs.khalti.com"
 repo_url: "https://github.com/khalti/docs.khalti.com"
 edit_uri: "edit/master/content/"
 copyright: "Copyright &copy; 2025  IME Khalti  Limited"
-# plugins:
+plugins:
+  - search
+  - copy-to-llm:
+      # Raw GitHub base for docs_dir (content/) — used for View as Markdown / Open in ChatGPT|Claude
+      repo_url: "https://raw.githubusercontent.com/khalti/docs.khalti.com/master/content"
+      button_hover_color: "var(--md-primary-fg-color)"
+      toast_bg_color: "var(--md-accent-fg-color)"
+      toast_text_color: "#ffffff"
 #   - social
 
 extra:
